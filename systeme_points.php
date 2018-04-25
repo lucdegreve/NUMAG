@@ -3,15 +3,21 @@
 	<meta charset="UTF-8">
 	<!-- page de fonctions pour le calcul des points -->
 	<!-- notation à partir des choix du profil 
--- récupération des choix dans les profils - get de liste principale, get de la liste secondaire , comment fait-on pour les choix ? liste déroulante à choix multiple ? id ?
--- créer liste de mots clés pour le compte utilisateur (ou faire copie de la liste générale ?)
--- attribuer points : si xxx était dans la liste P alors 3 points, dans la liste S 1 point, sinon 0-->
+récupération des choix dans les profils - get de liste principale, get de la liste secondaire , comment fait-on pour les choix ? liste déroulante à choix multiple ? id ? demander à titi
+cliquer sur OK 
+-- ajouter à centres d'interet des individus
+-- attribuer points : si xxx était dans la liste P alors 4 points, dans la liste S 2 point-->
+
 	<!-- fonction actualités -->
 
   <!-- Il y a une étoile pour choisir si une actualité nous intéresse ou pas 
     Si ce bouton est sélectionné get les tags associés à l'identifiant de l'actu 
     
 	
+	<!-- fonction connection entre 2 profils
+	à partir d'un profil : recherche dans la base de données de tous les profils ayant les mêmes centres d'interet dans les 3 premières places (avec les 3 scores les plus élevés) 
+	1/ sortir les 3 centres d'interet avec les scores les plus hauts pour le profil connecté
+	2/ pareil pour tous les profils de la platefrome
 	
 	
 	Faire une liste de ces tags -->
@@ -54,6 +60,30 @@
 	?>
 </head>
 <body>
+	<?php
+	//notation à partir des choix du profil
+	//récupérérer les choix des listes 
+	// Dans un premier temps de la liste principale
+	$i=1;
+	$nb_choix_p=3;// nombre de choix principaux
+	while($i<$nb_choix_p){
+		//récupérer l'id du centre d'interet i
+		//ajouter id à la liste des centres d'interets 
+		//ajouter 4 au compteur de ce centre d'interet
+		$i++;
+	}
+	//De la liste secondaire 
+	// 1 : compter le nombre de centres d'intérêt sélectionnés
+	$nb_choix_s=;
+	$k=1;
+	while($k<$nb_choix_s){
+		//récupérer l'id du centre d'interet k
+		//ajouter id à la liste des centres d'interets 
+		//ajouter 2 au compteur de ce centre d'interet
+		$k++;
+	?>
+	<!-- Fonction de connection entre 2 profils-->
+	
 	
 </body>
 </html>
