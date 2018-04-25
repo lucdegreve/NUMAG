@@ -18,7 +18,7 @@
 <div id="global">
 	
 	<!-- DIV Entête -->
-	<?php include("DIVEntete.html"); ?>
+	<?php include("Entete.html"); ?>
 	<!-- DIV Navigation (Menus) -->
 	<?php include("DIVNavigation.html"); ?>
 
@@ -34,7 +34,7 @@
 	</div><!-- #contenu -->
 
 	<!-- DIV Pied de page -->		
-	<?php include("DIVPied.html"); ?>	
+	<?php include("Pied_de_page.html"); ?>	
 
 
 </div><!-- #global -->
