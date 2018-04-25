@@ -2,22 +2,42 @@
 <head>
 	<meta charset="UTF-8">
 	<!-- page de fonctions pour le calcul des points -->
+	
+	
 	<!-- notation à partir des choix du profil 
+	
 récupération des choix dans les profils - get de liste principale, get de la liste secondaire , comment fait-on pour les choix ? liste déroulante à choix multiple ? id ? demander à titi
 cliquer sur OK 
 -- ajouter à centres d'interet des individus
 -- attribuer points : si xxx était dans la liste P alors 4 points, dans la liste S 2 point-->
+<!-- script-->
+<?php
+	//notation à partir des choix du profil
+	//récupérérer les choix des listes 
+	// Dans un premier temps de la liste principale
+	$i=1;
+	$nb_choix_p=3;// nombre de choix principaux
+	while($i<$nb_choix_p){
+		//récupérer l'id du centre d'interet i
+		//ajouter id à la liste des centres d'interets 
+		//ajouter 4 au compteur de ce centre d'interet
+		$i++;
+	}
+	//De la liste secondaire 
+	// 1 : compter le nombre de centres d'intérêt sélectionnés
+	$nb_choix_s=;
+	$k=1;
+	while($k<$nb_choix_s){
+		//récupérer l'id du centre d'interet k
+		//ajouter id à la liste des centres d'interets 
+		//ajouter 2 au compteur de ce centre d'interet
+		$k++;
+	?>
 
 	<!-- fonction actualités -->
 
   <!-- Il y a une étoile pour choisir si une actualité nous intéresse ou pas 
     Si ce bouton est sélectionné get les tags associés à l'identifiant de l'actu 
-    
-	
-	<!-- fonction connection entre 2 profils
-	à partir d'un profil : recherche dans la base de données de tous les profils ayant les mêmes centres d'interet dans les 3 premières places (avec les 3 scores les plus élevés) 
-	1/ sortir les 3 centres d'interet avec les scores les plus hauts pour le profil connecté
-	2/ pareil pour tous les profils de la platefrome
 	
 	
 	Faire une liste de ces tags -->
@@ -52,38 +72,17 @@ cliquer sur OK
     // Si il y a une égalité (booléen) ajouter un point au score du tag de l'agriculteur 
     // Si non ajouter la valeur (le libbelé) à la liste des libellés de l'agriculteur en lui ajoutant un point à son score 
     // Puis classement de cette nouvelle liste ? (utiliser la fonction classement si besoin mais pas forcément besoin parce qu'il faut classer avant d'afficher mais pas classer dans la base de donnée) 
-	
-	// fonction connection entre 2 profils -->
-	
-	// classement des mots clés ordre décroissant de points -->'
-	
 	?>
+	
+	
+	<!-- fonction connection entre 2 profils
+	
+	à partir d'un profil : recherche dans la base de données de tous les profils ayant les mêmes centres d'interet dans les 3 premières places (avec les 3 scores les plus élevés) 
+	1/ sortir les 3 centres d'interet avec les scores les plus hauts pour le profil connecté
+	2/ pareil pour tous les profils de la platefrome -->
+	
+	<!-- classement des mots clés ordre décroissant de points -->
+	
+	
 </head>
-<body>
-	<?php
-	//notation à partir des choix du profil
-	//récupérérer les choix des listes 
-	// Dans un premier temps de la liste principale
-	$i=1;
-	$nb_choix_p=3;// nombre de choix principaux
-	while($i<$nb_choix_p){
-		//récupérer l'id du centre d'interet i
-		//ajouter id à la liste des centres d'interets 
-		//ajouter 4 au compteur de ce centre d'interet
-		$i++;
-	}
-	//De la liste secondaire 
-	// 1 : compter le nombre de centres d'intérêt sélectionnés
-	$nb_choix_s=;
-	$k=1;
-	while($k<$nb_choix_s){
-		//récupérer l'id du centre d'interet k
-		//ajouter id à la liste des centres d'interets 
-		//ajouter 2 au compteur de ce centre d'interet
-		$k++;
-	?>
-	<!-- Fonction de connection entre 2 profils-->
-	
-	
-</body>
 </html>
