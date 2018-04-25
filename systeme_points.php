@@ -7,6 +7,14 @@
 -- créer liste de mots clés pour le compte utilisateur (ou faire copie de la liste générale ?)
 -- attribuer points : si xxx était dans la liste P alors 3 points, dans la liste S 1 point, sinon 0-->
 	<!-- fonction actualités -->
+
+  <!-- Il y a une étoile pour choisir si une actualité nous intéresse ou pas 
+    Si ce bouton est sélectionné get les tags associés à l'identifiant de l'actu 
+    Faire une liste de ces tags
+    Comparer la liste de ces tags à celle de l'utilisateur. 
+    Si il y a une égalité (booléen) ajouter un point au score du tag de l'agriculteur 
+    Si non ajouter la valeur (le libbelé) à la liste des libellés de l'agriculteur en lui ajoutant un point à son score 
+    Puis classement de cette nouvelle liste ? (utiliser la fonction classement si besoin mais pas forcément besoin parce qu'il faut classer avant d'afficher mais pas classer dans la base de donnée) 
 	
 	<!-- fonction connection entre 2 profils -->
 	
