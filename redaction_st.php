@@ -74,6 +74,16 @@
 			<TD><INPUT TYPE='TEXT' name='libelle_mot_cle'></TD>
 		</TR>
 		<BR/><BR/>
+				<TD>Date de début</TD>
+		<TR>	
+			<?php
+			echo '<select name='listemois'>';
+			$mois=array('janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre')
+			for ($i=0; $i<=11; $i++)
+				echo ("<option value= ".$mois[$i].">".$mois[$i]."</option>");
+			?>	
+		</TR>
+		<BR/><BR/>
 		</TABLE>
 		
 		<INPUT TYPE="TEXT" name="post_st" value="poster un stage">
