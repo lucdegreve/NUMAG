@@ -1,3 +1,4 @@
+Script Par Manuel, Marie, Julien L. 
 <?php
 	$link=mysqli_connect('localhost','root','','BDD_racine');
 	
@@ -6,7 +7,7 @@
 	$mois=$_GET["listemois"];
 	$periode_st=$_GET["periode_st"];
 	
-	$query="SELECT periode_st, mois_debut_st, nom_dpt, libelle_mot_cle, titre_st
+	$query="SELECT periode_st, mois_debut_st, nom_dpt, libelle_mot_cle, titre_st, id_st
 	FROM Stages 
 	INNER JOIN Mots_cles
 	ON Stages.id_mot_cle=Mots_cles.id_mot_cle
@@ -42,8 +43,12 @@
 		{	
 			$compteur=$compteur+1;
 		}
-		if (Tab[$nombreligneeffectuées,3]=$mot_cle)
+		if int strpos ( string $mot_cle , mixed $nombreligneeffectuées)=FALSE
 		{	
+			$compteur=$compteur;
+		}
+		else
+		{
 			$compteur=$compteur+1;
 		}
 		if $compteur=4
@@ -80,7 +85,7 @@
 	while ($i<count($L4)-1)
 	{
 		echo '<tr>';
-		echo href="lien">$Tab[$L4[$i]][4];
+		echo href="lien.php?lestage=$id_st">$Tab[$L4[$i]][4];
 		$i++;
 		echo '</tr>';
 	}
@@ -88,7 +93,7 @@
 	while ($i<count($L3)-1)
 	{
 		echo '<tr>';
-		echo href="lien">$Tab[$L3[$i]][4];
+		echo href="lien.php?lestage=$id_st">$Tab[$L3[$i]][4];
 		$i++;
 		echo '</tr>';
 	}
@@ -96,7 +101,7 @@
 	while ($i<count($L2)-1)
 	{
 		echo '<tr>';
-		echo href="lien">$Tab[$L2[$i]][4];
+		echo href="lien.php?lestage=$id_st">$Tab[$L2[$i]][4];
 		$i++;
 		echo '</tr>';
 	}
@@ -104,7 +109,7 @@
 	while ($i<count($L4)-1)
 	{
 		echo '<tr>';
-		echo href="lien">$Tab[$L1[$i]][4];
+		echo href="lien.php?lestage=$id_st">$Tab[$L1[$i]][4];
 		$i++;
 		echo '</tr>';
 	}
