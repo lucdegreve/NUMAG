@@ -135,17 +135,17 @@
                     $query->execute();*/
                     
                     $connexion=mysqli_connect('localhost:3306', 'root', 'root','Fofo');
-                    $query0="SELECT * FROM mp WHERE mp_receveur = '2' ORDER BY mp_id DESC";
+                    $query0="SELECT * FROM mp WHERE mp_receveur = '1' ORDER BY mp_id DESC";
                     $results0=mysqli_query($connexion,$query0);
                     $row=mysqli_fetch_array($results0,MYSQLI_BOTH);
-                    echo "$row[0]";
+                    $nbligne=mysqli_num_rows($results0);
                     echo'<p><a href="./messagerieprivee.php?action=nouveau">
                     <img src="./images/nouveau.gif" alt="Nouveau" title="Nouveau message" />
                     </a></p>';
-                    if (rowCount($query0)>0)
+                    if ($nbligne>0)
                     {
                         
-                        echo'<table>';
+                        echo'<table border=1>';
                         echo'<tr>';
                         echo'<th></th>';
                         echo'<th class="mp_titre"><strong>Titre</strong></th>';
@@ -156,7 +156,7 @@
 
                         
                         //On boucle et on remplit le tableau
-                        while ($data = $query0->fetch())
+                        while ($data=mysqli_fetch_array($results0,MYSQLI_BOTH))
                         {
                             echo'<tr>';
                             //Mp jamais lu, on affiche l'icone en question
@@ -173,7 +173,7 @@
                             '.stripslashes(htmlspecialchars($data['mp_titre'])).'</a></td>
                             <td id="mp_expediteur">
                             <a href="./voirprofil.php?action=consulter&amp;m='.$data['membre_id'].'">
-                            '.stripslashes(htmlspecialchars($data['membre_pseudo'])).'</a></td>
+                            '.stripslashes(htmlspecialchars($data['membre_pseudo'])).'</a>Pseudo</td>
                             <td id="mp_time">'.date('H\hi \l\e d M Y',$data['mp_time']).'</td>
                             <td>
                             <a href="./messagerieprivee.php?action=supprimer&amp;id='.$data['mp_id'].'&amp;sur=0">supprimer</a></td></tr>';
