@@ -20,31 +20,30 @@
 	$nbcol=mysqli_num_fields($result);
 
 
-	<table>
+	echo"<table border=1>
 	<tr>
 	Résumé 
 	</tr>
 	<tr><BR/>
 	Commune de stage
 	<BR/>
-		$Tab[0][5]
+		".$Tab[0][5]."
 	<BR/>
 	Departement
 	<BR/>		
-		$Tab[0][6]
+		".$Tab[0][6]."
 	<BR/>
 	Periode de stage
 	<BR/>
-		$Tab[0][3]
+		".$Tab[0][3]."
 	<BR/>
 	Mois de début de stage
 	<BR/>
-		$Tab[0][7]
+		".$Tab[0][7]."
 	<BR/>
 	</tr>
 
-	</table>
-	<br/>
+	</table>";
 
 	
 	echo " 
