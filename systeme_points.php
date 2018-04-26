@@ -43,18 +43,18 @@ cliquer sur OK
 
   <!-- Il y a une étoile pour choisir si une actualité nous intéresse ou pas 
     Si ce bouton est sélectionné get les tags associés à l'identifiant de l'actu 
-	
+	if la case est cochée je récupère l'identifiant de l'article 
 	
 	Faire une liste de ces tags -->
-	<FORM action="Oiseaup2.php" method="GET" name="form1">   <!-- tout changer là une fois qu'on a les données -->
+	<FORM action="" method="GET" name="form1">   <!-- tout changer là une fois qu'on a les données -->
 	<?php
     $link=mysqli_connect('localhost', 'root','','oiseaudb2018'); //Donner le nom de la base de donnée et modifier tout ce qui doit l'être 
 	
 	// Requête afin de récupérer l'identifiant des tags associés à une actualité sélectionnée par l'utilisateur // Peut-être une table en trop, s'arreter à la table mot clé article 
 	$query_MCA="SELECT Mots_cles.id_mot_cle 
-	FROM Mots_cles, Mots_cles_article, Articles 
-	WHERE Mots_cles.id_mot_cle=Mot_cles_article.id_mot_cle
-	AND Mot_cles_article.id_article=Articles_id_article
+	FROM Mots_cles, mot_cle_article, Articles 
+	WHERE Mots_cles.id_mot_cle=mot_cle_article.id_mot_cle
+	AND mot_cle_article.id_article=Articles_id_article
 	AND Articles_id_article= XXXX (Variable récupérée quand on clique sur l'étoile)"; // MCA=Mots_cles_actu 
 	$result_MCA=mysqli_query($link,$query_MCA);
 	$tab_MCA=mysqli_fetch_all($result_MCA);
@@ -62,44 +62,41 @@ cliquer sur OK
 	$nbcol_MCA=mysqli_num_fields($result_MCA);
 	
 	// Requête afin de récupérer les tags préférentiels de l'utilisateur ainsi que leur score associé 
-	$query_SU="SELECT * FROM Centre_interet
-	WHERE id_individu= XXXXX (id_individu de toute la session donc ça à finaliser à la fin)"; // SU=Score utilisateur   
+	$query_SU="SELECT * FROM Centres_interet
+	WHERE id_ind= XXXXX (id_individu de toute la session donc ça à finaliser à la fin)"; // SU=Score utilisateur   
 	$result_SU=mysqli_query($link,$query_SU);
 	$tab_SU=mysqli_fetch_all($result_SU);
 	$nblig_SU=mysqli_num_rows($result_SU);
 	$nbcol_SU=mysqli_num_fields($result_SU);
 	
-    // Récupérer les deux tableaux 
+    // Récupérer les deux tableaux --> est-ce vraiment utile ? 
 	Voir ce soir ou demain avec la correction papier de Mr Thiberville 
 	
 	// Comparer la liste de ces tags à celle de l'utilisateur. 
 	Soit LA et LU respectivement la liste des tags de l'actualité et celle de l'utilisateur 
 	for ($k=0; $k<$nblig_MCA; $k++)
 	{
-		$Modif=0
+		$Modif=0;
 		for ($i=0; $i<$nblig_SU; $i++)
 		{
-			if (LA[$k,1]==LU[$i,1])
+			if ($tab_MCA[$k,1]==$tab_SU[$i,1])
 			{
-				$Scoreactuel=LU[$i, 2]
-				$Nvxscore=$Scoreactuel+1
-				UPDATE $result_SU
-				SET #lenomdelacolonnescore= $Nvxscore 
-				WHERE idutilisateur=LU[$k,0] and idactu=LU[$k,1] 
+				$Scoreactuel=$tab_SU[$i, 2];
+				$Nvxscore=$Scoreactuel+1;
+				UPDATE $result_SU;  // j'update quoi ?????? result ? query ? ou le nom de la table ? 
+				SET Compteur=$Nvxscore; //Mettre le nom de la colonne score ? 
+				WHERE id_ind=$result_SU[$k,0] and id_mot_cle=$result_SU[$k,1]; 
+				$Modif=1;
 			}
-		if ($Modif=0)
+		if ($Modif==0)
 		{
-			$idutil=LU[$i,0]
-			$idactu=LA[$k,0]
-			INSERT INTO $resultSU (Colonne idutilisateur, colonne idactu, score)
-			VALUES ( $idutil, $idactu, 1)
+			$idutil=result_SU[$i,0];
+			$idactu=result_MCA[$k,0];
+			INSERT INTO $result_SU (id_ind, id_mot_cle, score); //est-ce que je dois mettre le nom de la table ? donc Centres_interet ? 
+			VALUES ($idutil, $idactu, 1);
 		}
 		}
 	}
-	
-    // Si il y a une égalité (booléen) ajouter un point au score du tag de l'agriculteur 
-    // Si non ajouter la valeur (le libbelé) à la liste des libellés de l'agriculteur en lui ajoutant un point à son score 
-    // Puis classement de cette nouvelle liste ? (utiliser la fonction classement si besoin mais pas forcément besoin parce qu'il faut classer avant d'afficher mais pas classer dans la base de donnée) 
 	?>
 	
 	
