@@ -177,16 +177,7 @@ strong {
 }
 
 
-/* Pied de page */
-#pied {
-	color: #DC143C /*Crimson*/; /* couleur de la police */
-	background: #000000; /* couleur du fond */
-	padding: 1% 3%; /* vertical/horizontal */
-	font-size: .85em; /* taille de police */ 
-}
-#pied p {
-	margin: .5em .5em; /* 2 param -> vertical/horizontal */
-}
+
 #copyright {
 	text-align: center; /* position (left, center, right) */
 	font-size: 1em; /* taille de police, relatif à la taille de l'entete */
