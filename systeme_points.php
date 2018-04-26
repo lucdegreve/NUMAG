@@ -10,7 +10,9 @@ récupération des choix dans les profils - get de liste principale, get de la l
 cliquer sur OK 
 -- ajouter à centres d'interet des individus
 -- attribuer points : si xxx était dans la liste P alors 4 points, dans la liste S 2 point-->
+
 <!-- script-->
+
 <?php
 	//notation à partir des choix du profil
 	//récupérérer les choix des listes 
@@ -34,6 +36,9 @@ cliquer sur OK
 		$k++;
 	?>
 
+	
+	
+	
 	<!-- fonction actualités -->
 
   <!-- Il y a une étoile pour choisir si une actualité nous intéresse ou pas 
@@ -65,14 +70,39 @@ cliquer sur OK
 	$nbcol_SU=mysqli_num_fields($result_SU);
 	
     // Récupérer les deux tableaux 
-	
-	
+	Voir ce soir ou demain avec la correction papier de Mr Thiberville 
 	
 	// Comparer la liste de ces tags à celle de l'utilisateur. 
+	Soit LA et LU respectivement la liste des tags de l'actualité et celle de l'utilisateur 
+	for ($k=0; $k<$nblig_MCA; $k++)
+	{
+		$Modif=0
+		for ($i=0; $i<$nblig_SU; $i++)
+		{
+			if (LA[$k,1]==LU[$i,1])
+			{
+				$Scoreactuel=LU[$i, 2]
+				$Nvxscore=$Scoreactuel+1
+				UPDATE $result_SU
+				SET #lenomdelacolonnescore= $Nvxscore 
+				WHERE idutilisateur=LU[$k,0] and idactu=LU[$k,1] 
+			}
+		if ($Modif=0)
+		{
+			$idutil=LU[$i,0]
+			$idactu=LA[$k,0]
+			INSERT INTO $resultSU (Colonne idutilisateur, colonne idactu, score)
+			VALUES ( $idutil, $idactu, 1)
+		}
+		}
+	}
+	
     // Si il y a une égalité (booléen) ajouter un point au score du tag de l'agriculteur 
     // Si non ajouter la valeur (le libbelé) à la liste des libellés de l'agriculteur en lui ajoutant un point à son score 
     // Puis classement de cette nouvelle liste ? (utiliser la fonction classement si besoin mais pas forcément besoin parce qu'il faut classer avant d'afficher mais pas classer dans la base de donnée) 
 	?>
+	
+	
 	
 	
 	<!-- fonction connection entre 2 profils
@@ -80,6 +110,8 @@ cliquer sur OK
 	à partir d'un profil : recherche dans la base de données de tous les profils ayant les mêmes centres d'interet dans les 3 premières places (avec les 3 scores les plus élevés) 
 	1/ sortir les 3 centres d'interet avec les scores les plus hauts pour le profil connecté
 	2/ pareil pour tous les profils de la platefrome -->
+	
+	
 	
 	<!-- classement des mots clés ordre décroissant de points -->
 	
