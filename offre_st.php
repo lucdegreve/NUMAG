@@ -24,15 +24,23 @@
 	<tr>
 	Résumé 
 	</tr>
-	<tr>
-	<BR>
-		$Tab[0][3]
-	</BR>
-	<BR>
+	<tr><BR/>
+	Commune de stage
+	<BR/>
 		$Tab[0][5]
-	</BR>
+	<BR/>
+	Departement
+	<BR/>		
 		$Tab[0][6]
+	<BR/>
+	Periode de stage
+	<BR/>
+		$Tab[0][3]
+	<BR/>
+	Mois de début de stage
+	<BR/>
 		$Tab[0][7]
+	<BR/>
 	</tr>
 
 	</table>
