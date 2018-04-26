@@ -19,13 +19,14 @@
 	$nbligne=mysqli_num_rows($result);
 	$nbcol=mysqli_num_fields($result);
 
-?>	
+
 	<table>
 	<tr>
 	Résumé 
 	</tr>
 	<tr>
-	<BR>
+	<BR/>
+
 		$Tab[0][3]
 	</BR>
 	<BR>
@@ -37,3 +38,45 @@
 
 	</table>
 	<br/>
+
+	
+	echo " 
+	<table border =1>
+	<tr>
+	Description du stage 
+	</tr>
+	<tr>
+	<BR/>
+	Description
+	<BR/>
+		".$Tab[0][2]."
+	<BR/>
+	Mots clés
+	<BR/>
+		".$Tab[0][4]."
+	<BR/>
+	</tr>
+	</table>";
+	
+	echo " 
+	<table border =1>
+	<tr>
+	Contact 
+	</tr>
+	<tr>
+	<BR/>
+	Description
+	<BR/>
+		".$Tab[0][2]."
+	<BR/>
+	Mots clés
+	<BR/>
+		".$Tab[0][4]."
+	<BR/>
+	</tr>
+	</table>";
+	
+	
+	
+	
+	?>	
