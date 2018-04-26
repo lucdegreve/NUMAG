@@ -146,6 +146,22 @@ strong {
 	padding: 2% 3%; /* 2 param -> vertical/horizontal */
 }
 
+#blancfull {
+	color: #000000; /* Couleur de la police */
+	background-image:linear-gradient(182deg, #FFFFFF, #dae9fc);
+	border-style: solid;
+	width: 100%;
+	border-width: 0.1em;
+	border-color: #9db3cf;
+	border-radius: .2em;
+	box-shadow: .1em .1em .1em  #718eb2; /* 3e param = force de l'adoucissement, inset = dedans */
+	padding: 2% 3%; /* 2 param -> vertical/horizontal */
+}
+
+#imggauche {
+	float: left;
+}
+
 #blancbord {
 	color: #000000; /* Couleur de la police */
 	background-image:linear-gradient(182deg, #FFFFFF, #dae9fc);
