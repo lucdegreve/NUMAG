@@ -9,7 +9,7 @@ html {
 	margin: 0;
 	padding: 2% 0; /* haut et bas de la page */
 	font-family: Verdana, "Bitstream Vera Sans", "Lucida Grande", sans-serif;
-	font-size: .8em; /* taille de police */
+	font-size: .9em; /* taille de police */
 	line-height: 1.25; /* Interligne */
 	color: #000000 /*Tan*/;
 	background-color:#FFFFFF; /* fond site */
@@ -95,58 +95,28 @@ strong {
 	margin-right: auto;
 }
 
-/* En tête du site */
-#entete {
-	padding: 3% 4% 6% 1%; /* haut droite bas gauche */
-}
-#entete h1 {
-	margin: 0; /* RELATIF gauche */
-	font-size: 2.5em; /* Taille de police */
-}
-#entete h1 img {
-	float: right;
-	margin: 0 1% 2% 0;
+#bleu {
+	color: rgb(37,117,127) ;
 }
 
-/* Onglets */
-#entete .sous-titre {
-	margin: 0.5% 0 3% -2%; /* on peut mettre du néfatif car latéral RELATIF à marge d'entete */
-	color: rgb(37,117,127); /* couleur du sous-titre */
+#unibleu {
+	color: #FFFFFF; /* Couleur de la police */
+	background: rgb(37,117,127);
+	padding: 2% 3%; /* 2 param -> vertical/horizontal */
+	border-style: solid;
+	border-width: 0.1em;
+	border-color: rgb(16,41,44);
+	width: 15em;
 }
 
-#navigation {
-	
-	background: #3CB371 /*MediumSeaGreen*/;
-	padding: 2% 2% 2% 2%; /* haut droite bas gauche */
-}
-#navigation a {
-	color: #A9F5F2;
-	padding: 0.5em; /* marge avec côté bouton */
-	line-height: 1.5em; /* hauteur du bouton */
-	font-size: 1.2em; /* taille police */
-	text-decoration: none; /* souligner https://developer.mozilla.org/fr/docs/Web/CSS/text-decoration */
-}
-#navigation a:hover, #navigation a:focus {
-	background: rgb(248,237,8); /* Jaune */ /* quand on a la souris dessus */
-}
-#navigation ul {
-	width: 100%; /* -> 2 */ /* Horizontal avec la gauche comme point de départ */
-	overflow: hidden; /* -> 2 */ /* en cas de chevauchement */
-	margin: 0; /* décale tout depuis la gauche (prioritaire sur la marge de la page, on peut faire sortir le cadre du champ) */
-	padding: 0; /*gauche est prioritaire, peut pas etre negatif, passe pas la marge de base */
-	list-style: none; /* mettre des tirets devant les noms https://developer.mozilla.org/fr/docs/Web/CSS/list-style */
-}
-#navigation li.gauche {
-	float: left; /* -> 3 */
-	margin-right: 1em; /* Marge droite entre chaque bouton */
-	font-size: 1.4em;
-	font-style: italic;
-}
-#navigation li.droite {
-	float: right; /* -> 3 */
-	margin-right: 1em;
-	margin-left: 1em;
-	padding: 3em 0 0 0; /* 1 param = pour les 4, 2 param = vertical puis horizontal, 3 param  c'est le droit qui est considéré à 0 */
+#unisombre{
+	color: #FFFFFF; /* Couleur de la police */
+	background: #0f454f;
+	padding: 2% 3%; /* 2 param -> vertical/horizontal */
+	border-style: solid;
+	border-width: 0.1em;
+	border-color: rgb(16,41,44);
+	width: 15em;
 }
 
 /* Bloc sombre */
@@ -176,29 +146,46 @@ strong {
 	padding: 2% 3%; /* 2 param -> vertical/horizontal */
 }
 
+#blancfull {
+	color: #000000; /* Couleur de la police */
+	background-image:linear-gradient(182deg, #FFFFFF, #dae9fc);
+	border-style: solid;
+	width: 100%;
+	border-width: 0.1em;
+	border-color: #9db3cf;
+	border-radius: .2em;
+	box-shadow: .1em .1em .1em  #718eb2; /* 3e param = force de l'adoucissement, inset = dedans */
+	padding: 2% 3%; /* 2 param -> vertical/horizontal */
+}
 
-/* Pied de page */
-#pied {
-	color: #DC143C /*Crimson*/; /* couleur de la police */
-	background: #000000; /* couleur du fond */
-	padding: 1% 3%; /* vertical/horizontal */
-	font-size: .85em; /* taille de police */ 
+#imggauche {
+	float: left;
 }
-#pied p {
-	margin: .5em .5em; /* 2 param -> vertical/horizontal */
+
+#blancbord {
+	color: #000000; /* Couleur de la police */
+	background-image:linear-gradient(182deg, #FFFFFF, #dae9fc);
+	border-style: solid;
+	width: 15em;
+	border-width: 0.1em;
+	border-color: rgb(16,41,44);
+	border-radius: .2em;
+	box-shadow: .1em .1em .1em  rgb(16,41,44); /* 3e param = force de l'adoucissement, inset = dedans */
+	padding: 2% 3%; /* 2 param -> vertical/horizontal */
 }
+
 #copyright {
 	text-align: center; /* position (left, center, right) */
 	font-size: 1em; /* taille de police, relatif à la taille de l'entete */
 	margin: 1% 0; /* marges externes vertical/horizontal */
-	color: #800080 /*Purple*/;
+	color: #8e9190 ;
 }
-#copyright a {
-	color: #000080 /*Navy*/;
-	text-decoration: wavy underline overline #FF3028;
+#lien a {
+	color: rgb(37,117,127) ;
+	text-decoration: underline ;
 }
-#copyright a:hover, #copyright a:focus {
-	text-decoration: underline dotted;
+#lien a:hover, #lien a:focus {
+	background: rgb(248,237,8); /* Jaune */ /* quand on a la souris dessus */
 }
 
 
