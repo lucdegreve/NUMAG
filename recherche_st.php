@@ -22,6 +22,8 @@
 				}
 			}	
 		</script>
+		<!-- Déclaration de la feuille de style -->	
+		<link rel="stylesheet" type="text/css" href="maFeuilleDeStyle.css" media="all" />
 	</head>
 	<body>
 	<BR/><BR/>
