@@ -1,11 +1,16 @@
 <?php
 	$link=mysqli_connect('localhost','root','','BDD_racine');
 	
-	$recherche=$_GET["objet_recherche_st"];
+	$quelstage=$_GET["lestage"];
 	
-	$query="SELECT id_st, titre_st, description_st, periode_st, libelle_mot_cle 
-	FROM Stages INNER JOIN Mots_cles ON Stages.id_mot_cle=Mots_cles.id_mot_cle
-	WHERE ";
+	$query="SELECT id_st, titre_st, description_st, periode_st, libelle_mot_cle, nom_commune, nom_dpt, mois_debut_st
+	FROM Stages INNER JOIN Mots_cles 
+	ON Stages.id_mot_cle=Mots_cles.id_mot_cle
+	INNER JOIN Departement
+	ON Stage.id_dpt=Departements.id_dpt
+	INNER JOIN Communes
+	ON Departements.id_commune=Communes_id.commune
+	WHERE id_st=".$quelstage;
 	
 	$result=mysqli_query($link,$query);
 	
@@ -14,25 +19,21 @@
 	$nbligne=mysqli_num_rows($result);
 	$nbcol=mysqli_num_fields($result);
 
-	echo '<table>';
-	$i=0;
-	while ($i<$nbligne)
-	{
-		echo '<tr>';
-		$j=0;
-		while($j<$nbcol)
-		{
-			echo '<tr>';
-			if $j=0
-				echo href="lien">$Tab[$i][$j];
-			else
-				echo $Tab[$i][$j];
-			$j++;
-			echo '</tr>';	
-		}
-		$i++;
-		echo '</tr>';
-	}
-	echo '</table>';
-	echo '<br/>';
-?>
+?>	
+	<table>
+	<tr>
+	Résumé 
+	</tr>
+	<tr>
+	<BR>
+		$Tab[0][3]
+	</BR>
+	<BR>
+		$Tab[0][5]
+	</BR>
+		$Tab[0][6]
+		$Tab[0][7]
+	</tr>
+
+	</table>
+	<br/>
