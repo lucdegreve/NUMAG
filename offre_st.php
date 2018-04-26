@@ -22,7 +22,6 @@ By Manuel, Julien Louet, Marie
 	$Tab=mysqli_fetch_all($result);
 	$nbligne=mysqli_num_rows($result);
 	$nbcol=mysqli_num_fields($result);
-<<<<<<< HEAD
 	
 	// Affichage du titre 
 	echo $Tab[0][2]
@@ -30,26 +29,18 @@ By Manuel, Julien Louet, Marie
 	
 	// Affichage du tableau de gauche comportant le résumé du lieu et période du stage
 	echo "<table>
-=======
-
-
-	echo"<table border=1>
->>>>>>> master
 	<tr>
 	Résumé 
 	</tr>
-	<tr><BR/>
-	Commune de stage
-	<BR/>
-<<<<<<< HEAD
-		$Tab[0][5]
-=======
-		".$Tab[0][5]."
->>>>>>> master
+	<tr>
 	<BR/>
 	Departement
 	<BR/>		
 		".$Tab[0][6]."
+	<BR/>
+	Commune de stage
+	<BR/>
+		".$Tab[0][5]."
 	<BR/>
 	Periode de stage
 	<BR/>
@@ -61,12 +52,8 @@ By Manuel, Julien Louet, Marie
 	<BR/>
 	</tr>
 
-<<<<<<< HEAD
 	</table>
 	<br/>";
-=======
-	</table>";
->>>>>>> master
 
 
 	// Affichage du tableau central comportant la description du stage, le type de production et les mots clés
