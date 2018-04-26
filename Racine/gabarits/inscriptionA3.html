@@ -1,0 +1,123 @@
+<!-- Code effectué par Clément Turbillier -->
+<!-- Ce code est fait en exploitant les possibilités de Bootstrap, il s'agit du formulaire d'inscription du site
+les containers et containers fluids structurent la page d'inscription 
+Cette page est la dernière des trois pages de formulaire d'inscription à remplir pour un agriculteur
+Il suffit de cocher les cases voulues
+Des validations sont mises en place grace aux données de bootstrap-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Formulaire d'inscription </title>
+		
+		<!-- css -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="card border-success mb-3">
+				<span style="color: green;">
+				<div class="card-header">Formulaire d'inscription pour agriculteurs</div>
+				</span>
+				<form>
+					<div class="container">
+						<br/>
+						veuillez renseigner vos centres d'interets
+						<br/>
+						<br/>
+					</div>
+					<div class="container">
+						<div class="form-row">
+							<div class="form-group col-md-4">
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Pintades" >
+										<label class="form-check-label" for="gridCheck">
+										Pintades
+										</label>
+								</div>
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Orge" >
+										<label class="form-check-label" for="gridCheck">
+										Orge
+										</label>
+								</div>
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Apiculture" >
+										<label class="form-check-label" for="gridCheck">
+										Apiculture
+										</label>
+								</div>
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Maraichage" >
+										<label class="form-check-label" for="gridCheck">
+										Maraichage
+										</label>
+								</div>
+							</div>
+							<div class="form-group col-md-4">
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Ecologie" >
+										<label class="form-check-label" for="gridCheck">
+										Ecologie
+										</label>
+								</div>
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Oléoprotéagineux" >
+										<label class="form-check-label" for="gridCheck">
+										Oléoprotéagineux
+										</label>
+								</div>
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Viticulture" >
+										<label class="form-check-label" for="gridCheck">
+										Viticulture
+										</label>
+								</div>
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="INRA" >
+										<label class="form-check-label" for="gridCheck">
+										INRA
+										</label>
+								</div>
+							</div>
+							<div class="form-group col-md-4">
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Legumes" >
+										<label class="form-check-label" for="gridCheck">
+										Legumes
+										</label>
+								</div>
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Fraises" >
+										<label class="form-check-label" for="gridCheck">
+										Fraises
+										</label>
+								</div>
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Machinisme" >
+										<label class="form-check-label" for="gridCheck">
+										Machinisme
+										</label>
+								</div>
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Limousine" >
+										<label class="form-check-label" for="gridCheck">
+										Limousine
+										</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<br/>
+							<button class="btn btn-success"> Terminer </button>
+						<br/>
+						<br/>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</body>
