@@ -1,8 +1,14 @@
+Script permettant de consulter une offre de stage à partir des résultats d'une recherche
+By Manuel, Julien Louet, Marie
+
 <?php
 	$link=mysqli_connect('localhost','root','','BDD_racine');
 	
+	// Recupération du stage sur lequel l'étudiant à cliqué
 	$quelstage=$_GET["lestage"];
 	
+	// Récupération du titre du stage, de sa description, de la période du stage, de tous les mots clès, 
+	//de la commune et du département de l'agriculteur, du mois de début du stage, du type de production et du nom et prénom de l'agriculteur
 	$query="SELECT id_st, titre_st, description_st, periode_st, libelle_mot_cle, nom_commune, nom_dpt, mois_debut_st
 	FROM Stages INNER JOIN Mots_cles 
 	ON Stages.id_mot_cle=Mots_cles.id_mot_cle
@@ -13,25 +19,28 @@
 	WHERE id_st=".$quelstage;
 	
 	$result=mysqli_query($link,$query);
-	
-
 	$Tab=mysqli_fetch_all($result);
 	$nbligne=mysqli_num_rows($result);
 	$nbcol=mysqli_num_fields($result);
-
-
-	echo"<table border=1>
+	
+	// Affichage du titre 
+	echo $Tab[0][2]
+	<BR/>
+	
+	// Affichage du tableau de gauche comportant le résumé du lieu et période du stage
+	echo "<table>
 	<tr>
 	Résumé 
 	</tr>
-	<tr><BR/>
-	Commune de stage
-	<BR/>
-		".$Tab[0][5]."
+	<tr>
 	<BR/>
 	Departement
 	<BR/>		
 		".$Tab[0][6]."
+	<BR/>
+	Commune de stage
+	<BR/>
+		".$Tab[0][5]."
 	<BR/>
 	Periode de stage
 	<BR/>
@@ -43,9 +52,11 @@
 	<BR/>
 	</tr>
 
-	</table>";
+	</table>
+	<br/>";
 
-	
+
+	// Affichage du tableau central comportant la description du stage, le type de production et les mots clés
 	echo " 
 	<table border =1>
 	<tr>
@@ -57,6 +68,10 @@
 	<BR/>
 		".$Tab[0][2]."
 	<BR/>
+	Type de production
+	<BR/>
+		".$Tab[0][8]."
+	<BR/>
 	Mots clés
 	<BR/>
 		".$Tab[0][4]."
@@ -64,6 +79,8 @@
 	</tr>
 	</table>";
 	
+	
+	// Affichage du tableau de droite permettant de contacter l'agriculteur pour postuler à l'offre
 	echo " 
 	<table border =1>
 	<tr>
@@ -71,13 +88,17 @@
 	</tr>
 	<tr>
 	<BR/>
-	Description
+	Nom
 	<BR/>
-		".$Tab[0][2]."
+		".$Tab[0][9]."
 	<BR/>
-	Mots clés
+	Prénom
 	<BR/>
-		".$Tab[0][4]."
+		".$Tab[0][10]."
+	<BR/>
+	Postuler à l'offre
+	<BR/>
+		"<a href = "messagerie.php" > Envoyer un message à l agriculteur </a>"
 	<BR/>
 	</tr>
 	</table>";

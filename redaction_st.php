@@ -44,7 +44,7 @@
 	</head>
 	<body>
 	<BR/><BR/>
-	<FORM action="new_st.php" method="GET" name="form2">
+	<FORM action="new_st.php" method="GET" onsubmit="return valider()" name="form2">
 		<TABLE>
 		<TR>
 			<TD>Titre du stage</TD>
