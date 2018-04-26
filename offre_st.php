@@ -9,11 +9,11 @@
 	
 	$result=mysqli_query($link,$query);
 	
-	
+
 	$Tab=mysqli_fetch_all($result);
 	$nbligne=mysqli_num_rows($result);
 	$nbcol=mysqli_num_fields($result);
-	
+
 	echo '<table>';
 	$i=0;
 	while ($i<$nbligne)

@@ -60,6 +60,7 @@
 			<TD><INPUT TYPE='TEXT' name='description_st'></TD>
 		</TR>
 		<BR/><BR/>
+		
 		<TR>
 			<TD>Durée du stage</TD>
 		</TR>
