@@ -17,10 +17,11 @@ cliquer sur OK
 	//notation à partir des choix du profil
 	//récupérérer les choix des listes 
 	// Dans un premier temps de la liste principale
-	$i=1;
 	$nb_choix_p=3;// nombre de choix principaux
-	while($i<$nb_choix_p){
+	for($i=1,$i=$nb_choix_p;$i++){
 		//récupérer l'id du centre d'interet i
+		if //la case est cochée
+		$choix=$_GET
 		//ajouter id à la liste des centres d'interets 
 		//ajouter 4 au compteur de ce centre d'interet
 		$i++;
@@ -114,7 +115,28 @@ cliquer sur OK
 	
 	
 	<!-- classement des mots clés ordre décroissant de points -->
+	<?
+	// fonction pour trier les centres d'intérêt
+	function trier($tab)
+	{
+		$l=1;
+		$nb=count($tab); //nombre de centres d'intérêt
+		for ($k=0;$k<$nb;$k++) 
+		{
+			$y=0;
+			if $tab[$k]<$tab[$l]
+			{
+				$y=$tab[$k];
+				$tab[$l]=$tab[$k];
+				$tab[$l]=$y;
+			}
+			$k++;
+			$l++;
+		}
+		return $tab;
+	}
+	trier($tab);
 	
-	
+				
 </head>
 </html>
