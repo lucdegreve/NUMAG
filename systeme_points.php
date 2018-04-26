@@ -53,10 +53,10 @@ cliquer sur OK
 	
 	// Requête afin de récupérer l'identifiant des tags associés à une actualité sélectionnée par l'utilisateur // Peut-être une table en trop, s'arreter à la table mot clé article 
 	$query_MCA="SELECT Mots_cles.id_mot_cle 
-	FROM Mots_cles, mot_cle_article, Articles 
-	WHERE Mots_cles.id_mot_cle=mot_cle_article.id_mot_cle
-	AND mot_cle_article.id_article=Articles_id_article
-	AND Articles_id_article= XXXX (Variable récupérée quand on clique sur l'étoile)"; // MCA=Mots_cles_actu 
+	FROM Mots_cles, mot_cle_act, Actualites
+	WHERE Mots_cles.id_mot_cle=mot_cle_actu.id_mot_cle
+	AND mot_cle_actu.id_article=Actualites.id_actu
+	AND Actualites_id_actu= XXXX (Variable récupérée quand on clique sur l'étoile)"; // MCA=Mots_cles_actu 
 	$result_MCA=mysqli_query($link,$query_MCA);
 	$tab_MCA=mysqli_fetch_all($result_MCA);
 	$nblig_MCA=mysqli_num_rows($result_MCA);
@@ -74,7 +74,6 @@ cliquer sur OK
 	Voir ce soir ou demain avec la correction papier de Mr Thiberville 
 	
 	// Comparer la liste de ces tags à celle de l'utilisateur. 
-	Soit LA et LU respectivement la liste des tags de l'actualité et celle de l'utilisateur 
 	for ($k=0; $k<$nblig_MCA; $k++)
 	{
 		$Modif=0;
@@ -114,6 +113,7 @@ cliquer sur OK
 	<!-- classement des mots clés ordre décroissant de points -->
 	<?
 	// fonction pour trier les centres d'intérêt
+	
 	function trier($tab)
 	{
 		$l=1;
