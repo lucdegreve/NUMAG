@@ -36,6 +36,8 @@ By Manuel, Julien Louet et Marie
 		{
 		window.open("recherche_tag_st.php", "recherche_tag_st", "toolbar=yes, status=yes, scrollbars=yes, resizable=no, width=300, height=300");
 		}
+		
+		window.close();
 		</script>
 		</head>
 	<body>
@@ -64,7 +66,7 @@ By Manuel, Julien Louet et Marie
 			<?php
 			
 			// Liste déroulante pour choisir le département où l'étudiant souhaite faire son stage (que en Nouvelle Aquitaine pour l'instant)
-			echo '<select name='listedpt'>';
+			echo "<select name='listedpt'>";
 			$dpt=array('Pyrénées Atlantiques','Landes','Lot et Garonne','Gironde','Dordogne','Corrèze','Haute-Vienne','Creuse','Charentes','Charentes-maritimes','Deux-sèvres','Vienne');
 			for ($j=0; $j<=11; $j++)
 			{
@@ -82,7 +84,7 @@ By Manuel, Julien Louet et Marie
 			<?php
 			
 			//Liste déroulante pour choisir le mois de début
-			echo '<select name='listemois'>';
+			echo "<select name='listemois'>";
 			$mois=array('janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre');
 			for ($i=0; $i<=11; $i++)
 			{ echo ("<option value= ".$mois[$i].">".$mois[$i]."</option>");
