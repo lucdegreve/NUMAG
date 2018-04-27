@@ -83,24 +83,20 @@ cliquer sur OK
 			{
 				$Scoreactuel=$tab_SU[$i, 2];
 				$Nvxscore=$Scoreactuel+1;
-				UPDATE $result_SU;  // j'update quoi ?????? result ? query ? ou le nom de la table ? 
-				SET Compteur=$Nvxscore; //Mettre le nom de la colonne score ? 
-				WHERE id_ind=$result_SU[$k,0] and id_mot_cle=$result_SU[$k,1]; 
+				$query_MAJ="UPDATE Centres_interet SET Compteur=".$Nvxscore."WHERE id_ind=".IDENTIFIANTDELAGRICONNECTE."And id_mot_cle=".$result_SU[$k,1]; 
 				$Modif=1;
 			}
 		if ($Modif==0)
 		{
-			$idutil=result_SU[$i,0];
-			$idactu=result_MCA[$k,0];
-			INSERT INTO $result_SU (id_ind, id_mot_cle, score); //est-ce que je dois mettre le nom de la table ? donc Centres_interet ? 
-			VALUES ($idutil, $idactu, 1);
+			$idutil=$result_SU[$i,0];
+			$idactu=$result_MCA[$k,0];
+			$query_ajout="INSERT INTO Centres_interet(id_ind, id_mot_cle, score) VALUES ($idutil, $idactu, 1)"; //est-ce que je dois mettre le nom de la table ? donc Centres_interet ? 
+			$result_SU=$link->query($query_ajout);
 		}
 		}
 	}
 	?>
-	
-	
-	
+ 
 	
 	<!-- fonction connection entre 2 profils
 	
