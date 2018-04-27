@@ -104,11 +104,14 @@ cliquer sur OK
 	1/ sortir les 3 centres d'interet avec les scores les plus hauts pour le profil connecté
 	2/ pareil pour tous les profils de la platefrome -->
 	
+
+	
+	<!-- classement des mots clés ordre décroissant de points SE FAIT DANS LA REQUETE -->
 	
 	
-	<!-- classement des mots clés ordre décroissant de points -->
+	
 	<?
-	// fonction pour trier les centres d'intérêt
+	// fonction pour trier les centres d'intérêt NE SERT PLUS NORMALEMENT 
 	
 	function trier($tab)
 	{
