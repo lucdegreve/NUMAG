@@ -8,7 +8,8 @@
 	<?php
 	// Récuperation des scores des actualités ordonnés 
 	$query_SA="SELECT id_actu, SUM(Centres_interet.Compteur) AS Score_actu
-	WHERE Centres_interet.id_ind=XXXXX Identifiant de la session en cours 
+	FROM Centres_interet, Mots_cles, Mot_cle_actu
+	 WHERE Centres_interet.id_ind=XXXXX Identifiant de la session en cours 
 	Centres_interet.id_mot_cle=Mots_cles.id_mot_cle
 	AND Mots_cle.id_mot_cle=Mot_cle_actualite.id_mot_cle
 	GROUP BY id_actu
