@@ -36,15 +36,24 @@ ZAZA & MC
 	//Afficher correctement les caractères spéciaux 
 	mysqli_set_charset($link, 'UTF-8');
 	//Construction des requêtes 
-	$requete_actu="SELECT titre_actu, url_actu, date_actu, desc_actu
+	$RequeteActu="SELECT titre_actu, url_actu, date_actu, desc_actu
 	FROM Actualites 
 	ORDER BY date_actu DESC"; //On trie les actualités par ordre de publication 
 	//Execution de la requête et production du recordset 
-	$result=mysqli_query($link,$requete_actu);
+	$ResultActu=mysqli_query($link,$RequeteActu);
+	//Traitement du recordset
+	$TabActu=mysqli_fetch_all($ResultActu);
+	$NbLignesActu=mysqli_num_rows($ResultActu);
+	$NbColonnesActu=mysqli_num_fields($ResultActu);
+	//Afficher les actualités les unes en dessous des autres 
+	for ($i=0; $i<$NbLignesActu; $i++)
+	{
+		echo $TabActu[i][0]." - ".$TabActu[i][2];
+		echo $TabActu[i][1];
+		echo $TabActu[i][3];
+	}
 	?>
 	</div>
-
-
 
 	<!-- DIV Pied de page -->
 	
