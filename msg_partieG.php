@@ -32,7 +32,7 @@ Session_start();
                 <i><b>Messages</b></i>
                 <br/>
                 <?php
-                    $connexion=mysqli_connect('localhost', 'root', '','oiseaudb2018'); // connexion au serveur MySQL
+                    $connexion=mysqli_connect('localhost:3306', 'root', 'root','BDD'); // connexion au serveur MySQL
                     mysqli_set_charset($connexion,"utf8");                      // pour les caractères spéciaux
                     
                     //Rechercher dans les contacts
@@ -41,7 +41,7 @@ Session_start();
                         echo "<input type='submit' name='submitcontact' value='Rechercher'>";
                     echo "</form>";
                     
-                    //On crée une scroll bar verticale pour afficher les contacts
+                    //On crée une scroll bar verticale pour afficher les contacts si jamais il y a trop de contacts
                     echo '<div style="height:600px; overflow-y:scroll;">';
                     
                     //En cliquant sur un contact, on ouvre la conversation avec ce contact
@@ -50,32 +50,46 @@ Session_start();
                     //Si rien n'est entré dans la barre de recherche
                     if (empty($_GET['contact']))
                     {
-                        $query="SELECT INDIV.nom_indiv, INDIV.prenom_indiv, MP.id_mp, MP.titre, MP.date, MP.lecture
-                        FROM INDIV
-                        INNER JOIN MP
-                        ON INDIV.id_indiv=MP.id_exp OR INDIV.id_indiv=MP.id_desti
-                        GROUP BY INDIV.id_indiv
-                        ORDER BY MP.date";
-                        /*select indiv.nom_indiv, indiv.prenom_indiv, conv.id_conv, mp.date, mp.lecture
-                        from indiv
-                        join conv on conv.id_indiv = indiv.id_indiv
-                        join mp on*/
+                        $query="SELECT individus.id_ind, individus.nom_ind, individus.prenom,
+                        messages_prives.id_mp, messages_prives.date_mp, messages_prives.lu
+                        FROM individus
+                        JOIN messages_prives
+                        ON individus.id_ind=messages_prives.id_expe OR individus.id_ind=messages_prives.id_rece
+                        GROUP BY individus.id_ind
+                        ORDER BY messages_prives.date_mp";
+                        /*select individus.nom_ind, individus.prenom, conversations.id_convers, conversations.date_inter, messages_prives.lu 
+                        from individus
+                        join conversations on conversations.id_ind_a = individus.id_ind
+                        join messages_prives on conversations.id_convers = messages_prives.id_convers
+                        order by conversations.date_inter*/
                         //On sélectionne uniquement les personnes avec qui l'utilisateur est en contact
                         
                         $results=mysqli_query($connexion,$query);
                         echo "<ul>";
-                        while ($row=mysqli_fetch_array($results,MYSQLI_BOTH))         // on parcourt le résultat de la requête
+                        while ($row=mysqli_fetch_array($results,MYSQLI_BOTH))   // on parcourt le résultat de la requête
                         {
-                            $NOM=$row['nom_indiv'];                                   // contient le nom du contact
-                            $PRENOM=$row['prenom_indiv'];                             // contient le prenom du contact
+                            $NOM=$row['individus.nom_ind'];                             // contient le nom du contact
+                            $PRENOM=$row['individus.prenom'];                       // contient le prenom du contact
+                            $CONTACT=$row['individus.id_ind'];                    // contient l'id du contact
+                            $lecture=$row['messages_prives.lu'];                        // si le dernier msg à été lu ou non
+                            
                             //Si on a un msg non lu de la part de ce contact alors on l'affiche en gras
-                            if (MP.lecture==0)
+                            if ($lecture==0)
                             {
-                                echo "<li><b><input type='submit' name='submitcontact' value='$PRENOM $NOM'></b></li>";       // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                echo "<li><b><input type='submit' name='submitcontact' value='$PRENOM $NOM'></b></li>";
+                                // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                echo '<p id="demo" onclick="myFunction($CONTACT)">$PRENOM $NOM</p>
+
+                                <script>
+                                function myFunction($entree) {
+                                    document.getElementById("demo").innerHTML = <input type="hidden" name="idcontact" value=$entree>;
+                                }
+                                </script>';
                             }
                             else
                             {
-                                echo "<li><input type='submit' name='submitcontact' value='$PRENOM $NOM'></li>";              // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                echo "<li><input type='submit' name='submitcontact' value='$PRENOM $NOM'></li>";
+                                // pour chaque contact, on fait une nouvelle ligne dans la liste
                             }
                         }
                         echo "</ul>";
@@ -84,12 +98,14 @@ Session_start();
                     //Si on a entré qqchose dans la barre de recherche
                     else
                     {
-                        $query1="SELECT INDIV.nom_indiv, INDIV.prenom_indiv, MP.id_mp, MP.titre, MP.date, MP.lecture
-                        FROM INDIV
-                        INNER JOIN MP
-                        ON INDIV.id_indiv=MP.id_indiv
-                        WHERE INDIV.nom_indiv=$_GET['contact'] OR INDIV.prenom_indiv=$_GET['contact']
-                        ORDER BY MP.date";
+                        $query1="SELECT individus.id_ind, individus.nom_ind, individus.prenom,
+                        messages_prives.id_mp, messages_prives.date_mp, messages_prives.lu
+                        FROM individus
+                        JOIN messages_prives
+                        ON individus.id_ind=messages_prives.id_expe OR individus.id_ind=messages_prives.id_rece
+                        WHERE individus.nom_ind=$_GET['contact'] OR individus.prenom=$_GET['contact']
+                        GROUP BY individus.id_ind
+                        ORDER BY messages_prives.date_mp";
                         //On sélectionne uniquement parmis les contacts ceux dont le nom ou le prénom est égal à ce qui a été entré
                         $results1=mysqli_query($connexion,$query1)
                         
@@ -102,19 +118,23 @@ Session_start();
                         else
                         {
                             echo "<ul>";
-                            while ($row=mysqli_fetch_array($results1,MYSQLI_BOTH))         // on parcourt le résultat de la requête
+                            while ($row=mysqli_fetch_array($results1,MYSQLI_BOTH))        // on parcourt le résultat de la requête
                             {
-                                $NOM=$row['nom_indiv'];                                   // contient le nom du contact
-                                $PRENOM=$row['prenom_indiv'];                             // contient le prenom du contact
+                                $NOM=$row['nom_indiv'];                         // contient le nom du contact
+                                $PRENOM=$row['prenom_indiv'];                   // contient le prenom du contact
+                                $lecture=$row['MP.lecture'];                    // si le dernier msg à été lu ou non
+                                echo "<input type='hidden' name='idcontact' value=$CONTACT>";      // on renvoi en caché l'id du contact
                                 
                                 //Si on a un msg non lu de la part de ce contact alors on l'affiche en gras
-                                if (MP.lecture==0)
+                                if ($lecture==0)
                                 {
-                                    echo "<li><b><input type='submit' name='submitcontact' value='$PRENOM $NOM'></b></li>";   // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                    echo "<li><b><input type='submit' name='submitcontact' value='$PRENOM $NOM'></b></li>";
+                                    // pour chaque contact, on fait une nouvelle ligne dans la liste
                                 }
                                 else
                                 {
-                                    echo "<li><input type='submit' name='submitcontact' value='$PRENOM $NOM'></li>";          // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                    echo "<li><input type='submit' name='submitcontact' value='$PRENOM $NOM'></li>";
+                                    // pour chaque contact, on fait une nouvelle ligne dans la liste
                                 }
                             }
                             echo "</ul>";
