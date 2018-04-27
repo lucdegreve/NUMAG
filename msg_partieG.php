@@ -44,6 +44,9 @@ Session_start();
                     //On crée une scroll bar verticale pour afficher les contacts
                     echo '<div style="height:600px; overflow-y:scroll;">';
                     
+                    //En cliquant sur un contact, on ouvre la conversation avec ce contact
+                    echo "<form action '' method='GET' name='form2'>";
+                    
                     //Si rien n'est entré dans la barre de recherche
                     if (empty($_GET['contact']))
                     {
@@ -51,7 +54,7 @@ Session_start();
                         FROM INDIV
                         INNER JOIN MP
                         ON INDIV.id_indiv=MP.id_exp OR INDIV.id_indiv=MP.id_desti
-                        GROUP BY INDIV.nom_indiv
+                        GROUP BY INDIV.id_indiv
                         ORDER BY MP.date";
                         /*select indiv.nom_indiv, indiv.prenom_indiv, conv.id_conv, mp.date, mp.lecture
                         from indiv
@@ -68,11 +71,11 @@ Session_start();
                             //Si on a un msg non lu de la part de ce contact alors on l'affiche en gras
                             if (MP.lecture==0)
                             {
-                                echo "<li><b>$PRENOM $NOM</b></li>";            // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                echo "<li><b><input type='submit' name='submitcontact' value='$PRENOM $NOM'></b></li>";       // pour chaque contact, on fait une nouvelle ligne dans la liste
                             }
                             else
                             {
-                                echo "<li>$PRENOM $NOM</li>";                   // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                echo "<li><input type='submit' name='submitcontact' value='$PRENOM $NOM'></li>";              // pour chaque contact, on fait une nouvelle ligne dans la liste
                             }
                         }
                         echo "</ul>";
@@ -107,18 +110,17 @@ Session_start();
                                 //Si on a un msg non lu de la part de ce contact alors on l'affiche en gras
                                 if (MP.lecture==0)
                                 {
-                                    echo "<li><b>$PRENOM $NOM</b></li>";        // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                    echo "<li><b><input type='submit' name='submitcontact' value='$PRENOM $NOM'></b></li>";   // pour chaque contact, on fait une nouvelle ligne dans la liste
                                 }
                                 else
                                 {
-                                    echo "<li>$PRENOM $NOM</li>";               // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                    echo "<li><input type='submit' name='submitcontact' value='$PRENOM $NOM'></li>";          // pour chaque contact, on fait une nouvelle ligne dans la liste
                                 }
                             }
                             echo "</ul>";
                         }
                     }
-                    
-                    
+                    echo "</form>";
                     
                     echo '</div>';
                     
@@ -126,7 +128,7 @@ Session_start();
                     
                     //On affiche les contacts par ordre de derniers msg décroissant -> Nico
                     //Si on a un msg non lu de la part d'un contact, on affiche le contact différemment -> moi OK
-                    //En cliquant sur un contact, on ouvre la conversation avec ce contact
+                    //En cliquant sur un contact, on ouvre la conversation avec ce contact -> moi OK ?
                     //On affiche différemment le contact à qui on est en train d'écrire
                 ?>
 	</div>
