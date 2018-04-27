@@ -7,15 +7,25 @@ By Manuel, Julien Louet, Marie
 	// Recupération du stage sur lequel l'étudiant à cliqué
 	$quelstage=$_GET["lestage"];
 	
+<<<<<<< Updated upstream
 	// Récupération du titre du stage, de sa description, de la période du stage, de tous les mots clès, 
 	//de la commune et du département de l'agriculteur, du mois de début du stage, du type de production et du nom et prénom de l'agriculteur
 	$query="SELECT id_st, titre_st, description_st, periode_st, libelle_mot_cle, nom_commune, nom_dpt, mois_debut_st
+=======
+	$query="SELECT id_st, titre_st, description_st, periode_st, libelle_mot_cle, nom_commune, nom_dpt, mois_debut_st, libelle_prod, nom_ind, prenom
+>>>>>>> Stashed changes
 	FROM Stages INNER JOIN Mots_cles 
 	ON Stages.id_mot_cle=Mots_cles.id_mot_cle
 	INNER JOIN Departement
 	ON Stage.id_dpt=Departements.id_dpt
 	INNER JOIN Communes
 	ON Departements.id_commune=Communes_id.commune
+	INNER JOIN Individus 
+	ON Stage.id_agri=Individus.id_ind
+	INNER JOIN Exploitations
+	ON Individus.id_exp=Exploitations.id_exp
+	INNER JOIN Productions
+	ON Exploitations.id_prod=Productions.id_prod
 	WHERE id_st=".$quelstage;
 	
 	$result=mysqli_query($link,$query);
