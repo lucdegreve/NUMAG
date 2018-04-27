@@ -1,4 +1,14 @@
-	
+	<!--Script par Manuel, Julien et Marie-->
+	<head>
+	<script type="text/javascript">
+        function open_popup_test()
+        {
+        window.open("recherche_tag_st1.php", "recherche_tag_st", "toolbar=yes, status=yes, scrollbars=yes, resizable=no, width=300, height=300");
+        }
+        
+        window.close();
+        </script>
+        </head>
 	
 	<form method="GET" action="previsualisation.php" name='form1'> 
 	<table border=1 style="width:1%">
@@ -53,7 +63,7 @@
 	<INPUT TYPE='TEXT' name='lien_mimosa'>
 	</td></tr>
 	</table>
-	
+	<TD><a href="javascript:open_popup_test()">Ajouter des mots clés</a><br><br></TD>
 	 
-	<INPUT TYPE="SUBMIT" name="bt_submit" value="Valider"><!-- Création du bouton valider-->
+	<INPUT TYPE="SUBMIT" name="bt_submit" value="Visualiser"><!-- Création du bouton valider-->
 	</form>
