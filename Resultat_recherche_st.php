@@ -101,7 +101,7 @@ Script Par Manuel, Marie, Julien L.
 	while ($i<count($L2)-1)
 	{
 		echo '<tr>';
-		echo <a href="lien.php?lestage=$id_st">$Tab[$L2[$i]][4] </a>;
+		echo href="lien.php?lestage=$id_st">$Tab[$L2[$i]][4];
 		$i++;
 		echo '</tr>';
 	}
