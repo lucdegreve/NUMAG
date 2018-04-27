@@ -27,11 +27,15 @@ ZAZA & MC
 	$link=mysqli_connect();
 	//Afficher correctement les caractères spéciaux 
 	mysqli_set_charset($link, 'UTF-8');
-	//Construction des requêtes 
-	$requete_conv_grp="SELECT titre_mp FROM Messages_prives 
+	//Construction des requêtes
+	$requete_conv_pr="SELECT distinct nom_ind FROM Individus, Messages_prives
+	WHERE (Messages_prives.id_dest=Individus.id_ind OR Messages_prives.id_expe=Individus.id_ind)
+	
+	"
+	$requete_conv_grp="SELECT titre_mp FROM Messages_prives, Individus
 	WHERE 
 	AND length(titre_mp)>0 
-	AND (id_dest=id_ind OR id_expe=id_ind)" //HELP TITI ! 
+	AND (Messages_prives.id_dest=Individus.id_ind OR Messages_prives.id_expe=Individus.id_ind)" //HELP
 	
 	?>
 	</div>
