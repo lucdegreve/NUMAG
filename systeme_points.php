@@ -88,9 +88,9 @@ cliquer sur OK
 			}
 		if ($Modif==0)
 		{
-			$idutil=$result_SU[$i,0];
+			$idutil=$result_SU[$i,0] // OU IDENTIFIANTDELAGRICONNECTE donc START SESSION;
 			$idactu=$result_MCA[$k,0];
-			$query_ajout="INSERT INTO Centres_interet(id_ind, id_mot_cle, score) VALUES ($idutil, $idactu, 1)"; //est-ce que je dois mettre le nom de la table ? donc Centres_interet ? 
+			$query_ajout="INSERT INTO Centres_interet(id_ind, id_mot_cle, score) VALUES (".$idutil.",".$idactu.", 1)"; //est-ce que je dois mettre le nom de la table ? donc Centres_interet ? 
 			$result_SU=$link->query($query_ajout);
 		}
 		}
