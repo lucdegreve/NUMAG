@@ -41,6 +41,9 @@ Session_start();
                         echo "<input type='submit' name='submitcontact' value='Rechercher'>";
                     echo "</form>";
                     
+                    //On crée une scroll bar verticale pour afficher les contacts
+                    echo '<div style="height:600px; overflow-y:scroll;">';
+                    
                     //Si rien n'est entré dans la barre de recherche
                     if (empty($_GET['contact']))
                     {
@@ -62,7 +65,15 @@ Session_start();
                         {
                             $NOM=$row['nom_indiv'];                                   // contient le nom du contact
                             $PRENOM=$row['prenom_indiv'];                             // contient le prenom du contact
-                            echo "<li>$PRENOM $NOM</li>";               // pour chaque contact, on fait une nouvelle ligne dans la liste
+                            //Si on a un msg non lu de la part de ce contact alors on l'affiche en gras
+                            if (MP.lecture==0)
+                            {
+                                echo "<li><b>$PRENOM $NOM</b></li>";            // pour chaque contact, on fait une nouvelle ligne dans la liste
+                            }
+                            else
+                            {
+                                echo "<li>$PRENOM $NOM</li>";                   // pour chaque contact, on fait une nouvelle ligne dans la liste
+                            }
                         }
                         echo "</ul>";
                     }
@@ -77,8 +88,8 @@ Session_start();
                         WHERE INDIV.nom_indiv=$_GET['contact'] OR INDIV.prenom_indiv=$_GET['contact']
                         ORDER BY MP.date";
                         //On sélectionne uniquement parmis les contacts ceux dont le nom ou le prénom est égal à ce qui a été entré
-                        
                         $results1=mysqli_query($connexion,$query1)
+                        
                         //Si la requête ne retourne rien
                         if (mysqli_num_rows($results1)==0)
                         {
@@ -92,15 +103,29 @@ Session_start();
                             {
                                 $NOM=$row['nom_indiv'];                                   // contient le nom du contact
                                 $PRENOM=$row['prenom_indiv'];                             // contient le prenom du contact
-                                echo "<li>$PRENOM $NOM</li>";               // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                
+                                //Si on a un msg non lu de la part de ce contact alors on l'affiche en gras
+                                if (MP.lecture==0)
+                                {
+                                    echo "<li><b>$PRENOM $NOM</b></li>";        // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                }
+                                else
+                                {
+                                    echo "<li>$PRENOM $NOM</li>";               // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                }
                             }
                             echo "</ul>";
                         }
                     }
+                    
+                    
+                    
+                    echo '</div>';
+                    
                     //À faire :
                     
                     //On affiche les contacts par ordre de derniers msg décroissant -> Nico
-                    //Si on a un msg non lu de la part d'un contact, on affiche le contact différemment -> moi
+                    //Si on a un msg non lu de la part d'un contact, on affiche le contact différemment -> moi OK
                     //En cliquant sur un contact, on ouvre la conversation avec ce contact
                     //On affiche différemment le contact à qui on est en train d'écrire
                 ?>
