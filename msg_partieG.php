@@ -1,3 +1,4 @@
+Diane
 <?php
 Session_start();
 ?>
@@ -46,13 +47,13 @@ Session_start();
                         $query="SELECT INDIV.nom_indiv, INDIV.prenom_indiv, MP.id_mp, MP.titre, MP.date, MP.lecture
                         FROM INDIV
                         INNER JOIN MP
-                        ON INDIV.id_indiv=MP.id_indiv
+                        ON INDIV.id_indiv=MP.id_exp OR INDIV.id_indiv=MP.id_desti
                         GROUP BY INDIV.nom_indiv
                         ORDER BY MP.date";
-                        select indiv.nom_indiv, indiv.prenom_indiv, conv.id_conv, mp.date, mp.lecture
+                        /*select indiv.nom_indiv, indiv.prenom_indiv, conv.id_conv, mp.date, mp.lecture
                         from indiv
                         join conv on conv.id_indiv = indiv.id_indiv
-                        join mp on
+                        join mp on*/
                         //On sélectionne uniquement les personnes avec qui l'utilisateur est en contact
                         
                         $results=mysqli_query($connexion,$query);
@@ -76,11 +77,14 @@ Session_start();
                         WHERE INDIV.nom_indiv=$_GET['contact'] OR INDIV.prenom_indiv=$_GET['contact']
                         ORDER BY MP.date";
                         //On sélectionne uniquement parmis les contacts ceux dont le nom ou le prénom est égal à ce qui a été entré
+                        
                         $results1=mysqli_query($connexion,$query1)
+                        //Si la requête ne retourne rien
                         if (mysqli_num_rows($results1)==0)
                         {
                             echo "Ce contact n'existe pas.";
                         }
+                        //Si la requête retourne des contacts on les affiche
                         else
                         {
                             echo "<ul>";
@@ -93,6 +97,12 @@ Session_start();
                             echo "</ul>";
                         }
                     }
+                    //À faire :
+                    
+                    //On affiche les contacts par ordre de derniers msg décroissant -> Nico
+                    //Si on a un msg non lu de la part d'un contact, on affiche le contact différemment -> moi
+                    //En cliquant sur un contact, on ouvre la conversation avec ce contact
+                    //On affiche différemment le contact à qui on est en train d'écrire
                 ?>
 	</div>
 
