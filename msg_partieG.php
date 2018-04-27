@@ -33,40 +33,65 @@ Session_start();
                 <?php
                     $connexion=mysqli_connect('localhost', 'root', '','oiseaudb2018'); // connexion au serveur MySQL
                     mysqli_set_charset($connexion,"utf8");                      // pour les caractères spéciaux
-                    $query="SELECT INDIV.nom_indiv, INDIV.prenom_indiv, MP.id_mp, MP.titre, MP.date, MP.lecture
-                    FROM INDIV
-                    INNER JOIN MP
-                    ON INDIV.id_indiv=MP.id_indiv
-                    GROUP BY INDIV.nom_indiv
-                    ORDER BY MP.date";
-                    $results=mysqli_query($connexion,$query);
-                    echo "<ul>";
-                    while ($row=mysqli_fetch_array($results,MYSQLI_BOTH))         // on parcourt le résultat de la requête
+                    
+                    //Rechercher dans les contacts
+                    echo "<form method='GET' name='form1'>";
+                        echo "<input type='text' name='contact' value=''>";
+                        echo "<input type='submit' name='submitcontact' value='Rechercher'>";
+                    echo "</form>";
+                    
+                    //Si rien n'est entré dans la barre de recherche
+                    if (empty($_GET['contact']))
                     {
-                        $NOM=$row['nom_indiv'];                              // contient le nom de l'observateur
-                        $PRENOM=$row['prenom_indiv'];                             // contient l'identifiant de l'observateur
-                        echo "<li>$PRENOM</li>";              // pour chaque observateur de la requête, on crée une nouvelle ligne dans la LD
+                        $query="SELECT INDIV.nom_indiv, INDIV.prenom_indiv, MP.id_mp, MP.titre, MP.date, MP.lecture
+                        FROM INDIV
+                        INNER JOIN MP
+                        ON INDIV.id_indiv=MP.id_indiv
+                        GROUP BY INDIV.nom_indiv
+                        ORDER BY MP.date";
+                        select indiv.nom_indiv, indiv.prenom_indiv, conv.id_conv, mp.date, mp.lecture
+                        from indiv
+                        join conv on conv.id_indiv = indiv.id_indiv
+                        join mp on
+                        //On sélectionne uniquement les personnes avec qui l'utilisateur est en contact
+                        
+                        $results=mysqli_query($connexion,$query);
+                        echo "<ul>";
+                        while ($row=mysqli_fetch_array($results,MYSQLI_BOTH))         // on parcourt le résultat de la requête
+                        {
+                            $NOM=$row['nom_indiv'];                                   // contient le nom du contact
+                            $PRENOM=$row['prenom_indiv'];                             // contient le prenom du contact
+                            echo "<li>$PRENOM $NOM</li>";               // pour chaque contact, on fait une nouvelle ligne dans la liste
+                        }
+                        echo "</ul>";
                     }
-                    echo "</ul>";
-
-                    if (empty($_GET['listeobs']))                               // Si l'observateur n'est pas encore choisi :
+                    
+                    //Si on a entré qqchose dans la barre de recherche
+                    else
                     {
-                        echo "<form action='' method='GET' name='form1'>";      // création du formulaire observateur renvoyant la même page
-                            $query0="SELECT * FROM observateurs INNER JOIN observations ON observateurs.id_observateur=observations.id_observateur GROUP BY observateurs.id_observateur ORDER BY nom_observateur";
-                                                                                // on crée une requête sélectionnant uniquement les observateurs ayant réalisé des observations
-                            $results0=mysqli_query($connexion,$query0);
-                            echo "Sélectionner un observateur : ";
-                            echo "<select name = 'listeobs'>";                  // création de la LD des observateurs
-                                while ($row0=mysqli_fetch_array($results0,MYSQLI_BOTH))         // on parcourt le résultat de la requête
-                                {
-                                    $OBS=$row0['nom_observateur'];                              // contient le nom de l'observateur
-                                    $IDOBS=$row0['id_observateur'];                             // contient l'identifiant de l'observateur
-                                    echo "<option value = '$IDOBS'>$OBS</option>";              // pour chaque observateur de la requête, on crée une nouvelle ligne dans la LD
-                                }
-                            echo "</select>";
-                            echo "<input type='submit' name='submitobs' value='Afficher'>";     // on renvoi l'identifiant de l'observateur sélectionné
-                        echo "</form>";
-                        echo "<br/>";
+                        $query1="SELECT INDIV.nom_indiv, INDIV.prenom_indiv, MP.id_mp, MP.titre, MP.date, MP.lecture
+                        FROM INDIV
+                        INNER JOIN MP
+                        ON INDIV.id_indiv=MP.id_indiv
+                        WHERE INDIV.nom_indiv=$_GET['contact'] OR INDIV.prenom_indiv=$_GET['contact']
+                        ORDER BY MP.date";
+                        //On sélectionne uniquement parmis les contacts ceux dont le nom ou le prénom est égal à ce qui a été entré
+                        $results1=mysqli_query($connexion,$query1)
+                        if (mysqli_num_rows($results1)==0)
+                        {
+                            echo "Ce contact n'existe pas.";
+                        }
+                        else
+                        {
+                            echo "<ul>";
+                            while ($row=mysqli_fetch_array($results1,MYSQLI_BOTH))         // on parcourt le résultat de la requête
+                            {
+                                $NOM=$row['nom_indiv'];                                   // contient le nom du contact
+                                $PRENOM=$row['prenom_indiv'];                             // contient le prenom du contact
+                                echo "<li>$PRENOM $NOM</li>";               // pour chaque contact, on fait une nouvelle ligne dans la liste
+                            }
+                            echo "</ul>";
+                        }
                     }
                 ?>
 	</div>
