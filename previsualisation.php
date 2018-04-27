@@ -1,16 +1,21 @@
 
 Previsualisation
 <?php
-$nom=$_GET["nom_ind"]
-$prenom=$_GET["prenom"]
-$telephone=$_GET["tel"]
-$description=$_GET[""]
-$lieu_st=$_GET[""]
-$duree=$_GET[""]
-$titre=$_GET["titre_proj"]
-$etat=$_GET["etatprojet"]
 
-echo" <table border=1>
+session_start();
+$tab=$_SESSION['tab'];
+$nom=$_GET["nom_ind"];			# on récupère toutes les données
+$prenom=$_GET["prenom"];
+$telephone=$_GET["tel"];
+$description=$_GET["desc_proj"];
+#$lieu_st=$_GET[""]; le lieu pas encore mis car il manque la base de donnée.. Il suffira d'intégrer la valeur à l'aide d'une requete sql
+$duree=$_GET["duree"];
+$titre=$_GET["titre_proj"];
+$etat=$_GET["etatprojet"];
+$listetags=array();
+$i=0;
+								# on insère tout dans un tableau 
+echo" <table border=1>			
 	<tr><td>
 	".$titre."
 	</td>
@@ -27,6 +32,18 @@ echo" <table border=1>
 	<BR/>
 	".$duree."
 	<br/>
+	Tags
+	<br/>
+	";
+	while ($i<count($tab))
+	{	
+		echo $tab[$i];
+		echo ', ';
+		$i++;
+	}
+	
+	
+echo "<br/>
 	Etat
 	<BR/>
 	".$etat."
@@ -35,14 +52,14 @@ echo" <table border=1>
 	<BR/>
 	Prénom : ".$prenom."
 	<BR/>
-	Téléphone : ".telephone."
+	Téléphone : ".$telephone."
 	<BR/>
 	</td>
 	</tr>
 	</table>";
 	
 	
-	?><form method="GET" action="creation_projet.php">
+	?><form method="GET" action="creation_projet.php">	<!-- boutons retour et valider -->
 	<INPUT TYPE="SUBMIT" name="retour" value="Retour">
 	</form>
 	

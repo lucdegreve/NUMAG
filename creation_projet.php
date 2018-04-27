@@ -1,60 +1,59 @@
 	
 	
-	
-	<table border=1>
-	<tr>
-	Titre du projet
-	</tr>
-	<tr>
+	<form method="GET" action="previsualisation.php" name='form1'> 
+	<table border=1 style="width:1%">
+	<tr><td>
+	Titre du projet						<!-- Création du premier tableau à remplir par l'exploitant -->
+	</td></tr><tr><td>
 	<INPUT TYPE='TEXT' name='titre_proj'>
-	</tr><tr>
+	</td></tr><tr><td>
 	Description du projet
-	</tr><tr>
+	</td></tr><tr><td>
 	<INPUT TYPE='TEXT' name='desc_proj'>
-	</tr><tr>	
+	</td></tr><tr>	<td>
 	Durée du projet
-	</tr><tr>
+	</td></tr><tr><td>
 	<INPUT TYPE='TEXT' name='duree' >
-	</tr><tr>
+	</td></tr><tr><td>
 	Date de publication
-	</tr>
-	<tr>
+	</td></tr>
+	<tr><td>
 	<INPUT TYPE='TEXT' name='date_proj'>
-	</tr>
+	</td></tr>
 	</table>
-	
-	
-	
-	<table border=1>
-	<tr>
+	 
+	<table border=1 style="width:1%">					<!-- Création du deuxième tableau à rentrer par l'agriculteur. Il contient aussi une liste déroulante -->
+	<tr><td>
 	Statut du projet
-	</tr>
-	<tr>
+	</td></tr>
+	<tr><td>
 	<?php
-			echo '<select name='etatprojet'>';
-			$etatprojet=array('Non débuté','En cours','Terminé')
+			echo '<select name=etatprojet>';
+			$etatprojet=array('Non débuté','En cours','Terminé');
 			for ($i=0; $i<=2; $i++)
 				echo ("<option value= ".$etatprojet[$i].">".$etatprojet[$i]."</option>");
 	?>
-	</tr><tr>
+	</td></tr><tr><td>
 	Nom
-	</tr><tr>
+	</td></tr><tr><td>
 	<INPUT TYPE='TEXT' name='nom_ind'>
-	</tr><tr>	
+	</td></tr><tr>	<td>
 	Prénom
-	</tr><tr>
+	</td></tr><tr><td>
 	<INPUT TYPE='TEXT' name='prenom' >
-	</tr><tr>
+	</td></tr><tr><td>
 	Téléphone
-	</tr>
-	<tr>
+	</td></tr>
+	<tr><td>
 	<INPUT TYPE='TEXT' name='tel'>
-	</tr><tr>
+	</td></tr><tr><td>
 	Lien Mimosa
-	</tr>
-	<tr>
+	</td></tr>
+	<tr><td>
 	<INPUT TYPE='TEXT' name='lien_mimosa'>
-	</tr>
+	</td></tr>
 	</table>
-	<form method="GET" action="previsualisation.php">
-	<INPUT TYPE="SUBMIT" name="bt_submit" value="Valider">
+	
+	 
+	<INPUT TYPE="SUBMIT" name="bt_submit" value="Valider"><!-- Création du bouton valider-->
+	</form>
