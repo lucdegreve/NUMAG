@@ -1,5 +1,12 @@
+Script de redaction d'une nouvelle offre de stage
+By Manuel, Julien Louet et Marie
+
+Attention script non fini car inutile pour le démonstrateur !
+
+
 <html>
 	<head>
+	<!-- On veut que l'agricutlteur rentre toutes les données propre à son offre de stage -->
 		<meta charset="UTF-8">
 		<script type="text/javascript">
 			function valider(){
@@ -43,8 +50,13 @@
 		</script>
 	</head>
 	<body>
+	
+	<!-- L'agriculteur doit remplir des données afin que les étudiants peuvent ensuite facilement rechercher des stages: Titre, mots clés,
+	description, durée et mois de début -->
+	
+	
 	<BR/><BR/>
-	<FORM action="new_st.php" method="GET" name="form2">
+	<FORM action="new_st.php" method="GET" onsubmit="return valider()" name="form2">
 		<TABLE>
 		<TR>
 			<TD>Titre du stage</TD>
