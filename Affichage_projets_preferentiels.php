@@ -20,7 +20,7 @@
 	$nblig_SP=mysqli_num_rows($result_SP);
 	$nbcol_SP=mysqli_num_fields($result_SP);
 
-	//$tab_SA : il suffit d'afficher $tab_SA puisque celui-ci est déjà trié dans l'ordre des points des actu 
+	//$tab_SP : il suffit d'afficher $tab_SP puisque celui-ci est déjà trié dans l'ordre des points des actu 
 	?>
 </body>
 </html> 
