@@ -1,3 +1,5 @@
+Script de l'accueil des projets avec bouton de cration de projet, recherche et affichage des projets
+By Manuel, Julien Louet et Marie
 
 <html>
 
@@ -10,9 +12,11 @@ Projet
 
 <table>
 
+
 <td>
 <?php
-$query="SELECT  libelle_mots_cles, nom_dpt, libelle_statut, duree, libelle_sout
+	// Recherche de projets à base de liste déroulante
+	$query="SELECT  libelle_mots_cles, nom_dpt, libelle_statut, duree, libelle_sout
 	FROM Projets 
 	INNER JOIN Individus Projets.id_ind=Individus.id_ind
 	INNER JOIN Communes Individus.id_commune=Communes.id_commune
@@ -25,8 +29,20 @@ $query="SELECT  libelle_mots_cles, nom_dpt, libelle_statut, duree, libelle_sout
 	$nbligne=mysqli_num_rows($result);
 	$nbcol=mysqli_num_fields($result);
 	
-	echo <FORM action="Resultat_recherche_projet.php" method="GET"  name="form2">;
+	echo "<FORM action="Resultat_recherche_projet.php" method="GET"  name="form2">";
+			
+	for ($i=0, $i<nbligne, $i++)
+	{
+		for ($j=0,$j<nbcol, $j++)
+		{
+			echo $Tab[$i][$j];
+			echo "<select name='listetag'>";
+			echo ("<option value= ".$Tab[$i][$j].">".$Tab[$i][$j]."</option>");
+			echo <br/>;
+		}
+	}
 	
+	echo <INPUT TYPE=SUBMIT  value='Valider'> ;
 
 
 ?>

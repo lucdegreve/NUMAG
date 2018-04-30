@@ -37,19 +37,19 @@ Affichage des résultats d'une recherche
 	while ($nombreligneeffectuées<$nbligne)
 	$compteur=0;	
 	{
-		if ($Tab[$nombreligneeffectuées,0]=$periode_st)
+		if ($Tab[$nombreligneeffectuées][0]=$periode_st)
 		{	
 			$compteur=$compteur+1;
 		}
-		if ($Tab[$nombreligneeffectuées,1]=$mois)
+		if ($Tab[$nombreligneeffectuées][1]=$mois)
 		{	
 			$compteur=$compteur+1;
 		}
-		if ($Tab[$nombreligneeffectuées,2]=$lieu)
+		if ($Tab[$nombreligneeffectuées][2]=$lieu)
 		{	
 			$compteur=$compteur+1;
 		}
-		if int strpos ( string $mot_cle , mixed $Tab[$nombreligneeffectuées,3])=FALSE
+		if int strpos ( string $mot_cle , mixed $Tab[$nombreligneeffectuées][3])=FALSE
 		{	
 			$compteur=$compteur;
 		}
