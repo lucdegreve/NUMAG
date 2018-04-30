@@ -14,6 +14,12 @@ Session_start();
 	</title>
 	<!-- Déclaration de la feuille de style -->
 	<link rel="stylesheet" type="text/css" href="styles/maFeuilleDeStyle.css" media="all" />
+        <!--  <script>
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "<input type='hidden' name='contact' value=$CONTACT>";
+        }
+        <input type='hidden' name='listeobs' value=$IDOBS>  
+        </script>  -->
 </head>
 <body>
 
@@ -42,21 +48,21 @@ Session_start();
                     echo "</form>";
                     
                     //On crée une scroll bar verticale pour afficher les contacts si jamais il y a trop de contacts
-                    echo '<div style="height:600px; overflow-y:scroll;">';
+                    echo '<div style="height:100px; width:300; overflow-y:scroll; border:#0000FF 1px solid;">';
                     
                     //En cliquant sur un contact, on ouvre la conversation avec ce contact
-                    echo "<form action '' method='GET' name='form2'>";
                     
                     //Si rien n'est entré dans la barre de recherche
                     if (empty($_GET['contact']))
                     {
                         $query="SELECT individus.id_ind, individus.nom_ind, individus.prenom,
-                        messages_prives.id_mp, messages_prives.date_mp, messages_prives.lu
+                        messages_prives.id_mp, messages_prives.date_mp, messages_prives.lu, id_convers
                         FROM individus
                         JOIN messages_prives
-                        ON individus.id_ind=messages_prives.id_expe OR individus.id_ind=messages_prives.id_rece
-                        GROUP BY individus.id_ind
-                        ORDER BY messages_prives.date_mp";
+                        ON individus.id_ind = messages_prives.id_expe OR individus.id_ind = messages_prives.id_rece
+                        WHERE (messages_prives.id_expe = 1 OR messages_prives.id_rece = 1) AND id_ind!=1
+                        GROUP BY id_ind
+                        ORDER BY messages_prives.date_mp DESC";
                         /*select individus.nom_ind, individus.prenom, conversations.id_convers, conversations.date_inter, messages_prives.lu 
                         from individus
                         join conversations on conversations.id_ind_a = individus.id_ind
@@ -68,29 +74,29 @@ Session_start();
                         echo "<ul>";
                         while ($row=mysqli_fetch_array($results,MYSQLI_BOTH))   // on parcourt le résultat de la requête
                         {
-                            $NOM=$row['individus.nom_ind'];                             // contient le nom du contact
-                            $PRENOM=$row['individus.prenom'];                       // contient le prenom du contact
-                            $CONTACT=$row['individus.id_ind'];                    // contient l'id du contact
-                            $lecture=$row['messages_prives.lu'];                        // si le dernier msg à été lu ou non
+                            echo "<form action 'page.php' method='GET' name='form2'>";
+                            $NOM=$row['nom_ind'];                     // contient le nom du contact
+                            $PRENOM=$row['prenom'];                   // contient le prenom du contact
+                            $CONTACT=$row['id_ind'];                  // contient l'id du contact
+                            //$lecture=$row['lu'];                      // si le dernier msg à été lu ou non
                             
                             //Si on a un msg non lu de la part de ce contact alors on l'affiche en gras
-                            if ($lecture==0)
+                            /*if ($lecture==0)
                             {
+                                echo "<input type='hidden' name='idcontact' value='$CONTACT'>";
                                 echo "<li><b><input type='submit' name='submitcontact' value='$PRENOM $NOM'></b></li>";
                                 // pour chaque contact, on fait une nouvelle ligne dans la liste
-                                echo '<p id="demo" onclick="myFunction($CONTACT)">$PRENOM $NOM</p>
-
-                                <script>
-                                function myFunction($entree) {
-                                    document.getElementById("demo").innerHTML = <input type="hidden" name="idcontact" value=$entree>;
-                                }
-                                </script>';
                             }
                             else
                             {
+                                echo "<input type='hidden' name='idcontact' value='$CONTACT'>";
                                 echo "<li><input type='submit' name='submitcontact' value='$PRENOM $NOM'></li>";
                                 // pour chaque contact, on fait une nouvelle ligne dans la liste
-                            }
+                            }*/
+                            
+                            echo "<input type='hidden' name='idcontact' value='$CONTACT'>";
+                            echo "<li><input type='submit' name='submitcontact' value='$PRENOM $NOM'></li>";
+                            echo "</form>";
                         }
                         echo "</ul>";
                     }
@@ -98,17 +104,16 @@ Session_start();
                     //Si on a entré qqchose dans la barre de recherche
                     else
                     {
+                        $RECHERCHE=$_GET['contact'];
                         $query1="SELECT individus.id_ind, individus.nom_ind, individus.prenom,
-                        messages_prives.id_mp, messages_prives.date_mp, messages_prives.lu
+                        messages_prives.id_mp, messages_prives.date_mp, messages_prives.lu, id_convers
                         FROM individus
                         JOIN messages_prives
-                        ON individus.id_ind=messages_prives.id_expe OR individus.id_ind=messages_prives.id_rece
-                        WHERE individus.nom_ind=$_GET['contact'] OR individus.prenom=$_GET['contact']
-                        GROUP BY individus.id_ind
-                        ORDER BY messages_prives.date_mp";
+                        ON individus.id_ind = messages_prives.id_expe OR individus.id_ind = messages_prives.id_rece
+                        WHERE (messages_prives.id_expe = 1 OR messages_prives.id_rece = 1) AND id_ind!=1 AND (nom_ind='$RECHERCHE' OR prenom='$RECHERCHE')
+                        GROUP BY id_ind";
                         //On sélectionne uniquement parmis les contacts ceux dont le nom ou le prénom est égal à ce qui a été entré
-                        $results1=mysqli_query($connexion,$query1)
-                        
+                        $results1=mysqli_query($connexion,$query1);
                         //Si la requête ne retourne rien
                         if (mysqli_num_rows($results1)==0)
                         {
@@ -119,28 +124,34 @@ Session_start();
                         {
                             echo "<ul>";
                             while ($row=mysqli_fetch_array($results1,MYSQLI_BOTH))        // on parcourt le résultat de la requête
-                            {
-                                $NOM=$row['nom_indiv'];                         // contient le nom du contact
-                                $PRENOM=$row['prenom_indiv'];                   // contient le prenom du contact
-                                $lecture=$row['MP.lecture'];                    // si le dernier msg à été lu ou non
-                                echo "<input type='hidden' name='idcontact' value=$CONTACT>";      // on renvoi en caché l'id du contact
-                                
-                                //Si on a un msg non lu de la part de ce contact alors on l'affiche en gras
-                                if ($lecture==0)
                                 {
-                                    echo "<li><b><input type='submit' name='submitcontact' value='$PRENOM $NOM'></b></li>";
-                                    // pour chaque contact, on fait une nouvelle ligne dans la liste
-                                }
-                                else
-                                {
+                                    echo "<form action 'page.php' method='GET' name='form3'>";
+                                    $NOM=$row['nom_ind'];                     // contient le nom du contact
+                                    $PRENOM=$row['prenom'];                   // contient le prenom du contact
+                                    $CONTACT=$row['id_ind'];                  // contient l'id du contact
+                                    //$lecture=$row['lu'];                      // si le dernier msg à été lu ou non
+                                    
+                                    //Si on a un msg non lu de la part de ce contact alors on l'affiche en gras
+                                    /*if ($lecture==0)
+                                    {
+                                        echo "<input type='hidden' name='idcontact' value='$CONTACT'>";
+                                        echo "<li><b><input type='submit' name='submitcontact' value='$PRENOM $NOM'></b></li>";
+                                        // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                    }
+                                    else
+                                    {
+                                        echo "<input type='hidden' name='idcontact' value='$CONTACT'>";
+                                        echo "<li><input type='submit' name='submitcontact' value='$PRENOM $NOM'></li>";
+                                        // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                    }*/
+                                    
+                                    echo "<input type='hidden' name='idcontact' value='$CONTACT'>";
                                     echo "<li><input type='submit' name='submitcontact' value='$PRENOM $NOM'></li>";
-                                    // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                    echo "</form>";
                                 }
-                            }
                             echo "</ul>";
                         }
                     }
-                    echo "</form>";
                     
                     echo '</div>';
                     
