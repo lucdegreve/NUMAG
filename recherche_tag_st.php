@@ -1,7 +1,11 @@
-<HTML>
-Bonjour
+Script de la fenetre pop-up, permettant de sélectionner un tag
+By Manuel, Julien Louet et Marie
 
-<FORM action="Resultat_recherche_st.php" method="GET" onsubmit="return valider()" name="form2">
+
+<HTML>
+
+
+<FORM action="resultat_tag_st.php" method="GET" onsubmit="return valider()" name="form2">
     Qu'est-ce que vous recherchez ?<br />
     
 <?php
@@ -15,6 +19,8 @@ Bonjour
 				echo ("<option value= ".$tag[$j].">".$tag[$j]."</option>");
 			}
 			?>
+<INPUT TYPE=SUBMIT  value='Valider'> 
+
 </form>
 
 </HTML>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--
+Mise en page par Mayeul Duval
+Il est encore nécessaire de rajouter l'entête et le pied de page, ainsi que de lier les boutons au formulaire de sortie
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Recherche de Stage</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- On valide ci-dessous que l'étudiant a bien rentré un nombre de semaines concernant la durée du stage  -->
+    <!-- L'étudiant peut choisir de laisser une case vide ou de remplir toutes les cases s'il veut une recherche plus ou moins précise
+      donc pas de message d'alerte s'il laisse une case incomplète-->
+    <script type="text/javascript">
+      function valider(){
+        var ok=1;
+        message ="";
+        var a = document.form1.periode_st.value
+        if ( a!="" && isNaN(a))
+        {
+          ok=ok-1;
+          message ="Veuillez saisir un nombre de semaines valide \n";
+        }
+        if (ok==1)
+        {
+          return true;
+        }
+        else
+        {
+          alert(message);
+          return false ;
+        }
+      }
+    </script>
+
+    <!-- ouverture de la fenetre pop up pour les tags -->
+    <script type="text/javascript">
+    function open_popup_test()
+    {
+    window.open("recherche_tag_st.php", "recherche_tag_st", "toolbar=yes, status=yes, scrollbars=yes, resizable=no, width=300, height=300");
+    }
+
+    window.close();
+    </script>
+
+  </head>
+  <body>
+    <br/>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-10">
+          <!-- Formulaire de recherche -->
+          <div class="jumbotron">
+            <h1 class="display-4">Recherchez un stage</h1>
+            <br/><br/>
+            <div class="row">
+              <!-- Partie de gauche -->
+              <div class="col-6">
+                <p class="lead">Choisissez un département</p>
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Lieu
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <a class="dropdown-item" href="#">Pyrénées Atlantiques</a>
+                    <a class="dropdown-item" href="#">Landes</a>
+                    <a class="dropdown-item" href="#">Lot et Garonne</a>
+                    <a class="dropdown-item" href="#">Gironde</a>
+                    <a class="dropdown-item" href="#">Dordogne</a>
+                    <a class="dropdown-item" href="#">Corrèze</a>
+                    <a class="dropdown-item" href="#">Haute-Vienne</a>
+                    <a class="dropdown-item" href="#">Creuse</a>
+                    <a class="dropdown-item" href="#">Charentes</a>
+                    <a class="dropdown-item" href="#">Charentes-maritimes</a>
+                    <a class="dropdown-item" href="#">Deux-sèvres</a>
+                    <a class="dropdown-item" href="#">Vienne</a>
+                  </div>
+                </div>
+                <hr class="my-4">
+                <p class="lead">Choisissez le mois de début</p>
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Début
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <a class="dropdown-item" href="#">janvier</a>
+                    <a class="dropdown-item" href="#">février</a>
+                    <a class="dropdown-item" href="#">mars</a>
+                    <a class="dropdown-item" href="#">avril</a>
+                    <a class="dropdown-item" href="#">mai</a>
+                    <a class="dropdown-item" href="#">juin</a>
+                    <a class="dropdown-item" href="#">juillet</a>
+                    <a class="dropdown-item" href="#">août</a>
+                    <a class="dropdown-item" href="#">septembre</a>
+                    <a class="dropdown-item" href="#">octobre</a>
+                    <a class="dropdown-item" href="#">novembre</a>
+                    <a class="dropdown-item" href="#">décembre</a>
+                  </div>
+                </div>
+                <hr class="my-4">
+                <p class="lead">Choisissez la période</p>
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Période
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <a class="dropdown-item" href="#">6 semaines</a>
+                    <a class="dropdown-item" href="#">3 mois</a>
+                    <a class="dropdown-item" href="#">6 mois</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Partie de droite -->
+              <div class="col-6">
+                <p class="lead center-block">Choisissez un mot-clef</p>
+                <div class="btn-group btn-group-lg" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Mot-clef
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item" href="#"></a>
+                        <a class="dropdown-item" href="#">Pintades</a>
+                        <a class="dropdown-item" href="#">Orge</a>
+                        <a class="dropdown-item" href="#">Apiculture</a>
+                        <a class="dropdown-item" href="#">Maraichage</a>
+                        <a class="dropdown-item" href="#">Ecologie</a>
+                        <a class="dropdown-item" href="#">Oléoprotéagineux</a>
+                        <a class="dropdown-item" href="#">Viticulture</a>
+                        <a class="dropdown-item" href="#">INRA</a>
+                        <a class="dropdown-item" href="#">Légumes</a>
+                        <a class="dropdown-item" href="#">Fraises</a>
+                      </div>
+                  </div>
+              </div>
+              <!-- Bouton Rechercher -->
+              <div class="container-fluid">
+                <hr class="my-4">
+                <div class="row">
+                  <div class="col-4">
+                  </div>
+                  <div class="col-4">
+                    <a class="btn btn-outline-info btn-lg btn-block" href="#" role="button">Rechercher</a>
+                  </div>
+                  <div class="col-4">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
