@@ -5,9 +5,9 @@
 	
 </head>
 <body>
-
-
 	<?php
+	
+	INCLUDE 'Connexion_bdd.php' ;
 	// Récuperation des scores des actualités ordonnés 
 	// ATTENTION A BIEN RENTRER LE BON ID_IND ET NON SEULEMENT L'ID 1
 	$query_SA="SELECT id_actu, SUM(Centres_interet.Compteur) AS Score_actu 
@@ -40,29 +40,32 @@
 
 	//$tab_SP : il suffit d'afficher $tab_SP puisque celui-ci est déjà trié dans l'ordre des points des actu 
 	
-	$tab_tot=$tab_SA+$tab_SP
+	$tab_tot=$tab_SA+$tab_SP;
 	function trier($tab)
 	{
-		$l=1;
+		$j=1;
 		$nb=count($tab); 
 		for ($k=0;$k<$nb;$k++) 
 		{
 			$y=0;
-			if $tab[$k]<$tab[$l]
+			if ($tab[$k,1]<$tab[$j,1])
 			{
 				$y=$tab[$k];
-				$tab[$l]=$tab[$k];
-				$tab[$l]=$y;
+				$tab[$k]=$tab[$j];
+				$tab[$j]=$y;
 			}
 			$k++;
-			$l++;
+			$j++;
 		}
 		return $tab;
 	}
-	$tab_trie=trier($tab_tot)
+	$tab_trie=trier($tab_tot);
+	$NBL=count($tab_trie);
 	
-	
-	//Manque plus qu'à afficher $tab_trie
+	for ($i=0; $i<$NBL; $i++)
+	{
+		echo $TabActu[$i];
+	}
 	?>
 </body>
 </html> 
