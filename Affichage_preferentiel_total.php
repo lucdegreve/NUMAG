@@ -5,6 +5,8 @@
 	
 </head>
 <body>
+
+
 	<?php
 	// Récuperation des scores des actualités ordonnés 
 	// ATTENTION A BIEN RENTRER LE BON ID_IND ET NON SEULEMENT L'ID 1
@@ -58,6 +60,7 @@
 		return $tab;
 	}
 	$tab_trie=trier($tab_tot)
+	
 	
 	//Manque plus qu'à afficher $tab_trie
 	?>
