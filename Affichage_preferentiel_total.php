@@ -6,9 +6,9 @@
 </head>
 <body>
 	<?php
-	
-	INCLUDE 'Connexion_bdd.php' ;
-	// Récuperation des scores des actualités ordonnés 
+	$link=mysqli_connect('localhost', 'root', '', 'racine');
+	//INCLUDE 'Connexion_bdd.php' ;
+	// Récuperation des scores des actualités ordonnées 
 	// ATTENTION A BIEN RENTRER LE BON ID_IND ET NON SEULEMENT L'ID 1
 	$query_SA="SELECT id_actu, SUM(Centres_interet.Compteur) AS Score_actu 
 	FROM Centres_interet, Mots_cles, mot_cle_actu 
@@ -24,7 +24,7 @@
 
 	//$tab_SA : il suffit d'afficher $tab_SA puisque celui-ci est déjà trié dans l'ordre des points des actu 	
 
-	// Récuperation des scores des actualités ordonnés 
+	// Récuperation des scores des projets ordonnés 
 	// ATTENTION A BIEN RENTRER LE BON ID_IND ET NON SEULEMENT L'ID 1
 	$query_SP="SELECT id_proj, SUM(Centres_interet.Compteur) AS Score_projet
 	FROM Centres_interet, Mots_cles, mot_cle_projet 
@@ -41,30 +41,25 @@
 	//$tab_SP : il suffit d'afficher $tab_SP puisque celui-ci est déjà trié dans l'ordre des points des actu 
 	
 	$tab_tot=$tab_SA+$tab_SP;
-	function trier($tab)
-	{
-		$j=1;
-		$nb=count($tab); 
-		for ($k=0;$k<$nb;$k++) 
-		{
-			$y=0;
-			if ($tab[$k,1]<$tab[$j,1])
-			{
-				$y=$tab[$k];
-				$tab[$k]=$tab[$j];
-				$tab[$j]=$y;
-			}
-			$k++;
-			$j++;
-		}
-		return $tab;
-	}
-	$tab_trie=trier($tab_tot);
-	$NBL=count($tab_trie);
 	
+	var_dump( $tab_tot);
+	$NBL=count($tab_tot);
 	for ($i=0; $i<$NBL; $i++)
 	{
-		echo $TabActu[$i];
+		$identifiant[$i]=$tab_tot[$i][0];
+		$score[$i]=$tab_tot[$i][1];
+	}	
+	array_multisort($score, SORT_DESC, $identifiant, SORT_ASC);
+	for ($i=0; $i<$NBL; $i++)
+	{
+		$tab_trie[$i][0]=$identifiant[$i];
+		$tab_trie[$i][1]=$score[$i];
+	}	
+	var_dump( $tab_trie);
+	for ($j=0; $j<$NBL; $j++)
+		for ($k=0; $k<2; $k++)
+	{
+		echo $tab_trie[$j][$k];
 	}
 	?>
 </body>
