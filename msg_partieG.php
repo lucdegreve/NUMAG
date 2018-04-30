@@ -1,3 +1,4 @@
+Diane
 <?php
 Session_start();
 ?>
@@ -31,43 +32,124 @@ Session_start();
                 <i><b>Messages</b></i>
                 <br/>
                 <?php
-                    $connexion=mysqli_connect('localhost', 'root', '','oiseaudb2018'); // connexion au serveur MySQL
+                    $connexion=mysqli_connect('localhost:3306', 'root', 'root','BDD'); // connexion au serveur MySQL
                     mysqli_set_charset($connexion,"utf8");                      // pour les caractères spéciaux
-                    $query="SELECT INDIV.nom_indiv, INDIV.prenom_indiv, MP.id_mp, MP.titre, MP.date, MP.lecture
-                    FROM INDIV
-                    INNER JOIN MP
-                    ON INDIV.id_indiv=MP.id_indiv
-                    GROUP BY INDIV.nom_indiv
-                    ORDER BY MP.date";
-                    $results=mysqli_query($connexion,$query);
-                    echo "<ul>";
-                    while ($row=mysqli_fetch_array($results,MYSQLI_BOTH))         // on parcourt le résultat de la requête
+                    
+                    //Rechercher dans les contacts
+                    echo "<form method='GET' name='form1'>";
+                        echo "<input type='text' name='contact' value=''>";
+                        echo "<input type='submit' name='submitcontact' value='Rechercher'>";
+                    echo "</form>";
+                    
+                    //On crée une scroll bar verticale pour afficher les contacts si jamais il y a trop de contacts
+                    echo '<div style="height:600px; overflow-y:scroll;">';
+                    
+                    //En cliquant sur un contact, on ouvre la conversation avec ce contact
+                    echo "<form action '' method='GET' name='form2'>";
+                    
+                    //Si rien n'est entré dans la barre de recherche
+                    if (empty($_GET['contact']))
                     {
-                        $NOM=$row['nom_indiv'];                              // contient le nom de l'observateur
-                        $PRENOM=$row['prenom_indiv'];                             // contient l'identifiant de l'observateur
-                        echo "<li>$PRENOM</li>";              // pour chaque observateur de la requête, on crée une nouvelle ligne dans la LD
-                    }
-                    echo "</ul>";
+                        $query="SELECT individus.id_ind, individus.nom_ind, individus.prenom,
+                        messages_prives.id_mp, messages_prives.date_mp, messages_prives.lu
+                        FROM individus
+                        JOIN messages_prives
+                        ON individus.id_ind=messages_prives.id_expe OR individus.id_ind=messages_prives.id_rece
+                        GROUP BY individus.id_ind
+                        ORDER BY messages_prives.date_mp";
+                        /*select individus.nom_ind, individus.prenom, conversations.id_convers, conversations.date_inter, messages_prives.lu 
+                        from individus
+                        join conversations on conversations.id_ind_a = individus.id_ind
+                        join messages_prives on conversations.id_convers = messages_prives.id_convers
+                        order by conversations.date_inter*/
+                        //On sélectionne uniquement les personnes avec qui l'utilisateur est en contact
+                        
+                        $results=mysqli_query($connexion,$query);
+                        echo "<ul>";
+                        while ($row=mysqli_fetch_array($results,MYSQLI_BOTH))   // on parcourt le résultat de la requête
+                        {
+                            $NOM=$row['individus.nom_ind'];                             // contient le nom du contact
+                            $PRENOM=$row['individus.prenom'];                       // contient le prenom du contact
+                            $CONTACT=$row['individus.id_ind'];                    // contient l'id du contact
+                            $lecture=$row['messages_prives.lu'];                        // si le dernier msg à été lu ou non
+                            
+                            //Si on a un msg non lu de la part de ce contact alors on l'affiche en gras
+                            if ($lecture==0)
+                            {
+                                echo "<li><b><input type='submit' name='submitcontact' value='$PRENOM $NOM'></b></li>";
+                                // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                echo '<p id="demo" onclick="myFunction($CONTACT)">$PRENOM $NOM</p>
 
-                    if (empty($_GET['listeobs']))                               // Si l'observateur n'est pas encore choisi :
-                    {
-                        echo "<form action='' method='GET' name='form1'>";      // création du formulaire observateur renvoyant la même page
-                            $query0="SELECT * FROM observateurs INNER JOIN observations ON observateurs.id_observateur=observations.id_observateur GROUP BY observateurs.id_observateur ORDER BY nom_observateur";
-                                                                                // on crée une requête sélectionnant uniquement les observateurs ayant réalisé des observations
-                            $results0=mysqli_query($connexion,$query0);
-                            echo "Sélectionner un observateur : ";
-                            echo "<select name = 'listeobs'>";                  // création de la LD des observateurs
-                                while ($row0=mysqli_fetch_array($results0,MYSQLI_BOTH))         // on parcourt le résultat de la requête
-                                {
-                                    $OBS=$row0['nom_observateur'];                              // contient le nom de l'observateur
-                                    $IDOBS=$row0['id_observateur'];                             // contient l'identifiant de l'observateur
-                                    echo "<option value = '$IDOBS'>$OBS</option>";              // pour chaque observateur de la requête, on crée une nouvelle ligne dans la LD
+                                <script>
+                                function myFunction($entree) {
+                                    document.getElementById("demo").innerHTML = <input type="hidden" name="idcontact" value=$entree>;
                                 }
-                            echo "</select>";
-                            echo "<input type='submit' name='submitobs' value='Afficher'>";     // on renvoi l'identifiant de l'observateur sélectionné
-                        echo "</form>";
-                        echo "<br/>";
+                                </script>';
+                            }
+                            else
+                            {
+                                echo "<li><input type='submit' name='submitcontact' value='$PRENOM $NOM'></li>";
+                                // pour chaque contact, on fait une nouvelle ligne dans la liste
+                            }
+                        }
+                        echo "</ul>";
                     }
+                    
+                    //Si on a entré qqchose dans la barre de recherche
+                    else
+                    {
+                        $query1="SELECT individus.id_ind, individus.nom_ind, individus.prenom,
+                        messages_prives.id_mp, messages_prives.date_mp, messages_prives.lu
+                        FROM individus
+                        JOIN messages_prives
+                        ON individus.id_ind=messages_prives.id_expe OR individus.id_ind=messages_prives.id_rece
+                        WHERE individus.nom_ind=$_GET['contact'] OR individus.prenom=$_GET['contact']
+                        GROUP BY individus.id_ind
+                        ORDER BY messages_prives.date_mp";
+                        //On sélectionne uniquement parmis les contacts ceux dont le nom ou le prénom est égal à ce qui a été entré
+                        $results1=mysqli_query($connexion,$query1)
+                        
+                        //Si la requête ne retourne rien
+                        if (mysqli_num_rows($results1)==0)
+                        {
+                            echo "Ce contact n'existe pas.";
+                        }
+                        //Si la requête retourne des contacts on les affiche
+                        else
+                        {
+                            echo "<ul>";
+                            while ($row=mysqli_fetch_array($results1,MYSQLI_BOTH))        // on parcourt le résultat de la requête
+                            {
+                                $NOM=$row['nom_indiv'];                         // contient le nom du contact
+                                $PRENOM=$row['prenom_indiv'];                   // contient le prenom du contact
+                                $lecture=$row['MP.lecture'];                    // si le dernier msg à été lu ou non
+                                echo "<input type='hidden' name='idcontact' value=$CONTACT>";      // on renvoi en caché l'id du contact
+                                
+                                //Si on a un msg non lu de la part de ce contact alors on l'affiche en gras
+                                if ($lecture==0)
+                                {
+                                    echo "<li><b><input type='submit' name='submitcontact' value='$PRENOM $NOM'></b></li>";
+                                    // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                }
+                                else
+                                {
+                                    echo "<li><input type='submit' name='submitcontact' value='$PRENOM $NOM'></li>";
+                                    // pour chaque contact, on fait une nouvelle ligne dans la liste
+                                }
+                            }
+                            echo "</ul>";
+                        }
+                    }
+                    echo "</form>";
+                    
+                    echo '</div>';
+                    
+                    //À faire :
+                    
+                    //On affiche les contacts par ordre de derniers msg décroissant -> Nico
+                    //Si on a un msg non lu de la part d'un contact, on affiche le contact différemment -> moi OK
+                    //En cliquant sur un contact, on ouvre la conversation avec ce contact -> moi OK ?
+                    //On affiche différemment le contact à qui on est en train d'écrire
                 ?>
 	</div>
 
