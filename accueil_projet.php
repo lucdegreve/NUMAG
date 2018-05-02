@@ -10,52 +10,87 @@ Projet
 <a href = "creation_projet.php" > Créer un projet  </a>
 <br/>
 
-<table>
+<table border=1>
 
-
+<tr>
 <td>
 <?php
 	$link=mysqli_connect('localhost','root','','bdd_racine');
-
-	// Recherche de projets à base de liste déroulante
-	$query="SELECT  libelle_mot_cle, nom_dpt, libelle_statut,
-	duree, libelle_sout FROM projets
+	echo "<FORM action='Resultat_recherche_projet.php' method='GET'  name='form2'>";
+	echo "<tr>
+	<td>";
+	echo "Filtres";
+	echo "</td> </tr>";
+	echo "<tr>
+	<td>";
+	// Recherche de projets à base de liste déroulante - Mot clé
+	$query="SELECT  libelle_mot_cle FROM projets
 	INNER JOIN mot_cle_projet 
 	ON projets.id_proj=mot_cle_projet.id_proj
 	INNER JOIN mots_cles 
-	ON mot_cle_projet.id_mot_cle=mots_cles.id_mot_cle
-	INNER JOIN individus 
-	ON projets.id_ind=individus.id_ind
-	INNER JOIN communes 
-	ON individus.id_commune=communes.id_commune
-	INNER JOIN departements 
-	ON communes.id_dpt=departements.id_dpt
-	INNER JOIN types_soutien 
-	ON projets.id_sout=types_soutien.id_sout
-	INNER JOIN statuts 
-	ON projets.id_statut=statuts.id_statut";
-	
+	ON mot_cle_projet.id_mot_cle=mots_cles.id_mot_cle";
 	$result=mysqli_query($link,$query);
 	$Tab=mysqli_fetch_all($result);
 	$nbligne=mysqli_num_rows($result);
-	$nbcol=mysqli_num_fields($result);
 	
-	echo "<FORM action='Resultat_recherche_projet.php' method='GET'  name='form2'>";
-			
+	echo "Mot clé";
+	echo "<select name='listetag'>";		
 	for ($i=0; $i<$nbligne; $i++)
 	{
-		for ($j=0; $j<$nbcol; $j++)
-		{
-			echo $Tab[$i][$j];
-			echo "<select name='listetag'>";
-			echo "<option value= '.$Tab[$i][$j].'>'.$Tab[$i][$j].'</option>";
-			echo "<br/>";
-		}
-	}
+		
+		echo "<option value= ".$Tab[$i][0].">".$Tab[$i][0]."</option>";
+		echo "<br/>";
 	
+	}
+	echo "</select>";
+	
+	echo "</td> </tr>";
+	echo "<tr>
+	<td>";
+		// Recherche de projets à base de liste déroulante - Département
+	$query="SELECT  nom_dpt FROM departements";
+	$result=mysqli_query($link,$query);
+	$Tab=mysqli_fetch_all($result);
+	$nbligne=mysqli_num_rows($result);
+	
+	echo "Département";
+	echo "<select name='listedpt'>";		
+	for ($i=0; $i<$nbligne; $i++)
+	{
+		
+		echo "<option value= ".$Tab[$i][0].">".$Tab[$i][0]."</option>";
+		echo "<br/>";
+	
+	}
+	echo "</select>";
+	
+	
+	echo "</td> </tr>";
+	echo "<tr>
+	<td>";
+		// Recherche de projets à base de liste déroulante - Statut
+	$query="SELECT  libelle_statut FROM statuts";
+	$result=mysqli_query($link,$query);
+	$Tab=mysqli_fetch_all($result);
+	$nbligne=mysqli_num_rows($result);
+	
+	echo "Statut du projet";
+	echo "<select name='listestatut'>";		
+	for ($i=0; $i<$nbligne; $i++)
+	{
+		
+		echo "<option value= ".$Tab[$i][0].">".$Tab[$i][0]."</option>";
+		echo "<br/>";
+	
+	}
+	echo "</select>";
+	
+	echo "</td> </tr>";
+	
+	echo "<tr>
+	<td>";
 	echo "<INPUT TYPE=SUBMIT  value='Valider'>" ;
-
-
+	echo "</td> </tr>";
 ?>
 
 </td>
@@ -73,26 +108,29 @@ $query="SELECT  titre_proj, libelle_statut
 	$nbligne=mysqli_num_rows($result);
 	$nbcol=mysqli_num_fields($result);
 	
-	echo "<table>";
+	
 	
 	for ($i=0; $i<$nbligne; $i++)
 	{
-		echo "<tr>
-		'.$Tab[$i][0].'
-		</tr>;
-		<tr>;
+		echo "<tr> <td>
+		".$Tab[$i][0]."
+		</td> </tr>
+		<tr>
 		<td>
-		'.$Tab[$i][0]'.
+		".$Tab[$i][1]."
 		</td>
 		<td>
-		<a href='projet.php?projet=$id_proj'> Consulter </a>
+		<a href='projet.php'> Consulter </a>
 		</td>
 		</tr>";
 	}
+	// <a href='projet.php?projet=".$id_proj."'> Consulter </a> exemple de bouton consulter si la page suivante été créer 
+	// (inutile dans le demonstrateur
 	
-	echo "</table>";
+	
 	?>
 </td>
+</tr>
 </table>
 
 </html>
