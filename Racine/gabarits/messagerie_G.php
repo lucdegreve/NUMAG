@@ -7,8 +7,8 @@ Session_start();
     $id_ind_co=1;
     $_SESSION['id_ind_co']=$id_ind_co;
     
-    $connexion=mysqli_connect('localhost', 'root', '','bdd_racine_beta_27.04'); // connexion au serveur MySQL
-    mysqli_set_charset($connexion,"utf8");                      // pour les caractères spéciaux
+    INCLUDE"connexion_bdd.php" // connexion au serveur MySQL
+    mysqli_set_charset($link,"utf8");                      // pour les caractères spéciaux
     
     //Si rien n'est entré dans la barre de recherche
     if (empty($_GET['contact']))
@@ -19,7 +19,7 @@ Session_start();
         FROM messages_prives WHERE (id_dest=$id_ind_co OR id_expe=$id_ind_co) GROUP BY id_compte) r
         ON i.id_ind=r.id_compte ORDER BY inter DESC";
         
-        $results=mysqli_query($connexion,$query);
+        $results=mysqli_query($link,$query);
         
         // début de la liste des contacts
         echo "<ul>";
@@ -62,7 +62,7 @@ Session_start();
         WHERE (nom_ind='$RECHERCHE' OR prenom='$RECHERCHE')
         ORDER BY inter DESC";
         
-        $results1=mysqli_query($connexion,$query1);
+        $results1=mysqli_query($link,$query1);
         
         //Si la requête ne retourne rien
         if (mysqli_num_rows($results1)==0)
