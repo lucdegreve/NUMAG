@@ -1,3 +1,5 @@
+<!-- Code effectué par Aurélie Jambon -->
+
 <html>
 <head>
 	<meta charset="UTF-8">
