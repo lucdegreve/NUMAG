@@ -24,8 +24,8 @@ By Manuel, Julien Louet, Marie
 	$nbcol=mysqli_num_fields($result);
 	
 	// Affichage du titre 
-	echo $Tab[0][2]
-	<BR/>
+	echo $Tab[0][2];
+	echo "<BR/>";
 	
 	// Affichage du tableau de gauche comportant le résumé du lieu et période du stage
 	echo "<table>
