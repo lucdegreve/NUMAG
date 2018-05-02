@@ -85,7 +85,7 @@ By Manuel, Julien Louet et Marie
 			
 			//Liste déroulante pour choisir le mois de début
 			echo "<select name='listemois'>";
-			$mois=array('','janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre');
+			$mois=array('','Janvier','Février','Mars','Avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre');
 			for ($i=0; $i<=11; $i++)
 			{ echo ("<option value= ".$mois[$i].">".$mois[$i]."</option>");
 			}
