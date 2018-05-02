@@ -47,11 +47,11 @@ ZAZA & MC
 	//Afficher les actualités les unes en dessous des autres 
 	for ($i=0; $i<$NbLignesActu; $i++)
 	{
-		echo $TabActu[i][0]." - ".$TabActu[i][2];
+		echo $TabActu[$i][0]." - ".$TabActu[$i][2];
 		echo "<br/>";
-		echo $TabActu[i][1];
+		$TabActu[$i][1];
 		echo "<br/>";
-		echo $TabActu[i][3];
+		$TabActu[$i][3];
 		echo "<br/><br/>";
 	}
 	?>
