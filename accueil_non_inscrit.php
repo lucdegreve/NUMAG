@@ -16,19 +16,20 @@ ZAZA & MC
 	
 	<!-- On définit ici une section 'global' -->
 	<div id="suggestions">
-	Suggestions	<br/>
+	Suggestions
 	<br/><br/>
 	Connectez-vous pour avoir des suggestions 
 	</div>
 
 	<div id="contacts">
-	Contacts <br/>
+	Contacts
 	<br/><br/>
 	Connectez-vous pour avoir des contacts
 	</div>
 
 	<div id="actualites">
-	Actualites <br/>
+	Actualites
+	<br/><br/>
 	<!-- Passage au codage PHP -->
 	<?php
 	//Connexion au serveur A REMPLIR 
@@ -49,9 +50,9 @@ ZAZA & MC
 	{
 		echo $TabActu[$i][0]." - ".$TabActu[$i][2];
 		echo "<br/>";
-		$TabActu[$i][1];
+		echo $TabActu[$i][1];
 		echo "<br/>";
-		$TabActu[$i][3];
+		echo $TabActu[$i][3];
 		echo "<br/><br/>";
 	}
 	?>
