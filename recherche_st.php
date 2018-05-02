@@ -32,12 +32,11 @@ By Manuel, Julien Louet et Marie
 		
 		<!-- ouverture de la fenetre pop up pour les tags -->
 		<script type="text/javascript">
-		function open_popup_test()
+		function open_popup_tag()
 		{
 		window.open("recherche_tag_st.php", "recherche_tag_st", "toolbar=yes, status=yes, scrollbars=yes, resizable=no, width=300, height=300");
 		}
 		
-		window.close();
 		</script>
 		</head>
 	<body>
