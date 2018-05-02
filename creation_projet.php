@@ -31,26 +31,6 @@
 					ok=ok-1;
 					message =message + "Veuillez saisir une durée du projet \n";
 				}
-				if (document.form2.nom_ind.value =="") 
-				{
-					ok=ok-1;
-					message =message + "Veuillez saisir un nom \n";
-				}
-				if (document.form2.prenom.value =="") 
-				{
-					ok=ok-1;
-					message =message + "Veuillez saisir un prénom \n";
-				}
-				var a = document.form2.tel.value
-				if ( a!="" && isNaN(a)) 
-				{
-					ok=ok-1;
-					message =message + "Veuillez saisir un numéro de téléphone valide \n";
-				}
-				if (a=="") {
-					ok=ok-1;
-					message =message + "Veuillez saisir un numéro de téléphone \n";
-				}
 				if (ok==1)
 				{
 					return true;
@@ -97,19 +77,6 @@
 			for ($i=0; $i<=2; $i++)
 				echo ("<option value= ".$etatprojet[$i].">".$etatprojet[$i]."</option>");
 	?>
-	</td></tr><tr><td>
-	Nom
-	</td></tr><tr><td>
-	<INPUT TYPE='TEXT' name='nom_ind'>
-	</td></tr><tr>	<td>
-	Prénom
-	</td></tr><tr><td>
-	<INPUT TYPE='TEXT' name='prenom' >
-	</td></tr><tr><td>
-	Téléphone
-	</td></tr>
-	<tr><td>
-	<INPUT TYPE='TEXT' name='tel'>
 	</td></tr><tr><td>
 	Lien Mimosa
 	</td></tr>
