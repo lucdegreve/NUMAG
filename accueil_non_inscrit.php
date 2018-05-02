@@ -1,4 +1,6 @@
 ZAZA & MC
+<br/><br/>
+
 <html>
 
 <head>
@@ -32,8 +34,7 @@ ZAZA & MC
 	//Afficher correctement les caractères spéciaux 
 	mysqli_set_charset($link, 'UTF-8');
 	//Construction des requêtes 
-	$RequeteActu="SELECT titre_actu, url_actu, date_actu, desc_actu
-	FROM Actualites 
+	$RequeteActu="SELECT titre_actu, url_actu, date_actu, desc_actu FROM Actualites 
 	ORDER BY date_actu desc"; //On trie les actualités par ordre de publication 
 	//Execution de la requête et production du recordset 
 	$ResultActu=mysqli_query($link,$RequeteActu);
