@@ -8,6 +8,8 @@ ZAZA & MC
 	<title>
 		Accueil
 	</title>
+	<B>ACCUEIL</B>
+	<br/><br/>
 	<!-- Déclaration de la feuille de style -->
 	
 </head>
@@ -16,16 +18,17 @@ ZAZA & MC
 	<!-- DIV Entête-->
 	
 	
-	<!-- On définit ici une section 'global' -->
+	<!-- On définit ici une section 'suggestions' -->
 	<div id="suggestions">
-	Suggestions
+	<B>Suggestions</B>
 	<br/>
 	Connectez-vous pour avoir des suggestions
 	<br/><br/>
 	</div>
 
+	<!-- On définit ici une section 'actualites' -->
 	<div id="actualites">
-	Actualites
+	<B>Actualites</B>
 	<br/><br/>
 	<!-- Passage au codage PHP -->
 	<?php
@@ -34,7 +37,7 @@ ZAZA & MC
 	//Afficher correctement les caractères spéciaux 
 	mysqli_set_charset($link, 'UTF-8');
 	//Construction des requêtes 
-	$RequeteActu="SELECT titre_actu, url_actu, date_actu, desc_actu FROM Actualites 
+	$RequeteActu = "SELECT titre_actu, url_actu, date_actu, desc_actu FROM Actualites 
 	ORDER BY date_actu desc"; //On trie les actualités par ordre de publication 
 	//Execution de la requête et production du recordset 
 	$ResultActu=mysqli_query($link,$RequeteActu);
@@ -44,9 +47,9 @@ ZAZA & MC
 	//Afficher les actualités les unes en dessous des autres 
 	for ($i=0; $i<$NbLignesActu; $i++)
 	{
-		echo $TabActu[$i][0]." - ".$TabActu[$i][2];
+		echo "<B>".$TabActu[$i][0]."</B> - ".$TabActu[$i][2];
 		echo "<br/>";
-		echo $TabActu[$i][1];
+		echo "<A href = ".$TabActu[$i][1]."> ".$TabActu[$i][1]." </A>";
 		echo "<br/>";
 		echo $TabActu[$i][3];
 		echo "<br/><br/>";
@@ -55,8 +58,9 @@ ZAZA & MC
 	<br/><br/>
 	</div>
 	
+	<!-- On définit ici une section 'contacts' -->
 	<div id="contacts">
-	Contacts
+	<B>Contacts</B>
 	<br/>
 	Connectez-vous pour avoir des contacts
 	<br/><br/>
