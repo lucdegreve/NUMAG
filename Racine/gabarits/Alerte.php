@@ -13,8 +13,8 @@ Bootstrap : Mayeul Duval
 		Alerte
 	</title>
 	<!-- Déclaration de la feuille de style -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all" />
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="all" />
+	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <!-- On définit ici une section 'global' -->
