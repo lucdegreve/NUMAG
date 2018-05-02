@@ -54,8 +54,22 @@ By Manuel, Julien Louet et Marie
 			<TD>Mot clé</TD>
 		</TR>
 		<TR>
-			<TD><a href="javascript:open_popup_test()">Ajouter des mots clés</a><br><br></TD>
-			
+		<TD>
+		<?php 
+			$link=mysqli_connect('localhost','root','','bdd_racine');
+			echo "<select name='listetag'>";
+			$query="SELECT libelle_mot_cle 
+			FROM mots_cles ";
+			$result=mysqli_query($link,$query);
+			$Tab=mysqli_fetch_all($result);
+			$nbligne=mysqli_num_rows($result);
+			for ($j=0; $j<$nbligne; $j++)
+			{
+				echo ("<option value= ".$Tab[$j][0].">".$Tab[$j][0]."</option>");
+			}
+			echo "</select>";
+			?>
+		</TD>
 		</TR>
 		<BR/><BR/>
 		<TR>
@@ -72,6 +86,7 @@ By Manuel, Julien Louet et Marie
 			{
 				echo ("<option value= ".$dpt[$j].">".$dpt[$j]."</option>");
 			}
+			echo "</select>";
 			?>
 		</TD>
 		</TR>
@@ -85,10 +100,11 @@ By Manuel, Julien Louet et Marie
 			
 			//Liste déroulante pour choisir le mois de début
 			echo "<select name='listemois'>";
-			$mois=array('','Janvier','Février','Mars','Avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre');
+			$mois=array('','Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre');
 			for ($i=0; $i<=11; $i++)
 			{ echo ("<option value= ".$mois[$i].">".$mois[$i]."</option>");
 			}
+			echo "</select>";
 			?>	
 		</TD>
 		

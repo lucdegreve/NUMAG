@@ -2,18 +2,19 @@
 
 
 <form method="GET" action="test_checkbox.php">
+	<?php
+			$link=mysqli_connect('localhost','root','','bdd_racine');
+			$query="SELECT libelle_mot_cle 
+			FROM mots_cles ";
+			$result=mysqli_query($link,$query);
+			$Tab=mysqli_fetch_all($result);
+			$nbligne=mysqli_num_rows($result);
+			for ($j=0; $j<$nbligne; $j++)
+			{
+				echo '<input type="checkbox" value='.$Tab [$j][0].'/>'.$Tab [$j][0].' </br>';
+			}
+			echo "</select>";
+			?>
 
-<input type="checkbox" name="jury[]" value="Pintades"/>Pintades </br>
-<input type="checkbox" name="jury[]" value="Orge"/>Orge</br>
-<input type="checkbox" name="jury[]" value="Apiculture"/>Apiculture</br>
-<input type="checkbox" name="jury[]" value="Maraichage"/>Maraichage</br>
-<input type="checkbox" name="jury[]" value="Ecologie"/>Ecologie</br>
-<input type="checkbox" name="jury[]" value="Oleoprotéagineux"/>Oleoprotéagineux</br>
-<input type="checkbox" name="jury[]" value="Viticulture"/>Viticulture</br>
-<input type="checkbox" name="jury[]" value="INRA"/>INRA</br>
-<input type="checkbox" name="jury[]" value="Légumes"/>Légumes</br>
-<input type="checkbox" name="jury[]" value="Fraise"/>Fraise</br>
-<input type="checkbox" name="jury[]" value="Machinisme"/>Machinisme</br>
-<input type="checkbox" name="jury[]" value="Limousine"/>Limousine</br>
 <input type= "submit" name="soumettre" size="10" value="soumettre">
 </form>

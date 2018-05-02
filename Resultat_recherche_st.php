@@ -6,10 +6,10 @@ session_start ();
 <html>
 <body>
 <?php
-	$link=mysqli_connect('localhost','root','','bdd_racine_beta27.04');
+	$link=mysqli_connect('localhost','root','','bdd_racine');
 	
 	// récupération des données de la recherche
-	$mot_cle=$_SESSION ['tag'];
+	$mot_cle=$_GET ['listetag'];
 	$lieu=$_GET["listedpt"];
 	$mois=$_GET["listemois"];
 	$periode_st=$_GET["periode_st"];
@@ -129,8 +129,18 @@ session_start ();
 			<TD>Mot clé</TD>
 		</TR>
 		<TR>
-			<TD><a href="javascript:open_popup_test()">Modifier le mot clé</a><br><br></TD>
+		<TD>
+			<?php
 			
+			//Liste déroulante pour choisir le mois de début
+			echo "<select name='listemois'>";
+			$mois=array('','Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre');
+			for ($i=0; $i<=11; $i++)
+			{ echo ("<option value= ".$mois[$i].">".$mois[$i]."</option>");
+			}
+			echo "</select>";
+			?>
+		</TD>
 		</TR>
 		<BR/><BR/>
 		<TR>
@@ -160,7 +170,7 @@ session_start ();
 			
 			//Liste déroulante pour choisir le mois de début
 			echo "<select name='listemois'>";
-			$mois=array('','Janvier','Février','Mars','Avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre');
+			$mois=array('','Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre');
 			for ($i=0; $i<=11; $i++)
 			{ echo ("<option value= ".$mois[$i].">".$mois[$i]."</option>");
 			}
@@ -189,6 +199,7 @@ session_start ();
 		echo '<tr>';
 		echo '<td>';
 		$idst=$L4[$i];
+		echo "L4".$idst;
 		echo "<a href='offre_st.php?lestage=".$idst."'>".$Tab[$idst][3]." </a>";
 		$i++;
 		echo '</td>';
@@ -201,6 +212,7 @@ session_start ();
 		echo '<tr>';
 		echo '<td>';
 		$idst=$L3[$i];
+		echo "L3".$idst;
 		echo "<a href='offre_st.php?lestage=".$idst."'>".$Tab[$idst][3]." </a>";
 		$i++;
 		echo '</td>';
@@ -212,6 +224,7 @@ session_start ();
 		echo '<tr>';
 		echo '<td>';
 		$idst=$L2[$i];
+		echo "L2".$idst;
 		echo "<a href='offre_st.php?lestage=".$idst."'>".$Tab[$idst][3]." </a>";
 		$i++;
 		echo '</td>';
@@ -223,6 +236,7 @@ session_start ();
 		echo '<tr>';
 		echo '<td>';
 		$idst=$L1[$i];
+		echo "L1".$idst;
 		echo "<a href='offre_st.php?lestage=".$idst."'>".$Tab[$idst][3]." </a>";
 		$i++;
 		echo '</td>';
