@@ -7,7 +7,7 @@ ZAZA & MC
 		Accueil
 	</title>
 	<!-- Déclaration de la feuille de style -->
-	<link rel="stylesheet" type="text/css" href="RACINE/css_accueil.css" media="all" />
+	
 </head>
 
 <body>
@@ -17,14 +17,9 @@ ZAZA & MC
 	<!-- On définit ici une section 'global' -->
 	<div id="suggestions">
 	Suggestions
+	<br/>
+	Connectez-vous pour avoir des suggestions
 	<br/><br/>
-	Connectez-vous pour avoir des suggestions 
-	</div>
-
-	<div id="contacts">
-	Contacts
-	<br/><br/>
-	Connectez-vous pour avoir des contacts
 	</div>
 
 	<div id="actualites">
@@ -56,6 +51,14 @@ ZAZA & MC
 		echo "<br/><br/>";
 	}
 	?>
+	<br/><br/>
+	</div>
+	
+	<div id="contacts">
+	Contacts
+	<br/>
+	Connectez-vous pour avoir des contacts
+	<br/><br/>
 	</div>
 
 	<!-- DIV Pied de page -->
