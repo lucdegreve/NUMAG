@@ -24,7 +24,6 @@ Des validations sont mises en place grace aux données de bootstrap-->
 				<span style="color: info;">
 				<div class="card-header">Formulaire d'inscription pour agriculteurs</div>
 				</span>
-				<form>
 					<div class="container">
 						<br/>
 						veuillez renseigner vos centres d'interets
@@ -33,99 +32,90 @@ Des validations sont mises en place grace aux données de bootstrap-->
 					</div>
 					<div class="container">
 						<div class="form-row">
-							<div class="form-group col-md-4">
-								<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="Pintade" name="centre_interet">
-										<label class="form-check-label" for="gridCheck">
-										Pintade
-										</label>
+							<form action="Tentative.php" method="post">
+								<div class="form-group col-md-4">
+									<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="Pintade" name="centre[]">
+											<label class="form-check-label" for="gridCheck">
+											Pintade
+											</label>
+									</div>
+									<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="Orge" name="centre[]">
+											<label class="form-check-label" for="gridCheck">
+											Orge
+											</label>
+									</div>
+									<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="Apiculture" name="centre[]">
+											<label class="form-check-label" for="gridCheck">
+											Apiculture
+											</label>
+									</div>
+									<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="Maraichage" name="centre[]">
+											<label class="form-check-label" for="gridCheck">
+											Maraichage
+											</label>
+									</div>
 								</div>
-								<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="Orge" name="centre_interet">
-										<label class="form-check-label" for="gridCheck">
-										Orge
-										</label>
+								<div class="form-group col-md-4">
+									<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="Ecologie" name="centre[]">
+											<label class="form-check-label" for="gridCheck">
+											Ecologie
+											</label>
+									</div>
+									<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="Oléoprotéagineux" name="centre[]">
+											<label class="form-check-label" for="gridCheck">
+											Oléoprotéagineux
+											</label>
+									</div>
+									<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="Viticulture" name="centre[]">
+											<label class="form-check-label" for="gridCheck">
+											Viticulture
+											</label>
+									</div>
+									<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="INRA" name="centre[]">
+											<label class="form-check-label" for="gridCheck">
+											INRA
+											</label>
+									</div>
 								</div>
-								<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="Apiculture" name="centre_interet">
-										<label class="form-check-label" for="gridCheck">
-										Apiculture
-										</label>
+								<div class="form-group col-md-4">
+									<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="Legumes" name="centre[]">
+											<label class="form-check-label" for="gridCheck">
+											Legumes
+											</label>
+									</div>
+									<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="Fraises" name="centre[]">
+											<label class="form-check-label" for="gridCheck">
+											Fraises
+											</label>
+									</div>
+									<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="Machinisme" name="centre[]">
+											<label class="form-check-label" for="gridCheck">
+											Machinisme
+											</label>
+									</div>
+									<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="Limousine" name="centre[]">
+											<label class="form-check-label" for="gridCheck">
+											Limousine
+											</label>
+									</div>
 								</div>
-								<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="Maraichage" name="centre_interet">
-										<label class="form-check-label" for="gridCheck">
-										Maraichage
-										</label>
-								</div>
-							</div>
-							<div class="form-group col-md-4">
-								<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="Ecologie" name="centre_interet">
-										<label class="form-check-label" for="gridCheck">
-										Ecologie
-										</label>
-								</div>
-								<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="Oléoprotéagineux" name="centre_interet">
-										<label class="form-check-label" for="gridCheck">
-										Oléoprotéagineux
-										</label>
-								</div>
-								<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="Viticulture" name="centre_interet">
-										<label class="form-check-label" for="gridCheck">
-										Viticulture
-										</label>
-								</div>
-								<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="INRA" name="centre_interet">
-										<label class="form-check-label" for="gridCheck">
-										INRA
-										</label>
-								</div>
-							</div>
-							<div class="form-group col-md-4">
-								<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="Legumes" name="centre_interet">
-										<label class="form-check-label" for="gridCheck">
-										Legumes
-										</label>
-								</div>
-								<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="Fraises" name="centre_interet">
-										<label class="form-check-label" for="gridCheck">
-										Fraises
-										</label>
-								</div>
-								<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="Machinisme" name="centre_interet">
-										<label class="form-check-label" for="gridCheck">
-										Machinisme
-										</label>
-								</div>
-								<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="Limousine" name="centre_interet">
-										<label class="form-check-label" for="gridCheck">
-										Limousine
-										</label>
-								</div>
-							</div>
+								<input class="btn btn-info" type="submit" value="Enregistrer">
+							</form>
 						</div>
 					</div>
-					<div class="container">
-						<br/>
-							<a href="#" class="btn btn-info"> Terminer </a>
-						<br/>
-						<br/>
-					</div>
-
-				</form>
 			</div>
 		</div>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
 		<?php include("Pied-VALIDE.html"); ?>
 	</body>
