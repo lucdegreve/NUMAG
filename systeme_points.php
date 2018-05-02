@@ -38,8 +38,6 @@ cliquer sur OK
 	?>
 
 	
-	
-	
 	<!-- fonction actualités -->
 
   <!-- Il y a une étoile pour choisir si une actualité nous intéresse ou pas 

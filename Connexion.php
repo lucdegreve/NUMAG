@@ -43,11 +43,14 @@ Des validations sont mises en place grace aux données de bootstrap-->
 				<small id="emailHelp" class="form-text text-muted"> Votre mot de passe doit contenir au moins 5 caractères </small>
 			  </div>
 			  <button type="submit" class="btn btn-primary"> Connexion </button>
+			  
+			  
+			  
 			  'Si jamais les codes sont pas vérifiés message d'erreur'
 			  'Sinon mise dans la variable start session $id_ind_co mettre l'identifiant du mec qui vient de se connecter 
 			  $_SESSION["id_ind_co"]= La variable que je récupère , 
 			  'Après signaler aux autres comment la récupérer 
-			  Refaire session 
+			  Refaire session (bien mettre avant le html premier truc écrit 
 			  $id_ind_co=$_SESSION["id_ind_co"]
 			  
 			</div>
