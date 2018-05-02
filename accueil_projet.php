@@ -1,8 +1,14 @@
 Script de l'accueil des projets avec bouton de cration de projet, recherche et affichage des projets
 By Manuel, Julien Louet et Marie
-
+<?php
+session_start()
+//$id_co=$_SESSION["id_ind_co"]
+?>
 <html>
 
+<head>
+	<meta charset="UTF-8">
+</head>
 
 <!-- Bouton permettant d'accéder à la page de création de projet -->
 Projet
@@ -97,17 +103,31 @@ Projet
 
 <td>
 <?php
-$query="SELECT  titre_proj, libelle_statut
-	FROM Projets 
-	INNER JOIN Statuts
-	ON Projets.id_statut=Statuts.id_statut";
+	// Requete sans les préférences des projets
 	
-	$result=mysqli_query($link,$query);
+	//$query="SELECT  titre_proj, libelle_statut
+	//FROM Projets 
+	//INNER JOIN Statuts
+	//ON Projets.id_statut=Statuts.id_statut";
+	//$result=mysqli_query($link,$query);
+	//$Tab=mysqli_fetch_all($result);
+	//$nbligne=mysqli_num_rows($result);
+	//$nbcol=mysqli_num_fields($result);
 	
-	$Tab=mysqli_fetch_all($result);
-	$nbligne=mysqli_num_rows($result);
-	$nbcol=mysqli_num_fields($result);
-	
+	// Requete avec les préférences des projets
+
+	$query_SP="SELECT titre_proj, libelle_statut, id_proj, SUM(Centres_interet.Compteur) AS Score_projet
+	FROM Centres_interet, Mots_cles, mot_cle_projet, Projets, Statuts
+	WHERE Centres_interet.id_ind=1
+	AND Centres_interet.id_mot_cle=Mots_cles.id_mot_cle 
+	AND Mots_cles.id_mot_cle=Mot_cle_projet.id_mot_cle 
+	AND Projets.id_statut=Statuts.id_statut
+	GROUP BY id_proj
+	ORDER BY Score_projet DESC"; // SP=Score projet 
+	$result_SP=mysqli_query($link,$query_SP);
+	$tab_SP=mysqli_fetch_all($result_SP);
+	$nblig_SP=mysqli_num_rows($result_SP);
+	$nbcol_SP=mysqli_num_fields($result_SP);
 	
 	
 	for ($i=0; $i<$nbligne; $i++)
