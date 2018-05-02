@@ -4,10 +4,10 @@ Session_start();
 ?>
 <?php
 $id_ind_co=$_SESSION['id_ind_co'];
-$nomcontact=$_GET['submitcontact'];
 $contact=$_GET['idcontact'];
 
-$link=mysqli_connect('localhost', 'root', 'numag2018','bdd_racine_beta_27.04');
+//$link=mysqli_connect('localhost', 'root', 'numag2018','bdd_racine_beta_27.04');
+include "localhost/NUMAG/Connexion_bdd.php";
 
 $bt=$_GET['bt'];
 if (@isset($bt))
@@ -62,10 +62,11 @@ if (!empty($contact))
     }
     echo '</table>';
     echo '<form method="GET">';
-        //En cliquant, le messaage par défault disparait
+        //En cliquant, le message 'Tapez votre message ici' par défault disparait ; on entre le msg
         ?>
         <input type="text" onfocus="this.value=''" value="Tapez votre message ici" size="80" name="message">
         <?php
+        //On transmet en caché l'id du destinataire et de l'utilisateur connecté
         echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";
         echo "<input type='hidden' name='idcontact' value='$contact'>";
         echo '<input type="submit" value="Envoyer" name="bt">';
