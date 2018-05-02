@@ -28,14 +28,12 @@ ZAZA & MC
 	//Afficher correctement les caractères spéciaux 
 	mysqli_set_charset($link, 'UTF-8');
 	//Construction des requêtes RECUPERER L'IDENTIFIANT DU COMPTE (PAGE PRECEDENTE = CONNEXION) 
-	$requete_contacts="SELECT distinct id_expe FROM (SELECT id_expe FROM Individus, Messages_prives WHERE Individus.id_ind=$moi AND (Messages_prives.id_dest=Individus.id_ind OR Messages_prives.id_expe=Individus.id_ind)) V1 WHERE id_expe <>$moi 
-	UNION 
-	SELECT distinct id_dest FROM (SELECT id_dest FROM Individus, Messages_prives WHERE Individus.id_ind=$moi AND (Messages_prives.id_dest=Individus.id_ind OR Messages_prives.id_expe=Individus.id_ind)) V1 WHERE id_dest <>$moi"
-	$requete_conv_grp="SELECT titre_mp FROM Messages_prives, Individus
-	WHERE 
-	AND length(titre_mp)>0 
-	AND (Messages_prives.id_dest=Individus.id_ind OR Messages_prives.id_expe=Individus.id_ind)"
-	
+	$requete_contacts="SELECT CASE WHEN id_dest=1 THEN id_expe ELSE id_dest END as id_autre_ind, 
+	CASE WHEN id_dest=1 THEN 'msg reçu' ELSE 'msg envoyé' END as type_msg, 
+	max(date_mp) as date_derniere_interaction , texte 
+	FROM individus i, messages_prives m WHERE i.id_ind=1 AND (m.id_dest=i.id_ind OR m.id_expe= i.id_ind) 
+	GROUP BY id_autre_ind 
+	ORDER BY date_derniere_interaction desc"	
 	?>
 	</div>
 

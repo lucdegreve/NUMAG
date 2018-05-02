@@ -44,13 +44,15 @@ ZAZA & MC
 	//Traitement du recordset
 	$TabActu=mysqli_fetch_all($ResultActu);
 	$NbLignesActu=mysqli_num_rows($ResultActu);
-	$NbColonnesActu=mysqli_num_fields($ResultActu);
 	//Afficher les actualités les unes en dessous des autres 
 	for ($i=0; $i<$NbLignesActu; $i++)
 	{
-		echo $TabActu[i][0]." - ".$TabActu[i][2];
-		echo $TabActu[i][1];
-		echo $TabActu[i][3];
+		echo $TabActu[$i][0]." - ".$TabActu[$i][2];
+		echo "<br/>";
+		$TabActu[$i][1];
+		echo "<br/>";
+		$TabActu[$i][3];
+		echo "<br/><br/>";
 	}
 	?>
 	</div>
