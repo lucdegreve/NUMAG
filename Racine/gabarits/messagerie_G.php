@@ -3,9 +3,9 @@
 Session_start();
 ?>
 <?php
-    //$id_ind_co=$_SESSION['id_ind_co'];        //récupère l'identifiant de l'utilisateur connecté
-    $id_ind_co=1;
-    $_SESSION['id_ind_co']=$id_ind_co;
+    $id_ind_co=$_SESSION['id_ind_co'];        //récupère l'identifiant de l'utilisateur connecté
+    //$id_ind_co=1;
+    //$_SESSION['id_ind_co']=$id_ind_co;
     
     //$link=mysqli_connect('localhost', 'root', 'numag2018','bdd_racine_beta_27.04');
     include "localhost/NUMAG/Connexion_bdd.php";
