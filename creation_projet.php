@@ -2,15 +2,69 @@
 	<head>
 	<script type="text/javascript">
         function open_popup_test()
-        {
+        {{
         window.open("recherche_tag_st1.php", "recherche_tag_st", "toolbar=yes, status=yes, scrollbars=yes, resizable=no, width=300, height=300");
-        }
+		}   
+       // window.close();
+		}
         
-        window.close();
-        </script>
+		function valider(){
+				var ok=1;
+				message ="";
+				if (document.form2.titre_proj.value =="") 
+				{
+					ok=ok-1;
+					message =message + "Veuillez saisir un titre de projet \n";
+				}
+				if (document.form2.desc_proj.value =="") 
+				{
+					ok=ok-1;
+					message =message + "Veuillez saisir une description \n";
+				}
+				if (document.form2.date_proj.value =="") 
+				{
+					ok=ok-1;
+					message =message + "Veuillez saisir une date de début de projet \n";
+				}
+				if (document.form2.duree.value =="") 
+				{
+					ok=ok-1;
+					message =message + "Veuillez saisir une durée du projet \n";
+				}
+				if (document.form2.nom_ind.value =="") 
+				{
+					ok=ok-1;
+					message =message + "Veuillez saisir un nom \n";
+				}
+				if (document.form2.prenom.value =="") 
+				{
+					ok=ok-1;
+					message =message + "Veuillez saisir un prénom \n";
+				}
+				var a = document.form2.tel.value
+				if ( a!="" && isNaN(a)) 
+				{
+					ok=ok-1;
+					message =message + "Veuillez saisir un numéro de téléphone valide \n";
+				}
+				if (a=="") {
+					ok=ok-1;
+					message =message + "Veuillez saisir un numéro de téléphone \n";
+				}
+				if (ok==1)
+				{
+					return true;
+				}
+				else 
+				{
+					alert(message);
+					return false ;
+				}
+			}	
+		</script>
         </head>
-	
-	<form method="GET" action="previsualisation.php" name='form1'> 
+	<body>
+	<form method="GET" action="previsualisation.php" onsubmit="return valider()" name='form2'> 
 	<table border=1 style="width:1%">
 	<tr><td>
 	Titre du projet						<!-- Création du premier tableau à remplir par l'exploitant -->
@@ -39,7 +93,7 @@
 	<tr><td>
 	<?php
 			echo '<select name=etatprojet>';
-			$etatprojet=array('Non débuté','En cours','Terminé');
+			$etatprojet=array('Non-débuté','En-cours','Terminé');
 			for ($i=0; $i<=2; $i++)
 				echo ("<option value= ".$etatprojet[$i].">".$etatprojet[$i]."</option>");
 	?>
@@ -67,3 +121,4 @@
 	 
 	<INPUT TYPE="SUBMIT" name="bt_submit" value="Visualiser"><!-- Création du bouton valider-->
 	</form>
+	</body>
