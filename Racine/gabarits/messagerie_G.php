@@ -7,8 +7,7 @@ Session_start();
     $id_ind_co=1;
     $_SESSION['id_ind_co']=$id_ind_co;
     
-    INCLUDE"connexion_bdd.php" // connexion au serveur MySQL
-    mysqli_set_charset($link,"utf8");                      // pour les caractères spéciaux
+    $link=mysqli_connect('localhost', 'root', 'numag2018','bdd_racine_beta_27.04'); // connexion au serveur MySQL
     
     //Si rien n'est entré dans la barre de recherche
     if (empty($_GET['contact']))

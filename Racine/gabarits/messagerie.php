@@ -9,6 +9,7 @@
         <td width="300";>
             <?php include "messagerie_G.php" ?>
             <?php
+                //Recherche
                 echo "<form method='GET' name='form1'>";
                     echo "<input type='text' name='contact' value=''>";
                     echo "<input type='submit' name='submitcontact' value='Rechercher'>";

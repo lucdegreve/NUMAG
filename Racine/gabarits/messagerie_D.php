@@ -7,7 +7,7 @@ $id_ind_co=$_SESSION['id_ind_co'];
 $nomcontact=$_GET['submitcontact'];
 $contact=$_GET['idcontact'];
 
-INCLUDE"connexion_bdd.php"
+$link=mysqli_connect('localhost', 'root', 'numag2018','bdd_racine_beta_27.04');
 
 $bt=$_GET['bt'];
 if (@isset($bt))
