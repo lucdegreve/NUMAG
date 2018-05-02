@@ -1,0 +1,226 @@
+/* 
+Feuille de style, v01
+Fait par Mayeul Duval 
+Si vous constatez des couleurs bizarres, venez-me voir */
+
+html {
+	font-size: 100%;
+}body {
+	margin: 0;
+	padding: 2% 0; /* haut et bas de la page */
+	font-family: Verdana, "Bitstream Vera Sans", "Lucida Grande", sans-serif;
+	font-size: .9em; /* taille de police */
+	line-height: 1.25; /* Interligne */
+	color: #000000 /*Tan*/;
+	background-color:#FFFFFF; /* fond site */
+	
+}
+/* Titres */
+h1, h2, h3, h4, h5, h6 {
+	margin: 1em 0 .5em 0;
+}
+h1, h2 {
+	font-family: Georgia, "Bitstream Vera Serif", Norasi, serif;
+	font-weight: normal;
+}
+h1 {
+	font-size: 3em;
+	font-style: italic;
+}
+h2 {font-size: 1.8em;}
+h3 {font-size: 1.2em;}
+h4 {font-size: 1em;}
+/* Listes */
+ul, ol {
+	margin: .75em 0 .75em 24px;
+	padding: 0;
+}
+ul {
+	list-style: square;
+}
+li {
+	margin: 0;
+	padding: 0;
+}
+/* Paragraphes */
+p {
+	margin: .75em 0;
+}
+li p, blockquote p {
+	margin: .5em 0;
+}
+/* Citations */
+blockquote, q {
+	font-size: 1.1em;
+	font-style: italic;
+	font-family: Georgia, "Bitstream Vera Serif", Norasi, serif;
+}
+blockquote {
+	margin: .75em 0 .75em 24px;
+}
+cite {
+	font-style: italic;
+}
+/* Liens */
+a {
+	text-decoration: underline;
+	color: #FF1493 /*DeepPink*/;
+}
+a:hover, a:focus {
+	color: #1E90FF /*DodgerBlue*/;
+}
+a img {
+	border: none; 
+}
+/* Divers éléments de type "en-ligne" */
+em {
+	font-style: italic;
+}
+strong {
+	font-weight: bold;
+	color: #ADFF2F /*GreenYellow*/;
+}
+
+
+
+
+
+
+
+/* pour les balises div */
+
+#global {
+	width: 95%; /*largeur à partir du centre*/
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#bleu {
+	color: rgb(37,117,127) ;
+}
+
+#unibleu {
+	color: #FFFFFF; /* Couleur de la police */
+	background: rgb(37,117,127);
+	padding: 2% 3%; /* 2 param -> vertical/horizontal */
+	border-style: solid;
+	border-width: 0.1em;
+	border-color: rgb(16,41,44);
+	width: 15em;
+}
+
+#unisombre{
+	color: #FFFFFF; /* Couleur de la police */
+	background: #0f454f;
+	padding: 2% 3%; /* 2 param -> vertical/horizontal */
+	border-style: solid;
+	border-width: 0.1em;
+	border-color: rgb(16,41,44);
+	width: 15em;
+}
+
+/* Bloc sombre */
+#sombre {
+	color: #FFFFFF; /* Couleur de la police */
+	background-image:linear-gradient(182deg, rgb(80,178,191), rgb(25,79,86));
+	width: 15em;
+	border-style: solid;
+	border-width: 0.1em;
+	border-color: rgb(16,41,44);
+	border-radius: .2em;
+	box-shadow: .1em .1em .1em rgb(16,41,44); /* 3e param = force de l'adoucissement, inset = dedans */
+	padding: 2% 3%; /* 2 param -> vertical/horizontal */
+	line-height: 1.5em; /* interligne */
+}
+
+/* Bloc blanc */
+#blanc {
+	color: #000000; /* Couleur de la police */
+	background-image:linear-gradient(182deg, #FFFFFF, #dae9fc);
+	border-style: solid;
+	width: 15em;
+	border-width: 0.1em;
+	border-color: #9db3cf;
+	border-radius: .2em;
+	box-shadow: .1em .1em .1em  #718eb2; /* 3e param = force de l'adoucissement, inset = dedans */
+	padding: 2% 3%; /* 2 param -> vertical/horizontal */
+}
+
+#blancfull {
+	color: #000000; /* Couleur de la police */
+	background-image:linear-gradient(182deg, #FFFFFF, #dae9fc);
+	border-style: solid;
+	width: 100%;
+	border-width: 0.1em;
+	border-color: #9db3cf;
+	border-radius: .2em;
+	box-shadow: .1em .1em .1em  #718eb2; /* 3e param = force de l'adoucissement, inset = dedans */
+	padding: 2% 3%; /* 2 param -> vertical/horizontal */
+}
+
+#imggauche {
+	float: left;
+}
+
+#blancbord {
+	color: #000000; /* Couleur de la police */
+	background-image:linear-gradient(182deg, #FFFFFF, #dae9fc);
+	border-style: solid;
+	width: 15em;
+	border-width: 0.1em;
+	border-color: rgb(16,41,44);
+	border-radius: .2em;
+	box-shadow: .1em .1em .1em  rgb(16,41,44); /* 3e param = force de l'adoucissement, inset = dedans */
+	padding: 2% 3%; /* 2 param -> vertical/horizontal */
+}
+
+#copyright {
+	text-align: center; /* position (left, center, right) */
+	font-size: 1em; /* taille de police, relatif à la taille de l'entete */
+	margin: 1% 0; /* marges externes vertical/horizontal */
+	color: #8e9190 ;
+}
+#lien a {
+	color: rgb(37,117,127) ;
+	text-decoration: underline ;
+}
+#lien a:hover, #lien a:focus {
+	background: rgb(248,237,8); /* Jaune */ /* quand on a la souris dessus */
+}
+
+.navbargrad {
+	background-color: linear-gradient(182deg, rgb(80,178,191), rgb(25,79,86));
+	border-color: #FFFFFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
