@@ -33,13 +33,13 @@ ZAZA & MC
 	<!-- Passage au codage PHP -->
 	<?php
 	//Connexion au serveur A REMPLIR 
-	$link=mysqli_connect();
+	$link=mysqli_connect('localhost', 'root', '', 'racine');
 	//Afficher correctement les caractères spéciaux 
 	mysqli_set_charset($link, 'UTF-8');
 	//Construction des requêtes 
 	$RequeteActu="SELECT titre_actu, url_actu, date_actu, desc_actu
 	FROM Actualites 
-	ORDER BY date_actu DESC"; //On trie les actualités par ordre de publication 
+	ORDER BY date_actu desc"; //On trie les actualités par ordre de publication 
 	//Execution de la requête et production du recordset 
 	$ResultActu=mysqli_query($link,$RequeteActu);
 	//Traitement du recordset

@@ -25,7 +25,7 @@ ZAZA & MC
 	<br/><br/>
 	<!-- Passage au codage PHP -->
 	<?php
-	//Connexion au serveur A REMPLIR 
+	//Connexion au serveur
 	$link = mysqli_connect('localhost', 'root', '', 'racine');
 	//Afficher correctement les caractères spéciaux 
 	mysqli_set_charset($link, 'UTF-8');
