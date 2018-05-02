@@ -13,7 +13,7 @@ Bootstrap : Mayeul Duval
 		Alerte
 	</title>
 	<!-- Déclaration de la feuille de style -->
-	<link rel="stylesheet" type="text/css" href="localhost/NUMAG/Racine/gabarits/css/bootstrap.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="localhost/NUMAG/Racine/gabarits/css/bootstrap.min.css" media="all" />
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
