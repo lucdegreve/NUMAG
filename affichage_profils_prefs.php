@@ -14,10 +14,6 @@
 	//connexion à la base de données
 	//include("Connexion_bdd.php");   COMMENTAIRE A ENLEVER
 	$link=mysqli_connect('localhost','root','','racine');
-	if (mysqli_connect_errno()) {
-    printf("Echec de la connexion: %s\n", mysqli_connect_error());
-    exit();
-	}
 	
 	$id_ind_co=2; //récupération de l'identifiant du connecté
 	
