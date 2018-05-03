@@ -90,8 +90,8 @@ ZAZA & MC
 	}
 	
 	//Construction des requêtes récupérant les tables Actualités et Projets
-	$RequeteActu = "SELECT id_actu, titre_actu, url_actu, date_actu, desc_actu FROM Actualites";
-	$RequeteProj = "SELECT id_proj, titre_proj, date_proj, duree, url_proj, desc_proj FROM projets";
+	$RequeteActu = "SELECT id_actu, titre_actu, url_actu, day(date_actu), month(date_actu), year(date_actu), desc_actu FROM Actualites";
+	$RequeteProj = "SELECT id_proj, titre_proj, day(date_proj), month(date_proj), year(date_proj), duree, url_proj, desc_proj FROM projets";
 	//Execution des requetes et production des recordset
 	$ResultActu = mysqli_query($link,$RequeteActu);
 	$ResultProj = mysqli_query($link,$RequeteProj);
@@ -109,11 +109,11 @@ ZAZA & MC
 		{
 			if ($id == $TabActu[$k][0])
 			{
-				echo "<B>".$TabActu[$k][1]."</B> - ".$TabActu[$k][3];
+				echo "<B>".$TabActu[$k][1]."</B> - ".$TabActu[$k][3]."/".$TabActu[$k][4]."/".$TabActu[$k][5];
 				echo "<br/>";
 				echo "<A href = ".$TabActu[$k][2]."> ".$TabActu[$k][2]." </A>";
 				echo "<br/>";
-				echo $TabActu[$k][4];
+				echo $TabActu[$k][6];
 				echo "<br/><br/>";
 				$verif = true;
 			}
@@ -126,11 +126,11 @@ ZAZA & MC
 			{
 				if ($id == $TabProj[$k][0])
 				{
-					echo "<B>".$TabProj[$k][1]."</B> - ".$TabProj[$k][2];
+					echo "<B>".$TabProj[$k][1]."</B> - ".$TabProj[$k][2]."/".$TabActu[$k][3]."/".$TabActu[$k][4];
 					echo "<br/>";
-					echo "Durée : ".$TabProj[$k][3];
+					echo "Durée : ".$TabProj[$k][5];
 					echo "<br/>";
-					echo $TabProj[$k][5];
+					echo $TabProj[$k][7];
 					echo "<br/><br/>";
 					$verif = true;
 				}
