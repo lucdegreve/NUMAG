@@ -10,6 +10,7 @@ ZAZA & MC
 	//Afficher correctement les caractères spéciaux 
 	mysqli_set_charset($link, 'UTF-8');
 ?>
+
 <html>
 
 <head>
@@ -133,20 +134,58 @@ ZAZA & MC
         $tab_inscrits[$i][0]=$identifiant[$i];
         $tab_inscrits[$i][1]=$score[$i];
 	}
-	echo'Tableau trié';
-	echo'<BR/>';
-	var_dump($tab_inscrits); //POUR VERIFIER
+	//echo'Tableau trié';
+	//echo'<BR/>';
+	//var_dump($tab_inscrits); //POUR VERIFIER
 	
 	//Construction de la requête récupérant la table Individus
-	$RequeteIndiv = "SELECT id_actu, titre_actu, url_actu, date_actu, desc_actu FROM Actualites";
-	//Execution des requetes et production des recordset
-	$ResultActu = mysqli_query($link,$RequeteActu);
-	$ResultProj = mysqli_query($link,$RequeteProj);
-	//Traitement des recordset
-	$TabActu = mysqli_fetch_all($ResultActu);
-	$TabProj = mysqli_fetch_all($ResultProj);
+	$RequeteIndiv = "SELECT id_ind, prenom, nom_ind, id_prof FROM Individus";
+	//Execution de la requete et production du recordset
+	$ResultIndiv = mysqli_query($link,$RequeteIndiv);
+	//Traitement du recordset
+	$TabIndiv = mysqli_fetch_all($ResultIndiv);
 	
-	
+	//Programmation de l'envoi de la demande de contact (si on clique sur le bouton 'Ajouter ce contact' --> voir après) 
+	if (@isset($_GET['bt']))
+	{
+		$bt=$_GET['bt'];
+		$IdSugg=$_GET['idcontact'];
+		$query2="INSERT INTO messages_prives (id_dest, id_expe, texte, date_mp, lu) VALUES ($IdSugg, $id_ind_co, 'Ceci est le tout début de votre historique des messages directs', NOW(), 0)";
+		$results2=mysqli_query($link,$query2);
+	}
+	for ($j=0; $j<$NBL; $j++)
+	{
+		$IdSugg = $tab_inscrits[$j][0];
+		$k = 0;
+		$verif = false;
+		while ($k<count($TabIndiv) AND $verif == false)
+		{
+			if ($IdSugg == $TabIndiv[$k][0])
+			{
+				echo "<B>".$TabIndiv[$k][1]." ".$TabIndiv[$k][2]."</B>";
+				echo "<br/>";
+				if ($TabIndiv[$k][3] == 1)
+				{
+					echo "Agriculteur";
+				}
+				else
+				{
+					echo "Etudiant";
+				}
+				echo "<br/>";				
+				//Ajouter en contact (à mettre dans la boucle)
+				echo '<form method="GET">';
+					//On transmet en caché l'id du destinataire et de l'utilisateur connecté
+					echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";
+					echo "<input type='hidden' name='idcontact' value='$IdSugg'>";
+					echo '<input type="submit" value="Ajouter ce contact" name="bt">';
+				echo '</form>';
+				echo "<br/>";
+				$verif = true;
+			}
+			$k++;
+		}
+	}
 	?>
 	<br/><br/>
 	</div>
@@ -157,9 +196,6 @@ ZAZA & MC
 	<br/><br/>
 	
 	<?php
-	//$link=mysqli_connect('localhost', 'root', '', 'racine');
-	//INCLUDE 'Connexion_bdd.php';
-	
 	//Récuperation des scores des actualités ordonnées 
 	//ATTENTION A BIEN RENTRER LE BON ID_IND ET NON PAS L'ID 1
 	$query_SA="SELECT id_actu, SUM(Centres_interet.Compteur) AS Score_actu 
@@ -206,6 +242,7 @@ ZAZA & MC
 		$tab_trie[$i][0]=$identifiant[$i];
 		$tab_trie[$i][1]=$score[$i];
 	}
+	//var_dump($tab_trie);
 	
 	//Construction des requêtes récupérant les tables Actualités et Projets
 	$RequeteActu = "SELECT id_actu, titre_actu, url_actu, date_actu, desc_actu FROM Actualites";
@@ -217,7 +254,6 @@ ZAZA & MC
 	$TabActu = mysqli_fetch_all($ResultActu);
 	$TabProj = mysqli_fetch_all($ResultProj);
 	
-	//var_dump($tab_trie);
 	for ($j=0; $j<$NBL; $j++)
 	{
 		$id = $tab_trie[$j][0];
