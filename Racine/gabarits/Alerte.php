@@ -26,9 +26,9 @@ Bootstrap : Mayeul Duval
 
 
 <?php
-//session-start();
-//$id_ind_co=$_SESSION["id_ind_co"];
-$id_ind_co=2;
+session-start();
+$id_ind_co=$_SESSION["id_ind_co"];
+//$id_ind_co=2;
 
 
 
