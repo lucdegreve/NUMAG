@@ -26,7 +26,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 				</span>
 					<div class="container">
 						<br/>
-						veuillez renseigner vos centres d'interets
+						Veuillez renseigner vos centres d'interets
 						<br/>
 						<br/>
 					</div>
@@ -111,8 +111,70 @@ Des validations sont mises en place grace aux données de bootstrap-->
 											</label>
 									</div>
 								</div>
+<<<<<<< Updated upstream:Racine/gabarits/inscriptionA3.php
 								<input class="btn btn-info" type="submit" value="Enregistrer">
 							</form>
+=======
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Maraichage" >
+										<label class="form-check-label" for="gridCheck">
+										Maraichage
+										</label>
+								</div>
+							</div>
+							<div class="form-group col-md-4">
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Ecologie" >
+										<label class="form-check-label" for="gridCheck">
+										Ecologie
+										</label>
+								</div>
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Oléoprotéagineux" >
+										<label class="form-check-label" for="gridCheck">
+										Oléoprotéagineux
+										</label>
+								</div>
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Viticulture" >
+										<label class="form-check-label" for="gridCheck">
+										Viticulture
+										</label>
+								</div>
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="INRA" >
+										<label class="form-check-label" for="gridCheck">
+										INRA
+										</label>
+								</div>
+							</div>
+							<div class="form-group col-md-4">
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Legumes" >
+										<label class="form-check-label" for="gridCheck">
+										Legumes
+										</label>
+								</div>
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Fraises" >
+										<label class="form-check-label" for="gridCheck">
+										Fraises
+										</label>
+								</div>
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Machinisme" >
+										<label class="form-check-label" for="gridCheck">
+										Machinisme
+										</label>
+								</div>
+								<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="Limousine" >
+										<label class="form-check-label" for="gridCheck">
+										Aubrac
+										</label>
+								</div>
+							</div>
+>>>>>>> Stashed changes:Racine/gabarits/inscriptionA3.html
 						</div>
 					</div>
 			</div>
