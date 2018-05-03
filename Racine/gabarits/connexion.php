@@ -15,8 +15,9 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+	<?php include("Entete-VALIDE.html"); ?>
 	<form action="Alerteconnexion.php" method="GET" name="F1">
-		<?php include("Entete-VALIDE.html"); ?>
+		
 			<br/>
 			<div class="container">
 			<div class="form-group">
@@ -36,6 +37,6 @@ Des validations sont mises en place grace aux données de bootstrap-->
 			<br/>
 			<br/>
 			<br/>
-			<?php include("Pied-VALIDE.html"); ?>
 		</form>
+		<?php include("Pied-VALIDE.html"); ?>
 	</body>
