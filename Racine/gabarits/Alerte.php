@@ -26,16 +26,16 @@ Bootstrap : Mayeul Duval
 
 
 <?php
-session-start();
-$id_ind_co=$_SESSION["id_ind_co"];
-//$id_ind_co=2;
+//session_start();
+//$id_ind_co=$_SESSION["id_ind_co"];
+$id_ind_co=2;
 
 
 
 
-header('Content-Type: text/html; charset=UTF-8');
+header('Content-Type: text/html; charset=UTF-8"');
 #$link=mysqli_connect('localhost','root','numag2018','bdd_racine_beta_27.04.5');
-$link=mysqli_connect('localhost','root','numag2018','bdd_racine_beta_27.04.5');
+include "Connexion_bdd.php";
 //mise en place de la requete
 
 //requete projet
