@@ -106,19 +106,23 @@
                 </div>
               </div>
               <div class="col-lg-6">
+                <?php
+            			$link=mysqli_connect('localhost','root','','bddtest');
+            			$query="SELECT libelle_mot_cle
+            			FROM mots_cles ";
+            			$result=mysqli_query($link,$query);
+            			$Tab=mysqli_fetch_all($result);
+            			$nbligne=mysqli_num_rows($result);
+            			?>
                   <div class="form-group">
                       <label for="exampleSelect2">Choisissez un mot-clef</label>
                       <select multiple class="form-control" name="tag">
-                        <option>Pintades</option>
-                        <option>Orge</option>
-                        <option>Apiculture</option>
-                        <option>Maraichage</option>
-                        <option>Ecologie</option>
-                        <option>Oléoprotéagineux</option>
-                        <option>Viticulture</option>
-                        <option>INRA</option>
-                        <option>Légumes</option>
-                        <option>Fraises</option>
+                        <?php
+                          for ($j=0; $j<$nbligne; $j++)
+                          {
+                            echo "<option>".$Tab[$j][0]."</option>";
+                          }
+                        ?>
                       </select>
                     </div>
                 </div>
