@@ -5,6 +5,9 @@ Cette page est la premiere des trois pages de formulaire d'inscription à rempli
 Des validations sont mises en place grace aux données de bootstrap-->
 
 <!DOCTYPE html>
+
+
+
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -13,8 +16,21 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		<!-- css -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
+		<?PHP 
+		$link = mysqli_connect('localhost','root','','bdd_racine_beta_27.04');
+		$query = "SELECT id_commune,nom_commune FROM communes";
+		$result=mysqli_query($link,$query);
+		$nbligne = mysqli_num_rows($result);
+		$nbcol = mysqli_num_fields($result);
+		
+		$query2 = "SELECT id_dpt,nom_dpt FROM departements";
+		$result2=mysqli_query($link,$query2);
+		$nbligne2 = mysqli_num_rows($result2);
+		$nbcol2 = mysqli_num_fields($result2);
+		?>
 	</head>
 	<body>
+		
 		<?php include("Entete-VALIDE.html"); ?>
 		<br/>
 		<br/>
@@ -23,7 +39,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 				<span style="color: Info;">
 				<div class="card-header">Formulaire d'inscription pour agriculteurs</div>
 				</span>
-				<form>
+				<form action="inscriptionA2.php" method="GET" >
 					<div class="container"> 
 						<div class="form-row">
 							<div class="form-group col-md-6">
@@ -32,13 +48,13 @@ Des validations sont mises en place grace aux données de bootstrap-->
 									  <legend class="col-form-label col-sm-2 pt-0">Civilité</legend>
 									  <div class="col-sm-10">
 										<div class="form-check">
-										  <input class="form-check-input" type="radio" name="civilite" id="monsieur" value="option1" required>
+										  <input class="form-check-input" type="radio" name="civilite" value="M" required>
 										  <label class="form-check-label" for="monsieur">
 											Monsieur
 										  </label>
 										</div>
 										<div class="form-check">
-										  <input class="form-check-input" type="radio" name="civilite" id="madame" value="option2" required>
+										  <input class="form-check-input" type="radio" name="civilite" value="F" required>
 										  <label class="form-check-label" for="madame">
 											Madame
 										  </label>
@@ -54,50 +70,78 @@ Des validations sont mises en place grace aux données de bootstrap-->
 						<div class="form-row">
 							<div class="form-group col-md-4">
 								<label for="inputNom">Nom</label>
-								<input type="text" class="form-control" id="nom_ind" placeholder="Nom" required>
+								<input type="text" class="form-control" name="nom_ind" placeholder="Nom" required>
 							</div>
 							<div class="form-group col-md-4">
 								<label for="inputPrenom">Prenom</label>
-								<input type="text" class="form-control" id="prenom" placeholder="Prenom" required>
+								<input type="text" class="form-control" name="prenom" placeholder="Prenom" required>
 							</div>
 							<div class="form-group col-md-4">
 								<label for="inputDate">Date de naissance</label>
-								<input type="date" class="form-control" id="naissance" placeholder="Date de naissance" required>
+								<input type="date" class="form-control" name="naissance" placeholder="Date de naissance" required>
 							</div>
 						</div>
 					
 					
 					
 						<div class="form-row">
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-4">
 							  <label for="inputEmail">Email</label>
-							  <input type="email" class="form-control" id="mail" placeholder="Email" required>
+							  <input type="email" class="form-control" name="mail" placeholder="Email" required>
 							</div>
 							
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-4">
 							  <label for="inputPassword"> Mot de passe </label>
-							  <input type="password" class="form-control" id="mdp" placeholder="Mot de passe" required>
+							  <input type="password" class="form-control" name="mdp" placeholder="Mot de passe" required>
+							</div>
+							
+							<div class="form-group col-md-4">
+							  <label for="inputPassword"> Telephone </label>
+							  <input type="text" class="form-control" name="tel" placeholder="06xxxxxxxx" required>
 							</div>
 						</div>
 						  
 						<div class="form-group">
 							<label for="inputAdresse">Adresse</label>
-							<input type="text" class="form-control" id="ad_ind" placeholder="Rue, lieu-dit" required>
+							<input type="text" class="form-control" name="ad_ind" placeholder="Rue, lieu-dit" required>
 						</div>
-						<div class="form-group">
-							<label for="inputAdresse2">Adresse 2</label>
-							<input type="text" class="form-control" id="ad_ind2" placeholder="Appartement ou autre" required>
-						</div>
+						
+						
+						
 						<div class="form-row">
-							<div class="form-group col-md-6">
-							  <label for="inputDpt">Département</label>
-							  <input type="text" class="form-control" id="id_dpt" required>
+							<div class="form-group col-md-4">
+								<label for="inputDpt">Département</label>
+								<select class="form-control" name="departement">
+									<?php
+										while($row=mysqli_fetch_array($result2,MYSQLI_BOTH))
+											{
+												$id=$row["id_dpt"];
+												$nom =$row["nom_dpt"];
+												echo "<option> ".$nom." </option>";
+											}	
+									?>
+								</select>
 							</div>
-							<div class="form-group col-md-3">
+							<div class="form-group col-md-4">
+								<label for="inputCommune">Commune</label>
+								<select class="form-control" name="commune">
+									<?php
+										while($row=mysqli_fetch_array($result,MYSQLI_BOTH))
+										{
+											$id=$row["id_commune"];
+											$nom =$row["nom_commune"];
+											echo "<option> ".$nom." </option>";
+										}	
+									?>
+								</select>
+							</div>
+							<div class="form-group col-md-4">
 							  <label for="inputCp">Code postal</label>
-							  <input type="number" class="form-control" id="cp" required>
+							  <input type="number" class="form-control" name="cp" required>
 							</div>
+							
 						</div>
+						  
 						  
 						<div class="form-group">
 							<div class="form-check">
@@ -108,13 +152,13 @@ Des validations sont mises en place grace aux données de bootstrap-->
 							</div>
 							<div class="form-group">
 							<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="gridCheckNews" required>
+								<input class="form-check-input" type="checkbox" id="gridCheckNews" >
 								<label class="form-check-label" for="gridCheckNews">
 								Recevoir les news
 								</label>
 							</div>
 						  </div>
-						  <a href="inscriptionA2.php" class="btn btn-info"> Suite </a>
+						  <input type="submit" class="btn btn-info" value="suite" ></input>
 						</div>
 					</div>
 				</form>
