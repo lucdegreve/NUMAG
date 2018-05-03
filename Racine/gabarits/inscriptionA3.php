@@ -112,7 +112,8 @@ Des validations sont mises en place grace aux données de bootstrap-->
                       </label>
                   </div>
                 </div>
-                <input class="btn btn-info" type="submit" value="Enregistrer">
+				<a href="connexion.php" class="btn btn-info"> Enregistrer </a>
+                <!--  <input class="btn btn-info" type="submit" value="Enregistrer"> -->
               </form>
             </div>
           </div>
