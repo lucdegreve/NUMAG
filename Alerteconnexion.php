@@ -2,8 +2,8 @@
 	session_start();
 	$mail=$_GET["mail"];
 	$mdp=$_GET["mdp"];
-	$url1="http://194.199.251.65/NUMAG/Racine/gabarits/Index.php";
-	$url2="http://194.199.251.65/NUMAG/Racine/gabarits/connexion-inscription.php";
+	$url1="http://localhost/NUMAG/Fonctionnel/accueil_inscrit.php";
+	$url2="http://localhost/NUMAG/Fonctionnel/connexion-inscription.php";
 	$link=mysqli_connect('localhost','root','','racine');
 
 	$query_ind="SELECT id_ind, mail, mdp
