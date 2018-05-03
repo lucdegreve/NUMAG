@@ -1,6 +1,9 @@
+<!-- Cette page met à jour les alertes projet
+Code : Luc Degreve
+
 <?php
 header('Content-Type: text/html; charset=UTF-8');
-$link=mysqli_connect('localhost','root','','bdd_racine_beta_27.04');
+$link=mysqli_connect('localhost','root','numag2018','bdd_racine_beta_27.04.5');
 
 $id_proj=$_GET["idp"];
 $url=$_GET["url"];
@@ -14,3 +17,4 @@ $resultPm=mysqli_query($link, $modifProjet);
 //Ouvre le projet
 header('Location: '.$url);
   exit();
+?>

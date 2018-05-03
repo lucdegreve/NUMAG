@@ -21,14 +21,21 @@ Bootstrap : Mayeul Duval
 <div id="global">
 
 	<!-- Entête -->
-	<?php //include("Entete.html"); ?>
-	<!-- Navigation (Menus) -->
-	<?php //include("DIVNavigation.html"); ?>
+	<?php //include("Entête-VALIDE")?>
+
 
 
 <?php
+session-start();
+$id_ind_co=$_SESSION["id_ind_co"];
+//$id_ind_co=2;
+
+
+
+
 header('Content-Type: text/html; charset=UTF-8');
-$link=mysqli_connect('localhost','root','numag2018','bdd_racine_beta_27.04');
+#$link=mysqli_connect('localhost','root','numag2018','bdd_racine_beta_27.04.5');
+$link=mysqli_connect('localhost','root','numag2018','bdd_racine_beta_27.04.5');
 //mise en place de la requete
 
 //requete projet
@@ -43,9 +50,14 @@ $queryStage="SELECT Alertes_Stage.id_ind, Alertes_Stage.id_st, Alertes_Stage.Dat
 FROM Alertes_Stage, Individus, stages
 where Alertes_Stage.id_ind=Individus.id_ind and stages.id_st=Alertes_Stage.id_st and Alertes_Stage.vu_st=0" ;
 
+//requete message
+$queryMes="SELECT messages_prives.id_expe, messages_prives.id_dest , messages_prives.id_dest, Individus.nom_ind, Individus.prenom, Individus.id_ind, messages_prives.date_mp, messages_prives.lu
+FROM messages_prives, Individus
+where messages_prives.lu=0 and messages_prives.id_dest=$id_ind_co and Individus.id_ind=messages_prives.id_expe";
 
 $resultP=mysqli_query($link, $queryProjet);
 $resultS=mysqli_query($link, $queryStage);
+$resultM=mysqli_query($link, $queryMes);
 ?>
 
 <div class="container-fluid">
@@ -65,7 +77,6 @@ $resultS=mysqli_query($link, $queryStage);
 			<div class="col-lg-8">
 				<div class="jumbotron">
           <h4 class="display-4">Nouvelle alerte</h4>
-          <hr class="my-4">
           <p class="lead">
 						<?php
 						//tableau d'alertes projets
@@ -78,6 +89,7 @@ $resultS=mysqli_query($link, $queryStage);
 							$idp =$row["id_proj"];
 							$url=$row["url_proj"];
 							?>
+          <hr class="my-4">
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-lg-10">
@@ -90,10 +102,9 @@ $resultS=mysqli_query($link, $queryStage);
 									</div>
 								</div>
 							</div>
-							<hr class="my-4">
 							</form>
+						
 						<?php }
-
 						while($row=mysqli_fetch_array($resultS,MYSQLI_BOTH))
 						{
 							echo '<form action=Alertevus.php METHOD=get>';
@@ -103,7 +114,7 @@ $resultS=mysqli_query($link, $queryStage);
 							$ids =$row["id_st"];
 							$url=$row["url_st"];
 						?>
-
+          <hr class="my-4">
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-lg-10">
@@ -118,6 +129,31 @@ $resultS=mysqli_query($link, $queryStage);
 						</div>
 						</form>
 						<?php } ?>
+						
+						<?php
+						//tableau d'alertes message
+						while($row=mysqli_fetch_array($resultM,MYSQLI_BOTH))
+						{
+							echo '<form action=Alertevum.php METHOD=get>';
+							$nom =$row["nom_ind"];
+							$prenom =$row["prenom"];
+							$date =$row["date_mp"];
+							?>
+          <hr class="my-4">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-lg-10">
+										<?php echo $prenom,' ', $nom ,' vous a envoyé un message le ',$date; ?>
+									</div>
+									<div class="col-lg-2">
+										<input TYPE="hidden" name="id_expe" value='.$id_expe.' >
+										<input TYPE="SUBMIT" class="btn btn-info btn-sm center-block" name="voir" value="voir" >
+									</div>
+								</div>
+							</div>
+							<hr class="my-4">
+							</form>
+						<?php } ?>
         </div>
 			</div>
 			<div class="col-lg-2">
@@ -127,7 +163,7 @@ $resultS=mysqli_query($link, $queryStage);
 </div>
 
 	<!-- Pied de page -->
-	<?php //include("Pied_de_page.html"); ?>
+	<?php //include("Pied-VALIDE"); ?>
 
 
 </div><!-- #global -->

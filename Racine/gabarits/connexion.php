@@ -15,23 +15,28 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+	<?php include("Entete-VALIDE.html"); ?>
 	<form action="Alerteconnexion.php" method="GET" name="F1">
-			<br/>
-			<br/>
+		
 			<br/>
 			<div class="container">
 			<div class="form-group">
 					<label for="exampleInputEmail1"> Adresse mail </label>
-					<input type="email" class="form-control" id="mail" name="mail"  aria-describedby="emailHelp" placeholder="entrez email" required>
+					<input type="email" class="form-control" id="mail" name="mail"  aria-describedby="emailHelp" placeholder="Entrez votre email" required>
 					<small id="emailHelp" class="form-text text-muted"> Cette adresse mail est confidentielle </small>
 				</div>
 			<div class="form-group">
 				<label for="exampleInputPassword1"> Mot de passe </label>
-				<input type="password" class="form-control" id="mdp" name="mdp" placeholder="entrez mot de passe" required>
+				<input type="password" class="form-control" id="mdp" name="mdp" placeholder="Entrez votre mot de passe" required>
 				<small id="emailHelp" class="form-text text-muted"> Votre mot de passe doit contenir au moins 5 caractères </small>
 			</div>
 				<input type="submit" class="btn btn-primary" VALUE =" Connexion ">
 				</input>
 			</div>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
 		</form>
+		<?php include("Pied-VALIDE.html"); ?>
 	</body>
