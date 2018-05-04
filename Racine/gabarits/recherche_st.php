@@ -47,7 +47,7 @@
 
   </head>
   <body>
-    <?php include "Entete-VALIDE.html" ?>
+    <?php include "Entete-VALIDE.php" ?>
     <br/>
     <div class="container-fluid">
       <br>
@@ -107,7 +107,7 @@
               </div>
               <div class="col-lg-6">
                 <?php
-            			$link=mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
+            			include "Connexion_bdd.php";
             			$query="SELECT libelle_mot_cle
             			FROM mots_cles ";
             			$result=mysqli_query($link,$query);
