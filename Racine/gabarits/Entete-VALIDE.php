@@ -38,10 +38,10 @@ Bootstrap assure un aspect graphique élégant-->
 					<a class="nav-link" href="accueil_inscrit.php"><p class="text-light">Accueil</p></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="accueil_projet.php"><p class="text-light">Projets</p></a>
+					<a class="nav-link" href="Messagerie_Bootstrap.php"><p class="text-light">Messagerie</p></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="Messagerie_Bootstrap.php"><p class="text-light">Messagerie</p></a>
+					<a class="nav-link" href="accueil_projet.php"><p class="text-light">Projets</p></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="recherche_st.php"><p class="text-light">Stages</p></a>
@@ -52,7 +52,15 @@ Bootstrap assure un aspect graphique élégant-->
 				<li class="nav-item">
 					<a class="nav-link" href="tutoriel.php"><p class="text-light">Tutoriel</p></a>
 				</li>
-
+				<li class="nav-item">
+					<a class="nav-link" href="compte.php"><p class="text-light">Mon compte</p></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="presentation.php"><p class="text-light">Qui sommes nous ?</p></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="contact.php"><p class="text-light">Nous contacter</p></a>
+				</li>
 				<?php
 
 				session_start();
