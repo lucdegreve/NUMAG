@@ -29,7 +29,7 @@ By Manuel, Julien Louet, Marie -->
 
 <?php
 // code php principal récupérant les données du stage
-	$link=mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
+	include 'Connexion_bdd';
 
 	// Recupération du stage sur lequel l'étudiant à cliqué
 	$stage=$_GET["lestage"];
