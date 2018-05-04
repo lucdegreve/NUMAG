@@ -254,9 +254,9 @@
 			<div class="col-lg-2">
 <!-- On définit ici une section 'suggestions' -->
 				<div id="suggestions">
-					<h3>Suggestions</h3>
-					<hr class="my-4">
-						<form>
+						<form class="jumbotron HauteurMaxee">
+							<h3>Suggestions</h3>
+							<hr class="my-4">
 							<div class="form-group">
 								<?php
 								if (@isset($_GET['bt']))
@@ -313,12 +313,14 @@
 <!-- On définit ici une section 'actualites' -->
 			<div class="col-lg-8">
 				<div id="actualites">
-					<h3>Actualites</h3>
-					<hr class="my-4">
-					<form>
+					<form class="jumbotron HauteurMaxee">
+						<h3>Actualites</h3>
+						<hr class="my-4">
 						<div class="form-group">
 							<?php
-							for ($j=0; $j<$NBL; $j++)
+							// code alternatif pour afficher TOUTES les actualites :
+							// for ($j=0; $j<$NBL; $j++)
+							for ($j=0; $j<6; $j++)
 							{
 								$id = $tab_trie[$j][0];
 								$k = 0;
@@ -374,9 +376,9 @@
 <!-- On définit ici une section 'contacts' -->
 			<div class="col-lg-2">
 				<div id="contacts">
-					<h3>Contacts</h3>
-					<hr class="my-4">
-					<form>
+					<form class="jumbotron HauteurMaxee">
+						<h3>Contacts</h3>
+						<hr class="my-4">
 						<div class="form-group">
 							<?php
 							for ($i=0; $i<$NbLignesContacts; $i++)
