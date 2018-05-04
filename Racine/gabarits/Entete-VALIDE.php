@@ -85,13 +85,13 @@ Bootstrap assure un aspect graphique élégant-->
 					$resultm=mysqli_query($link, $queryMessage);
 
 					$nbligp=mysqli_num_rows($resultp);
-					//echo $nbligp;
+					echo $nbligp;
 					$nbligs=mysqli_num_rows($results);
-					//echo $nbligs;
+					echo $nbligs;
 					$nbligm=mysqli_num_rows($resultm);
-					//echo $nbligm;
+					echo $nbligm;
 					$nbligt=$nbligp+$nbligs+$nbligm;
-					//echo $nbligt;
+					echo $nbligt;
 						if ($nbligt==0){
 						// Afficher le bonton standard
 					?>

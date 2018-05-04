@@ -3,8 +3,8 @@
 	session_start();
 	$mail=$_GET["mail"];
 	$mdp=$_GET["mdp"];
-	$url1="http://localhost/NUMAG/Racine/gabarits/accueil_inscrit.php";
-	$url2="http://localhost/NUMAG/Racine/gabarits/connexion-inscription.php";
+	$url1="accueil_inscrit.php";
+	$url2="connexion-inscription.php";
 	include'Connexion_bdd.php';
 
 	$query_ind="SELECT id_ind, mail, mdp

@@ -25,7 +25,7 @@ Bootstrap assure un aspect graphique élégant-->
 			</div>
 
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
