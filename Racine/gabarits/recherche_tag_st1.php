@@ -1,9 +1,11 @@
 <HTML><!--manu .. Création d'un questionnaire qui ira sur le pop up-->
 
-
+<?php include("Entete-VALIDE.php"); ?>
+		<br/>
+		
 <form method="GET" action="test_checkbox.php">
 	<?php
-			$link=mysqli_connect('localhost','root','','bdd_racine');
+			Include("Connexion_bdd.php");
 			$query="SELECT libelle_mot_cle 
 			FROM mots_cles ";
 			$result=mysqli_query($link,$query);
@@ -17,4 +19,10 @@
 			?>
 
 <input type= "submit" name="soumettre" size="10" value="soumettre">
+
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<?php include("Pied-VALIDE.html"); ?>
 </form>

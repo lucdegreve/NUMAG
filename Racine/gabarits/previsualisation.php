@@ -13,7 +13,7 @@ $date=$_GET["date_proj"];
 $sout=1;
 $listetags=array();
 $i=0;
-$link=mysqli_connect('localhost','root','','bdd_racine_beta27.04');
+Include("Connexion_bdd.php");
 	
 	//On récupère les coordonnées de l'agriculteur grâce à l'id_ind_co
 	$query="SELECT individus.id_ind, individus.nom_ind, individus.prenom, individus.tel, individus.mail, communes.nom_commune
