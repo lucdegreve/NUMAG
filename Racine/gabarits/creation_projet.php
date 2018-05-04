@@ -7,7 +7,9 @@
 		<script type="text/javascript">
 	        function open_popup_test()
 	        {{
-	        window.open("recherche_tag_st1.php", "recherche_tag_st", "toolbar=yes", "status=yes", "scrollbars=yes", "resizable=yes", "fullscreen=yes");
+	        window.open("recherche_tag_st1.php", "recherche_tag_st");
+				//	window.open("recherche_tag_st1.php", "recherche_tag_st", "toolbar=yes", "status=yes", "scrollbars=yes", "resizable=yes", "fullscreen=yes");
+
 			}
 	       // window.close();
 			}
@@ -77,7 +79,7 @@
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
-									<input type="text" class="form-control HauteurAuto" name="desc_proj" placeholder="Entrer la description du projet">
+									<textarea type="text" class="form-control" name="desc_proj" rows="9" placeholder="Entrer la description du projet"></textarea>
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control VertMiimosa" name="lien_mimosa" placeholder="Lien Miimosa">
