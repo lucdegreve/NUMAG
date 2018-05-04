@@ -2,7 +2,7 @@
 	session_start();  //Récupérer l'identifiant du compte 
 	$id_ind_co=$_SESSION["id_ind_co"];
 	//Connexion au serveur
-	$link = mysqli_connect('localhost', 'root', '', 'racine');
+	include'Connexion_bdd.php';
 	//Afficher correctement les caractères spéciaux 
 	mysqli_set_charset($link, 'UTF-8');
 ?>

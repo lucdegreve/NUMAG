@@ -5,7 +5,7 @@
 	$mdp=$_GET["mdp"];
 	$url1="http://localhost/NUMAG/Racine/gabarits/accueil_inscrit.php";
 	$url2="http://localhost/NUMAG/Racine/gabarits/connexion-inscription.php";
-	$link=mysqli_connect('localhost','root','','racine');
+	include'Connexion_bdd.php';
 
 	$query_ind="SELECT id_ind, mail, mdp
 		FROM Individus"; 
