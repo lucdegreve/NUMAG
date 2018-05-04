@@ -37,9 +37,7 @@ ZAZA & MC
 	<!-- Ne pas afficher proposition de connexion si déjà connectés -->
 	<?php
 	
-	$id_ind_co=2; //récupération de l'identifiant du connecté
-	
-	//Requête permettant de sortir la liste des inscrits pour les compter
+	//Requête permettant de sortir la liste des inscrits pour les compter	
 	$query_inscrits="SELECT distinct id_ind FROM Centres_interet WHERE id_ind <> ".$id_ind_co."";   
 	$result_inscrits=mysqli_query($link,$query_inscrits);
 	$tab_inscrits=mysqli_fetch_all($result_inscrits);
@@ -49,7 +47,7 @@ ZAZA & MC
 	//echo'<BR/>';
 	//echo'Tableau avec identifiants des inscrits sauf le connecté';
 	//echo'<BR/>';
-	//var_dump($tab_inscrits); //POUR VERIFIER
+	//var_dump($tab_inscrits);//POUR VERIFIER
 	
 	//Requête dans une boucle permettant de sortir les 3 centres d interet principaux par inscrit avec le score correspondant à ceux du connectés
 	//Faire boucle permettant de faire tableau
@@ -61,7 +59,6 @@ ZAZA & MC
 			$tab_selection_profils=mysqli_fetch_all($result_selection_profils);
 			$nblig_selection_profils=mysqli_num_rows($result_selection_profils); 
 			$nbcol_selection_profils=mysqli_num_fields($result_selection_profils); 
-			//echo'<BR/>-';
 			$k=0;
 			//Construction du tableau
 			while($k<$nblig_selection_profils) 
@@ -70,7 +67,6 @@ ZAZA & MC
 				while($j<$nbcol_selection_profils) 
 				{
 					$tab_profils[$pos][$j]=$tab_selection_profils[$k][$j];
-					//echo 'data='.$tab_profils[$pos][$j].'-'; // POUR VERIFIER
 					$j++;
 				}
 				$k++;
@@ -82,7 +78,7 @@ ZAZA & MC
 	//echo'<BR/>';
 	//echo'Tableau avec identifiants, id des mots clé';
 	//echo'<BR/>';
-	//var_dump($tab_profils); //POUR VERIFIER
+	//var_dump($tab_profils);//POUR VERIFIER
 	
 	//Requête sortant la liste des mots clé associés à leurs scores pour l'individu connecté
 	$query_mots_cle_co="SELECT id_ind, id_mot_cle, compteur FROM Centres_interet WHERE id_ind = ".$id_ind_co." ORDER BY compteur DESC";   
@@ -97,14 +93,22 @@ ZAZA & MC
 	
 	$nblig_profils=count($tab_profils);
 	
-	//Comparaison des centres d'intérêt du connecté et des autres inscrits pour faire score par mot clé 
 	for ($j=0;$j<$nblig_mots_cle_co;$j++){
-		for ($k=0;$k<$nblig_profils;$k++){
-			if ($tab_mots_cle_co[$j][1]==$tab_profils[$k][1]){
-				$tab_profils[$k][2]=$tab_mots_cle_co[$j][2];
+		for ($m=0;$m<$nblig_profils;$m++){
+			if ($tab_mots_cle_co[$j][1]==$tab_profils[$m][1]){
+				$tab_profils[$m][2]=$tab_mots_cle_co[$j][2];
+			}
+			else{
+				if (empty($tab_profils[$m][2])){
+					$tab_profils[$m][2]=0;
+				}
+				else{
+				$tab_profils[$m][2]=$tab_profils[$m][2];
+				}
 			}
 		}
-	}	
+	}
+	
 	//echo'Tableau avec identifiants, identifiants des mots clé et scores par mot clé';
 	//echo'<BR/>';	
 	//var_dump($tab_profils); //POUR VERIFIER 
@@ -118,7 +122,7 @@ ZAZA & MC
 
 	//echo'Tableau avec identifiants et scores finaux';
 	//echo'<BR/>';
-	//var_dump($tab_inscrits); //POUR VERIFIER	
+	//var_dump($tab_inscrits); // POUR VERIFIER
 	
 	//Tri du tableau avec les scores finaux pour faire classement 
 	$NBL=count($tab_inscrits);
@@ -136,7 +140,7 @@ ZAZA & MC
 	}
 	//echo'Tableau trié';
 	//echo'<BR/>';
-	//var_dump($tab_inscrits); //POUR VERIFIER
+	//var_dump($tab_inscrits);
 	
 	//Construction de la requête récupérant la table Individus
 	$RequeteIndiv = "SELECT id_ind, prenom, nom_ind, id_prof FROM Individus";
@@ -196,11 +200,10 @@ ZAZA & MC
 	<br/><br/>
 	
 	<?php
-	//Récuperation des scores des actualités ordonnées 
-	//ATTENTION A BIEN RENTRER LE BON ID_IND ET NON PAS L'ID 1
+	//Récuperation des scores des actualités ordonnées
 	$query_SA="SELECT id_actu, SUM(Centres_interet.Compteur) AS Score_actu 
 	FROM Centres_interet, Mots_cles, mot_cle_actu 
-	WHERE Centres_interet.id_ind=1 
+	WHERE Centres_interet.id_ind=".$id_ind_co." 
 	AND Centres_interet.id_mot_cle=Mots_cles.id_mot_cle 
 	AND Mots_cles.id_mot_cle=Mot_cle_actu.id_mot_cle 
 	GROUP BY id_actu 
@@ -212,10 +215,9 @@ ZAZA & MC
 	//var_dump($tab_SA);	
 
 	//Récuperation des scores des projets ordonnés 
-	//ATTENTION A BIEN RENTRER LE BON ID_IND ET NON PAS L'ID 1
 	$query_SP="SELECT id_proj, SUM(Centres_interet.Compteur) AS Score_projet
 	FROM Centres_interet, Mots_cles, mot_cle_projet 
-	WHERE Centres_interet.id_ind=1 
+	WHERE Centres_interet.id_ind=".$id_ind_co."
 	AND Centres_interet.id_mot_cle=Mots_cles.id_mot_cle 
 	AND Mots_cles.id_mot_cle=Mot_cle_projet.id_mot_cle 
 	GROUP BY id_proj
@@ -315,12 +317,11 @@ ZAZA & MC
 	//Afficher correctement les caractères spéciaux 
 	//mysqli_set_charset($link, 'UTF-8');
 	//Construction de la requête récupérant les contacts avec qui le compte a intéragi
-//Insérer le $id_ind_co !!!!!!
 	$RequeteContacts = "SELECT id_autre_ind, prenom, nom_ind, type_msg, date_derniere_interaction 
-	FROM (SELECT CASE WHEN id_dest=1 THEN id_expe ELSE id_dest END as id_autre_ind, 
-	CASE WHEN id_dest=1 THEN 'Message reçu' ELSE 'Message envoyé' END as type_msg, 
+	FROM (SELECT CASE WHEN id_dest=".$id_ind_co." THEN id_expe ELSE id_dest END as id_autre_ind, 
+	CASE WHEN id_dest=".$id_ind_co." THEN 'Message reçu' ELSE 'Message envoyé' END as type_msg, 
 	max(date_mp) as date_derniere_interaction 
-	FROM individus i, messages_prives m WHERE m.id_dest=1 OR m.id_expe=1 
+	FROM individus i, messages_prives m WHERE m.id_dest=".$id_ind_co." OR m.id_expe=".$id_ind_co." 
 	GROUP BY id_autre_ind ORDER BY date_derniere_interaction desc) V1 
 	JOIN individus i ON V1.id_autre_ind=i.id_ind";
 	//Execution de la requete et production du recordset
