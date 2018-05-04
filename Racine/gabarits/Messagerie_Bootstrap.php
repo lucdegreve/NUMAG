@@ -19,9 +19,7 @@
         <h2>Contact</h2>
         <hr class="my-4">
         <?php
-            //$id_ind_co=$_SESSION['id_ind_co'];        //récupère l'identifiant de l'utilisateur connecté
-            $id_ind_co=1;
-            $_SESSION['id_ind_co']=$id_ind_co;
+            $id_ind_co=$_SESSION['id_ind_co'];
 
             Include("connexion_bdd.php");
 
