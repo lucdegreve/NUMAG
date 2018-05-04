@@ -7,7 +7,7 @@ if(isset($_GET['jury'])){ //sera vrai si au moins un checkbox a été coché
 	$_SESSION['tab']=$tab;
 	var_dump($tab);
 }
-echo '<script type="text/javascript">
+echo '<script type="text/javascript">;
     window.close();
     </script>';
 ?>
