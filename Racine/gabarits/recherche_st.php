@@ -56,14 +56,14 @@
         </div>
         <div class="col-lg-10">
           <div class="jumbotron">
-            <h1 class="display-4">Recherchez un stage</h1>
+            <h1 class="display-4">Rechercher un stage</h1>
             <hr class="my-4">
             <br/><br/>
             <form action="Result_Recherche_st.php" method="get">
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label for="exampleSelect1">Choisissez un département</label>
+                    <label for="exampleSelect1">Choisir un département</label>
                     <select class="form-control" name="dpt">
                       <option>Pyrénées Atlantiques</option>
                       <option>Landes</option>
@@ -80,7 +80,7 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="exampleSelect1">Choisissez le mois de début</label>
+                    <label for="exampleSelect1">Choisir le mois de début</label>
                     <select class="form-control" name="mois">
                       <option>Janvier</option>
                       <option>Février</option>
@@ -97,7 +97,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                  <label for="exampleSelect1">Choisissez la période</label>
+                  <label for="exampleSelect1">Choisir la période</label>
                   <select class="form-control" name="periode">
                     <option>6 semaines</option>
                     <option>3 mois</option>
@@ -115,7 +115,7 @@
             			$nbligne=mysqli_num_rows($result);
             			?>
                   <div class="form-group">
-                      <label for="exampleSelect2">Choisissez un mot-clef</label>
+                      <label for="exampleSelect2">Choisir un mot-clef</label>
                       <select multiple class="form-control" name="tag">
                         <?php
                           for ($j=0; $j<$nbligne; $j++)
