@@ -3,7 +3,7 @@
 	$mail=$_GET["mail"];
 	$mdp=$_GET["mdp"];
 	$url1="accueil_inscrit.php";
-	$url2="index.php";
+	$url2="connexion.php";
 	include'Connexion_bdd.php';
 
 	$query_ind="SELECT id_ind, mail, mdp
