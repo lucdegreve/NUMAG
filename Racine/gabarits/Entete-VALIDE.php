@@ -78,7 +78,9 @@ Bootstrap assure un aspect graphique élégant-->
 					//requete stage
 					$queryStage="SELECT Alertes_Stage.vu_st, stages.id_ind
 					FROM Alertes_Stage, stages
-					where Alertes_Stage.vu_st=0 and stages.id_ind=".$id_ind_co;
+					where Alertes_Stage.vu_st=0 
+					and stages.id_st=Alertes_Stage.id_st
+					and stages.id_ind=".$id_ind_co;
 					
 					//requete message
 					$queryMessage="SELECT messages_prives.lu
