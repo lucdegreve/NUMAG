@@ -15,7 +15,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<?php include("Entete-VALIDE.html"); ?>
+		<?php include("Entete-NC.php"); ?>
 		<div class="jumbotron jumbotron-fluid">
 		  <div class="container">
 			<h1 class="display-4">Inscription</h1>

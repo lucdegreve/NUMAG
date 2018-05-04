@@ -22,7 +22,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		?>
 	</head>
 	<body>
-		<?php include("Entete-VALIDE.html"); ?>
+		<?php include("Entete-NC.php"); ?>
 		<br/>
 		<br/>
 		<div class="container">
