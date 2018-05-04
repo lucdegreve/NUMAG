@@ -33,7 +33,7 @@ ZAZA & MC
 	<B>Suggestions</B>
 	<br/><br/>
 	
-	<!-- Ordonner les centres d'intérêt du profil en cours et de tous les autres profils pour pouvoir les comparer et sélectionner les profils apparentés -->
+	<!-- Ordonner les centres d'intérêt du profil en cours et de tous les autres profils pour pouvoir les comparer et sélectionner les profils apparentés-->
 	<!-- Ne pas afficher proposition de connexion si déjà connectés -->
 	<?php
 	
@@ -266,9 +266,9 @@ ZAZA & MC
 			if ($id == $TabActu[$k][0])
 			{
 				$date = $TabActu[$k][3];
-				$jour = substr($date, -11, 2);
-				$mois = substr($date, -14, 2);
-				$annee = substr($date, -19, 4);
+				$jour = substr($date, -2, 2);
+				$mois = substr($date, -5, 2);
+				$annee = substr($date, -10, 4);
 				echo "<B>".$TabActu[$k][1]."</B> - ".$jour."/".$mois."/".$annee;
 				echo "<br/>";
 				echo "<A href = ".$TabActu[$k][2]."> ".$TabActu[$k][2]." </A>";
@@ -287,9 +287,9 @@ ZAZA & MC
 				if ($id == $TabProj[$k][0])
 				{
 					$date = $TabProj[$k][2];
-					$jour = substr($date, -11, 2);
-					$mois = substr($date, -14, 2);
-					$annee = substr($date, -19, 4);
+					$jour = substr($date, -2, 2);
+					$mois = substr($date, -5, 2);
+					$annee = substr($date, -10, 4);
 					echo "<B>".$TabProj[$k][1]."</B> - ".$jour."/".$mois."/".$annee;
 					echo "<br/>";
 					echo "Durée : ".$TabProj[$k][3];
@@ -334,7 +334,12 @@ ZAZA & MC
 	{
 		echo $TabContacts[$i][1]." ".$TabContacts[$i][2];
 		echo "<br/>";
-		echo $TabContacts[$i][3]." - ".$TabContacts[$i][4];
+		$date = $TabContacts[$i][4];
+		$jour = substr($date, -11, 2);
+		$mois = substr($date, -14, 2);
+		$annee = substr($date, -19, 4);
+		$heure = substr($date, -8, 5);
+		echo $TabContacts[$i][3]." le ".$jour."/".$mois."/".$annee." à ".$heure;
 		echo "<br/><br/>";
 	}
 	?>
