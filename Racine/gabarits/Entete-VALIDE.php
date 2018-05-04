@@ -55,9 +55,9 @@ Bootstrap assure un aspect graphique élégant-->
 
 				<?php
 
-				//session_start();
-				//$id_ind_co=$_SESSION["id_ind_co"];
-				$id_ind_co=5;
+				session_start();
+				$id_ind_co=$_SESSION["id_ind_co"];
+
 				
 					header('Content-Type: text/html; charset=UTF-8');
 					include('Connexion_bdd.php');
