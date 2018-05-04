@@ -19,7 +19,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		<div class="jumbotron jumbotron-fluid">
 		  <div class="container">
 			<h1 class="display-4">Inscription</h1>
-			<p class="lead">Inscrivez vous en fonction de votre statut. Etes-vous étudiant ou agriculteur ? </p>
+			<p class="lead">Inscrivez vous en fonction de votre statut. Vous êtes étudiant ou agriculteur ? </p>
 		  </div>
 		</div>
 		<br/>
@@ -29,8 +29,8 @@ Des validations sont mises en place grace aux données de bootstrap-->
 					<div class="form-group col-md-6">
 						<div class="card border-info mb-6" style="max-width: 18rem;">
 							<div class="card-body text-info">
-								<h5 class="card-title">Vous etes agriculteur</h5>
-								<p class="card-text">Accedez au premier réseau social entre agriculteurs. Disposez de multiples informations du monde agricole.</p>
+								<h5 class="card-title">Vous êtes agriculteur</h5>
+								<p class="card-text">Accédez au premier réseau social entre agriculteurs. Disposez de multiples informations du monde agricole.</p>
 								<a href="inscriptionA1.php" class="btn btn-info"> Inscription en tant qu'agriculteur </a>
 							</div>
 						</div>
@@ -39,7 +39,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 					<div class="form-group col-md-6">
 						<div class="card border-danger mb-6" style="max-width: 18rem;">
 							<div class="card-body text-danger">
-								<h5 class="card-title">Vous etes étudiant</h5>
+								<h5 class="card-title">Vous êtes étudiant</h5>
 								<p class="card-text">Découvrez le monde agricole et entrez en contact avec de nombreux agriculteurs. Trouver un stage n'a jamais été aussi simple.</p>
 								<a href="inscriptionE1.php" class="btn btn-danger"> Inscription en tant qu'étudiant </a>
 							</div>
