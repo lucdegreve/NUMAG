@@ -186,13 +186,14 @@
                 $TEXTE=$row['texte'];
                 $DATE=$row['date'];
                 $dest=$row['id_dest'];
-                $query1="UPDATE messages_prives SET lu = '1' WHERE id_mp=$IDMP";
-                $results1=mysqli_query($link,$query1);
                 if ($dest==$id_ind_co){ ?>
                   <div class="col-lg-6">
                     <div class="card" style="width: 18rem;">
                       <div class="card-header">
-                        <?php echo"<h6 class='card-subtitle mb-2 text-muted min-size'><i>".$tab[0][0]." ".$tab[0][1]." - ".$DATE."</i></h6>"; ?>
+                        <?php echo"<h6 class='card-subtitle mb-2 text-muted min-size'><i>".$tab[0][0]." ".$tab[0][1]." - ".$DATE."</i></h6>";
+                            $query1="UPDATE messages_prives SET lu = '1' WHERE id_mp=$IDMP";
+                            $results1=mysqli_query($link,$query1);
+                        ?>
                       </div>
                       <div class="card-body">
                         <p class="card-text"><?php echo"$TEXTE"; ?></p>
