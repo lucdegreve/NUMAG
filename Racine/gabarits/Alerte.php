@@ -39,16 +39,16 @@ include "Connexion_bdd.php";
 //mise en place de la requete
 
 //requete projet
-$queryProjet="SELECT Alertes_Projet.id_ind, Alertes_Projet.id_proj, Alertes_Projet.Date_Alp, Individus.nom_ind, Individus.prenom, Individus.id_ind, projets.id_proj, projets.titre_proj, Alertes_Projet.vu_proj, projets.url_proj
+$queryProjet="SELECT Alertes_Projet.id_ind, Alertes_Projet.id_proj, Alertes_Projet.Date_Alp, Individus.nom_ind, Individus.prenom, Individus.id_ind, projets.id_proj, projets.id_ind, projets.titre_proj, Alertes_Projet.vu_proj, projets.url_proj
 FROM Alertes_Projet, Individus, projets
-where Alertes_Projet.id_ind=Individus.id_ind and Alertes_Projet.id_ind=$id_ind_co  and projets.id_proj=Alertes_Projet.id_proj and Alertes_Projet.vu_proj=0";
+where Alertes_Projet.id_ind=Individus.id_ind and projets.id_ind=$id_ind_co  and projets.id_proj=Alertes_Projet.id_proj and Alertes_Projet.vu_proj=0";
 
 
 
 //requete stage
 $queryStage="SELECT Alertes_Stage.id_ind, Alertes_Stage.id_st, Alertes_Stage.Date_Als, Individus.nom_ind, Individus.prenom, Individus.id_ind, stages.id_st, stages.titre_st, Alertes_Stage.vu_st, stages.url_st
 FROM Alertes_Stage, Individus, stages
-where Alertes_Stage.id_ind=Individus.id_ind and Alertes_Stage.id_ind=$id_ind_co and stages.id_st=Alertes_Stage.id_st and Alertes_Stage.vu_st=0" ;
+where Alertes_Stage.id_ind=Individus.id_ind and stages.id_ind=$id_ind_co and stages.id_st=Alertes_Stage.id_st and Alertes_Stage.vu_st=0" ;
 
 //requete message
 $queryMes="SELECT messages_prives.id_expe, messages_prives.id_dest , messages_prives.id_dest, Individus.nom_ind, Individus.prenom, Individus.id_ind, messages_prives.date_mp, messages_prives.lu
