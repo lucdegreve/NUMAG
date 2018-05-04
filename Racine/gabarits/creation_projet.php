@@ -66,7 +66,7 @@
 	Date de publication
 	</td></tr>
 	<tr><td>
-	<INPUT TYPE='TEXT' name='date_proj'>
+	<INPUT TYPE='date' name='date_proj'>
 	</td></tr>
 	</table>
 	 
