@@ -58,9 +58,6 @@ Bootstrap assure un aspect graphique élégant-->
 				<li class="nav-item">
 					<a class="nav-link" href="presentation.php"><p class="text-light">Qui sommes nous ?</p></a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="contact.php"><p class="text-light">Nous contacter</p></a>
-				</li>
 				<?php
 
 				session_start();
