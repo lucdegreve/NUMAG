@@ -158,25 +158,26 @@ By Manuel, Julien Louet, Marie -->
 			<div class="jumbotron HauteurMax">
 				<h3>Contact</h3>
 				<hr class="my-4">
-				<form>
+				<form action="messagerie.php" method="get">
+          <!-- Création d'un formulaire renvoyant nom et prénom de l'offreur de stage, et d'un bouton
+          envoyant vers la page messagerie.php (prise de contact avec l'agriculteur) -->
 						<div class="form-group">
 							<?php
 								echo '<label for="exampleSelect1"><u> Nom : </u></label>';
 								echo '</br>';
-								echo '<label for="exampleSelect1">'.$Tabcontact[0][1].'</label>';
+								echo '<label for="exampleSelect1" name="Nom">'.$Tabcontact[0][1].'</label>';
 							echo '</div>';
 							echo '<div class="form-group">';
 								echo '<label for="exampleSelect1"><u> Prénom : </u></label>';
 								echo '</br>';
-								echo '<label for="exampleSelect1">'.$Tabcontact[0][2].'</label>';
+								echo '<label for="exampleSelect1" name="Prenom">'.$Tabcontact[0][2].'</label>';
 							echo '</div>';
 							echo '<div class="form-group">';
 								echo "<label for='exampleSelect1'><u> Postuler à l'offre : </u></label>";
 								echo '</br>';
-								echo "<a href = 'messagerie.php' > Envoyer un message à l agriculteur </a>";
+                echo '<input type="submit" class="btn btn-outline-info btn-lg" value="Postuler"></input>';
 							echo '</div>';
 							?>
-
 			</div>
 		</div>
 	</div>
