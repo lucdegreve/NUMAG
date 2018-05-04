@@ -1,6 +1,6 @@
 <!-- Code effectué par Clément Turbillier -->
 <!-- Ce code est fait en exploitant les possibilités de Bootstrap, il s'agit de la page de connexion inscription du site
-les containers et containers fluids structurent la page d'inscription 
+les containers et containers fluids structurent la page d'inscription
 Cette page apparait sur la page d'acceuil.
 L'utilisateur habitué pourra donc se connecter et le nouveau pourra s'inscrire
 Des validations sont mises en place grace aux données de bootstrap-->
@@ -10,20 +10,20 @@ Des validations sont mises en place grace aux données de bootstrap-->
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title> Bootstrap tutoriel </title>
-		
+		<title> Acceuil RACINE </title>
+
 		<!-- css -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<?php include("Entete-VALIDE.html"); ?>
+		<?php include("Entete-VALIDE.php"); ?>
 		<div class="jumbotron">
 			<h1 class="display-4">Bienvenue sur Racine!</h1>
 			<p class="lead"> Le premier réseau social entre agriculteurs </p>
 			<hr class="my-4">
 			<p>Connectez vous avec de multiples acteurs du monde agricole, que vous soyez étudiant ou professionnel</p>
-			
+
 			<div class="row">
 				<div class="col-md-2">
 					<a class="btn btn-info btn-lg" href="connexion.php" role="button"> Connexion </a>
@@ -65,4 +65,3 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		<?php include("Pied-VALIDE.html"); ?>
 	</body>
 </html>
-		
