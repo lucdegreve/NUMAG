@@ -23,7 +23,7 @@
             $id_ind_co=1;
             $_SESSION['id_ind_co']=$id_ind_co;
 
-            $link=mysqli_connect('localhost', 'root', '','bddtest');
+            $link=mysqli_connect('localhost', 'root', '','bdd_racine_beta_27.04.5');
             //include "localhost/NUMAG/Connexion_bdd.php";
 
             //Si rien n'est entré dans la barre de recherche
@@ -102,7 +102,7 @@
                             echo "<form action='' method='GET' name='form3'>";
                                 echo "<input type='hidden' name='idcontact' value=".$CONTACT.">";
                                 echo "<li><input type='submit' class='list-group-item list-group-item-action' name='submitcontact' value='$PRENOM $NOM'></li>";
-                                
+
                                 //Si on a un msg non lu de la part de ce contact alors on met une image ?
                                 /*if ($lecture==0)
                                 {
@@ -139,7 +139,7 @@
         if (@isset($_GET['idcontact'])){
           $contact=$_GET['idcontact'];
         }
-        $link=mysqli_connect('localhost', 'root', '','bddtest');
+        $link=mysqli_connect('localhost', 'root', '','bdd_racine_beta_27.04.5');
         //include "localhost/NUMAG/Connexion_bdd.php";
 
         if (@isset($_GET['bt']))
@@ -164,9 +164,7 @@
           GROUP BY id_mp
           ORDER BY messages_prives.date_mp";
           $results=mysqli_query($link,$query);
-          echo $contact;
           $query3="SELECT prenom, nom_ind FROM individus WHERE id_ind=".$contact;
-          echo $query3;
           $results3=mysqli_query($link,$query3);
           $tab=mysqli_fetch_all($results3);
         }
@@ -176,7 +174,6 @@
         <div class='container-fluid'><?php
           if (!empty($contact))
           {
-            echo $contact." 178";
           ?>
             <div class="row">
               <?php
