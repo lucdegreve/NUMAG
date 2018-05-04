@@ -32,6 +32,9 @@ Bootstrap assure un aspect graphique élégant-->
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<li class="nav-item">
+					<a class="btn btn-danger" href="deconnexion.php">Déconnection</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="accueil_inscrit.php"><p class="text-light">Accueil</p></a>
 				</li>
 				<li class="nav-item">
