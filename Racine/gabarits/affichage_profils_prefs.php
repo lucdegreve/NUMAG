@@ -14,7 +14,7 @@
 	//connexion à la base de données
 	//include("Connexion_bdd.php");   COMMENTAIRE A ENLEVER
 	$link=mysqli_connect('localhost','root','','racine');
-	
+
 	$id_ind_co=2; //récupération de l'identifiant du connecté
 	
 	//requête permettant de sortir la liste des inscrits pour les compter
@@ -40,7 +40,6 @@
 			$tab_selection_profils=mysqli_fetch_all($result_selection_profils);
 			$nblig_selection_profils=mysqli_num_rows($result_selection_profils); 
 			$nbcol_selection_profils=mysqli_num_fields($result_selection_profils); 
-			echo'<BR/>-';
 			$k=0;
 			// construction du tableau
 			while($k<$nblig_selection_profils) 
@@ -49,7 +48,6 @@
 				while($j<$nbcol_selection_profils) 
 				{
 					$tab_profils[$pos][$j]=$tab_selection_profils[$k][$j];
-					echo 'data='.$tab_profils[$pos][$j].'-'; // POUR VERIFIER
 					$j++;
 				}
 				$k++;
@@ -77,14 +75,23 @@
 	
 	$nblig_profils=count($tab_profils);
 	
-	//comparaison des centres d'intérêt du connecté et des autres inscrits pour faire score par mot clé 
 	for ($j=0;$j<$nblig_mots_cle_co;$j++){
-		for ($k=0;$k<$nblig_profils;$k++){
-			if ($tab_mots_cle_co[$j][1]==$tab_profils[$k][1]){
-				$tab_profils[$k][2]=$tab_mots_cle_co[$j][2];
+		for ($m=0;$m<$nblig_profils;$m++){
+			if ($tab_mots_cle_co[$j][1]==$tab_profils[$m][1]){
+				$tab_profils[$m][2]=$tab_mots_cle_co[$j][2];
+			}
+			else{
+				if (empty($tab_profils[$m][2])){
+					$tab_profils[$m][2]=0;
+				}
+				else{
+				$tab_profils[$m][2]=$tab_profils[$m][2];
+				}
 			}
 		}
-	}	
+	}
+	
+	
 	echo'Tableau avec identifiants, identifiants des mots clé et scores par mot clé';
 	echo'<BR/>';	
 	var_dump($tab_profils); //POUR VERIFIER 
