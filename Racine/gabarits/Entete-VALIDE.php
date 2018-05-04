@@ -52,7 +52,7 @@ Bootstrap assure un aspect graphique élégant-->
 
 				<?php
 					header('Content-Type: text/html; charset=UTF-8');
-					$link=mysqli_connect('localhost','root','numag2018','bdd_racine_beta_27.04.5');
+					include'Connexion_bdd.php';
 					//mise en place de la requete
 
 					//requete projet
