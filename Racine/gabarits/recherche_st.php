@@ -107,7 +107,7 @@
               </div>
               <div class="col-lg-6">
                 <?php
-            			$link=mysqli_connect('localhost','root','','bddtest');
+            			$link=mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
             			$query="SELECT libelle_mot_cle
             			FROM mots_cles ";
             			$result=mysqli_query($link,$query);
