@@ -16,8 +16,9 @@ Des validations sont mises en place grace aux données de bootstrap-->
 	</head>
 	<body>
 		<?php
-		include("Entete-NC.php");
-		$link = mysqli_connect('localhost','root','','bdd_racine_beta_27.04');
+		include("Entete-VALIDE.php");
+		//$link = mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
+                $link = mysqli_connect('localhost','root','root','BDD');
 		$civilite=$_GET['civilite'];
 		$nom_ind=$_GET['nom_ind'];
 		$prenom=$_GET['prenom'];
@@ -26,14 +27,12 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		$mdp=$_GET['mdp'];
 		$tel=$_GET['tel'];
 		$ad_ind=$_GET['ad_ind'];
-		$departement=$_GET['departement'];
-		$commune=$_GET['commune'];
-		$q_comm="SELECT id_commune FROM communes WHERE nom_commune=".$commune."";
-		$r_comm=mysqli_query($link,$q_comm);
-		$t_comm=mysqli_fetch_all($link,$r_comm);
-		$commune=$t_comm[0][0];
-		echo $commune;
-		$cp=$_GET['cp'];
+		$idcommune=$_GET['commune'];
+		$query="INSERT INTO individus(id_prof, id_commune, nom_ind, prenom, civilite, naissance, ad_ind, tel, mail, mdp)
+                VALUES (1, $idcommune, '$nom_ind', '$prenom', '$civilite', '$naissance', '$ad_ind', '$tel', '$mail', '$mdp')";
+		$result=mysqli_query($link,$query);
+                //Récupération de l'id individus crée
+                $id_ind=mysqli_insert_id($link);
 		?>
 		<br/>
 		<BR/>
@@ -42,80 +41,91 @@ Des validations sont mises en place grace aux données de bootstrap-->
 				<span style="color: info;">
 				<div class="card-header">Formulaire d'inscription pour agriculteurs</div>
 				</span>
-				<form>
+				<form action="inscriptionA2bis.php" method="GET">
 					<div class="container"> 
 						<div class="form-row">
 							<div class="form-group col-md-7">
 								<label for="inputExploit">Nom de l'exploitation</label>
-								<input type="text" class="form-control" id="nom_exp" placeholder="Nom de l'exploitation" required>
+								<input type="text" class="form-control" name="nom_exp" placeholder="Nom de l'exploitation" required>
 							</div>
 							<div class="form-group col-md-5">
 								<label for="inputSIRENE">SIRENE</label>
-								<input type="text" class="form-control" id="sirene" placeholder="numero sirene" required>
+								<input type="text" class="form-control" name="sirene" placeholder="numero sirene" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputAdresse">Type de production</label>
-							<input type="text" class="form-control" id="libel_type_prod" placeholder="ferme laitière ou autre" required>
+							<input type="text" class="form-control" name="libel_type_prod" placeholder="ferme laitière ou autre" required>
 						</div>
 						<div class="form-group">
 							<label for="inputAdresse">Description de l'exploitation</label>
-							<input type="text" class="form-control" id="desc_exp" placeholder="ferme laitière avec atelier de transformation " required>
+							<input type="text" class="form-control" name="desc_exp" placeholder="ferme laitière avec atelier de transformation " required>
 						</div>
 						<div class="form-group">
 							<label for="inputAdresse">Adresse de l'exploitation</label>
-							<input type="text" class="form-control" id="ad_exp" placeholder="Rue, lieu-dit" required>
+							<input type="text" class="form-control" name="ad_exp" placeholder="Rue, lieu-dit" required>
 						</div>
+                                                
+                                                <?php echo'<input type="hidden" name="id_ind" value='.$id_ind.'>';?>
 						
 						<?PHP 
-						$link = mysqli_connect('localhost','root','','bdd_racine_beta_27.04');
-						$query = "SELECT id_commune,nom_commune FROM communes";
-						$result=mysqli_query($link,$query);
-						$nbligne = mysqli_num_rows($result);
-						$nbcol = mysqli_num_fields($result);
+						/*$query1 = "SELECT id_commune,nom_commune FROM communes";
+						$result1=mysqli_query($link,$query1);
+						$nbligne1 = mysqli_num_rows($result1);
+						$nbcol1 = mysqli_num_fields($result1);
 						
 						$query2 = "SELECT id_dpt,nom_dpt FROM departements";
 						$result2=mysqli_query($link,$query2);
 						$nbligne2 = mysqli_num_rows($result2);
-						$nbcol2 = mysqli_num_fields($result2);
+						$nbcol2 = mysqli_num_fields($result2);*/
+                                                
+                                                $query1 = "SELECT id_commune, nom_commune, cp, communes.id_dpt, nom_dpt FROM communes
+                                                JOIN departements ON departements.id_dpt = communes.id_dpt ORDER BY nom_commune";
+                                                $result1=mysqli_query($link,$query1);
+                                                $nbligne = mysqli_num_rows($result1);
+                                                $nbcol = mysqli_num_fields($result1);
+                                                
+                                                $row=mysqli_fetch_array($result1,MYSQLI_BOTH);
+                                                $nom_commune=$row['nom_commune'];
+                                                $nom_dpt=$row['nom_dpt'];
+                                                $id_dpt=$row['id_dpt'];
+                                                $cp=$row['cp'];
 						?>
 						<div class="form-row">
 							<div class="form-group col-md-4">
+								<label for="inputCommune">Commune</label>
+								<select class="form-control" name="commune_exp">
+									<?php
+										while($row=mysqli_fetch_array($result1,MYSQLI_BOTH))
+										{
+											$id=$row["id_commune"];
+											$nom =$row["nom_commune"];
+											echo "<option value=$id>$nom</option>";
+										}	
+									?>
+								</select>
+							</div>
+							<!--<div class="form-group col-md-4">
 								<label for="inputDpt">Département</label>
 								<select class="form-control" name="dpt_exp">
-									<?php
+									<?php/*
 										while($row=mysqli_fetch_array($result2,MYSQLI_BOTH))
 											{
 												$id=$row["id_dpt"];
 												$nom =$row["nom_dpt"];
 												echo "<option> ".$nom." </option>";
-											}	
-									?>
-								</select>
-							</div>
-							<div class="form-group col-md-4">
-								<label for="inputCommune">Commune</label>
-								<select class="form-control" name="commune_exp">
-									<?php
-										while($row=mysqli_fetch_array($result,MYSQLI_BOTH))
-										{
-											$id=$row["id_commune"];
-											$nom =$row["nom_commune"];
-											echo "<option> ".$nom." </option>";
-										}	
+											}*/	
 									?>
 								</select>
 							</div>
 							<div class="form-group col-md-4">
 							  <label for="inputCp">Code postal</label>
-							  <input type="number" class="form-control" id="cp_exp" required>
-							</div>
+							  <input type="number" class="form-control" name="cp_exp" required>
+							</div>-->
 							
 						</div>
 						
-						<div class="form-group">
-							<a href="inscriptionA3.php" class="btn btn-info"> Suite </a>
-						</div>
+						<input type="submit" class="btn btn-info" value="Suite" ></input>
 					</div>
 				</form>
 			</div>

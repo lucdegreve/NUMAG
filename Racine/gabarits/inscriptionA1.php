@@ -17,21 +17,31 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
 		<?PHP 
-		$link = mysqli_connect('localhost','root','','bdd_racine_beta_27.04');
-		$query = "SELECT id_commune,nom_commune FROM communes";
+		//$link = mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
+                $link = mysqli_connect('localhost','root','root','BDD');
+		/*$query = "SELECT id_commune,nom_commune FROM communes";
+		$result=mysqli_query($link,$query);
+		$nbligne = mysqli_num_rows($result);
+		$nbcol = mysqli_num_fields($result);*/
+                
+                $query = "SELECT id_commune,nom_commune, cp, communes.id_dpt, nom_dpt FROM communes
+                JOIN departements ON departements.id_dpt = communes.id_dpt ORDER BY nom_commune";
 		$result=mysqli_query($link,$query);
 		$nbligne = mysqli_num_rows($result);
 		$nbcol = mysqli_num_fields($result);
-		
-		$query2 = "SELECT id_dpt,nom_dpt FROM departements";
+                
+                /*$query2 = "SELECT communes.id_dpt, cp, nom_dpt FROM communes
+                JOIN departements ON departements.id_dpt = communes.id_dpt
+                WHERE id_commune = $idcommune";
 		$result2=mysqli_query($link,$query2);
 		$nbligne2 = mysqli_num_rows($result2);
-		$nbcol2 = mysqli_num_fields($result2);
+		$nbcol2 = mysqli_num_fields($result2);*/
+                
 		?>
 	</head>
 	<body>
 		
-		<?php include("Entete-NC.php"); ?>
+		<?php include("Entete-VALIDE.php"); ?>
 		<br/>
 		<br/>
 		<div class="container">
@@ -39,7 +49,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 				<span style="color: Info;">
 				<div class="card-header">Formulaire d'inscription pour agriculteurs</div>
 				</span>
-				<form action="inscriptionA2.php" method="GET" >
+				<form action="inscriptionA1bis.php" method="GET" >
 					<div class="container"> 
 						<div class="form-row">
 							<div class="form-group col-md-6">
@@ -54,7 +64,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 										  </label>
 										</div>
 										<div class="form-check">
-										  <input class="form-check-input" type="radio" name="civilite" value="F" required>
+										  <input class="form-check-input" type="radio" name="civilite" value="Mme" required>
 										  <label class="form-check-label" for="madame">
 											Madame
 										  </label>
@@ -110,40 +120,49 @@ Des validations sont mises en place grace aux données de bootstrap-->
 						
 						<div class="form-row">
 							<div class="form-group col-md-4">
-								<label for="inputDpt">Département</label>
-								<select class="form-control" name="departement">
-									<?php
-										while($row=mysqli_fetch_array($result2,MYSQLI_BOTH))
-											{
-												$id=$row["id_dpt"];
-												$nom =$row["nom_dpt"];
-												echo "<option> ".$nom." </option>";
-											}	
-									?>
-								</select>
-							</div>
-							<div class="form-group col-md-4">
 								<label for="inputCommune">Commune</label>
 								<select class="form-control" name="commune">
 									<?php
 										while($row=mysqli_fetch_array($result,MYSQLI_BOTH))
-										{
-											$id=$row["id_commune"];
-											$nom =$row["nom_commune"];
-											echo "<option> ".$nom." </option>";
-										}	
+                                                                                        {
+                                                                                                $id=$row["id_commune"];
+                                                                                                $nom =$row["nom_commune"];
+                                                                                                echo "<option value='$id'> ".$nom." </option>";
+                                                                                        }	
+                                                                                ?>
+								</select>
+							</div>
+							<!--<div class="form-group col-md-4">
+								<label for="inputDpt">Département</label>
+								<select class="form-control" name="departement">
+									<?php/*
+                                                                                while($row=mysqli_fetch_array($result2,MYSQLI_BOTH))
+                                                                                        {
+                                                                                                $id=$row["id_dpt"];
+                                                                                                $nom =$row["nom_dpt"];
+                                                                                                $idcommune=$_GET['commune'];
+                                                                                                if ($row["id_commune"]==$idcommune)
+                                                                                                {
+                                                                                                    echo "<option selected> ".$nom." </option>";
+                                                                                                }
+                                                                                                else
+                                                                                                {
+                                                                                                    echo "<option> ".$nom." </option>";
+                                                                                                }
+                                                                                        }*/
+                                                                                        //ajouter nouvelle page A1bis
 									?>
 								</select>
 							</div>
 							<div class="form-group col-md-4">
 							  <label for="inputCp">Code postal</label>
 							  <input type="number" class="form-control" name="cp" required>
-							</div>
+							</div>-->
 							
 						</div>
 						  
 						  
-						<div class="form-group">
+						<!--<div class="form-group">
 							<div class="form-check">
 								<input class="form-check-input" type="checkbox" id="gridCheck" required>
 								<label class="form-check-label" for="gridCheck">
@@ -157,8 +176,8 @@ Des validations sont mises en place grace aux données de bootstrap-->
 								Recevoir les news
 								</label>
 							</div>
-						  </div>
-						  <input type="submit" class="btn btn-info" value="suite" ></input>
+						  </div>-->
+						  <input type="submit" class="btn btn-info" value="Suite" ></input>
 						</div>
 					</div>
 				</form>

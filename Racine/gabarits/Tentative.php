@@ -23,3 +23,14 @@ Bootstrap assure un aspect graphique élégant-->
 		</li> 
 	</body>
 </HTML>
+
+<?php
+$id_ind=$_POST['id_ind'];
+//$link = mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
+$link = mysqli_connect('localhost','root','root','BDD');
+foreach($_POST['centre'] as $centre)
+{
+    $query="INSERT INTO centres_interet (id_ind, id_mot_cle)
+    VALUES ($id_ind, $id_type_prod)";
+    $result=mysqli_query($link,$query);
+}
