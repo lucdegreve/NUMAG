@@ -1,6 +1,6 @@
 <?php
 	session_start();  //Récupérer l'identifiant du compte
-	$id_ind_co=$_SESSION["id_ind_co"];
+//	$id_ind_co=$_SESSION["id_ind_co"];
 	//Connexion au serveur
 	include'Connexion_bdd.php';
 	//Afficher correctement les caractères spéciaux
@@ -11,8 +11,6 @@
 
 <head>
 	<?php Include("Entete-VALIDE.php");?>
-	<br/>
-	<br/>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>
 		Accueil
@@ -25,27 +23,17 @@
 	<!-- DIV Entête-->
 
 
-
-
-
-
-
-
 	<!-- Ordonner les centres d'intérêt du profil en cours et de tous les autres profils pour pouvoir les comparer et sélectionner les profils apparentés-->
 	<!-- Ne pas afficher proposition de connexion si déjà connectés -->
+
 	<?php
-	$id_ind_co=3;
+	$id_ind_co=1;
 	//Requête permettant de sortir la liste des inscrits pour les compter
 	$query_inscrits="SELECT distinct id_ind FROM Centres_interet WHERE id_ind <>".$id_ind_co;
 	$result_inscrits=mysqli_query($link,$query_inscrits);
 	$tab_inscrits=mysqli_fetch_all($result_inscrits);
 	$nblig_inscrits=mysqli_num_rows($result_inscrits); //Donne le nombre d'identifiants différents = nombre d'inscrits sur la plateforme
 	$nbcol_inscrits=mysqli_num_fields($result_inscrits);
-
-	//echo'<BR/>';
-	//echo'Tableau avec identifiants des inscrits sauf le connecté';
-	//echo'<BR/>';
-	//var_dump($tab_inscrits);//POUR VERIFIER
 
 	//Requête dans une boucle permettant de sortir les 3 centres d interet principaux par inscrit avec le score correspondant à ceux du connectés
 	//Faire boucle permettant de faire tableau
@@ -73,10 +61,6 @@
 		}
 	}
 
-	//echo'<BR/>';
-	//echo'Tableau avec identifiants, id des mots clé';
-	//echo'<BR/>';
-	//var_dump($tab_profils);//POUR VERIFIER
 
 	//Requête sortant la liste des mots clé associés à leurs scores pour l'individu connecté
 	$query_mots_cle_co="SELECT id_ind, id_mot_cle, compteur FROM Centres_interet WHERE id_ind = ".$id_ind_co." ORDER BY compteur DESC";
@@ -85,9 +69,6 @@
 	$nblig_mots_cle_co=mysqli_num_rows($result_mots_cle_co);
 	$nbcol_mots_cle_co=mysqli_num_fields($result_mots_cle_co);
 
-	//echo'Tableau de mes mots clé';
-	//echo'<BR/>';
-	//var_dump($tab_mots_cle_co); //POUR VERIFIER
 
 	$nblig_profils=count($tab_profils);
 
@@ -107,9 +88,6 @@
 		}
 	}
 
-	//echo'Tableau avec identifiants, identifiants des mots clé et scores par mot clé';
-	//echo'<BR/>';
-	//var_dump($tab_profils); //POUR VERIFIER
 
 	//Faire somme des scores par individu pour faire score total
 	$c=0;
@@ -118,9 +96,6 @@
 		$c++;
 	}
 
-	//echo'Tableau avec identifiants et scores finaux';
-	//echo'<BR/>';
-	//var_dump($tab_inscrits); // POUR VERIFIER
 
 	//Tri du tableau avec les scores finaux pour faire classement
 	$NBL=count($tab_inscrits);
@@ -136,9 +111,7 @@
         $tab_inscrits[$i][0]=$identifiant[$i];
         $tab_inscrits[$i][1]=$score[$i];
 	}
-	//echo'Tableau trié';
-	//echo'<BR/>';
-	//var_dump($tab_inscrits);
+
 
 	//Construction de la requête récupérant la table Individus
 	$RequeteIndiv = "SELECT id_ind, prenom, nom_ind, id_prof FROM Individus";
@@ -146,14 +119,7 @@
 	$ResultIndiv = mysqli_query($link,$RequeteIndiv);
 	//Traitement du recordset
 	$TabIndiv = mysqli_fetch_all($ResultIndiv);
-?>
 
-
-
-
-
-
-	<?php
 	//Récuperation des scores des actualités ordonnées
 	$query_SA="SELECT id_actu, SUM(Centres_interet.Compteur) AS Score_actu
 	FROM Centres_interet, Mots_cles, mot_cle_actu
@@ -166,7 +132,6 @@
 	$tab_SA=mysqli_fetch_all($result_SA);
 	$nblig_SA=mysqli_num_rows($result_SA);
 	$nbcol_SA=mysqli_num_fields($result_SA);
-	//var_dump($tab_SA);
 
 	//Récuperation des scores des projets ordonnés
 	$query_SP="SELECT id_proj, SUM(Centres_interet.Compteur) AS Score_projet
@@ -180,12 +145,9 @@
 	$tab_SP=mysqli_fetch_all($result_SP);
 	$nblig_SP=mysqli_num_rows($result_SP);
 	$nbcol_SP=mysqli_num_fields($result_SP);
-	//var_dump($tab_SP);
 
 	//Concaténer actu et projets
 	$tab_tot=array_merge($tab_SA, $tab_SP);
-	//var_dump($tab_tot);
-
 	$NBL=count($tab_tot);
 	for ($i=0; $i<$NBL; $i++)
 	{
@@ -198,7 +160,6 @@
 		$tab_trie[$i][0]=$identifiant[$i];
 		$tab_trie[$i][1]=$score[$i];
 	}
-	//var_dump($tab_trie);
 
 	//Construction des requêtes récupérant les tables Actualités et Projets
 	$RequeteActu = "SELECT id_actu, titre_actu, url_actu, date_actu, desc_actu FROM Actualites";
@@ -209,26 +170,6 @@
 	//Traitement des recordset
 	$TabActu = mysqli_fetch_all($ResultActu);
 	$TabProj = mysqli_fetch_all($ResultProj);
-
-?>
-
-
-
-
-
-
-
-
-
-
-
-
-	<!-- Passage au codage PHP -->
-	<?php
-	//Connexion au serveur
-	//$link = mysqli_connect('localhost', 'root', '', 'racine');
-	//Afficher correctement les caractères spéciaux
-	//mysqli_set_charset($link, 'UTF-8');
 	//Construction de la requête récupérant les contacts avec qui le compte a intéragi
 	$RequeteContacts = "SELECT id_autre_ind, prenom, nom_ind, type_msg, date_derniere_interaction
 	FROM (SELECT CASE WHEN id_dest=".$id_ind_co." THEN id_expe ELSE id_dest END as id_autre_ind,
@@ -242,10 +183,7 @@
 	//Traitement du recordset
 	$TabContacts = mysqli_fetch_all($ResultContacts);
 	$NbLignesContacts=mysqli_num_rows($ResultContacts);
-
-
 	?>
-
 
 	<br>
 	<div class="container-fluid">
@@ -298,7 +236,6 @@
 											//echo "<br/>";
 											$verif = true;
 										}
-
 										$k++;
 									}
 									echo "</p>";
@@ -307,7 +244,6 @@
 								?>
 							</div>
 					</form>
-
 				</div>
 			</div>
 <!-- On définit ici une section 'actualites' -->
@@ -339,6 +275,7 @@
 										echo "<br/>";
 										echo $TabActu[$k][4];
 										echo "<br/><br/>";
+										echo '<hr class="my-1">';
 										$verif = true;
 									}
 									$k++;
@@ -363,10 +300,8 @@
 											$verif = true;
 										}
 										$k++;
-
 									}
 								}
-
 							}
 							?>
 						</div>
@@ -401,15 +336,10 @@
 			</div>
 		</div>
 	</div>
-
-
-
 	<!-- DIV Pied de page -->
 	<br/>
 	<br/>
 	<br/>
 	<?php Include("Pied-VALIDE.html");?>
-
 </body>
-
 </html>
