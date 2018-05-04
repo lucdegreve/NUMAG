@@ -74,7 +74,7 @@ Bootstrap assure un aspect graphique élégant-->
 					//requete projet
 					$queryProjet="SELECT Alertes_Projet.vu_proj, projets.id_ind
 					FROM Alertes_Projet, projets
-					where Alertes_Projet.vu_proj=0 and projets.id_ind=".$id_ind_co;
+					where Alertes_Projet.vu_proj=0 and projets.id_ind=".$id_ind_co." and projets.id_ind=Alertes_Projet.id_ind";
 					
 					//requete stage
 					$queryStage="SELECT Alertes_Stage.vu_st, stages.id_ind
