@@ -14,7 +14,7 @@ $id_ind_co=$_SESSION["id_ind_co"];
 <body>
 
 	<?php Include("Entete-VALIDE.php");
-	include("Connexion-bdd.php");?>
+	include("Connexion_bdd.php");?>
 	?>
 	<br/>
 	<br/>
