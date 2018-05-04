@@ -15,7 +15,7 @@ $modifMessage="UPDATE messages_prives SET lu =1";
 $resultMm=mysqli_query($link, $modifMessage);
 
 //Ouvre la messagerie
-header('Location: http://localhost/numag/Racine/gabarits/Messagerie_Bootstrap.php');
+header('Location: Messagerie_Bootstrap.php');
 //header('Location: https://www.agro-bordeaux.fr/');
   exit();
 ?>
