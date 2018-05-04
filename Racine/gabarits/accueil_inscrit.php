@@ -37,7 +37,7 @@
 	<?php
 	
 	//Requête permettant de sortir la liste des inscrits pour les compter	
-	$query_inscrits="SELECT distinct id_ind FROM Centres_interet WHERE id_ind <> ".$id_ind_co;   
+	$query_inscrits="SELECT distinct id_ind FROM Centres_interet WHERE id_ind <>".$id_ind_co;   
 	$result_inscrits=mysqli_query($link,$query_inscrits);
 	$tab_inscrits=mysqli_fetch_all($result_inscrits);
 	$nblig_inscrits=mysqli_num_rows($result_inscrits); //Donne le nombre d'identifiants différents = nombre d'inscrits sur la plateforme

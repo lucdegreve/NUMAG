@@ -32,7 +32,7 @@ Bootstrap assure un aspect graphique élégant-->
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<li class="nav-item">
-					<a class="nav-link" href="#"><p class="text-light">Accueil</p></a>
+					<a class="nav-link" href="accueil_inscrit.php"><p class="text-light">Accueil</p></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="accueil_projet.php"><p class="text-light">Projets</p></a>
@@ -52,7 +52,7 @@ Bootstrap assure un aspect graphique élégant-->
 
 				<?php
 					header('Content-Type: text/html; charset=UTF-8');
-					include'Connexion_bdd.php';
+					include('Connexion_bdd.php');
 					//mise en place de la requete
 
 					//requete projet
