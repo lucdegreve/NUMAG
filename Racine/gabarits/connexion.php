@@ -15,7 +15,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-	<?php include("Entete-VALIDE.html"); ?>
+	<?php include("Entete-VALIDE.php"); ?>
 	<?php 
 		$Message=$_GET["Message"];
 		if ($Message==1)

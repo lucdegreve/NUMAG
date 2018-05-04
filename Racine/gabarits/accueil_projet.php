@@ -1,15 +1,17 @@
 Script de l'accueil des projets avec bouton de cration de projet, recherche et affichage des projets
 By Manuel, Julien Louet et Marie
 <?php
-session_start()
-//$id_co=$_SESSION["id_ind_co"]
+session_start();
+$id_ind_co=$_SESSION["id_ind_co"];
 ?>
 <html>
-
+	
 <head>
 	<meta charset="UTF-8">
 </head>
-
+	<?php Include("Entete-VALIDE.php");?>
+	<br/>
+	<br/>
 <!-- Bouton permettant d'accéder à la page de création de projet -->
 Projet
 <br/>
@@ -21,7 +23,7 @@ Projet
 <tr>
 <td>
 <?php
-	$link=mysqli_connect('localhost','root','','bdd_racine');
+	$link=mysqli_connect('localhost','root','','racine');
 	echo "<FORM action='Resultat_recherche_projet.php' method='GET'  name='form2'>";
 	echo "<tr>
 	<td>";
@@ -116,12 +118,13 @@ Projet
 	
 	// Requete avec les préférences des projets
 
-	$query_SP="SELECT titre_proj, libelle_statut, id_proj, SUM(Centres_interet.Compteur) AS Score_projet
-	FROM Centres_interet, Mots_cles, mot_cle_projet, Projets, Statuts
-	WHERE Centres_interet.id_ind=1
-	AND Centres_interet.id_mot_cle=Mots_cles.id_mot_cle 
-	AND Mots_cles.id_mot_cle=Mot_cle_projet.id_mot_cle 
-	AND Projets.id_statut=Statuts.id_statut
+	$query_SP="SELECT titre_proj, libelle_statut, projets.id_proj, SUM(centres_interet.compteur) AS Score_projet
+	FROM centres_interet, mots_cles, mot_cle_projet, projets, statuts
+	WHERE centres_interet.id_ind=".$id_ind_co."
+	AND centres_interet.id_mot_cle=mots_cles.id_mot_cle 
+	AND mots_cles.id_mot_cle=Mot_cle_projet.id_mot_cle 
+	AND mot_cle_projet.id_proj=projets.id_proj
+	AND projets.id_statut=statuts.id_statut
 	GROUP BY id_proj
 	ORDER BY Score_projet DESC"; // SP=Score projet 
 	$result_SP=mysqli_query($link,$query_SP);
@@ -130,14 +133,14 @@ Projet
 	$nbcol_SP=mysqli_num_fields($result_SP);
 	
 	
-	for ($i=0; $i<$nbligne; $i++)
+	for ($i=0; $i<$nblig_SP; $i++)
 	{
 		echo "<tr> <td>
-		".$Tab[$i][0]."
+		".$tab_SP[$i][0]."
 		</td> </tr>
 		<tr>
 		<td>
-		".$Tab[$i][1]."
+		".$tab_SP[$i][1]."
 		</td>
 		<td>
 		<a href='projet.php'> Consulter </a>
@@ -152,5 +155,8 @@ Projet
 </td>
 </tr>
 </table>
-
+	<br/>
+	<br/>
+	<br/>
+	<?php include("Pied-VALIDE.html"); ?>
 </html>
