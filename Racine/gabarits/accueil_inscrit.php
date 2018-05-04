@@ -34,7 +34,7 @@
 	$nblig_inscrits=mysqli_num_rows($result_inscrits); //Donne le nombre d'identifiants différents = nombre d'inscrits sur la plateforme
 	$nbcol_inscrits=mysqli_num_fields($result_inscrits);
 
-	//Requête dans une boucle permettant de sortir les 3 centres d interet principaux par inscrit avec le score correspondant à ceux du connectés
+	//Requête dans une boucle permettant de sortir les 3 centres d interet principaux par inscrit avec le score correspondant à ceux du connecté
 	//Faire boucle permettant de faire tableau
 	$pos=0;
 	for ($id=1;$id<=$nblig_inscrits+1;$id++){ //id représente l'identifiant de l'utilisateur, il commence donc à 1
@@ -212,7 +212,6 @@
 									$verif = false;
 									while ($k<count($TabIndiv) AND $verif == false)
 									{
-										echo "<p>";
 										if ($IdSugg == $TabIndiv[$k][0])
 										{
 											echo "<B>".$TabIndiv[$k][1]." ".$TabIndiv[$k][2]."</B>";
@@ -224,13 +223,13 @@
 											else
 											{
 												echo "Etudiant";
-											} echo "</p>";
+											}
 											//Ajouter en contact (à mettre dans la boucle)
 											echo '<form action="Messagerie_Bootstrap.php" method="GET">';
 												//On transmet en caché l'id du destinataire et de l'utilisateur connecté
 											echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";
 											echo "<input type='hidden' name='idcontact' value='$IdSugg'>";
-											echo '<input type="submit" value="Ajouter ce contact" name="bt">';
+											echo '<input type="submit" value="Ajouter ce contact" class="btn btn-info btn-sm" name="bt">';
 											echo '</form>';
 											//echo "<br/>";
 											$verif = true;
@@ -255,8 +254,8 @@
 							<?php
 							// code alternatif pour afficher TOUTES les actualites :
 							// for ($j=0; $j<$NBL; $j++)
-							for ($j=0; $j<6; $j++)
-							{
+							for ($j=0; $j<5; $j++)
+							{ echo '<div class="card bg-light border-secondary mb-3">';
 								$id = $tab_trie[$j][0];
 								$k = 0;
 								$verif = false;
@@ -268,13 +267,9 @@
 										$jour = substr($date, -2, 2);
 										$mois = substr($date, -5, 2);
 										$annee = substr($date, -10, 4);
-										echo "<B>".$TabActu[$k][1]."</B> - ".$jour."/".$mois."/".$annee;
-										echo "<br/>";
-										echo "<A href = ".$TabActu[$k][2]."> ".$TabActu[$k][2]." </A>";
-										echo "<br/>";
-										echo $TabActu[$k][4];
-										echo "<br/><br/>";
-										echo '<hr class="my-1">';
+										echo "<p class='card-text'><B>".$TabActu[$k][1]."</B> - ".$jour."/".$mois."/".$annee."</p>";
+										echo "<a href = ".$TabActu[$k][2]." class='card-link'> ".$TabActu[$k][2]." </a>";
+										echo "<p> ".$TabActu[$k][4]."</p>";
 										$verif = true;
 									}
 									$k++;
@@ -295,12 +290,12 @@
 											echo "Durée : ".$TabProj[$k][3];
 											echo "<br/>";
 											echo $TabProj[$k][5];
-											echo "<br/><br/>";
+											echo "<br/>";
 											$verif = true;
 										}
 										$k++;
 									}
-								}
+								} echo "</div>";
 							}
 							?>
 						</div>
@@ -318,7 +313,7 @@
 							for ($i=0; $i<$NbLignesContacts; $i++)
 							{
 								//Afficher les contacts les uns en dessous des autres
-								echo $TabContacts[$i][1]." ".$TabContacts[$i][2];
+								echo "<u>".$TabContacts[$i][1]." ".$TabContacts[$i][2]."</u>";
 								echo "<br/>";
 								$date = $TabContacts[$i][4];
 								$jour = substr($date, -11, 2);
@@ -326,7 +321,8 @@
 								$annee = substr($date, -19, 4);
 								$heure = substr($date, -8, 5);
 								echo $TabContacts[$i][3]." le ".$jour."/".$mois."/".$annee." à ".$heure;
-								echo "<br/><br/>";
+								echo '<hr class="my-1">';
+								echo "<br/>";
 							}
 							?>
 						</div>
