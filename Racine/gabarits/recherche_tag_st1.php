@@ -13,7 +13,7 @@
 			$nbligne=mysqli_num_rows($result);
 			for ($j=0; $j<$nbligne; $j++)
 			{
-				echo '<input type="checkbox" value='.$Tab [$j][0].'/>'.$Tab [$j][0].' </br>';
+				echo '<input type="checkbox" name ="jury[]" value='.$Tab [$j][0].'/>'.$Tab [$j][0].' </br>';
 			}
 			echo "</select>";
 			?>
