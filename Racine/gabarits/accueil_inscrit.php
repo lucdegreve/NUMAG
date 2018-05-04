@@ -10,7 +10,7 @@
 <html>
 
 <head>
-	<?php Include("Entete-VALIDE.html");?>
+	<?php Include("Entete-VALIDE.php");?>
 	<br/>
 	<br/>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />

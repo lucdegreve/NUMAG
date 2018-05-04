@@ -9,8 +9,8 @@ $description=$_GET["desc_proj"];
 $duree=$_GET["duree"];
 $titre=$_GET["titre_proj"];
 $etat=$_GET["etatprojet"];
-$date=$_GET["date_proj"]
-$sout=1
+$date=$_GET["date_proj"];
+$sout=1;
 $listetags=array();
 $i=0;
 $link=mysqli_connect('localhost','root','','bdd_racine_beta27.04');
@@ -95,9 +95,9 @@ echo "<br/>
 	if ($etat=='En-lancement')
 		$id_statut=1;
 	if ($etat=='En-cours')
-		$id_statut=2
+		$id_statut=2;
 	else
-		$id_statut=3
+		$id_statut=3;
 		
 	
 	$query_insert="insert into projets (id_proj, id_statut, id_ind, id_sout, titre_proj, desc_proj, date_proj, duree, url_proj)

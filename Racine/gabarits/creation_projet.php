@@ -1,5 +1,9 @@
 	<!--Script par Manuel, Julien et Marie-->
 	<head>
+	<?php Include("Entete-VALIDE.php");?>
+	<br/>
+	<br/>
+
 	<script type="text/javascript">
         function open_popup_test()
         {{
@@ -89,3 +93,9 @@
 	<INPUT TYPE="SUBMIT" name="bt_submit" value="Visualiser"><!-- Création du bouton valider-->
 	</form>
 	</body>
+	<br/>
+	<br/>
+	<br/>
+	<?php Include("Pied-VALIDE.html");?>
+	
+</html>
