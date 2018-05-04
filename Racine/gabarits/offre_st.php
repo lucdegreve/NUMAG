@@ -25,7 +25,7 @@ By Manuel, Julien Louet, Marie -->
 
   </head>
   <body>
-		<?php include "Entete-VALIDE.html" ?>
+		<?php include "Entete-VALIDE.html"; ?>
 
 <?php
 // code php principal récupérant les données du stage
