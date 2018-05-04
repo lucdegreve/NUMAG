@@ -54,26 +54,30 @@ Bootstrap assure un aspect graphique élégant-->
 				</li>
 
 				<?php
+
+				//session_start();
+				//$id_ind_co=$_SESSION["id_ind_co"];
+				$id_ind_co=5;
+				
 					header('Content-Type: text/html; charset=UTF-8');
 					include('Connexion_bdd.php');
 					//mise en place de la requete
 
 					//requete projet
-					$queryProjet="SELECT Alertes_Projet.vu_proj
-					FROM Alertes_Projet
-					where Alertes_Projet.vu_proj=0";
+					$queryProjet="SELECT Alertes_Projet.vu_proj, projets.id_ind
+					FROM Alertes_Projet, projets
+					where Alertes_Projet.vu_proj=0 and projets.id_ind=".$id_ind_co;
 					
 					//requete stage
-					$queryStage="SELECT Alertes_Stage.vu_st
-					FROM Alertes_Stage
-					where Alertes_Stage.vu_st=0";
+					$queryStage="SELECT Alertes_Stage.vu_st, stages.id_ind
+					FROM Alertes_Stage, stages
+					where Alertes_Stage.vu_st=0 and stages.id_ind=".$id_ind_co;
 					
 					//requete message
 					$queryMessage="SELECT messages_prives.lu
-					FROM messages_prives
-					where messages_prives.lu=0 and messages_prives.id_dest=2";
-					//where messages_prives.lu=0 and messages_prives.id_dest=".$id_ind_co;
-					
+					FROM messages_prives	
+					where messages_prives.lu=0 and messages_prives.id_dest=".$id_ind_co;
+					//where messages_prives.lu=0 and messages_prives.id_dest=5";					
 					
 					
 					$resultp=mysqli_query($link, $queryProjet);
