@@ -32,7 +32,7 @@ ZAZA & MC
 	<br/><br/>
 	<!-- Passage au codage PHP -->
 	<?php
-	//Connexion au serveur 
+	//Connexion au serveur
 	$link=mysqli_connect('localhost', 'root', '', 'racine');
 	//Afficher correctement les caractères spéciaux 
 	mysqli_set_charset($link, 'UTF-8');
@@ -48,9 +48,9 @@ ZAZA & MC
 	for ($i=0; $i<$NbLignesActu; $i++)
 	{
 		$date = $TabActu[$i][2];
-		$jour = substr($date, -11, 2);
-		$mois = substr($date, -14, 2);
-		$annee = substr($date, -19, 4);
+		$jour = substr($date, -2, 2);
+		$mois = substr($date, -5, 2);
+		$annee = substr($date, -10, 4);
 		echo "<B>".$TabActu[$i][0]."</B> - ".$jour."/".$mois."/".$annee;
 		echo "<br/>";
 		echo "<A href = ".$TabActu[$i][1]."> ".$TabActu[$i][1]." </A>";
