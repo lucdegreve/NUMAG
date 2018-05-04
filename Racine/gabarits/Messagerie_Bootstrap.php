@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <?php include "Entete-VALIDE.html" ?>
+    <?php include "Entete-VALIDE.php" ?>
     <?php
     Session_start();
     ?>
@@ -23,8 +23,7 @@
             $id_ind_co=1;
             $_SESSION['id_ind_co']=$id_ind_co;
 
-            $link=mysqli_connect('localhost', 'root', '','bdd_racine_beta_27.04.5');
-            //include "localhost/NUMAG/Connexion_bdd.php";
+            Include("connexion_bdd.php");
 
             //Si rien n'est entré dans la barre de recherche
             if (empty($_GET['contact']))
@@ -139,8 +138,6 @@
         if (@isset($_GET['idcontact'])){
           $contact=$_GET['idcontact'];
         }
-        $link=mysqli_connect('localhost', 'root', '','bdd_racine_beta_27.04.5');
-        //include "localhost/NUMAG/Connexion_bdd.php";
 
         if (@isset($_GET['bt']))
         {
