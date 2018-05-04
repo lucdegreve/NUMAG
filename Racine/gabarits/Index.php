@@ -17,7 +17,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<?php include("Entete-VALIDE.php"); ?>
+		<?php include("Entete-NC.php"); ?>
 		<div class="jumbotron">
 			<h1 class="display-4">Bienvenue sur Racine!</h1>
 			<p class="lead"> Le premier réseau social entre agriculteurs </p>

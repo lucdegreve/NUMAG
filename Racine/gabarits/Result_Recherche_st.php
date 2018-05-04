@@ -47,9 +47,9 @@
 
   </head>
   <body>
-    <?php include "Entete-VALIDE.html" ?>
+    <?php include "Entete-VALIDE.php" ?>
 <?php
-	$link=mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
+	Include("Connexion_bdd.php")
 
     // récupération des données de la recherche
 	$mot_cle=$_GET ['tag'];
