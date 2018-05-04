@@ -49,7 +49,7 @@
   <body>
     <?php include "Entete-VALIDE.html" ?>
 <?php
-	$link=mysqli_connect('localhost','root','','bddtest');
+	$link=mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
 
     // récupération des données de la recherche
 	$mot_cle=$_GET ['tag'];
@@ -138,8 +138,7 @@
 	$nombreligneeffectuées=$nombreligneeffectuées+1;
 	}
 
-
-  ?>
+?>
     <br>
     <div class="container-fluid">
       <br>
@@ -148,7 +147,7 @@
           <div class="jumbotron HauteurMax">
             <h3>Modifier votre recherche</h3>
             <hr class="my-4">
-            <form action="Result_Recherche_st.php" method="get">
+            <form>
                 <div class="form-group">
                   <label for="exampleSelect1">Choisissez un département</label>
                   <select class="form-control" id="dpt">
@@ -191,27 +190,23 @@
                   <option>6 mois</option>
                 </select>
               </div>
-              <?php
-                $link=mysqli_connect('localhost','root','','bddtest');
-                $query="SELECT libelle_mot_cle
-                FROM mots_cles ";
-                $result=mysqli_query($link,$query);
-                $Tab=mysqli_fetch_all($result);
-                $nbligne=mysqli_num_rows($result);
-                ?>
-                <div class="form-group">
-                    <label for="exampleSelect2">Choisissez un mot-clef</label>
-                    <select multiple class="form-control" name="tag">
-                      <?php
-                        for ($j=0; $j<$nbligne; $j++)
-                        {
-                          echo "<option>".$Tab[$j][0]."</option>";
-                        }
-                      ?>
-                    </select>
-                </div>
+              <div class="form-group">
+                <label for="exampleSelect2">Choisissez un mot-clef</label>
+                <select class="form-control" id="tags">
+                  <option>Pintades</option>
+                  <option>Orge</option>
+                  <option>Apiculture</option>
+                  <option>Maraichage</option>
+                  <option>Ecologie</option>
+                  <option>Oléoprotéagineux</option>
+                  <option>Viticulture</option>
+                  <option>INRA</option>
+                  <option>Légumes</option>
+                  <option>Fraises</option>
+                </select>
+              </div>
               <hr class="my-4">
-              <input type="submit" class="btn btn-outline-info center-block" value="Modifier"></input>
+              <button type="submit" class="btn btn-outline-info center-block">Modifier</button>
             </form>
           </div>
         </div>
@@ -220,40 +215,39 @@
             <h1>Résultat de la recherche</h1>
             <hr class="my-4">
             <br>
-            <?php
-              while ($i<count($L4))
-              {
-                $idst=$L4[$i];
-                echo "<a href='offre_st.php?lestage=".$idst."'>".$Tab[$idst][3]." </a><br/>";
-                $i++;
-                echo '<hr class="my-4">';
-              }
-              $i=0;
-              while ($i<count($L3))
-              {
-                $idst=$L3[$i];
-                echo "<a href='offre_st.php?lestage=".$idst."'>".$Tab[$idst][3]." </a><br/>";
-                $i++;
-                echo '<hr class="my-4">';
-              }
-              $i=0;
-              while ($i<count($L2))
-              {
-                $idst=$L2[$i];
-                echo "<a href='offre_st.php?lestage=".$idst."'>".$Tab[$idst][3]." </a><br/>";
-                $i++;
-                echo '<hr class="my-4">';
-              }
-              $i=0;
-              while ($i<count($L1))
-              {
-                $idst=$L1[$i];
-                echo "<a href='offre_st.php?lestage=".$idst."'>".$Tab[$idst][3]." </a><br/>";
-                $i++;
-              echo '<hr class="my-4">';
-              }
-            ?>
-
+              <?php
+                while ($i<count($L4))
+                {
+                  $idst=$L4[$i];
+                  echo '<a href="offre_st.php?lestage='.$idst.'">'.$Tab[$idst][3].'</a><br/>';
+                  $i++;
+                  echo '<hr class="my-4">';
+                }
+                $i=0;
+                while ($i<count($L3))
+                {
+                  $idst=$L3[$i];
+                  echo "<a href='offre_st.php?lestage=".$idst."'>".$Tab[$idst][3]." </a><br/>";
+                  $i++;
+                  echo '<hr class="my-4">';
+                }
+                $i=0;
+                while ($i<count($L2))
+                {
+                  $idst=$L2[$i];
+                  echo "<a href='offre_st.php?lestage=".$idst."'>".$Tab[$idst][3]." </a><br/>";
+                  $i++;
+                  echo '<hr class="my-4">';
+                }
+                $i=0;
+                while ($i<count($L1))
+                {
+                  $idst=$L1[$i];
+                  echo "<a href='offre_st.php?lestage=".$idst."'>".$Tab[$idst][3]." </a><br/>";
+                  $i++;
+                  echo '<hr class="my-4">';
+                }
+              ?>
         </div>
       </div>
     </div>

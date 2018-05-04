@@ -74,7 +74,7 @@ By Manuel, Julien Louet, Marie -->
 
 
 	// Récupération du nom et prenom de l'agriculteur
-	$querycontact="SELECT id_st, nom_ind, prenom
+	$querycontact="SELECT id_st, nom_ind, prenom, individus.id_ind
 	FROM Stages
 	INNER JOIN individus
 	ON stages.id_ind=individus.id_ind
@@ -158,23 +158,25 @@ By Manuel, Julien Louet, Marie -->
 			<div class="jumbotron HauteurMax">
 				<h3>Contact</h3>
 				<hr class="my-4">
-				<form action="messagerie.php" method="get">
+				<form action="Messagerie_Bootstrap.php" method="get">
           <!-- Création d'un formulaire renvoyant nom et prénom de l'offreur de stage, et d'un bouton
           envoyant vers la page messagerie.php (prise de contact avec l'agriculteur) -->
 						<div class="form-group">
 							<?php
 								echo '<label for="exampleSelect1"><u> Nom : </u></label>';
 								echo '</br>';
-								echo '<label for="exampleSelect1" name="Nom">'.$Tabcontact[0][1].'</label>';
+								echo '<label for="exampleSelect1" name="nom">'.$Tabcontact[0][1].'</label>';
 							echo '</div>';
 							echo '<div class="form-group">';
 								echo '<label for="exampleSelect1"><u> Prénom : </u></label>';
 								echo '</br>';
-								echo '<label for="exampleSelect1" name="Prenom">'.$Tabcontact[0][2].'</label>';
+								echo '<label for="exampleSelect1" name="prenom">'.$Tabcontact[0][2].'</label>';
 							echo '</div>';
 							echo '<div class="form-group">';
 								echo "<label for='exampleSelect1'><u> Postuler à l'offre : </u></label>";
 								echo '</br>';
+                echo '<input type="hidden" name="idcontact" value="'.$Tabcontact[0][3].'"</input>';
+                echo '</br>';
                 echo '<input type="submit" class="btn btn-outline-info btn-lg" value="Postuler"></input>';
 							echo '</div>';
 							?>
