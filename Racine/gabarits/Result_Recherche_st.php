@@ -49,7 +49,7 @@
   <body>
     <?php include "Entete-VALIDE.php" ?>
 <?php
-	Include("Connexion_bdd.php")
+	Include("Connexion_bdd.php");
 
     // récupération des données de la recherche
 	$mot_cle=$_GET ['tag'];
