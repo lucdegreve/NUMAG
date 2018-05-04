@@ -9,13 +9,13 @@ $id_expe=$_GET["id_expe"];
 
 
 // Marque l'alerte comme vu
-$modifMessage="UPDATE messages_prives SET vu_proj =1";
+$modifMessage="UPDATE messages_prives SET lu =1";
 //$modifMessage="UPDATE messages_prives SET vu_proj =1 where id_expe=".$id_expe;
 
 $resultMm=mysqli_query($link, $modifMessage);
 
 //Ouvre la messagerie
-header('Location: http://localhost/numag/Racine/gabarits/messagerie.php');
+header('Location: http://localhost/numag/Racine/gabarits/Messagerie_Bootstrap.php');
 //header('Location: https://www.agro-bordeaux.fr/');
   exit();
 ?>

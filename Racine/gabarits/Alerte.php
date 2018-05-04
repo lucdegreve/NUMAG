@@ -21,7 +21,7 @@ Bootstrap : Mayeul Duval
 <div id="global">
 
 	<!-- Entête -->
-	<?php //include("Entête-VALIDE")?>
+	<?php include("Entete-VALIDE.php")?>
 
 
 
@@ -96,9 +96,11 @@ $resultM=mysqli_query($link, $queryMes);
 										<?php echo $prenom,' ', $nom ,' a commenté votre projet nommé ', $titre; ?>
 									</div>
 									<div class="col-lg-2">
-										<input TYPE="hidden" name="url" value='.$url.' >
-										<input TYPE="hidden" name="idp" value='.$idp.' >
-										<input TYPE="SUBMIT" class="btn btn-info btn-sm center-block" name="voir" value="voir" >
+									<?php
+										echo '<input TYPE="hidden" name="url" value='.$url.' >';
+										echo '<input TYPE="hidden" name="idp" value='.$idp.' >';
+										echo '<input TYPE="SUBMIT" class="btn btn-info btn-sm center-block" name="voir" value="voir" >';
+										?>
 									</div>
 								</div>
 							</div>
@@ -121,9 +123,11 @@ $resultM=mysqli_query($link, $queryMes);
 									<?php echo $prenom,' ', $nom ,' a commenté votre stage nommé ', $titre; ?>
 								</div>
 								<div class="col-lg-2">
-									<input TYPE="hidden" name="url" value='.$url.' >
-									<input TYPE="hidden" name="idp" value='.$idp.' >
-									<input TYPE="SUBMIT" class="btn btn-info btn-sm center-block" name="voir" value="voir" >
+								<?php
+									echo '<input TYPE="hidden" name="url" value='.$url.' >';
+									echo '<input TYPE="hidden" name="ids" value='.$ids.' >';
+									echo '<input TYPE="SUBMIT" class="btn btn-info btn-sm center-block" name="voir" value="voir" >';
+									?>
 								</div>
 							</div>
 						</div>
@@ -138,6 +142,7 @@ $resultM=mysqli_query($link, $queryMes);
 							$nom =$row["nom_ind"];
 							$prenom =$row["prenom"];
 							$date =$row["date_mp"];
+							$id_expe=$row["id_expe"];
 							?>
           <hr class="my-4">
 							<div class="container-fluid">
@@ -146,8 +151,10 @@ $resultM=mysqli_query($link, $queryMes);
 										<?php echo $prenom,' ', $nom ,' vous a envoyé un message le ',$date; ?>
 									</div>
 									<div class="col-lg-2">
-										<input TYPE="hidden" name="id_expe" value='.$id_expe.' >
-										<input TYPE="SUBMIT" class="btn btn-info btn-sm center-block" name="voir" value="voir" >
+									<?php
+										echo '<input TYPE="hidden" name="id_expe" value='.$id_expe.' >';
+										echo '<input TYPE="SUBMIT" class="btn btn-info btn-sm center-block" name="voir" value="voir" >';
+										?>
 									</div>
 								</div>
 							</div>
@@ -163,7 +170,7 @@ $resultM=mysqli_query($link, $queryMes);
 </div>
 
 	<!-- Pied de page -->
-	<?php //include("Pied-VALIDE"); ?>
+	<?php include("Pied-VALIDE.html"); ?>
 
 
 </div><!-- #global -->

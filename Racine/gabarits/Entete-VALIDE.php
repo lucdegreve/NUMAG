@@ -52,19 +52,40 @@ Bootstrap assure un aspect graphique élégant-->
 
 				<?php
 					header('Content-Type: text/html; charset=UTF-8');
-					$link=mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
+					$link=mysqli_connect('localhost','root','numag2018','bdd_racine_beta_27.04.5');
 					//mise en place de la requete
 
 					//requete projet
 					$queryProjet="SELECT Alertes_Projet.vu_proj
 					FROM Alertes_Projet
 					where Alertes_Projet.vu_proj=0";
+					
+					//requete stage
+					$queryStage="SELECT Alertes_Stage.vu_st
+					FROM Alertes_Stage
+					where Alertes_Stage.vu_st=0";
+					
+					//requete message
+					$queryMessage="SELECT messages_prives.lu
+					FROM messages_prives
+					where messages_prives.lu=0 and messages_prives.id_dest=2";
+					//where messages_prives.lu=0 and messages_prives.id_dest=".$id_ind_co;
+					
+					
+					
+					$resultp=mysqli_query($link, $queryProjet);
+					$results=mysqli_query($link, $queryStage);
+					$resultm=mysqli_query($link, $queryMessage);
 
-					$result=mysqli_query($link, $queryProjet);
-
-					$nblig=mysqli_num_rows($result);
-
-						if ($nblig==0){
+					$nbligp=mysqli_num_rows($resultp);
+					//echo $nbligp;
+					$nbligs=mysqli_num_rows($results);
+					//echo $nbligs;
+					$nbligm=mysqli_num_rows($resultm);
+					//echo $nbligm;
+					$nbligt=$nbligp+$nbligs+$nbligm;
+					//echo $nbligt;
+						if ($nbligt==0){
 						// Afficher le bonton standard
 					?>
 							<li class="nav-item">
