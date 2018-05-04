@@ -16,6 +16,14 @@ Des validations sont mises en place grace aux données de bootstrap-->
 	</head>
 	<body>
 	<?php include("Entete-VALIDE.html"); ?>
+	<?php 
+		$Message=$_GET["Message"];
+		if ($Message==1)
+		{
+			echo 'Veuillez vérifier votre identifiant et votre mot de passe puis réessayer';
+		}
+	?>
+		
 	<form action="Alerteconnexion.php" method="GET" name="F1">
 		
 			<br/>

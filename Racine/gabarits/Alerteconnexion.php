@@ -24,13 +24,16 @@
 	}
 	if ($VERIF==1)
 	{
+		$_SESSION['id_ind_co']=$tab_ind[$ligne][0];
 		header('Location: '.$url1);
 		exit();
-		$_SESSION['id_ind_co']=$tab_ind[$ligne][0];
+		
 	}
 	else
 	{
 		header('Location: '.$url2);
 		exit();
+		$Message=1;
+		echo '<input TYPE="hidden" name="Message" value='.$Message.'>';
 	}
 ?>

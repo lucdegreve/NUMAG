@@ -1,9 +1,5 @@
-ZAZA & MC
-<br/><br/>
-
 <?php
-	//Récupérer l'identifiant du compte 
-	session_start();
+	session_start();  //Récupérer l'identifiant du compte 
 	$id_ind_co=$_SESSION["id_ind_co"];
 	//Connexion au serveur
 	$link = mysqli_connect('localhost', 'root', '', 'racine');
@@ -14,6 +10,9 @@ ZAZA & MC
 <html>
 
 <head>
+	<?php Include("Entete-VALIDE.html");?>
+	<br/>
+	<br/>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>
 		Accueil
@@ -38,7 +37,7 @@ ZAZA & MC
 	<?php
 	
 	//Requête permettant de sortir la liste des inscrits pour les compter	
-	$query_inscrits="SELECT distinct id_ind FROM Centres_interet WHERE id_ind <> ".$id_ind_co."";   
+	$query_inscrits="SELECT distinct id_ind FROM Centres_interet WHERE id_ind <> ".$id_ind_co;   
 	$result_inscrits=mysqli_query($link,$query_inscrits);
 	$tab_inscrits=mysqli_fetch_all($result_inscrits);
 	$nblig_inscrits=mysqli_num_rows($result_inscrits); //Donne le nombre d'identifiants différents = nombre d'inscrits sur la plateforme
@@ -346,7 +345,10 @@ ZAZA & MC
 	</div>
 
 	<!-- DIV Pied de page -->
-	
+	<br/>
+	<br/>
+	<br/>
+	<?php Include("Pied-VALIDE.html");?>
 	
 </body>
 
