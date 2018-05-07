@@ -29,13 +29,13 @@
 	$tab_inscrits=mysqli_fetch_all($result_inscrits);
 	$nblig_inscrits=mysqli_num_rows($result_inscrits); //Donne le nombre d'identifiants différents = nombre d'inscrits sur la plateforme
 	$nbcol_inscrits=mysqli_num_fields($result_inscrits);
-
+//var_dump($tab_inscrits);
 	//Requête dans une boucle permettant de sortir les 3 centres d interet principaux par inscrit avec le score correspondant à ceux du connecté
 	//Faire boucle permettant de faire tableau
 	$pos=0;
-	for ($id=1;$id<=$nblig_inscrits+1;$id++){ //id représente l'identifiant de l'utilisateur, il commence donc à 1
-		if ($id <> $id_ind_co){
-			$query_selection_profils="SELECT id_ind, id_mot_cle FROM Centres_interet WHERE id_ind = ".$id." ORDER BY compteur DESC LIMIT 3"; //requête sortant les 3 premiers mots clé pour l'identifiant id sans le faire pour l'id du connecté
+	for ($id=0;$id<$nblig_inscrits;$id++){ //id représente l'identifiant de l'utilisateur, il commence donc à 1
+		if ($tab_inscrits[$id][0] <> $id_ind_co){
+			$query_selection_profils="SELECT id_ind, id_mot_cle FROM Centres_interet WHERE id_ind = ".$tab_inscrits[$id][0]." ORDER BY compteur DESC LIMIT 3"; //requête sortant les 3 premiers mots clé pour l'identifiant id sans le faire pour l'id du connecté
 			$result_selection_profils=mysqli_query($link,$query_selection_profils);
 			$tab_selection_profils=mysqli_fetch_all($result_selection_profils);
 			$nblig_selection_profils=mysqli_num_rows($result_selection_profils);
@@ -55,7 +55,7 @@
 			}
 		}
 	}
-
+	
 	//Requête sortant la liste des mots clé associés à leurs scores pour l'individu connecté
 	$query_mots_cle_co="SELECT id_ind, id_mot_cle, compteur FROM Centres_interet WHERE id_ind = ".$id_ind_co." ORDER BY compteur DESC";
 	$result_mots_cle_co=mysqli_query($link,$query_mots_cle_co);
@@ -65,7 +65,6 @@
 
 
 	$nblig_profils=count($tab_profils);
-
 	for ($j=0;$j<$nblig_mots_cle_co;$j++){
 		for ($m=0;$m<$nblig_profils;$m++){
 			if ($tab_mots_cle_co[$j][1]==$tab_profils[$m][1]){
@@ -233,7 +232,7 @@
 												}
 												echo '<p>';
 												//Bouton pour accéder au profil de l'utilisateur
-												echo '<form action="consulter_profil.php" method="GET">';
+												echo '<form action="profil.php" method="GET">';
 												echo '<input type = "submit" value = "Voir le profil" class="btn btn-info btn-sm btn-block" name = "bouton">';
 												echo '</form>';												
 												//Bouton pour ajouter en contact (à mettre dans la boucle)
