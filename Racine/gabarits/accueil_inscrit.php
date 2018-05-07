@@ -100,12 +100,6 @@
         $score[$i]=$tab_inscrits[$i][1];
     }
     array_multisort($score, SORT_DESC,$identifiant, SORT_ASC);
-
-	for ($i=0; $i<$NBL; $i++)
-    {
-        $tab_inscrits[$i][0]=$identifiant[$i];
-        $tab_inscrits[$i][1]=$score[$i];
-	}
 	
 
 	//Récuperation des scores des actualités ordonnées
