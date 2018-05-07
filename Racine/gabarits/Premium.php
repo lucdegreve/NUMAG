@@ -69,8 +69,8 @@ Des validations sont mises en place grace aux données de bootstrap-->
 					      <p class="card-text"><small class="text-muted">Vos données restent confidentielles. </small></p>
 					    </div>
 					  </div>
-
 					</div>
+					<br/>
 					<button type="button" class="btn btn-outline-danger btn-lg btn-block"> <h5> Je souhaite passer premium </h5> </button>
 				</div>
 			</div>
