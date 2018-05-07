@@ -325,7 +325,7 @@
 							for ($i=0; $i<$NbLignesContacts; $i++)
 							{
 								//Afficher les contacts les uns en dessous des autres
-								echo "<u>".$TabContacts[$i][1]." ".$TabContacts[$i][2]."</u>";
+								echo "<b>".$TabContacts[$i][1]." ".$TabContacts[$i][2]."</b>";
 								echo "<br/>";
 								$date = $TabContacts[$i][4];
 								$jour = substr($date, -11, 2);
