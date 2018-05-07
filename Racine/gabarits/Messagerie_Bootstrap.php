@@ -9,7 +9,7 @@
   <body>
     <?php include "Entete-VALIDE.php" ?>
     <?php
-    //Session_start();
+    Session_start();
     ?>
 <br>
 <div class="container-fluid">
@@ -73,7 +73,7 @@
                 JOIN (SELECT CASE WHEN id_dest=$id_ind_co THEN id_expe ELSE id_dest END AS id_compte, MAX(date_mp) AS inter, lu
                 FROM messages_prives WHERE (id_dest=$id_ind_co OR id_expe=$id_ind_co) GROUP BY id_compte) r
                 ON i.id_ind=r.id_compte
-                WHERE (nom_ind='$RECHERCHE' OR prenom='$RECHERCHE')
+                WHERE (nom_ind LIKE '%$RECHERCHE%' OR prenom='%$RECHERCHE%')
                 ORDER BY inter DESC";
 
                 $results1=mysqli_query($link,$query1);
