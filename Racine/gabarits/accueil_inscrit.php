@@ -2,8 +2,7 @@
 <?php //Session_start();
 	//$id_ind_co=$_SESSION["id_ind_co"];
 	//Connexion au serveur
-	//include'Connexion_bdd.php';
-	$link = mysqli_connect('localhost', 'root', '', 'racine');
+	include'Connexion_bdd.php';
 	//Afficher correctement les caractères spéciaux
 	
 ?>
@@ -24,10 +23,6 @@
 	<!-- Ne pas afficher proposition de connexion si déjà connectés -->
 
 	<?php
-	
-	$id_ind_co=2;
-	
-	
 	//Requête permettant de sortir la liste des inscrits pour les compter
 	$query_inscrits="SELECT distinct id_ind FROM Centres_interet WHERE id_ind <>".$id_ind_co;
 	$result_inscrits=mysqli_query($link,$query_inscrits);
