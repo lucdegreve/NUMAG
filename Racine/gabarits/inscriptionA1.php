@@ -18,7 +18,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		<link rel="stylesheet" href="css/style.css">
 		<?PHP 
 		//$link = mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
-                $link = mysqli_connect('localhost','root','root','BDD');
+		include 'Connexion_bdd.php';
 		/*$query = "SELECT id_commune,nom_commune FROM communes";
 		$result=mysqli_query($link,$query);
 		$nbligne = mysqli_num_rows($result);
