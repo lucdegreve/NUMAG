@@ -48,16 +48,6 @@ Bootstrap assure un aspect graphique élégant-->
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="benchmark.php"><p class="text-light">Benchmark</p></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="tutoriel.php"><p class="text-light">Tutoriel</p></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="compte.php"><p class="text-light">Mon compte</p></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="presentation.php"><p class="text-light">Qui sommes nous ?</p></a>
-				</li>
 				<?php
 
 				session_start();
@@ -115,6 +105,16 @@ Bootstrap assure un aspect graphique élégant-->
 							<a class="nav-link" href="Alerte.php"><p class="text-light">Alertes</p></a>
 							</li>
 							<span class="badge badge-danger center-vertical">!</span>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="tutoriel.php"><p class="text-light">Tutoriel</p></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="compte.php"><p class="text-light">Mon compte</p></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="presentation.php"><p class="text-light">Qui sommes nous ?</p></a>
+							</li>
 						<?php }	?>
 
 

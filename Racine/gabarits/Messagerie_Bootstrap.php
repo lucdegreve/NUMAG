@@ -98,7 +98,7 @@
                           $lecture=$row['lu'];                      // si le dernier msg à été lu ou non
                             echo "<form action='' method='GET' name='form3'>";
                                 echo "<input type='hidden' name='idcontact' value=".$CONTACT.">";
-                                echo "<li><input type='submit' class='list-group-item list-group-item-action' name='submitcontact' value='$PRENOM $NOM'></li>";
+                                echo "<li><input type='submit' class='list-group-item list-group-item-action' name='submitcontact' value='$PRENOM $NOM'><span class='badge badge-light'>Nouveau message</span></li>";
 
                                 //Si on a un msg non lu de la part de ce contact alors on met une image ?
                                 if ($lecture==0)
