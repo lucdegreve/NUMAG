@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<!-- DIV Entête-->
+	<!-- DIV Entête -->
 
 
 	<!-- Ordonner les centres d'intérêt du profil en cours et de tous les autres profils pour pouvoir les comparer et sélectionner les profils apparentés-->
