@@ -52,6 +52,9 @@ Bootstrap assure un aspect graphique élégant-->
 				<li class="nav-item">
 					<a class="nav-link" href="Index.php"><p class="text-light">Alertes</p></a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="presentation.php"><p class="text-light">Qui sommes nous ?</p></a>
+				</li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
 				<input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
