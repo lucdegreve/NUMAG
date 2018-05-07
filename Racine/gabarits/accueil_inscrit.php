@@ -210,7 +210,7 @@
 									{
 										if ($IdSugg == $TabIndiv[$k][0])
 										{
-											echo "<B>".$TabIndiv[$k][1]." ".$TabIndiv[$k][2]."</B>";
+											echo "<b>".$TabIndiv[$k][1]." ".$TabIndiv[$k][2]."</b>";
 											echo "<br/>";
 											if ($TabIndiv[$k][3] == 1)
 											{
@@ -220,24 +220,26 @@
 											{
 												echo "Etudiant";
 											}
-											echo '<br/>';
+											echo '<p>';
 											//Bouton pour accéder au profil de l'utilisateur
 											echo '<form action="profil.php" method="GET">';
-											echo '<input type = "submit" value = "Voir le profil" class="btn btn-info btn-sm" name = "bouton">';
-											echo '</form>';											
+											echo '<input type = "submit" value = "Voir le profil" class="btn btn-info btn-sm btn-block" name = "bouton">';
+											echo '</form>';
+											
 											//Bouton pour ajouter en contact (à mettre dans la boucle)
 											echo '<form action="Messagerie_Bootstrap.php" method="GET">';
 												//On transmet en caché l'id du destinataire et de l'utilisateur connecté
 											echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";
 											echo "<input type='hidden' name='idcontact' value='$IdSugg'>";
-											echo '<input type="submit" value="Contacter" class="btn btn-info btn-sm" name="bt">';
+											echo '<input type="submit" value="Contacter" class="btn btn-info btn-sm btn-block" name="bt">';
 											echo '</form>';
+											echo '</p>';
 											//echo "<br/>";
 											$verif = true;
 										}
 										$k++;
 									}
-									echo "</p>";
+
 									echo '<hr class="my-1">';
 								}
 								?>
