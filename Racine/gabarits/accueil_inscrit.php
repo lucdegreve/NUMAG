@@ -207,55 +207,43 @@
 								{
 									$IdSugg = $tab_inscrits[$i][0]; //On sélectionne chaque suggestion de contact une par une
 									$test = false;
-									//On vérifie que les 2 individus ne sont pas déjà en contact
-									for ($k=0; $k<$NbLignesContacts; $k++)
+									//On vérifie que les 2 individus ne sont pas déjà en contact																			
+									$j = 0;
+									$verif = false;
+									//... on parcourt la table des individus jusqu'à trouver le contact concerné pour récupérer ses infos
+									while ($j<count($TabIndiv) AND $verif == false)
 									{
-										if ($IdSugg == $TabContacts[$k][0])
+										//Quand on le trouve, on l'affiche
+										if ($IdSugg == $TabIndiv[$j][0])
 										{
-											$test = true;
-											echo "Déjà en contact avec ".$TabContacts[$k][0];
-										}
-									}
-									//Si les 2 individus ne sont pas déjà en contact...
-									if ($test == false)
-									{										
-										$j = 0;
-										$verif = false;
-										//... on parcourt la table des individus jusqu'à trouver le contact concerné pour récupérer ses infos
-										while ($j<count($TabIndiv) AND $verif == false)
-										{
-											//Quand on le trouve, on l'affiche
-											if ($IdSugg == $TabIndiv[$j][0])
+											$verif = true;
+											echo "<b>".$TabIndiv[$j][1]." ".$TabIndiv[$j][2]."</b>";
+											echo "<br/>";
+											//Indiquer le statut agriculteur ou étudiant
+											if ($TabIndiv[$j][3] == 1)
 											{
-												$verif = true;
-												echo "<b>".$TabIndiv[$j][1]." ".$TabIndiv[$j][2]."</b>";
-												echo "<br/>";
-												//Indiquer le statut agriculteur ou étudiant
-												if ($TabIndiv[$j][3] == 1)
-												{
-													echo "Agriculteur";
-												}
-												else											
-												{
-													echo "Etudiant";
-												}
-												echo '<p>';
-												//Bouton pour accéder au profil de l'utilisateur
-												echo '<form action="profil.php" method="GET">';
-												echo '<input type = "submit" value = "Voir le profil" class="btn btn-info btn-sm btn-block" name = "bouton">';
-												echo '</form>';												
-												//Bouton pour ajouter en contact (à mettre dans la boucle)
-												echo '<form action="Messagerie_Bootstrap.php" method="GET">';
-													//On transmet en caché l'id du destinataire et de l'utilisateur connecté
-												echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";
-												echo "<input type='hidden' name='idcontact' value='$IdSugg'>";
-												echo '<input type="submit" value="Contacter" class="btn btn-info btn-sm btn-block" name="bt">';
-												echo '</form>';
-												echo '</p>';
-												echo '<hr class="my-1">';
+												echo "Agriculteur";
 											}
-											$j++;
+											else											
+											{
+												echo "Etudiant";
+											}
+											echo '<p>';
+											//Bouton pour accéder au profil de l'utilisateur
+											echo '<form action="profil.php" method="GET">';
+											echo '<input type = "submit" value = "Voir le profil" class="btn btn-info btn-sm btn-block" name = "bouton">';
+											echo '</form>';												
+											//Bouton pour ajouter en contact (à mettre dans la boucle)
+											echo '<form action="Messagerie_Bootstrap.php" method="GET">';
+												//On transmet en caché l'id du destinataire et de l'utilisateur connecté
+											echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";
+											echo "<input type='hidden' name='idcontact' value='$IdSugg'>";
+											echo '<input type="submit" value="Contacter" class="btn btn-info btn-sm btn-block" name="bt">';
+											echo '</form>';
+											echo '</p>';
+											echo '<hr class="my-1">';
 										}
+										$j++;										
 									}
 									$i++;
 								}
