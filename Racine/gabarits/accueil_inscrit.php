@@ -2,7 +2,8 @@
 <?php //Session_start();
 	//$id_ind_co=$_SESSION["id_ind_co"];
 	//Connexion au serveur
-	include'Connexion_bdd.php';
+	//include'Connexion_bdd.php';
+	$link = mysqli_connect('localhost', 'root', '', 'racine');
 	//Afficher correctement les caractères spéciaux
 	
 ?>
@@ -23,6 +24,10 @@
 	<!-- Ne pas afficher proposition de connexion si déjà connectés -->
 
 	<?php
+	
+	$id_ind_co=2;
+	
+	
 	//Requête permettant de sortir la liste des inscrits pour les compter
 	$query_inscrits="SELECT distinct id_ind FROM Centres_interet WHERE id_ind <>".$id_ind_co;
 	$result_inscrits=mysqli_query($link,$query_inscrits);
@@ -55,7 +60,6 @@
 			}
 		}
 	}
-
 
 	//Requête sortant la liste des mots clé associés à leurs scores pour l'individu connecté
 	$query_mots_cle_co="SELECT id_ind, id_mot_cle, compteur FROM Centres_interet WHERE id_ind = ".$id_ind_co." ORDER BY compteur DESC";
@@ -96,13 +100,16 @@
 	$NBL=count($tab_inscrits);
     for ($i=0; $i<$NBL; $i++)
     {
-        $tab_inscrits[$i][0]=$identifiant[$i];
-        $tab_inscrits[$i][1]=$score[$i];
+        $identifiant[$i]=$tab_inscrits[$i][0];
+        $score[$i]=$tab_inscrits[$i][1];
     }
     array_multisort($score, SORT_DESC,$identifiant, SORT_ASC);
-	echo "Sugg";
-	var_dump($tab_inscrits);
-	echo "<br/>";
+	for ($i=0; $i<$NBL; $i++)
+    {
+        $tab_inscrits[$i][0]=$identifiant[$i];
+        $tab_inscrits[$i][1]=$score[$i];
+	}
+	
 	
 
 	//Récuperation des scores des actualités ordonnées
@@ -168,8 +175,6 @@
 	//Traitement du recordset
 	$TabContacts = mysqli_fetch_all($ResultContacts);
 	$NbLignesContacts=mysqli_num_rows($ResultContacts);
-	echo "Contacts";
-	var_dump($TabContacts);
 	
 	//Construction de la requête récupérant la table Individus
 	$RequeteIndiv = "SELECT id_ind, prenom, nom_ind, id_prof FROM Individus";
@@ -192,26 +197,26 @@
 							<div class="form-group">
 								<?php
 								//Afficher maximum 3 contacts
-								for ($i=0; $i<3; $i++)
+								$i=0;
+								$compteur=0;
+								while ($compteur<3)								
 								{
 									$IdSugg = $tab_inscrits[$i][0]; //On sélectionne chaque suggestion de contact une par une
-									echo $IdSugg;
-									echo "<br/>";
+									$i++;
 									//On vérifie que les 2 individus ne sont pas déjà en contact
 									$test = false;
 									for ($k=0; $k<$NbLignesContacts; $k++)
 									{
 										if ($IdSugg == $TabContacts[$k][0])
 										{
-											$test = true;
-											echo "Déjà en contact avec ".$IdSugg;
-											echo "<br/>";
+											$test = true;											
 										}
 									}
 									//Si les 2 individus ne sont pas déjà en contact...
 									if ($test == false)
 									{										
 										//... on parcourt la table des individus jusqu'à trouver le contact concerné pour récupérer ses infos
+										$compteur++;
 										$j = 0;
 										$verif = false;
 										while ($j<count($TabIndiv) AND $verif == false)
@@ -249,7 +254,7 @@
 											}
 											$j++;										
 										}
-									}	
+									}
 								}
 								?>
 							</div>
