@@ -21,7 +21,7 @@
 							<div class="card border-danger">
 							  <img class="card-img-top" src="picto/apiculteur.jpg" alt="Card image cap">
 							  <div class="card-body">
-							    <h5 class="card-title">Alphonse Pommier</h5>
+							    <h5 class="card-title">Alphonse Paumier</h5>
 							    <p class="card-text">Passionné d'apiculture depuis tout jeune. Je suis engagé dans la protection des abeilles. <br/> Comme disait Einstein : « Si l’abeille disparaissait de la surface du globe, l’homme n’aurait plus que quatre années à vivre »</p>
 							  </div>
 							  <ul class="list-group list-group-flush">
@@ -37,7 +37,7 @@
 							<div class="card">
 	      				<div class="card-body">
 	        				<h5 class="card-title"><b>Centres d'intérêts</b></h5>
-	        				<p class="card-text">Centres d'intérêts de Alphonse Pommier.</p>
+	        				<p class="card-text">Centres d'intérêts de Alphonse Paumier.</p>
 									<hr class="my-4">
 	        				<button href="#" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Ecologie</button>
 									<button href="#" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Apiculture</button>
@@ -50,7 +50,7 @@
 							<div class="card">
 	      				<div class="card-body">
 	        				<h5 class="card-title"><b>Projets</b></h5>
-	        				<p class="card-text">Projets avec la participation de Alphonse Pommier.</p>
+	        				<p class="card-text">Projets avec la participation de Alphonse Paumier.</p>
 									<hr class="my-4">
 	        				<a href="Projet_apiculteur.php"><i>Projet d'apiculture biologique</i></a><br/>
 									<a href="Projet_apiculteur.php"><i>Système de suivi des ruches pour lutter contre les vols</i></a>
@@ -60,7 +60,7 @@
 							<div class="card">
 	      				<div class="card-body">
 	        				<h5 class="card-title"><b>Stages</b></h5>
-	        				<p class="card-text">Propositions de stages de Alphonse Pommier.</p>
+	        				<p class="card-text">Propositions de stages de Alphonse Paumier.</p>
 									<hr class="my-4">
 	        				<p class="card-text"> <i> Aucune offre de stage n'a été proposée par Alphonse Pommier. </i></p>
 	      				</div>
