@@ -40,10 +40,14 @@
 					<h2><?php echo $titre; ?></h2>
 					<hr class="my-4">
 					<div class="row">
-						<div class="col-lg-8">
+						<div class="col-lg-12">
 							<h4>Description</h4>
-							<p class="text-justify lead"><?php echo $description; ?></p>
-							<hr class="my-4">
+							<div class="container">
+								<p class="text-justify lead"><?php echo $description; ?></p>
+								<hr class="my-4">
+							</div>
+						</div>
+						<div class="col-lg-8">
 							<h4>Durée</h4>
 							<p class="lead"><?php echo $duree; ?></p>
 							<hr class="my-4">

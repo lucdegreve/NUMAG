@@ -1,3 +1,8 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 .BleuRacine{
   background :rgb(37,117,127);
   color: #FFFFFF;
@@ -21,15 +26,31 @@
 .LargeurGrande{
   width: 90%;
 }
+.LargeurMax{
+  width: 100%;
+}
 .center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-
-
+.center-vertical {
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.min-vertical {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.min-size{
+  font-size: 0.8em;
+}
 .element {
   .center-block();
+  .Agauche();
+  .Adroite();
 }
 .CouleurInfo{
   background: #17a2b8;
@@ -46,8 +67,8 @@ a:hover, a:focus {
 .HauteurMax{
   height: 90%;
 }
-.HauteurMaxee{
-  height: 140%;
+.HauteurAuto{
+  height: 83%;
 }
 .footer {
     bottom: 0;
@@ -55,4 +76,26 @@ a:hover, a:focus {
     height: 80px;
     background: linear-gradient(182deg, rgb(255,255,255), rgb(180,180,180));
     color: #000000;
+}
+.MargeHaute{
+  padding-top: 2.5em;
+  padding-bottom: 1em;
+}
+.minilead{
+  color: #6c757d;
+  font-weight: 300;
+  margin-bottom: 0.1px;
+}
+.VertMiimosa {
+  border-color: rgb(2, 214, 157);
+}
+.Agauche{
+  display: block;
+  margin-left: auto;
+  margin-right: 1%;
+}
+.Adroite{
+  display: block;
+  margin-left: 1%;
+  margin-right: auto;
 }
