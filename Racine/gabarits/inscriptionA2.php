@@ -28,6 +28,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		$tel=$_GET['tel'];
 		$ad_ind=$_GET['ad_ind'];
 		$idcommune=$_GET['commune'];
+                
 		$query="INSERT INTO individus(id_prof, id_commune, nom_ind, prenom, civilite, naissance, ad_ind, tel, mail, mdp)
                 VALUES (1, $idcommune, '$nom_ind', '$prenom', '$civilite', '$naissance', '$ad_ind', '$tel', '$mail', '$mdp')";
 		$result=mysqli_query($link,$query);
