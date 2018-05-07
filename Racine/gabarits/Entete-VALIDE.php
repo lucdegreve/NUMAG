@@ -24,10 +24,10 @@ Bootstrap assure un aspect graphique élégant-->
 				</div>
 				<div class="col-md-2">
 					<li class="nav-item">
-						<a class="nav-link" href="compte.php"><p class="text-dark">Mon compte</p></a>
+						<a class="btn btn-danger" href="Index.php">Déconnexion</a>
 					</li>
 					<li class="nav-item">
-					<a class="btn btn-danger" href="Index.php">Déconnexion</a>
+						<a class="nav-link" href="compte.php"><p class="text-dark">Mon compte</p></a>
 					</li>
 				</div>
 			</div>
