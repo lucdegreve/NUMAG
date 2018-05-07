@@ -202,8 +202,7 @@
 									$results2=mysqli_query($link,$query2);
 								}
 								//Afficher maximum 3 contacts
-								$i=0;
-								while ($i<3)
+								for ($i=0; $i<3; $i++)
 								{
 									$IdSugg = $tab_inscrits[$i][0]; //On sélectionne chaque suggestion de contact une par une
 									$test = false;
@@ -244,8 +243,7 @@
 											echo '<hr class="my-1">';
 										}
 										$j++;										
-									}
-									$i++;
+									}									
 								}
 								?>
 							</div>
