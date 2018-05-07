@@ -71,13 +71,13 @@ Des validations sont mises en place grace aux données de bootstrap-->
                                                                             if ($civilite=="M")
                                                                             {
                                                                               echo'<div class="form-check">';
-                                                                                echo'<input class="form-check-input" type="radio" name="civilite" id="monsieur" value="option1" checked>';
+                                                                                echo'<input class="form-check-input" type="radio" name="civilite" id="monsieur" value="M" checked>';
                                                                                 echo'<label class="form-check-label" for="monsieur">';
                                                                                 echo' Monsieur';
                                                                                 echo'</label>';
                                                                               echo'</div>';
                                                                               echo'<div class="form-check">';
-                                                                                echo'<input class="form-check-input" type="radio" name="civilite" id="madame" value="option2">';
+                                                                                echo'<input class="form-check-input" type="radio" name="civilite" id="madame" value="Mme">';
                                                                                 echo'<label class="form-check-label" for="madame">';
                                                                                 echo' Madame';
                                                                                 echo'</label>';
@@ -86,13 +86,13 @@ Des validations sont mises en place grace aux données de bootstrap-->
                                                                             else
                                                                             {
                                                                               echo'<div class="form-check">';
-                                                                                echo'<input class="form-check-input" type="radio" name="civilite" id="monsieur" value="option1" >';
+                                                                                echo'<input class="form-check-input" type="radio" name="civilite" id="monsieur" value="M" >';
                                                                                 echo'<label class="form-check-label" for="monsieur">';
                                                                                 echo' Monsieur';
                                                                                 echo'</label>';
                                                                               echo'</div>';
                                                                               echo'<div class="form-check">';
-                                                                                echo'<input class="form-check-input" type="radio" name="civilite" id="madame" value="option2" checked>';
+                                                                                echo'<input class="form-check-input" type="radio" name="civilite" id="madame" value="Mme" checked>';
                                                                                 echo'<label class="form-check-label" for="madame">';
                                                                                 echo' Madame';
                                                                                 echo'</label>';
@@ -110,11 +110,11 @@ Des validations sont mises en place grace aux données de bootstrap-->
 						<div class="form-row">
 							<div class="form-group col-md-4">
 								<label for="inputNom">Nom</label>
-								<?php echo'<input type="text" class="form-control" name="nom_ind" value='.$nom_ind.' required>'?>
+								<?php echo'<input type="text" class="form-control" name="nom_ind" value="'.$nom_ind.'" required>'?>
 							</div>
 							<div class="form-group col-md-4">
 								<label for="inputPrenom">Prenom</label>
-								<?php echo'<input type="text" class="form-control" name="prenom" value='.$prenom.' required>'?>
+								<?php echo'<input type="text" class="form-control" name="prenom" value="'.$prenom.'" required>'?>
 							</div>
 							<div class="form-group col-md-4">
 								<label for="inputDate">Date de naissance</label>
@@ -132,7 +132,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 							
 							<div class="form-group col-md-4">
 							  <label for="inputPassword"> Mot de passe </label>
-							  <?php echo'<input type="password" class="form-control" name="mdp" value='.$mdp.' required>'?>
+							  <?php echo'<input type="password" class="form-control" name="mdp" value="'.$mdp.'" required>'?>
 							</div>
 							
 							<div class="form-group col-md-4">
@@ -143,7 +143,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 						  
 						<div class="form-group">
 							<label for="inputAdresse">Adresse</label>
-							<?php echo'<input type="text" class="form-control" name="ad_ind" value='.$ad_ind.' required>'?>
+							<?php echo'<input type="text" class="form-control" name="ad_ind" value="'.$ad_ind.'" required>'?>
 						</div>
 						
 						
@@ -152,7 +152,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 							<div class="form-group col-md-4">
 								<label for="inputCommune">Commune</label>
 								<select class="form-control" name="commune">
-									<?php echo "<option value=$idcommune> ".$nom_commune." </option>";?>
+									<?php echo '<option value=$idcommune> "'.$nom_commune.'" </option>';?>
 								</select>
 							</div>
 							<div class="form-group col-md-4">

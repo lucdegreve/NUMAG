@@ -39,38 +39,29 @@ Des validations sont mises en place grace aux données de bootstrap-->
 						<div class="form-row">
 							<div class="form-group col-md-7">
 								<label for="inputExploit">Nom de l'exploitation</label>
-								<?php echo'<input type="text" class="form-control" name="nom_exp" value='.$nom_exp.' required>';?>
+								<?php echo'<input type="text" class="form-control" name="nom_exp" value="'.$nom_exp.'" required>';?>
 							</div>
 							<div class="form-group col-md-5">
 								<label for="inputSIRENE">SIRENE</label>
-								<?php echo'<input type="text" class="form-control" name="sirene" value='.$sirene.' required>';?>
+								<?php echo'<input type="text" class="form-control" name="sirene" value="'.$sirene.'" required>';?>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputAdresse">Type de production</label>
-							<?php echo'<input type="text" class="form-control" name="libel_type_prod" value='.$libel_type_prod.' required>';?>
+							<?php echo'<input type="text" class="form-control" name="libel_type_prod" value="'.$libel_type_prod.'" required>';?>
 						</div>
 						<div class="form-group">
 							<label for="inputAdresse">Description de l'exploitation</label>
-							<?php echo'<input type="text" class="form-control" name="desc_exp" value='.$desc_exp.' required>';?>
+							<?php echo'<input type="text" class="form-control" name="desc_exp" value="'.$desc_exp.'" required>';?>
 						</div>
 						<div class="form-group">
 							<label for="inputAdresse">Adresse de l'exploitation</label>
-							<?php echo'<input type="text" class="form-control" name="ad_exp" value='.$ad_exp.' required>';?>
+							<?php echo'<input type="text" class="form-control" name="ad_exp" value="'.$ad_exp.'" required>';?>
 						</div>
                                                 
                                                 <?php echo'<input type="hidden" name="id_ind" value='.$id_ind.'>';?>
 						
-						<?PHP 
-						/*$query1 = "SELECT id_commune,nom_commune FROM communes";
-						$result1=mysqli_query($link,$query1);
-						$nbligne1 = mysqli_num_rows($result1);
-						$nbcol1 = mysqli_num_fields($result1);
-						
-						$query2 = "SELECT id_dpt,nom_dpt FROM departements";
-						$result2=mysqli_query($link,$query2);
-						$nbligne2 = mysqli_num_rows($result2);
-						$nbcol2 = mysqli_num_fields($result2);*/
+						<?PHP
                                                 
                                                 $query1 = "SELECT id_commune, nom_commune, cp, communes.id_dpt, nom_dpt FROM communes
                                                 JOIN departements ON departements.id_dpt = communes.id_dpt
