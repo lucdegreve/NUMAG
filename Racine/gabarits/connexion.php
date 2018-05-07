@@ -17,7 +17,8 @@ Des validations sont mises en place grace aux données de bootstrap-->
 	<body>
 	<?php include("Entete-NC.php"); ?>
 	<?php 
-		$Message=$_GET["Message"];
+		$Message=0;
+		@$Message=$_GET["Message"];
 		if ($Message==1)
 		{
 			echo 'Veuillez vérifier votre identifiant et votre mot de passe puis réessayer';

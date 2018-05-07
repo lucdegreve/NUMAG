@@ -30,9 +30,6 @@
 	}
 	else
 	{
-		header('Location: '.$url2);
-		exit();
-		$Message=1;
-		echo '<input TYPE="hidden" name="Message" value='.$Message.'>';
+		header('Location: '.$url2."?Message=1" );
 	}
 ?>
