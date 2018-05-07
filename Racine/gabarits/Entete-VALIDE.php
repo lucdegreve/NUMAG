@@ -23,12 +23,15 @@ Bootstrap assure un aspect graphique élégant-->
 					<i>RACINE &mdash; Réseau Agricole Collaboratif par l'Interaction et l'Echange</i></div>
 				</div>
 				<div class="col-md-2">
-					<li class="nav-item">
-						<a class="btn btn-danger" href="Deconnexion_protocole.php">Déconnexion</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="compte.php"><p class="text-dark">Mon compte</p></a>
-					</li>
+					<br>
+					<ul class="nav nav-pills">
+						<li class="nav-item">
+							<a class="nav-link active" href="Deconnexion_protocole.php">Déconnexion</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="compte.php"><p class="text-dark">Mon compte</p></a>
+						</li>
+					</ul>
 				</div>
 			</div>
 
@@ -40,7 +43,7 @@ Bootstrap assure un aspect graphique élégant-->
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<li class="nav-item">
-					<a class="nav-link" href="accueil_inscrit.php"><p class="text-light"><a class="nav-link" href="accueil_inscrit.php"><p class="text-light"><img alt="" src="picto\accueil.png" width="40" height="40"></p></a></p></a>
+					<a class="nav-link" href="accueil_inscrit.php"><p class="text-light"><img alt="" src="picto\accueil.png" width="35" height="30"></p></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="Messagerie_Bootstrap.php"><p class="text-light">Messagerie</p></a>
@@ -58,7 +61,7 @@ Bootstrap assure un aspect graphique élégant-->
 				session_start();
 				$id_ind_co=$_SESSION["id_ind_co"];
 
-				
+
 					header('Content-Type: text/html; charset=UTF-8');
 					include('Connexion_bdd.php');
 					//mise en place de la requete
@@ -66,24 +69,24 @@ Bootstrap assure un aspect graphique élégant-->
 					//requete projet
 					$queryProjet="SELECT Alertes_Projet.vu_proj, projets.id_ind
 					FROM Alertes_Projet, projets
-					where Alertes_Projet.vu_proj=0 
+					where Alertes_Projet.vu_proj=0
 					and projets.id_ind=".$id_ind_co."
 					and projets.id_proj=Alertes_Projet.id_proj";
-					
+
 					//requete stage
 					$queryStage="SELECT Alertes_Stage.vu_st, stages.id_ind
 					FROM Alertes_Stage, stages
-					where Alertes_Stage.vu_st=0 
+					where Alertes_Stage.vu_st=0
 					and stages.id_st=Alertes_Stage.id_st
 					and stages.id_ind=".$id_ind_co;
-					
+
 					//requete message
 					$queryMessage="SELECT messages_prives.lu
-					FROM messages_prives	
+					FROM messages_prives
 					where messages_prives.lu=0 and messages_prives.id_dest=".$id_ind_co;
-					//where messages_prives.lu=0 and messages_prives.id_dest=5";					
-					
-					
+					//where messages_prives.lu=0 and messages_prives.id_dest=5";
+
+
 					$resultp=mysqli_query($link, $queryProjet);
 					$results=mysqli_query($link, $queryStage);
 					$resultm=mysqli_query($link, $queryMessage);
@@ -109,7 +112,7 @@ Bootstrap assure un aspect graphique élégant-->
 							<li class="nav-item">
 							<a class="nav-link" href="Alerte.php"><p class="text-light">Alertes</p></a>
 							</li>
-							<span class="badge badge-danger center-vertical">!</span>
+							<span class="badge badge-danger center-alerte">!</span>
 							</li>
 						<?php } ?>
 							<li class="nav-item">
@@ -118,8 +121,8 @@ Bootstrap assure un aspect graphique élégant-->
 							<li class="nav-item">
 								<a class="nav-link" href="presentation.php"><p class="text-light">Qui sommes nous ?</p></a>
 							</li>
-						
-						
+
+
 
 
 			</ul>

@@ -39,6 +39,11 @@ html {
   margin-top: auto;
   margin-bottom: auto;
 }
+.center-alerte {
+  display: block;
+  margin-top: auto;
+  margin-bottom: 2.5em;
+}
 .min-vertical {
   display: block;
   margin-top: 0;
@@ -57,7 +62,6 @@ html {
 }
 /* Liens */
 a {
-	text-decoration: underline;
 	color: #17a2b8;
   font-size: 1.4em;
 }
@@ -98,4 +102,40 @@ a:hover, a:focus {
   display: block;
   margin-left: 1%;
   margin-right: auto;
+}
+.jumbotron {
+  padding: 1rem 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #e9ecef;
+  border-radius: 0.3rem;
+}
+
+@media (min-width: 576px) {
+  .jumbotron {
+    padding: 2rem 1rem;
+  }
+}
+
+.jumbotron-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 0;
+}
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.nav-link:hover, .nav-link:focus {
+  text-decoration: none;
+}
+.nav-pills .nav-link {
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #dc3545;
 }
