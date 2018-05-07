@@ -29,7 +29,7 @@ By Manuel, Julien Louet, Marie -->
 
 <?php
 // code php principal récupérant les données du stage
-	include 'Connexion_bdd';
+	include 'Connexion_bdd.php';
 
 	// Recupération du stage sur lequel l'étudiant à cliqué
 	$stage=$_GET["lestage"];
