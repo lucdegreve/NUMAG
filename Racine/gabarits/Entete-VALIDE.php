@@ -60,7 +60,11 @@ Bootstrap assure un aspect graphique élégant-->
 
 				session_start();
 				$id_ind_co=$_SESSION["id_ind_co"];
-
+				if ($id_ind_co==null){
+					header('Location: index.php');
+					exit();
+				}else{
+				}
 
 					header('Content-Type: text/html; charset=UTF-8');
 					include('Connexion_bdd.php');
