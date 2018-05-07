@@ -1,15 +1,14 @@
-
-<html>
-
-<head>
-	<?php Include("Entete-VALIDE.php");?>
-	<?php //Session_start();
+<?php Include("Entete-VALIDE.php");?>
+<?php //Session_start();
 	$id_ind_co=$_SESSION["id_ind_co"];
 	//Connexion au serveur
 	include'Connexion_bdd.php';
 	//Afficher correctement les caractères spéciaux
 	mysqli_set_charset($link, 'UTF-8');
-	?>
+?>
+
+	<html>
+<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>
 		Accueil
