@@ -67,7 +67,7 @@
             {
                 // on récupère l'entrée de la recherche
                 $RECHERCHE=$_GET['contact'];
-
+				echo $RECHERCHE;
                 //On sélectionne uniquement, parmis les contacts de l'utilisateur connecté, ceux dont le nom ou le prénom est égal à ce qui a été entré
                 $query1="SELECT prenom, nom_ind, lu, id_compte, id_ind FROM individus i
                 JOIN (SELECT CASE WHEN id_dest=$id_ind_co THEN id_expe ELSE id_dest END AS id_compte, MAX(date_mp) AS inter, lu
