@@ -198,7 +198,7 @@
 							<div class="form-group">
 								<?php
 								//Afficher maximum 3 contacts
-								for ($i=0; $i<5; $i++)
+								for ($i=0; $i<10; $i++)
 								{
 									$IdSugg = $tab_inscrits[$i][0]; //On sélectionne chaque suggestion de contact une par une
 									echo $IdSugg;
@@ -247,7 +247,7 @@
 													//On transmet en caché l'id du destinataire et de l'utilisateur connecté
 												echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";
 												echo "<input type='hidden' name='idcontact' value='$IdSugg'>";
-                                                                                                echo "<input type='hidden' name='message' value='Ceci est le début de votre conversation'>";
+                                                echo "<input type='hidden' name='message' value='Ceci est le début de votre conversation'>";
 												echo '<input type="submit" value="Contacter" class="btn btn-info btn-sm btn-block" name="bt">';
 												echo '</form>';
 												echo '</p>';
