@@ -204,14 +204,20 @@
 								//Afficher maximum 3 contacts
 								for ($i=0; $i<2; $i++)
 								{
-									$IdSugg = $tab_inscrits[$i][0]; //On sélectionne chaque suggestion de contact une par une									
+									$IdSugg = $tab_inscrits[$i][0]; //On sélectionne chaque suggestion de contact une par une
+									echo $IdSugg;
+									echo "<br/>";
 									//On vérifie que les 2 individus ne sont pas déjà en contact
 									$test = false;
-									if ($IdSugg == $TabContacts[$k][0])
+									for ($k=0; $k<$NbLignesContacts; $k++)
+									{
+										if ($IdSugg == $TabContacts[$k][0])
 										{
 											$test = true;
-											echo "Déjà en contact avec ".$TabContacts[$k][0];
+											echo "Déjà en contact avec ".$IdSugg;
+											echo "<br/>";
 										}
+									}
 									//Si les 2 individus ne sont pas déjà en contact...
 									if ($test == false)
 									{										
