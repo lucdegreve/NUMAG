@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+	<?php include "Entete-VALIDE.php" ?>
     <meta charset="utf-8">
     <title>Recherche de stage</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -36,18 +37,11 @@
     </script>
 
     <!-- ouverture de la fenetre pop up pour les tags -->
-    <script type="text/javascript">
-    function open_popup_test()
-    {
-    window.open("recherche_tag_st.php", "recherche_tag_st", "toolbar=yes, status=yes, scrollbars=yes, resizable=no, width=300, height=300");
-    }
 
-    window.close();
-    </script>
 
   </head>
   <body>
-    <?php include "Entete-VALIDE.php" ?>
+
     <br/>
     <div class="container-fluid">
       <br>
