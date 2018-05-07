@@ -111,13 +111,15 @@ Bootstrap assure un aspect graphique élégant-->
 							</li>
 							<span class="badge badge-danger center-vertical">!</span>
 							</li>
+						<?php } ?>
 							<li class="nav-item">
 								<a class="nav-link" href="tutoriel.php"><p class="text-light">Tutoriel</p></a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="presentation.php"><p class="text-light">Qui sommes nous ?</p></a>
 							</li>
-						<?php }	?>
+						
+						
 
 
 			</ul>
