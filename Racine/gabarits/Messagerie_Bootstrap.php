@@ -9,7 +9,7 @@
   <body>
     <?php include "Entete-VALIDE.php" ?>
     <?php
-    Session_start();
+    //Session_start();
     ?>
 <br>
 <div class="container-fluid">
