@@ -171,6 +171,7 @@
 	//Traitement du recordset
 	$TabContacts = mysqli_fetch_all($ResultContacts);
 	$NbLignesContacts=mysqli_num_rows($ResultContacts);
+	var_dump($TabContacts);
 	
 	//Construction de la requête récupérant la table Individus
 	$RequeteIndiv = "SELECT id_ind, prenom, nom_ind, id_prof FROM Individus";
@@ -212,12 +213,12 @@
 										if ($IdSugg == $TabContacts[$k][0])
 										{
 											$test = true;
+											echo "Déjà en contact avec ".$TabContacts[$k][0];
 										}
 									}
 									//Si les 2 individus ne sont pas déjà en contact...
 									if ($test == false)
-									{
-										$i++;
+									{										
 										$j = 0;
 										$verif = false;
 										//... on parcourt la table des individus jusqu'à trouver le contact concerné pour récupérer ses infos
@@ -256,6 +257,7 @@
 											$j++;
 										}
 									}
+									$i++;
 								}
 								?>
 							</div>
@@ -266,7 +268,7 @@
 			<div class="col-lg-8">
 				<div id="actualites">
 					<form class="jumbotron HauteurMaxee">
-						<h3>Actualites</h3>
+						<h3>Actualités</h3>
 						<hr class="my-4">
 						<div class="form-group">
 							<?php
