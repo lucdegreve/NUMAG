@@ -106,6 +106,9 @@
         $tab_inscrits[$i][0]=$identifiant[$i];
         $tab_inscrits[$i][1]=$score[$i];
 	}
+	echo "Sugg";
+	var_dump($tab_inscrits);
+	echo "<br/>";
 	
 
 	//Récuperation des scores des actualités ordonnées
@@ -171,6 +174,7 @@
 	//Traitement du recordset
 	$TabContacts = mysqli_fetch_all($ResultContacts);
 	$NbLignesContacts=mysqli_num_rows($ResultContacts);
+	echo "Contacts";
 	var_dump($TabContacts);
 	
 	//Construction de la requête récupérant la table Individus
@@ -201,14 +205,14 @@
 									$results2=mysqli_query($link,$query2);
 								}
 								//Afficher maximum 3 contacts
-								for ($i=0; $i<2; $i++)
+								for ($i=0; $i<1; $i++)
 								{
 									$IdSugg = $tab_inscrits[$i][0]; //On sélectionne chaque suggestion de contact une par une
 									echo $IdSugg;
 									echo "<br/>";
 									//On vérifie que les 2 individus ne sont pas déjà en contact
 									$test = false;
-									for ($k=0; $k<$NbLignesContacts-1; $k++)
+									for ($k=0; $k<$NbLignesContacts; $k++)
 									{
 										if ($IdSugg == $TabContacts[$k][0])
 										{
