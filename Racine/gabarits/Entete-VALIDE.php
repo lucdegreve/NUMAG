@@ -22,6 +22,14 @@ Bootstrap assure un aspect graphique élégant-->
 					</br>
 					<i>RACINE &mdash; Réseau Agricole Collaboratif par l'Interaction et l'Echange</i></div>
 				</div>
+				<div class="col-md-2">
+					<li class="nav-item">
+						<a class="nav-link" href="compte.php"><p class="text-dark">Mon compte</p></a>
+					</li>
+					<li class="nav-item">
+					<a class="btn btn-danger" href="Index.php">Déconnexion</a>
+					</li>
+				</div>
 			</div>
 
 
@@ -31,9 +39,6 @@ Bootstrap assure un aspect graphique élégant-->
 		</button>
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-				<li class="nav-item">
-					<a class="btn btn-danger" href="Index.php">Déconnexion</a>
-				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="accueil_inscrit.php"><p class="text-light"><a class="nav-link" href="accueil_inscrit.php"><p class="text-light"><img alt="" src="picto\accueil.png" width="40" height="40"></p></a></p></a>
 				</li>
@@ -108,9 +113,6 @@ Bootstrap assure un aspect graphique élégant-->
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="tutoriel.php"><p class="text-light">Tutoriel</p></a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="compte.php"><p class="text-light">Mon compte</p></a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="presentation.php"><p class="text-light">Qui sommes nous ?</p></a>
