@@ -9,7 +9,7 @@
   <body>
     <?php include "Entete-VALIDE.php" ?>
     <?php
-    Session_start();
+    //Session_start();
     ?>
 <br>
 <div class="container-fluid">
@@ -19,7 +19,7 @@
         <h2>Contact</h2>
         <hr class="my-4">
         <?php
-            $id_ind_co=$_SESSION['id_ind_co'];
+            //$id_ind_co=$_SESSION['id_ind_co'];
 
             Include("connexion_bdd.php");
 
@@ -118,7 +118,7 @@
               <div class='form-group'>
                 <div class="row">
                   <div class="col-lg-9">
-                    <?php  echo "<input type='hidden' name='contact' value=".$CONTACT.">"; ?>
+                    <?php  //echo "<input type='hidden' name='contact' value=".$CONTACT.">"; ?>
                     <input type='text' class="form-control" name='contact' value=''>
                   </div>
                   <div class="col-lg-3">
