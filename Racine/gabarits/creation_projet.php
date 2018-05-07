@@ -13,7 +13,6 @@
 			}
 	       // window.close();
 			}
-
 			function valider(){
 					var ok=1;
 					message ="";
@@ -59,6 +58,9 @@
 						<div class="col-lg-6">
 							<div class="form-group">
 								<input type="text" class="form-control" name="titre_proj" placeholder="Entrer le titre">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" name="lieu_proj" placeholder="Entrer le lieu">
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control" name="duree" placeholder="Entrer la durée">

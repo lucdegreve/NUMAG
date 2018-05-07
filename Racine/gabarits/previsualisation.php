@@ -15,6 +15,7 @@
 			$titre=$_GET["titre_proj"];
 			$etat=$_GET["etatprojet"];
 			$date=$_GET["date_proj"];
+			$lieu_proj=$_GET["lieu_proj"];
 			$sout=1;
 			$listetags=array();
 			$i=0;
@@ -48,6 +49,9 @@
 							</div>
 						</div>
 						<div class="col-lg-8">
+							<h4>Lieu</h4>
+							<p class="lead"><?php echo $lieu_proj; ?></p>
+							<hr class="my-4">
 							<h4>Durée</h4>
 							<p class="lead"><?php echo $duree; ?></p>
 							<hr class="my-4">
@@ -64,9 +68,6 @@
 							<p class="lead"><?php echo $etat; ?></p>
 						</div>
 						<div class="col-lg-4">
-							<h4>Lieu</h4>
-							<p class="lead"><?php echo $Tab_res[0][5]; ?></p>
-							<hr class="my-4">
 							<h4>Nom</h4>
 							<p class="lead"><?php echo $Tab_res[0][1]; ?></p>
 							<hr class="my-4">
@@ -78,6 +79,7 @@
 						</div>
 					</div>
 					<div class="container">
+						<hr class="my-4">
 						<div class="row">
 							<div class="col-lg-6">
 								<form method="GET" action="creation_projet.php">	<!-- boutons retour et valider -->
