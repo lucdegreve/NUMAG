@@ -196,7 +196,7 @@
 								{
 									$bt=$_GET['bt'];
 									$IdSugg=$_GET['idcontact'];
-									$query2="INSERT INTO messages_prives (id_dest, id_expe, texte, date_mp, lu) VALUES ($IdSugg, $id_ind_co, 'Ceci est le tout début de votre historique des messages directs', NOW(), 0)";
+									$query2="INSERT INTO messages_prives (id_dest, id_expe, texte, date_mp, lu) VALUES ($IdSugg, $id_ind_co, 'Début', NOW(), 0)";
 									$results2=mysqli_query($link,$query2);
 								}
 								//Afficher maximum 3 contacts
