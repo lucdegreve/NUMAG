@@ -96,8 +96,8 @@
 	$NBL=count($tab_inscrits);
     for ($i=0; $i<$NBL; $i++)
     {
-        $identifiant[$i]=$tab_inscrits[$i][0];
-        $score[$i]=$tab_inscrits[$i][1];
+        $tab_inscrits[$i][0]=$identifiant[$i];
+        $tab_inscrits[$i][1]=$score[$i];
     }
     array_multisort($score, SORT_DESC,$identifiant, SORT_ASC);
 	echo "Sugg";
