@@ -178,8 +178,7 @@
 	//Execution de la requete et production du recordset
 	$ResultIndiv = mysqli_query($link,$RequeteIndiv);
 	//Traitement du recordset
-	$TabIndiv = mysqli_fetch_all($ResultIndiv);
-	
+	$TabIndiv = mysqli_fetch_all($ResultIndiv);	
 	?>
 
 	<br>
@@ -209,7 +208,7 @@
 									echo "<br/>";
 									//On vérifie que les 2 individus ne sont pas déjà en contact
 									$test = false;
-									for ($k=0; $k<$NbLignesContacts; $k++)
+									for ($k=0; $k<$NbLignesContacts-1; $k++)
 									{
 										if ($IdSugg == $TabContacts[$k][0])
 										{
