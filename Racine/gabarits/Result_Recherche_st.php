@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+      <?php include "Entete-VALIDE.php" ?>
     <meta charset="utf-8">
     <title>Résultat recherche stage</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -47,7 +48,7 @@
 
   </head>
   <body>
-    <?php include "Entete-VALIDE.php" ?>
+
 <?php
 	Include("Connexion_bdd.php");
 
