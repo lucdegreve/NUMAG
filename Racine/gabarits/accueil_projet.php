@@ -1,8 +1,8 @@
 <!-- Script de l'accueil des projets avec bouton de cration de projet, recherche et affichage des projets
 By Manuel, Julien Louet et Marie -->
 <?php
-session_start();
-$id_ind_co=$_SESSION["id_ind_co"];
+//session_start();
+//$id_ind_co=$_SESSION["id_ind_co"];
 ?>
 <html>
 

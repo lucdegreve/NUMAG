@@ -1,6 +1,6 @@
 <?php Include("Entete-VALIDE.php");?>
 <?php //Session_start();
-	$id_ind_co=$_SESSION["id_ind_co"];
+	//$id_ind_co=$_SESSION["id_ind_co"];
 	//Connexion au serveur
 	include'Connexion_bdd.php';
 	//Afficher correctement les caractères spéciaux
