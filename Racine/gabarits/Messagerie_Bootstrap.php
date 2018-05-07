@@ -8,6 +8,9 @@
   </head>
   <body>
     <?php include "Entete-VALIDE.php" ?>
+    <?php
+    Session_start();
+    ?>
 <br>
 <div class="container-fluid">
   <div class="row">
@@ -147,7 +150,7 @@
         if (@isset($contact)){
           //On sélectionne les messages échangés entre l'utilisateur connecté et celui qu'il a sélectionné dans la partieG
           $query="SELECT individus.id_ind, individus.nom_ind, individus.prenom,
-          messages_prives.id_mp, DATE_FORMAT(messages_prives.date_mp, '%d/%m/%y %h:%i') as date, messages_prives.lu, messages_prives.texte, id_dest
+          messages_prives.id_mp, DATE_FORMAT(messages_prives.date_mp, '%d/%m/%y %H:%i') as date, messages_prives.lu, messages_prives.texte, id_dest
           FROM individus
           JOIN messages_prives
           ON individus.id_ind = messages_prives.id_expe OR individus.id_ind = messages_prives.id_dest
