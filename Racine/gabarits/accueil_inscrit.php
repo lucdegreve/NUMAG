@@ -224,8 +224,7 @@
 											//Bouton pour accéder au profil de l'utilisateur
 											echo '<form action="profil.php" method="GET">';
 											echo '<input type = "submit" value = "Voir le profil" class="btn btn-info btn-sm" name = "bouton">';
-											echo '</form>';
-											echo '  ';
+											echo '</form>';											
 											//Bouton pour ajouter en contact (à mettre dans la boucle)
 											echo '<form action="Messagerie_Bootstrap.php" method="GET">';
 												//On transmet en caché l'id du destinataire et de l'utilisateur connecté
