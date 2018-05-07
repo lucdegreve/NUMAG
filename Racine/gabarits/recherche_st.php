@@ -102,7 +102,7 @@
               <div class="col-lg-6">
                 <?php
             			$query="SELECT libelle_mot_cle
-            			FROM mots_cles ORDER BY libelle_mot_cle DESC";
+            			FROM mots_cles ORDER BY libelle_mot_cle";
             			$result=mysqli_query($link,$query);
             			$Tab=mysqli_fetch_all($result);
             			$nbligne=mysqli_num_rows($result);
