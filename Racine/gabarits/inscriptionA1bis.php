@@ -152,7 +152,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 							<div class="form-group col-md-4">
 								<label for="inputCommune">Commune</label>
 								<select class="form-control" name="commune">
-									<?php echo '<option value=$idcommune> "'.$nom_commune.'" </option>';?>
+									<?php echo '<option value=$idcommune> '.$nom_commune.' </option>';?>
 								</select>
 							</div>
 							<div class="form-group col-md-4">
