@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<?php include("Entete-VALIDE.html"); ?>
+		<?php include("Entete-VALIDE.php"); ?>
 		<br/>
 		<form>
       <div class="container">
