@@ -53,7 +53,7 @@
 	Include("Connexion_bdd.php");
 
     // récupération des données de la recherche
-	$mot_cle=$_GET ['tag'];
+	@$mot_cle=$_GET ['tag'];
 	$lieu=$_GET["dpt"];
   $mois=$_GET["mois"];
 	$periode_st=$_GET["periode"];
