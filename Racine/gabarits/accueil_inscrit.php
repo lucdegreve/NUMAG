@@ -106,9 +106,6 @@
         $tab_inscrits[$i][0]=$identifiant[$i];
         $tab_inscrits[$i][1]=$score[$i];
 	}
-	echo "Sugg";
-	var_dump($tab_inscrits);
-	echo "<br/>";
 	
 
 	//Récuperation des scores des actualités ordonnées
@@ -174,8 +171,6 @@
 	//Traitement du recordset
 	$TabContacts = mysqli_fetch_all($ResultContacts);
 	$NbLignesContacts=mysqli_num_rows($ResultContacts);
-	echo "Contacts";
-	var_dump($TabContacts);
 	
 	//Construction de la requête récupérant la table Individus
 	$RequeteIndiv = "SELECT id_ind, prenom, nom_ind, id_prof FROM Individus";
