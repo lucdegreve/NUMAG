@@ -198,7 +198,7 @@
 							<div class="form-group">
 								<?php
 								//Afficher maximum 3 contacts
-								for ($i=0; $i<10; $i++)
+								for ($i=0; $i<3; $i++)
 								{
 									$IdSugg = $tab_inscrits[$i][0]; //On sélectionne chaque suggestion de contact une par une
 									echo $IdSugg;
