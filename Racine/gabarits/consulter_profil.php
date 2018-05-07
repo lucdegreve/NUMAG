@@ -52,7 +52,7 @@
 	        				<h5 class="card-title"><b>Projets</b></h5>
 	        				<p class="card-text">Projets avec la participation de Alphonse Paumier.</p>
 									<hr class="my-4">
-	        				<a href="Projet_apiculteur.php"><i>Projet d'apiculture biologique</i></a><br/>
+	        				<a href="projet_api.php"><i>Projet d'apiculture biologique</i></a><br/>
 									<a href="Projet_apiculteur.php"><i>Système de suivi des ruches pour lutter contre les vols</i></a>
 	      				</div>
 	    				</div>
