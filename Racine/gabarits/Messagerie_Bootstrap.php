@@ -101,10 +101,10 @@
                                 echo "<li><input type='submit' class='list-group-item list-group-item-action' name='submitcontact' value='$PRENOM $NOM'></li>";
 
                                 //Si on a un msg non lu de la part de ce contact alors on met une image ?
-                                /*if ($lecture==0)
+                                if ($lecture==0)
                                 {
-                                    echo "<img src='image.jpg' height=50px>";
-                                }*/
+                                    echo "<span class='badge badge-light'>Nouveau message</span>";
+                                }
                             echo "</form>";
                         }
                     echo "</ul>";
