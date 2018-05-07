@@ -101,9 +101,8 @@
               </div>
               <div class="col-lg-6">
                 <?php
-            			include "Connexion_bdd.php";
             			$query="SELECT libelle_mot_cle
-            			FROM mots_cles ";
+            			FROM mots_cles ORDER BY libelle_mot_cle DESC";
             			$result=mysqli_query($link,$query);
             			$Tab=mysqli_fetch_all($result);
             			$nbligne=mysqli_num_rows($result);
