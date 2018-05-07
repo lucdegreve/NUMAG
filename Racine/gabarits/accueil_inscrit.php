@@ -29,7 +29,6 @@
 	$tab_inscrits=mysqli_fetch_all($result_inscrits);
 	$nblig_inscrits=mysqli_num_rows($result_inscrits); //Donne le nombre d'identifiants différents = nombre d'inscrits sur la plateforme
 	$nbcol_inscrits=mysqli_num_fields($result_inscrits);
-//var_dump($tab_inscrits);
 	//Requête dans une boucle permettant de sortir les 3 centres d interet principaux par inscrit avec le score correspondant à ceux du connecté
 	//Faire boucle permettant de faire tableau
 	$pos=0;
