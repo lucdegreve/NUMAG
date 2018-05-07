@@ -59,17 +59,17 @@
                   <div class="form-group">
                     <label for="exampleSelect1">Choisir un département</label>
                     <select class="form-control" name="dpt">
-                      <option>Pyrénées Atlantiques</option>
-                      <option>Landes</option>
-                      <option>Lot et Garonne</option>
-                      <option>Gironde</option>
-                      <option>Dordogne</option>
-                      <option>Corrèze</option>
-                      <option>Haute-Vienne</option>
-                      <option>Creuse</option>
-                      <option>Charentes</option>
-                      <option>Charentes-maritimes</option>
-                      <option>Deux-sèvres</option>
+					  <option>Charente</option>
+					  <option>Charente-Maritime</option>
+					  <option>Corrèze</option>
+					  <option>Creuse</option>
+					  <option>Deux-Sèvres</option>
+					  <option>Dordogne</option>
+					  <option>Gironde</option>
+					  <option>Haute-Vienne</option>
+					  <option>Landes</option>
+					  <option>Lot-et-Garonne</option>
+                      <option>Pyrénées-Atlantiques</option>
                       <option>Vienne</option>
                     </select>
                   </div>
