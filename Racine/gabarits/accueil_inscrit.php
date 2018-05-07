@@ -106,14 +106,7 @@
         $tab_inscrits[$i][0]=$identifiant[$i];
         $tab_inscrits[$i][1]=$score[$i];
 	}
-
-
-	//Construction de la requête récupérant la table Individus
-	$RequeteIndiv = "SELECT id_ind, prenom, nom_ind, id_prof FROM Individus";
-	//Execution de la requete et production du recordset
-	$ResultIndiv = mysqli_query($link,$RequeteIndiv);
-	//Traitement du recordset
-	$TabIndiv = mysqli_fetch_all($ResultIndiv);
+	
 
 	//Récuperation des scores des actualités ordonnées
 	$query_SA="SELECT id_actu, SUM(Centres_interet.Compteur) AS Score_actu
@@ -178,6 +171,14 @@
 	//Traitement du recordset
 	$TabContacts = mysqli_fetch_all($ResultContacts);
 	$NbLignesContacts=mysqli_num_rows($ResultContacts);
+	
+	//Construction de la requête récupérant la table Individus
+	$RequeteIndiv = "SELECT id_ind, prenom, nom_ind, id_prof FROM Individus";
+	//Execution de la requete et production du recordset
+	$ResultIndiv = mysqli_query($link,$RequeteIndiv);
+	//Traitement du recordset
+	$TabIndiv = mysqli_fetch_all($ResultIndiv);
+	
 	?>
 
 	<br>
@@ -199,48 +200,62 @@
 									$query2="INSERT INTO messages_prives (id_dest, id_expe, texte, date_mp, lu) VALUES ($IdSugg, $id_ind_co, 'Ceci est le tout début de votre historique des messages directs', NOW(), 0)";
 									$results2=mysqli_query($link,$query2);
 								}
-								// code alternatif pour afficher TOUS les contacts possibles :
-								// for ($j=0; $j<$NBL; $j++)
-								for ($j=0; $j<3; $j++)
+								//Afficher maximum 3 contacts
+								$i=0;
+								while ($i<3)
 								{
-									$IdSugg = $tab_inscrits[$j][0];
-									$k = 0;
-									$verif = false;
-									while ($k<count($TabIndiv) AND $verif == false)
+									$IdSugg = $tab_inscrits[$i][0]; //On sélectionne chaque suggestion de contact une par une
+									$test = false;
+									//On vérifie que les 2 individus ne sont pas déjà en contact
+									for ($k=0; $k<$NbLignesContacts; $k++)
 									{
-										if ($IdSugg == $TabIndiv[$k][0])
+										if ($IdSugg == $TabContacts[$k][0])
 										{
-											echo "<b>".$TabIndiv[$k][1]." ".$TabIndiv[$k][2]."</b>";
-											echo "<br/>";
-											if ($TabIndiv[$k][3] == 1)
-											{
-												echo "Agriculteur";
-											}
-											else
-											{
-												echo "Etudiant";
-											}
-											echo '<p>';
-											//Bouton pour accéder au profil de l'utilisateur
-											echo '<form action="profil.php" method="GET">';
-											echo '<input type = "submit" value = "Voir le profil" class="btn btn-info btn-sm btn-block" name = "bouton">';
-											echo '</form>';
-											
-											//Bouton pour ajouter en contact (à mettre dans la boucle)
-											echo '<form action="Messagerie_Bootstrap.php" method="GET">';
-												//On transmet en caché l'id du destinataire et de l'utilisateur connecté
-											echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";
-											echo "<input type='hidden' name='idcontact' value='$IdSugg'>";
-											echo '<input type="submit" value="Contacter" class="btn btn-info btn-sm btn-block" name="bt">';
-											echo '</form>';
-											echo '</p>';
-											//echo "<br/>";
-											$verif = true;
+											$test = true;
 										}
-										$k++;
 									}
-
-									echo '<hr class="my-1">';
+									//Si les 2 individus ne sont pas déjà en contact...
+									if ($test == false)
+									{
+										$i++;
+										$j = 0;
+										$verif = false;
+										//... on parcourt la table des individus jusqu'à trouver le contact concerné pour récupérer ses infos
+										while ($j<count($TabIndiv) AND $verif == false)
+										{
+											//Quand on le trouve, on l'affiche
+											if ($IdSugg == $TabIndiv[$j][0])
+											{
+												$verif = true;
+												echo "<b>".$TabIndiv[$j][1]." ".$TabIndiv[$j][2]."</b>";
+												echo "<br/>";
+												//Indiquer le statut agriculteur ou étudiant
+												if ($TabIndiv[$j][3] == 1)
+												{
+													echo "Agriculteur";
+												}
+												else											
+												{
+													echo "Etudiant";
+												}
+												echo '<p>';
+												//Bouton pour accéder au profil de l'utilisateur
+												echo '<form action="profil.php" method="GET">';
+												echo '<input type = "submit" value = "Voir le profil" class="btn btn-info btn-sm btn-block" name = "bouton">';
+												echo '</form>';												
+												//Bouton pour ajouter en contact (à mettre dans la boucle)
+												echo '<form action="Messagerie_Bootstrap.php" method="GET">';
+													//On transmet en caché l'id du destinataire et de l'utilisateur connecté
+												echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";
+												echo "<input type='hidden' name='idcontact' value='$IdSugg'>";
+												echo '<input type="submit" value="Contacter" class="btn btn-info btn-sm btn-block" name="bt">';
+												echo '</form>';
+												echo '</p>';
+												echo '<hr class="my-1">';
+											}
+											$j++;
+										}
+									}
 								}
 								?>
 							</div>
