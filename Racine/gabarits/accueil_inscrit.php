@@ -4,7 +4,7 @@
 	//Connexion au serveur
 	include'Connexion_bdd.php';
 	//Afficher correctement les caractères spéciaux
-	mysqli_set_charset($link, 'UTF-8');
+	
 ?>
 
 	<html>
