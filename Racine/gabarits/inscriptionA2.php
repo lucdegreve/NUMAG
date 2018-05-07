@@ -16,9 +16,9 @@ Des validations sont mises en place grace aux données de bootstrap-->
 	</head>
 	<body>
 		<?php
-		include("Entete-VALIDE.php");
+		include("Entete-NC.php");
 		//$link = mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
-                $link = mysqli_connect('localhost','root','root','BDD');
+        include 'Connexion_bdd.php';;
 		$civilite=$_GET['civilite'];
 		$nom_ind=$_GET['nom_ind'];
 		$prenom=$_GET['prenom'];
