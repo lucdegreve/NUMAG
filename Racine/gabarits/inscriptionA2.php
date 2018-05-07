@@ -1,7 +1,7 @@
-<!-- Code effectué par Clément Turbillier -->
+<!-- Code effectué par Clément Turbillier, modif Diane -->
 <!-- Ce code est fait en exploitant les possibilités de Bootstrap, il s'agit du formulaire d'inscription du site
 les containers et containers fluids structurent la page d'inscription 
-Cette page est la deuxième des trois pages de formulaire d'inscription à remplir pour un agriculteur
+Cette page est la troisième des six pages de formulaire d'inscription à remplir pour un agriculteur
 Des validations sont mises en place grace aux données de bootstrap-->
 
 <!DOCTYPE html>
@@ -17,8 +17,8 @@ Des validations sont mises en place grace aux données de bootstrap-->
 	<body>
 		<?php
 		include("Entete-NC.php");
-		//$link = mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
-        include 'Connexion_bdd.php';;
+		Include("connexion_bdd.php");
+                
 		$civilite=$_GET['civilite'];
 		$nom_ind=$_GET['nom_ind'];
 		$prenom=$_GET['prenom'];
@@ -68,16 +68,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
                                                 
                                                 <?php echo'<input type="hidden" name="id_ind" value='.$id_ind.'>';?>
 						
-						<?PHP 
-						/*$query1 = "SELECT id_commune,nom_commune FROM communes";
-						$result1=mysqli_query($link,$query1);
-						$nbligne1 = mysqli_num_rows($result1);
-						$nbcol1 = mysqli_num_fields($result1);
-						
-						$query2 = "SELECT id_dpt,nom_dpt FROM departements";
-						$result2=mysqli_query($link,$query2);
-						$nbligne2 = mysqli_num_rows($result2);
-						$nbcol2 = mysqli_num_fields($result2);*/
+						<?PHP
                                                 
                                                 $query1 = "SELECT id_commune, nom_commune, cp, communes.id_dpt, nom_dpt FROM communes
                                                 JOIN departements ON departements.id_dpt = communes.id_dpt ORDER BY nom_commune";
@@ -101,28 +92,10 @@ Des validations sont mises en place grace aux données de bootstrap-->
 											$id=$row["id_commune"];
 											$nom =$row["nom_commune"];
 											echo "<option value=$id>$nom</option>";
-										}	
+										}
 									?>
 								</select>
 							</div>
-							<!--<div class="form-group col-md-4">
-								<label for="inputDpt">Département</label>
-								<select class="form-control" name="dpt_exp">
-									<?php/*
-										while($row=mysqli_fetch_array($result2,MYSQLI_BOTH))
-											{
-												$id=$row["id_dpt"];
-												$nom =$row["nom_dpt"];
-												echo "<option> ".$nom." </option>";
-											}*/	
-									?>
-								</select>
-							</div>
-							<div class="form-group col-md-4">
-							  <label for="inputCp">Code postal</label>
-							  <input type="number" class="form-control" name="cp_exp" required>
-							</div>-->
-							
 						</div>
 						
 						<input type="submit" class="btn btn-info" value="Suite" ></input>

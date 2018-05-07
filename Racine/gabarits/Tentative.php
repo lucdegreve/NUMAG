@@ -3,34 +3,46 @@
 Bootstrap assure un aspect graphique élégant-->
 
 
-<HTML>
+<!--<HTML>
 	<head>
 		<meta charset="utf-8">
-		<title> Entete </title>
+		<title> Entete </title>-->
 		
 		<!-- css -->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!--<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		<li>
-			centres d'interets :
+			Centres d'interets :
 			<ul>
-				<?php foreach($_POST['centre'] as $centre): ?>
+				<?php /*foreach($_POST['centre'] as $centre); ?>
 					<li><?php echo $centre; ?></li>
-				<?php endforeach; ?>
+				<?php endforeach; */?>
 			</ul>
 		</li> 
 	</body>
-</HTML>
+</HTML>-->
+
+<!-- Modifications : Diane -->
 
 <?php
+/*
+Cette page est la sixième des six pages de formulaire d'inscription à remplir pour un agriculteur
+Cette page n'affiche rien, elle envoie juste des données (centres d'intéret de
+l'agriculteurqui vient de s'inscrire) et renvoie à la page de connexion*/
+Include("connexion_bdd.php");
+
+//Pour chaque CI sélectionné on l'ajoute dans la table centres_interet avec une valeur de 5.
 $id_ind=$_POST['id_ind'];
-//$link = mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
-$link = mysqli_connect('localhost','root','root','BDD');
 foreach($_POST['centre'] as $centre)
 {
-    $query="INSERT INTO centres_interet (id_ind, id_mot_cle)
-    VALUES ($id_ind, $id_type_prod)";
+    $query="INSERT INTO centres_interet (id_ind, id_mot_cle, compteur)
+    VALUES ($id_ind, $centre, 5)";
     $result=mysqli_query($link,$query);
 }
+
+//Ouvre la page
+header('Location: connexion.php');
+  exit();
+?>

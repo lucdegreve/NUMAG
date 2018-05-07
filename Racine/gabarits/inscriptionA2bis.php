@@ -1,7 +1,7 @@
-<!-- Code effectué par Clément Turbillier -->
+<!-- Code effectué par Clément Turbillier, modif Diane -->
 <!-- Ce code est fait en exploitant les possibilités de Bootstrap, il s'agit du formulaire d'inscription du site
 les containers et containers fluids structurent la page d'inscription 
-Cette page est la deuxième des trois pages de formulaire d'inscription à remplir pour un agriculteur
+Cette page est la quatrième des six pages de formulaire d'inscription à remplir pour un agriculteur
 Des validations sont mises en place grace aux données de bootstrap-->
 
 <!DOCTYPE html>
@@ -16,9 +16,9 @@ Des validations sont mises en place grace aux données de bootstrap-->
 	</head>
 	<body>
 		<?php
-		include("Entete-VALIDE.php");
-		//$link = mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
-                $link = mysqli_connect('localhost','root','root','BDD');
+		include("Entete-NC.php");
+		Include("connexion_bdd.php");
+                
 		$nom_exp=$_GET['nom_exp'];
 		$sirene=$_GET['sirene'];
 		$libel_type_prod=$_GET['libel_type_prod'];

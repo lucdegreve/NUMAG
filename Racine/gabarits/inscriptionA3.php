@@ -1,7 +1,7 @@
-<!-- Code effectué par Clément Turbillier -->
+<!-- Code effectué par Clément Turbillier, modif Diane-->
 <!-- Ce code est fait en exploitant les possibilités de Bootstrap, il s'agit du formulaire d'inscription du site
 les containers et containers fluids structurent la page d'inscription 
-Cette page est la dernière des trois pages de formulaire d'inscription à remplir pour un agriculteur
+Cette page est la cinquième des six pages de formulaire d'inscription à remplir pour un agriculteur
 Il suffit de cocher les cases voulues
 Des validations sont mises en place grace aux données de bootstrap-->
 
@@ -16,8 +16,9 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		<link rel="stylesheet" href="css/style.css">
 		
 		<?php 
-		//$link = mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
-        include 'Connexion_bdd.php';
+		include("Entete-NC.php");
+                Include("connexion_bdd.php");
+                
 		$nom_exp=$_GET['nom_exp'];
 		$sirene=$_GET['sirene'];
 		$libel_type_prod=$_GET['libel_type_prod'];
@@ -65,14 +66,12 @@ Des validations sont mises en place grace aux données de bootstrap-->
                     $result3=mysqli_query($link,$query3);
                 }
 		
-                $query = "SELECT id_mot_cle, libelle_mot_cle FROM mots_cles";
+                $query = "SELECT id_mot_cle, libelle_mot_cle FROM mots_cles ORDER BY libelle_mot_cle";
 		$result=mysqli_query($link,$query);
                 
-                //PROB NICO PAJOT TYPE DE PRODUCTION
-		?>
+                ?>
 	</head>
 	<body>
-		<?php include("Entete-NC.php"); ?>
 		<br/>
 		<br/>
 		<div class="container">
@@ -82,13 +81,13 @@ Des validations sont mises en place grace aux données de bootstrap-->
 				</span>
 					<div class="container">
 						<br/>
-						Veuillez renseigner vos centres d'interets
+						Veuillez renseigner au moins 3 centres d'intérêt :
 						<br/>
 						<br/>
 					</div>
 					<div class="container">
 						<div class="form-row">
-							<form action="Tentative.php" method="post">
+							<form action="Tentative.php" method="post" name="form1">
 									<?php
 										while($row=mysqli_fetch_array($result,MYSQLI_BOTH))
 											{

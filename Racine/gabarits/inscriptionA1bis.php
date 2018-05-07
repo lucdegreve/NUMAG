@@ -1,7 +1,7 @@
-<!-- Code effectué par Clément Turbillier -->
+<!-- Code effectué par Clément Turbillier, modif Diane -->
 <!-- Ce code est fait en exploitant les possibilités de Bootstrap, il s'agit du formulaire d'inscription du site
 les containers et containers fluids structurent la page d'inscription 
-Cette page est la premiere des trois pages de formulaire d'inscription à remplir pour un agriculteur
+Cette page est la deuxième des six pages de formulaire d'inscription à remplir pour un agriculteur
 Des validations sont mises en place grace aux données de bootstrap-->
 
 <!DOCTYPE html>
@@ -16,14 +16,12 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		<!-- css -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
-		<?PHP 
-                //include "connexion_bdd.php";
-                $link = mysqli_connect('localhost','root','root','BDD');
-		/*$query = "SELECT id_commune,nom_commune FROM communes";
-		$result=mysqli_query($link,$query);
-		$nbligne = mysqli_num_rows($result);
-		$nbcol = mysqli_num_fields($result);*/
                 
+		<?php
+                include("Entete-NC.php");
+                include "connexion_bdd.php";
+                
+                //on récupère les données entrées à la page précédente pour les rafficher et pouvoir les modifier
                 $civilite=$_GET['civilite'];
 		$nom_ind=$_GET['nom_ind'];
 		$prenom=$_GET['prenom'];
@@ -34,19 +32,13 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		$ad_ind=$_GET['ad_ind'];
 		$idcommune=$_GET['commune'];
                 
+                //on sélectionne le département et le cp de la commune sélectionnée à la page précédente
                 $query = "SELECT id_commune, nom_commune, cp, communes.id_dpt, nom_dpt FROM communes
                 JOIN departements ON departements.id_dpt = communes.id_dpt
                 WHERE id_commune = $idcommune";
 		$result=mysqli_query($link,$query);
 		$nbligne = mysqli_num_rows($result);
 		$nbcol = mysqli_num_fields($result);
-                
-                /*$query2 = "SELECT communes.id_dpt, cp, nom_dpt FROM communes
-                JOIN departements ON departements.id_dpt = communes.id_dpt
-                WHERE id_commune = $idcommune";
-		$result2=mysqli_query($link,$query2);
-		$nbligne2 = mysqli_num_rows($result2);
-		$nbcol2 = mysqli_num_fields($result2);*/
                 
                 $row=mysqli_fetch_array($result,MYSQLI_BOTH);
                 $nom_commune=$row['nom_commune'];
@@ -75,6 +67,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 									  <legend class="col-form-label col-sm-2 pt-0">Civilité</legend>
 									  <div class="col-sm-10">
                                                                             <?php
+                                                                            //suivant ce qui été coché, on raffiche la même chose, avec possibilité de modifier son choix quand meme sur cette page
                                                                             if ($civilite=="M")
                                                                             {
                                                                               echo'<div class="form-check">';

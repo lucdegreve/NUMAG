@@ -1,7 +1,7 @@
-<!-- Code effectué par Clément Turbillier -->
+<!-- Code effectué par Clément Turbillier, modif Diane -->
 <!-- Ce code est fait en exploitant les possibilités de Bootstrap, il s'agit du formulaire d'inscription du site
 les containers et containers fluids structurent la page d'inscription 
-Cette page est la premiere des trois pages de formulaire d'inscription à remplir pour un agriculteur
+Cette page est la premiere des six pages de formulaire d'inscription à remplir pour un agriculteur
 Des validations sont mises en place grace aux données de bootstrap-->
 
 <!DOCTYPE html>
@@ -16,32 +16,22 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		<!-- css -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
-		<?PHP 
-		//$link = mysqli_connect('localhost','root','','bdd_racine_beta_27.04.5');
-		include 'Connexion_bdd.php';
-		/*$query = "SELECT id_commune,nom_commune FROM communes";
-		$result=mysqli_query($link,$query);
-		$nbligne = mysqli_num_rows($result);
-		$nbcol = mysqli_num_fields($result);*/
+                
+		<?php
+		include("Entete-NC.php");
+                Include("connexion_bdd.php");
                 
                 $query = "SELECT id_commune,nom_commune, cp, communes.id_dpt, nom_dpt FROM communes
                 JOIN departements ON departements.id_dpt = communes.id_dpt ORDER BY nom_commune";
 		$result=mysqli_query($link,$query);
 		$nbligne = mysqli_num_rows($result);
 		$nbcol = mysqli_num_fields($result);
-                
-                /*$query2 = "SELECT communes.id_dpt, cp, nom_dpt FROM communes
-                JOIN departements ON departements.id_dpt = communes.id_dpt
-                WHERE id_commune = $idcommune";
-		$result2=mysqli_query($link,$query2);
-		$nbligne2 = mysqli_num_rows($result2);
-		$nbcol2 = mysqli_num_fields($result2);*/
-                
+                                
 		?>
 	</head>
 	<body>
 		
-		<?php include("Entete-NC.php"); ?>
+		<?php include("Entete-VALIDE.php"); ?>
 		<br/>
 		<br/>
 		<div class="container">
@@ -132,53 +122,8 @@ Des validations sont mises en place grace aux données de bootstrap-->
                                                                                 ?>
 								</select>
 							</div>
-							<!--<div class="form-group col-md-4">
-								<label for="inputDpt">Département</label>
-								<select class="form-control" name="departement">
-									<?php/*
-                                                                                while($row=mysqli_fetch_array($result2,MYSQLI_BOTH))
-                                                                                        {
-                                                                                                $id=$row["id_dpt"];
-                                                                                                $nom =$row["nom_dpt"];
-                                                                                                $idcommune=$_GET['commune'];
-                                                                                                if ($row["id_commune"]==$idcommune)
-                                                                                                {
-                                                                                                    echo "<option selected> ".$nom." </option>";
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    echo "<option> ".$nom." </option>";
-                                                                                                }
-                                                                                        }*/
-                                                                                        //ajouter nouvelle page A1bis
-									?>
-								</select>
-							</div>
-							<div class="form-group col-md-4">
-							  <label for="inputCp">Code postal</label>
-							  <input type="number" class="form-control" name="cp" required>
-							</div>-->
-							
 						</div>
-						  
-						  
-						<!--<div class="form-group">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="gridCheck" required>
-								<label class="form-check-label" for="gridCheck">
-								J'accepte les CGU
-								</label>
-							</div>
-							<div class="form-group">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="gridCheckNews" >
-								<label class="form-check-label" for="gridCheckNews">
-								Recevoir les news
-								</label>
-							</div>
-						  </div>-->
 						  <input type="submit" class="btn btn-info" value="Suite" ></input>
-						</div>
 					</div>
 				</form>
 			</div>
