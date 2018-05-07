@@ -35,7 +35,7 @@ Bootstrap assure un aspect graphique élégant-->
 					<a class="btn btn-danger" href="Index.php">Déconnexion</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="accueil_inscrit.php"><p class="text-light">Accueil</p></a>
+					<a class="nav-link" href="accueil_inscrit.php"><p class="text-light"><a class="nav-link" href="accueil_inscrit.php"><p class="text-light"><img alt="" src="picto\accueil.png" width="40" height="40"></p></a></p></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="Messagerie_Bootstrap.php"><p class="text-light">Messagerie</p></a>
