@@ -203,7 +203,7 @@
 								}
 								// code alternatif pour afficher TOUS les contacts possibles :
 								// for ($j=0; $j<$NBL; $j++)
-								for ($j=0; $j<5; $j++)
+								for ($j=0; $j<3; $j++)
 								{
 									$IdSugg = $tab_inscrits[$j][0];
 									$k = 0;
@@ -222,12 +222,15 @@
 											{
 												echo "Etudiant";
 											}
+											//Accéder au profil de l'utilisateur
+											echo '<form action="profil.php" method="GET">';
+											echo '<input type = "submit" value = "Voir le profil" class="btn btn-info btn-sm" name = "bouton">';
 											//Ajouter en contact (à mettre dans la boucle)
 											echo '<form action="Messagerie_Bootstrap.php" method="GET">';
 												//On transmet en caché l'id du destinataire et de l'utilisateur connecté
 											echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";
 											echo "<input type='hidden' name='idcontact' value='$IdSugg'>";
-											echo '<input type="submit" value="Ajouter ce contact" class="btn btn-info btn-sm" name="bt">';
+											echo '<input type="submit" value="Contacter" class="btn btn-info btn-sm" name="bt">';
 											echo '</form>';
 											//echo "<br/>";
 											$verif = true;
