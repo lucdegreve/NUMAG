@@ -70,7 +70,7 @@
 					  <option>Landes</option>
 					  <option>Lot-et-Garonne</option>
                       <option>Pyrénées-Atlantiques</option>
-                      <option>Vienne2</option>
+                      <option>Vienne</option>
                     </select>
                   </div>
                   <div class="form-group">
