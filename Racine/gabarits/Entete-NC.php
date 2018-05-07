@@ -35,22 +35,16 @@ Bootstrap assure un aspect graphique élégant-->
 					<a class="nav-link" href="Index.php"><p class="text-light"><img alt="" src="picto\accueil.png" width="40" height="40"></p></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="Index.php"><p class="text-light">Projets</p></a>
+					<a class="nav-link" href="connexion.php"><p class="text-light">Projets</p></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="Index.php"><p class="text-light">Messagerie</p></a>
+					<a class="nav-link" href="connexion.php"><p class="text-light">Stages</p></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="Index.php"><p class="text-light">Stages</p></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="Index.php"><p class="text-light">Benchmark</p></a>
+					<a class="nav-link" href="connexion.php"><p class="text-light">Benchmark</p></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="Index.php"><p class="text-light">Tutoriel</p></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="Index.php"><p class="text-light">Alertes</p></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="presentation.php"><p class="text-light">Qui sommes nous ?</p></a>
