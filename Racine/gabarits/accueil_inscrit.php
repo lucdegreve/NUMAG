@@ -100,6 +100,15 @@
         $score[$i]=$tab_inscrits[$i][1];
     }
     array_multisort($score, SORT_DESC,$identifiant, SORT_ASC);
+
+	for ($i=0; $i<$NBL; $i++)
+    {
+        $tab_inscrits[$i][0]=$identifiant[$i];
+        $tab_inscrits[$i][1]=$score[$i];
+	}
+	echo "Sugg";
+	var_dump($tab_inscrits);
+	echo "<br/>";
 	
 
 	//Récuperation des scores des actualités ordonnées
@@ -165,6 +174,8 @@
 	//Traitement du recordset
 	$TabContacts = mysqli_fetch_all($ResultContacts);
 	$NbLignesContacts=mysqli_num_rows($ResultContacts);
+	echo "Contacts";
+	var_dump($TabContacts);
 	
 	//Construction de la requête récupérant la table Individus
 	$RequeteIndiv = "SELECT id_ind, prenom, nom_ind, id_prof FROM Individus";
@@ -190,11 +201,11 @@
 								{
 									$bt=$_GET['bt'];
 									$IdSugg=$_GET['idcontact'];
-									$query2="INSERT INTO messages_prives (id_dest, id_expe, texte, date_mp, lu) VALUES ($IdSugg, $id_ind_co, 'Début', NOW(), 0)";
+									$query2="INSERT INTO messages_prives (id_dest, id_expe, texte, date_mp, lu) VALUES ($IdSugg, $id_ind_co, 'Ceci est le tout début de votre historique des messages directs', NOW(), 0)";
 									$results2=mysqli_query($link,$query2);
 								}
 								//Afficher maximum 3 contacts
-								for ($i=0; $i<3; $i++)
+								for ($i=0; $i<2; $i++)
 								{
 									$IdSugg = $tab_inscrits[$i][0]; //On sélectionne chaque suggestion de contact une par une
 									echo $IdSugg;
@@ -243,6 +254,7 @@
 													//On transmet en caché l'id du destinataire et de l'utilisateur connecté
 												echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";
 												echo "<input type='hidden' name='idcontact' value='$IdSugg'>";
+                                                                                                echo "<input type='hidden' name='message' value='Ceci est le début de votre conversation'>";
 												echo '<input type="submit" value="Contacter" class="btn btn-info btn-sm btn-block" name="bt">';
 												echo '</form>';
 												echo '</p>';
