@@ -41,7 +41,7 @@ while ($row=mysqli_fetch_array($results,MYSQLI_BOTH)){
 	$DATE=$row['date'];
 	$NOM= $row['nom_ind'];
 	$PRENOM= $row['prenom'];
-	echo '<tr><th>'.$NOM.' '.$PRENOM.'<br/></th></tr>';
+	echo '<tr><th>'.$PRENOM.' '.$NOM.'<br/></th></tr>';
 	echo "<tr><td>$TEXTE<br/><i>$DATE</i> <br/></td><td></td></tr>";
 }
 echo '</table>';
@@ -57,8 +57,5 @@ echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";
 echo "<input type='hidden' name='idcontact' value='$forum'>";
 echo '<input type="submit" value="Envoyer" name="bt">';
 echo '</form>';
-
-	          
-                
-                
+              
 ?>
