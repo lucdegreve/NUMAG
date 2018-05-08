@@ -19,6 +19,10 @@
 <div class="container-fluid">
 	<br/>
 	<div class="row">
+		<!-- Titre -->
+		<div class="col-lg-1">
+
+			</div>
 		<div class="col-lg-3">
 			<h1>Tutoriel</h1>
 		</div>
@@ -33,7 +37,7 @@
 					<hr class="my-4">
 					Vous trouverez ci-dessous un guide d'utilisation de la plateforme:
 					<br/><br/>
-					<iframe src="video/guide.pdf" width="650" height="650"></iframe>
+					<iframe src="video/guide.pdf" width="550" height="650"></iframe>
 					<br/><br/>
 				</div>
 			</div>

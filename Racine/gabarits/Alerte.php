@@ -10,7 +10,7 @@ Bootstrap : Mayeul Duval
   <meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>
-		Alerte
+		Alertes
 	</title>
 	<!-- Déclaration de la feuille de style -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
