@@ -27,11 +27,13 @@
 	<div id="video">
 		Et quelques vidéos pour une prise en main plus facile !
 		<br/><br/>	
-		<object type="application/x-mplayer2" style="width: 700px; height: 500px;" data="tutoriel.wmv">
+		<!-- <object type="application/x-mplayer2" style="width: 700px; height: 500px;" data="tutoriel.wmv">
 		<param name="tutoriel" value="tutoriel.wmv"/>
 		</object>
+		<br/> -->
+		<a href="video/Stageetconnexionfini.htm" > Lien 1ère vidéo </a>
 		<br/>
-		<a href="picto/Stageetconnexionfini.swf" target="_blank"> Cliquez ici </a>
+		<a href="video/Stageetconnexionfini.exe" > Téléchargement 1ère vidéo </a>
 		<br/>
 	</div>
 	
