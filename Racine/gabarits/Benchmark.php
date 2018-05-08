@@ -64,7 +64,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 				    </div>
 						<div class="card-footer">
 							<small class="text-muted">Accédez à l'intégralité des possibilités de Racine et consultez l'ensemble des données.</small></p>
-							<button type="button" class="btn btn-outline-danger btn-block">Découvrir le privilège premium</button>
+							<a href="premium.php" class="btn btn-outline-danger btn-block">Découvrir le privilège premium</a>
 						</div>
 				  </div>
 				</div>
