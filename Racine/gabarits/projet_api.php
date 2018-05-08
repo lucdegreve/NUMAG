@@ -128,6 +128,8 @@ mysqli_set_charset($link, 'UTF-8');
 		<br/>
   </div>
 	<br/>
+	<br/>
+	<br/>
 
 <?php Include("Pied-VALIDE.html");?>
 </body>
