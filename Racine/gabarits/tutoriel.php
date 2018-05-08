@@ -14,27 +14,31 @@
 	</title>
 </head>
 
+<body>
+
 <h1> Tutoriel </h1>
 <br/><br/>
 	
+	<!-- Section à placer à gauche -->
 	<div id="guide">
 		Vous trouverez ci-dessous un guide d'utilisation de la plateforme:
 		<br/><br/>
 		<iframe src="video/guide.pdf" width="800" height="800"></iframe>
-		<br/>
+		<br/><br/>
 	</div>
 	
+	<!-- Section à placer à droite, vidéos les unes en dessous des autres -->
 	<div id="video">
-		Et quelques vidéos pour une prise en main plus facile !
-		<br/><br/>	
-		<!-- <object type="application/x-mplayer2" style="width: 700px; height: 500px;" data="tutoriel.wmv">
-		<param name="tutoriel" value="tutoriel.wmv"/>
-		</object>
-		<br/> -->
-		<a href="video/Stageetconnexionfini.htm" > Lien 1ère vidéo </a>
+		Et quelques vidéos pour une prise en main plus facile ! Vous pouvez les visualiser directement sur votre navigateur, ou les télécharger sur votre ordinateur.
+		<br/><br/>
+		<h3> 1ère vidéo </h3>
 		<br/>
-		<a href="video/Stageetconnexionfini.exe" > Téléchargement 1ère vidéo </a>
+		<a href="video/Stageetconnexionfini.htm" target="_blank" > Lien vers la 1ère vidéo </a>
+		<br/>
+		<a href="video/Stageetconnexionfini.exe" > Téléchargement de la 1ère vidéo </a>
 		<br/>
 	</div>
 	
-	Bonne navigation sur RACINE ! 
+	<h3> Bonne navigation sur RACINE ! </h3>
+	
+</body>
