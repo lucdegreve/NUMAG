@@ -25,9 +25,11 @@
 			<div class="col-md-4">
 				<img src="picto/Jules.png" width="150" height="150">
 				</br>
-				<h6 align="center"> Jules Colombo, 21 ans </h6>
+				<h6> Jules Colombo, 21 ans </h6>
 				</br>
 				Non issu du monde agricole
+				</br>
+				</br>
 				“Les étudiants agro manquent de connaissance sur le monde agricole, sur les coopératives, la PAC, les marchés à terme...”
 			</div>
 			<div class="col-md-4">
@@ -36,16 +38,21 @@
 				<h6 align="center"> Audrey Fourcade, 31 ans </h6>
 				</br>
 				Fille d'agriculteurs
+				</br>
+				</br>
 				“L’exploitation familiale est passée en bio en 2001, aujourd’hui de nombreux agriculteurs viennent directement échanger sur place sans intermédiaire, pour connaître les raisons de cette réussite, et pour pouvoir se lancer dans leurs projets de développement” 
 			</div>
-			<div class="row">
+		</div>
+		<div class="row">
 			<div class="col-md-4">
+			</div>
+			<div class="col-md-8">
 			3 ème année à Bordeaux Sciences Agro - <span> spécialisation </span> : Management des Entreprises Agricoles	
 			</br>
 			</br>			
 			</br>			
-			RACINE, l'idée : Un but commun, partager une vision dynamique et positive de l’agriculture	
-		</div>
+			RACINE, l'idée : Un but commun, partager une vision dynamique et positive de l’agriculture.
+			</div>
 		</div>
 		
 	</body>
