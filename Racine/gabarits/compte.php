@@ -19,14 +19,13 @@
 	?>
 
 	<br/>
-	<br/>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 text-center">
 				<div class="jumbotron">
 
 					<?php
-					echo"<b> Votre Profil <br/></b>";
+					echo"<b> Votre Profil <br/></b>"
 					echo $tab[0][0].". ".$tab[0][1]." ".$tab[0][2]." <br/>";
 					$profil=$tab[0][3];
 					if ($tab[0][0]=='Mme')
@@ -99,17 +98,12 @@
 					      }
 					    }
 					    echo'</div>';
-						echo'<br/>';
-					  echo '<input type="submit" class="btn btn-info center-block" value="Valider les modifications"></input>';
+					  echo '<input type="submit" class="btn btn-info" value="Valider les modifications"></input>';
 					echo '</form>';
 					?>
 
 				</div>
 			</div>
-		</div>
-	</div>
-	<br/>
-	<br/>
-	<?php include("Pied-VALIDE.html"); ?>
+			<?php include("Pied-VALIDE.html"); ?>
 </body>
 </html>
