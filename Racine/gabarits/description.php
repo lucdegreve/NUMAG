@@ -22,22 +22,22 @@
 					<a href="contact.php" class="btn btn-secondary btn-lg btn-block">Nous contacter</a>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4" align="center">
 				<img src="picto/Jules.png" width="150" height="150">
 				</br>
 				<h5> Jules Colombo, 21 ans </h5>
-				<p align="center">
+				<!-- <p align="center"> -->
 				Non issu du monde agricole
 				</br>
 				</br>
 				<I>“Les étudiants agro manquent de connaissance sur le monde agricole, sur les coopératives, la PAC, les marchés à terme...” </I>
 				</p>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4" align="center">
 				<img src="picto/Audrey.png" width="150" height="150">
 				</br>
 				<h5> Audrey Fourcade, 31 ans </h5>
-				<p align="center">
+				<!-- <p align="center"> -->
 				Fille d'agriculteurs
 				</br>
 				</br>
