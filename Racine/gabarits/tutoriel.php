@@ -61,7 +61,7 @@
 							<a class="btn btn-outline-info btn-md btn-block" href="video/Stageetconnexionfini.exe" role="button"> Téléchargement de la vidéo </a>
 						</div>
 					</div>
-					<hr class="my-1">					
+					<hr class="my-4">					
 					<h5> 2ème vidéo </h5>
 					<div class="row text-center">
 						<div class="col-lg-5">
@@ -71,7 +71,7 @@
 							<a class="btn btn-outline-info btn-md btn-block" href="video/Stageetconnexionfini.exe" role="button"> Téléchargement de la vidéo </a>
 						</div>
 					</div>
-					<hr class="my-1">
+					<hr class="my-4">
 					<h5> 3ème vidéo </h5>
 					<div class="row text-center">
 						<div class="col-lg-5">
@@ -81,7 +81,7 @@
 							<a class="btn btn-outline-info btn-md btn-block" href="video/Stageetconnexionfini.exe" role="button"> Téléchargement de la vidéo </a>
 						</div>
 					</div>
-					<hr class="my-1">
+					<hr class="my-4">
 					<h5> 4ème vidéo </h5>
 					<div class="row text-center">
 						<div class="col-lg-5">
