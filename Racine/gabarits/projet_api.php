@@ -117,10 +117,10 @@ mysqli_set_charset($link, 'UTF-8');
 								<input type='hidden' name='id_ind_co' value=".$id_ind_co.">
 								<input type='hidden' name='idcontact' value=".$forum.">
 								<input type="submit" value="Envoyer" name="bt">
-							</div>";
-						</form>';
-					</li>";
-				</ul>';
+							</div>
+						</form>
+					</li>
+				</ul>
 			</div>
     </div>
 		<br/>
