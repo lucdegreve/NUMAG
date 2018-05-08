@@ -9,4 +9,4 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<?php Include("Entete-VALIDE.php");?>
+	<?php include("Entete-NC.php"); ?>
