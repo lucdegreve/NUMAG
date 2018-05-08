@@ -37,7 +37,7 @@
 					<hr class="my-4">
 					Vous trouverez ci-dessous un guide d'utilisation de la plateforme:
 					<br/><br/>
-					<iframe src="video/guide.pdf" width="550" height="650"></iframe>
+					<iframe src="video/guide.pdf" width="650" height="500"></iframe>
 					<br/><br/>
 				</div>
 			</div>
