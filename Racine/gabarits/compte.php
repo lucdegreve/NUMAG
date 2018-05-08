@@ -23,7 +23,7 @@
 		<div class="row">
 			<div class="col-lg-6 text-center">
 				<div class="jumbotron">
-
+ 
 					<?php
 					echo"<b> Votre Profil <br/></b>"
 					echo $tab[0][0].". ".$tab[0][1]." ".$tab[0][2]." <br/>";
