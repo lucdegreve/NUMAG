@@ -185,7 +185,7 @@
 <!-- On définit ici une section 'suggestions' -->
 				<div id="suggestions">
 						<div class="jumbotron HauteurMax">
-							<h3><img alt="" src="picto\suggestion.png" width="40" height="40"></h3>
+							<h1><img alt="" src="picto\suggestion.png" width="90" height="90">Suggestions</h1>
 							<hr class="my-4">
 								<?php
 								//Afficher maximum 3 contacts
@@ -272,7 +272,7 @@
 			<div class="col-lg-8">
 				<div id="actualites">
 					<div class="jumbotron HauteurMax">
-						<h3>Actualités</h3>
+						<h1><img alt="" src="picto\actu.png" width="90" height="90"> </br>Actualités</h1>
 						<hr class="my-4">
 							<?php
 							// code alternatif pour afficher TOUTES les actualites :
@@ -330,7 +330,7 @@
 			<div class="col-lg-2">
 				<div id="contacts">
 					<div class="jumbotron HauteurMax">
-						<h3>Contacts</h3>
+						<h1><img class="mr-3" alt="" src="picto\message.png" width="90" height="90">Messages</h1>
 						<hr class="my-4">
 							<?php
 							for ($i=0; $i<$NbLignesContacts; $i++)
