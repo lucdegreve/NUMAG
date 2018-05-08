@@ -44,7 +44,7 @@
 			<div class="col-md-1">
 			</div>
 			<div class="col-md-10" align="center">	
-			3 ème année à Bordeaux Sciences Agro - <U> Spécialisation </U> : Management des Entreprises Agricoles	
+			<h6> 3 ème année à Bordeaux Sciences Agro - <U> Spécialisation </U> : Management des Entreprises Agricoles </h6>	
 			</div>
 		</div>
 		</br>
