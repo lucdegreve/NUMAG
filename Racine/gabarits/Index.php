@@ -10,7 +10,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title> Acceuil RACINE </title>
+		<title> Accueil RACINE </title>
 
 		<!-- css -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
