@@ -55,6 +55,7 @@ mysqli_set_charset($link, 'UTF-8');
 				</div>
       </div>
     </div>
+		<br>
     <div class="row">
       <h5>Partie forum</h5>
 		</div>
@@ -102,6 +103,7 @@ mysqli_set_charset($link, 'UTF-8');
 						</p>
 						</li>';
 					}
+					echo "<br/><li>";
 					echo '<form method="GET">';
 
 					//En cliquant, le message 'Tapez votre message ici' par défault disparait. On entre le msg
@@ -113,6 +115,7 @@ mysqli_set_charset($link, 'UTF-8');
 					echo "<input type='hidden' name='idcontact' value='$forum'>";
 					echo '<input type="submit" value="Envoyer" name="bt">';
 					echo '</form>';
+					echo "</li>";
 					echo '</ul>';
 					?>
 			</div>
