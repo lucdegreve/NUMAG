@@ -24,7 +24,8 @@
 			</div>
 			<div class="col-md-4">
 				RACINE est une plateforme permettant des échanges entre les agriculteurs et les étudiants, 
-				le but étant la mise en contact entre différents acteurs, la consultation d'actualité er 
+				le but étant la mise en contact entre différents acteurs, la consultation d'actualité et de projets,
+				ainsi que le dépôt et la consultation d'offres de stage 
 			</div>
 		</div>
 	</body>
