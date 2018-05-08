@@ -71,7 +71,7 @@
 	</div>
 	<br/>
 	<div class="row">
-		<div class="col-lg-12">
+		<div class="col-lg-3">
 			<h3> Bonne navigation sur RACINE !</h3>
 		</div>
 	</div>
