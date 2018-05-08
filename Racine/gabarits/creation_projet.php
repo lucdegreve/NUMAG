@@ -70,7 +70,7 @@
 								<input type="date" class="form-control" name="date_proj">
 							</div>
 							<div class="form-group">
-						    <label for="etatprojet"><p class="minilead">Entrer la date de publication</p></label>
+						    <label for="etatprojet"><p class="minilead">Entrer l'état actuel du projet</p></label>
 						    <select class="form-control" name="etatprojet">
 						      <option>Non-débuté</option>
 						      <option>En-cours</option>
