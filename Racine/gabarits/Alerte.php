@@ -168,6 +168,14 @@ $resultM=mysqli_query($link, $queryMes);
 		</div>
 	</div>
 </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 	<!-- Pied de page -->
 	<?php include("Pied-VALIDE.html"); ?>
