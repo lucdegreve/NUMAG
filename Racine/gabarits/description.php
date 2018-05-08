@@ -38,11 +38,15 @@
 				<h5> Audrey Fourcade, 31 ans </h5>
 				Fille d'agriculteurs
 			</div>
+		</div>
+		</br>
 		<div class="row">
 			<div class="col-md-10" align="center">	
 			3 ème année à Bordeaux Sciences Agro - <U> Spécialisation </U> : Management des Entreprises Agricoles	
 			</div>
 		</div>
+		</br>
+		</br>
 		<div class="row">
 			<div class="col-md-5" align="center">
 				<I>“Les étudiants agro manquent de connaissance sur le monde agricole, sur les coopératives, la PAC, les marchés à terme... Les stages de 1ère année sont trouvés par le bouche à oreille, ils ne sont pas forcément motivés par de réelles problématiques sur les exploitations, et donc ne sont pas toujours bien accompagnés.”</I>
