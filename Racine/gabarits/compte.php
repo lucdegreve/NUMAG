@@ -25,7 +25,7 @@
 				<div class="jumbotron">
 
 					<?php
-					echo"<b> Votre Profil <br/></b>"
+					echo"<b> Votre Profil <br/></b>";
 					echo $tab[0][0].". ".$tab[0][1]." ".$tab[0][2]." <br/>";
 					$profil=$tab[0][3];
 					if ($tab[0][0]=='Mme')
