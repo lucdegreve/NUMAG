@@ -64,7 +64,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 						<p class="card-text">Envie de créer un projet à grande échelle ? Racine vous propose de concevoir un projet et de le présenter à l'ensemble des utilisateurs. Vous pouvez également consulter et soutenir des projets déjà existants.</p>
 					</div>
 					<img class="card-img-top" src="picto/projet.png" alt="Card image cap">
-					<div class="card-footer text-center"><p class="card-text"><small class="text-muted">Lancez vous!</small></p></div>
+					<div class="card-footer text-center"><p class="card-text"><small class="text-muted">Lancez vous !</small></p></div>
 				</div>
 			</div>
 		</div>
