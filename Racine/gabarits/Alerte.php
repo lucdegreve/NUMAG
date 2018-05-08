@@ -61,7 +61,6 @@ $resultM=mysqli_query($link, $queryMes);
 ?>
 
 <div class="container-fluid">
-	<br/>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -144,6 +143,7 @@ $resultM=mysqli_query($link, $queryMes);
 							$prenom =$row["prenom"];
 							$date =$row["date_mp"];
 							$id_expe=$row["id_expe"];
+							$id_dest=$row["id_dest"];							
 							?>
           <hr class="my-4">
 							<div class="container-fluid">
@@ -154,6 +154,7 @@ $resultM=mysqli_query($link, $queryMes);
 									<div class="col-lg-2">
 									<?php
 										echo '<input TYPE="hidden" name="id_expe" value='.$id_expe.' >';
+										echo '<input TYPE="hidden" name="id_dest" value='.$id_dest.' >';
 										echo '<input TYPE="SUBMIT" class="btn btn-info btn-sm center-block" name="voir" value="voir" >';
 										?>
 									</div>
