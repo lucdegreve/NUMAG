@@ -16,11 +16,25 @@
 
 <body>
 
+<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-1">
+
+			</div>
+			<div class="col-lg-3">
+				<h1>Projets</h1>
+			</div>
+
 <h1> Tutoriel </h1>
 <br/><br/>
 	
 	
 <div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-3">
+			<h1>Projets</h1>
+		</div>
+	</div>
 	<div class="row">
 		<!-- Section Guide -->
 		<div class="col-lg-7">
@@ -30,7 +44,7 @@
 					<hr class="my-4">
 					Vous trouverez ci-dessous un guide d'utilisation de la plateforme:
 					<br/><br/>
-					<iframe src="video/guide.pdf" width="500" height="800"></iframe>
+					<iframe src="video/guide.pdf" width="650" height="500"></iframe>
 					<br/><br/>
 				</div>
 			</div>
