@@ -193,7 +193,7 @@
 								$compteur=0;
 								while ($compteur<3)
 								{
-									$IdSugg = $tab_inscrits[$i][0]; //On sélectionne chaque suggestion de contact une par une
+									@$IdSugg = @$tab_inscrits[$i][0]; //On sélectionne chaque suggestion de contact une par une
 									$i++;
 									//On vérifie que les 2 individus ne sont pas déjà en contact
 									$test = false;
