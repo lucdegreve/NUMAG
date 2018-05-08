@@ -14,7 +14,7 @@
 		</br> 
 		</br>
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-1">
 				<div class="btn-group-vertical">
 					<a href="Presentation.php" class="btn btn-secondary btn-lg btn-block">Accueil</a>
 					<a href="description.php" class="btn btn-secondary btn-lg btn-block">Présentation</a>
