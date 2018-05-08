@@ -58,6 +58,6 @@ while ($row=mysqli_fetch_array($result2,MYSQLI_BOTH))
 }
 
 //Ouvre la page
-/*header('Location: compte.php');
-  exit();*/
+header('Location: compte.php');
+  exit();
 ?>
