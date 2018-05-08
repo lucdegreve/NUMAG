@@ -27,10 +27,9 @@
 			<div class="jumbotron HauteurMax">
 				<h3> Guide d'utilisation de RACINE </h3>
 				<hr class="my-4">
-				<br/>
 				Vous trouverez ci-dessous un guide d'utilisation de la plateforme:
 				<br/><br/>
-				<iframe src="video/guide.pdf" width="800" height="800"></iframe>
+				<iframe src="video/guide.pdf" width="600" height="800"></iframe>
 				<br/><br/>
 			</div>
 		</div>
@@ -41,7 +40,6 @@
 			<div class="jumbotron HauteurMax">
 				<h3> Vidéos </h3>
 				<hr class="my-4">
-				<br/>
 				Et quelques vidéos pour une prise en main plus facile ! Vous pouvez les visualiser directement sur votre navigateur, ou les télécharger sur votre ordinateur.
 				<br/><br/>
 				<h5> 1ère vidéo </h5>
