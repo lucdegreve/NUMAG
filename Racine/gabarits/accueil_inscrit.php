@@ -242,6 +242,7 @@
 												echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";
 												echo "<input type='hidden' name='idcontact' value='$IdSugg'>";
                                                 echo "<input type='hidden' name='message' value='Ceci est le début de votre conversation'>";
+												echo '<br/>';
 												echo '<input type="submit" value="Contacter" class="btn btn-info btn-sm btn-block" name="bt">';
 												echo '</form>';
 												echo '</p>';
