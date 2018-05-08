@@ -16,14 +16,10 @@
 		<div class="row">
 			<div class="col-md-4">
 				<div class="btn-group-vertical">
-					<!-- <button type="button" href="Presentation.php" class="btn btn-primary btn_lg">Accueil qui sommes-nous</button> -->
 					<a href="Presentation.php" class="btn btn-primary btn-lg btn-block">Accueil qui sommes-nous</a>
-					<!-- <button type="button" href="description.php" class="btn btn-secondary">Présentation</button> -->
 					<a href="description.php" class="btn btn-secondary btn-lg btn-block">Présentation</a>
-					<!-- <button type="button" href="mission.php" class="btn btn-secondary">Notre mission</button> -->
-					<a href="description.php" class="btn btn-secondary btn-lg btn-block">Notre mission</a>
-					<!-- <button type="button" href="contact.php" class="btn btn-secondary">Nous contacter</button> -->
-					<a href="description.php" class="btn btn-secondary btn-lg btn-block">Nous contacter</a>
+					<a href="mission.php" class="btn btn-secondary btn-lg btn-block">Notre mission</a>
+					<a href="contact.php" class="btn btn-secondary btn-lg btn-block">Nous contacter</a>
 				</div>
 			</div>
 		</div>
