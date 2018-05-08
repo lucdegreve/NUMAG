@@ -1,3 +1,5 @@
+<!-- Code effectué par MC et Elsa -->
+
 <?php Include("Entete-VALIDE.php");?>
 <?php //Session_start();
 	//$id_ind_co=$_SESSION["id_ind_co"];
@@ -22,7 +24,7 @@
 		<!-- Titre -->
 		<div class="col-lg-1">
 
-			</div>
+		</div>
 		<div class="col-lg-3">
 			<h1>Tutoriel</h1>
 		</div>
@@ -50,20 +52,29 @@
 					<hr class="my-4">
 					Et quelques vidéos pour une prise en main plus facile ! Vous pouvez les visualiser directement sur votre navigateur, ou les télécharger sur votre ordinateur.
 					<br/><br/>
-					<h5> 1ère vidéo </h5>
+					<h5> Se connecter et rechercher un stage </h5>
 					<br/>
-					<a href="video/Stageetconnexionfini.htm" target="_blank" > Lien vers la 1ère vidéo </a>
-					<br/>
-					<a href="video/Stageetconnexionfini.exe" > Téléchargement de la 1ère vidéo </a>
+					<div class="row text-center">
+						<div class="col-md-6">
+							<a class="btn btn-info btn-lg btn-block" href="video/Stageetconnexionfini.htm" target="_blank" role="button"> Lien vers la vidéo </a>
+						</div>
+						<div class="col-md-6">
+							<a class="btn btn-outline-info btn-lg btn-block" href="video/Stageetconnexionfini.exe" role="button"> Téléchargement de la vidéo </a>
+						</div>
+					</div>
 					<br/><br/>
 					<h5> 2ème vidéo </h5>
 					<br/>
 				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
+	<br/>
+	<div class="row">
+		<div class="col-lg-3">
+			<h3> Bonne navigation sur RACINE !</h3>
+		</div>
+	</div>
 </div>
-	
-	<h3> Bonne navigation sur RACINE ! </h3>
 	
 </body>

@@ -77,7 +77,7 @@ $resultM=mysqli_query($link, $queryMes);
 
 			<div class="col-lg-8">
 				<div class="jumbotron">
-          <h4 class="display-4">Nouvelle alerte</h4>
+          <h4 class="display-4"> Nouvelle alerte </h4>
           <p class="lead">
 						<?php
 						//tableau d'alertes projets
