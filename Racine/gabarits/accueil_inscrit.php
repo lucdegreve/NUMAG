@@ -231,7 +231,7 @@
 												}
 												echo '<p>';
 												//Bouton pour accéder au profil de l'utilisateur
-												echo '<a href="consulter_profil.php" class="button">Voir le profil</a>'
+												echo '<a href="consulter_profil.php" class="button">Voir le profil</a>';
 												/*echo '<form action="consulter_profil.php" method="GET">';
 												echo '<input type = "submit" value = "Voir le profil" class="btn btn-info btn-sm btn-block" name = "bouton">';
 												echo '</form>';		
