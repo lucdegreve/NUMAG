@@ -20,10 +20,10 @@
 		<div class="row">
 			<div class="col-md-1">
 				<div class="btn-group-vertical">
-					<a href="Presentation.php" class="btn btn-secondary btn-lg btn-block">Accueil</a>
-					<a href="description.php" class="btn btn-info btn-lg btn-block">Présentation</a>
-					<a href="mission.php" class="btn btn-secondary btn-lg btn-block">Notre mission</a>
-					<a href="contact.php" class="btn btn-secondary btn-lg btn-block">Nous contacter</a>
+					<a href="Presentation_NC.php" class="btn btn-secondary btn-lg btn-block">Accueil</a>
+					<a href="description_NC.php" class="btn btn-info btn-lg btn-block">Présentation</a>
+					<a href="mission_NC.php" class="btn btn-secondary btn-lg btn-block">Notre mission</a>
+					<a href="contact_NC.php" class="btn btn-secondary btn-lg btn-block">Nous contacter</a>
 				</div>
 			</div>
 			<div class="col-md-5" align="center">
