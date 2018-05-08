@@ -278,7 +278,7 @@
 										$mois = substr($date, -5, 2);
 										$annee = substr($date, -10, 4);
 										echo "<p class='card-text'><B>".$TabActu[$k][1]."</B> - ".$jour."/".$mois."/".$annee."</p>";
-										echo "<a href = ".$TabActu[$k][2]." class='card-link font-size:1em;'> ".$TabActu[$k][2]." </a>";
+										echo "<a href = '.$TabActu[$k][2].' class='card-link' style='font-size:1em'> ".$TabActu[$k][2]." </a>";
 										echo "<p> ".$TabActu[$k][4]."</p>";
 										$verif = true;
 									}
