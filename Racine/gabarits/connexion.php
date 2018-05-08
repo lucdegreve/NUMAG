@@ -21,7 +21,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		@$Message=$_GET["Message"];
 		if ($Message==1)
 		{
-			echo '<div class="center-block> Veuillez vérifier votre identifiant et votre mot de passe puis réessayer </div>';
+			echo 'Veuillez vérifier votre identifiant et votre mot de passe puis réessayez de vous connecter au site Racine';
 		}
 	?>
 	<div class="row">
