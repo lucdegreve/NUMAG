@@ -64,6 +64,15 @@
 					</div>
 					<br/><br/>
 					<h5> 2ème vidéo </h5>
+					<div class="row text-center">
+						<div class="col-lg-5">
+							<a class="btn btn-info btn-md btn-block" href="video/Stageetconnexionfini.htm" target="_blank" role="button"> Lien vers la vidéo </a>
+						</div>
+						<div class="col-lg-7">
+							<a class="btn btn-outline-info btn-md btn-block" href="video/Stageetconnexionfini.exe" role="button"> Téléchargement de la vidéo </a>
+						</div>
+					</div>
+					<br/><br/>
 					<br/>
 				</div>
 			</div>
