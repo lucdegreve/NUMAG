@@ -37,34 +37,34 @@ Des validations sont mises en place grace aux données de bootstrap-->
 	  			<div class="card">
 	    			<img class="card-img-top" src="picto/vert.jpg" alt="Card image cap">
 	    			<div class="card-body">
-	      			<h5 class="card-title">Forfait découverte</h5>
-		      		<p class="card-text">Ce forfait vous donne les possibilités suivantes : Accès aux bases de données, études de marchés ....</p>
+	      			<h5 class="card-title">Privilège découverte</h5>
+		      		<p class="card-text">Etre privilégié découverte vous donne les possibilités suivantes : Accès aux bases de données ainsi que des études de marchés.</p>
 				    </div>
 						<div class="card-footer">
 							<small class="text-muted">Parfaitement adapté si vous souhaitez découvrir les possibilités de Racine.</small></p>
-							<button type="button" class="btn btn-outline-success btn-block">Découvrir le forfait découverte</button>
+							<button type="button" class="btn btn-outline-success btn-block">Découvrir le privilège découverte</button>
 						</div>
 				  </div>
 	  			<div class="card">
 				    <img class="card-img-top" src="picto/jaune.jpg" alt="Card image cap">
 				    <div class="card-body">
-				      <h5 class="card-title">Forfait participatif</h5>
-							<p class="card-text">Ce forfait vous donne davantage de possiblités que le forfait découverte et vous permet d'accdérer aux bases de données ....</p>
+				      <h5 class="card-title">Privilège participatif</h5>
+							<p class="card-text">Le privilège participatif vous donne davantage de possiblités que le privilège découverte et vous permet d'accdérer aux bases de données en plus d'analyses poussées.</p>
 				    </div>
 						<div class="card-footer">
-							<small class="text-muted">Un forfait complet qui vous offre encore plus d'avantages.</small></p>
-							<button type="button" class="btn btn-outline-warning btn-block">Découvrir le forfait participatif</button>
+							<small class="text-muted">Un privilège complet qui vous offre encore plus d'avantages.</small></p>
+							<button type="button" class="btn btn-outline-warning btn-block">Découvrir le privilège participatif</button>
 						</div>
 				  </div>
 				  <div class="card">
 				    <img class="card-img-top" src="picto/rouge.jpg" alt="Card image cap">
 				    <div class="card-body">
-				      <h5 class="card-title">Forfait premium</h5>
-				      <p class="card-text">Le forfait intégral avec l'ensemble du contenu, à savoir : ......</p>
+				      <h5 class="card-title">Privilège premium</h5>
+				      <p class="card-text">Le privilège intégral avec l'ensemble du contenu, à savoir : accès auyx bases de données, cartographies et études des sols, conseils agricoles.</p>
 				    </div>
 						<div class="card-footer">
 							<small class="text-muted">Accédez à l'intégralité des possibilités de Racine et consultez l'ensemble des données.</small></p>
-							<a href="Premium.php" class="btn btn-outline-danger btn-block">Découvrir le forfait premium</a>
+							<a href="premium.php" class="btn btn-outline-danger btn-block">Découvrir le privilège premium</a>
 						</div>
 				  </div>
 				</div>
