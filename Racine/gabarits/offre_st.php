@@ -32,8 +32,9 @@ By Manuel, Julien Louet, Marie -->
 	include 'Connexion_bdd.php';
 
 	// Recupération du stage sur lequel l'étudiant à cliqué
-	$stage=$_GET["lestage"];
-	$quelstage=$stage+1;
+	//$stage=$_GET["lestage"];
+	$quelstage=$_GET["lestage"];
+	//$quelstage=$stage+1;
 	// Récupération du titre du stage, du Département, de la commune, de la période
 	// et du mois de début pour le premier tableau d'affichage
 	$queryresume="SELECT id_st, titre_st, nom_dpt, nom_commune, periode_st, mois_debut_st
@@ -61,9 +62,9 @@ By Manuel, Julien Louet, Marie -->
 	ON individus.id_exp=exploitation_typeprod.id_exp
 	INNER JOIN types_production
 	ON exploitation_typeprod.id_type_prod=types_production.id_type_prod
-	INNER JOIN mot_cle_stage
+	LEFT JOIN mot_cle_stage
 	ON stages.id_st=mot_cle_stage.id_st
-	INNER JOIN mots_cles
+	LEFT JOIN mots_cles
 	ON mot_cle_stage.id_mot_cle=mots_cles.id_mot_cle
 	WHERE stages.id_st=".$quelstage;
 

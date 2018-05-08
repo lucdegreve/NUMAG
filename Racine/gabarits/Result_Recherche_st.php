@@ -80,6 +80,10 @@
 	$L3=array();
 	$L2=array();
 	$L1=array();
+	$nomstage4=array();
+	$nomstage3=array();
+	$nomstage2=array();
+	$nomstage1=array();
 
 	// On cherche tout d'abord à noté chaque recherche et selon le résultat (compteur =0=aucun des critères de recherche n'apprait dans la base de données
 	// compteur = 4 = les quatre critères se retrouve dans la description de stage où l'on regarde.)
@@ -123,18 +127,22 @@
 		if ($compteur==4)
 		{
 			array_push($L4,$Tab[$nombreligneeffectuées][4]);
+			array_push($nomstage4,$Tab[$nombreligneeffectuées][3]);
 		}
 		if ($compteur==3)
 		{
 			array_push($L3,$Tab[$nombreligneeffectuées][4]);
+			array_push($nomstage3,$Tab[$nombreligneeffectuées][3]);
 		}
 		if ($compteur==2)
 		{
 			array_push($L2,$Tab[$nombreligneeffectuées][4]);
+			array_push($nomstage2,$Tab[$nombreligneeffectuées][3]);
 		}
 		if ($compteur==1)
 		{
 			array_push($L1,$Tab[$nombreligneeffectuées][4]);
+			array_push($nomstage1,$Tab[$nombreligneeffectuées][3]);
 		}
 	$nombreligneeffectuées=$nombreligneeffectuées+1;
 	}
@@ -220,7 +228,7 @@
                 while ($i<count($L4))
                 {
                   $idst=$L4[$i];
-                  echo '<a href="offre_st.php?lestage='.$idst.'">'.$Tab[$idst][3].'</a><br/>';
+                  echo '<a href="offre_st.php?lestage='.$idst.'">'.$nomstage4[$i].'</a><br/>';
                   $i++;
                   echo '<hr class="my-4">';
                 }
@@ -228,7 +236,7 @@
                 while ($i<count($L3))
                 {
                   $idst=$L3[$i];
-                  echo "<a href='offre_st.php?lestage=".$idst."'>".$Tab[$idst][3]." </a><br/>";
+                  echo "<a href='offre_st.php?lestage=".$idst."'>".$nomstage3[$i]." </a><br/>";
                   $i++;
                   echo '<hr class="my-4">';
                 }
@@ -236,7 +244,7 @@
                 while ($i<count($L2))
                 {
                   $idst=$L2[$i];
-                  echo "<a href='offre_st.php?lestage=".$idst."'>".$Tab[$idst][3]." </a><br/>";
+                  echo "<a href='offre_st.php?lestage=".$idst."'>".$nomstage2[$i]." </a><br/>";
                   $i++;
                   echo '<hr class="my-4">';
                 }
@@ -244,7 +252,7 @@
                 while ($i<count($L1))
                 {
                   $idst=$L1[$i];
-                  echo "<a href='offre_st.php?lestage=".$idst."'>".$Tab[$idst][3]." </a><br/>";
+                  echo "<a href='offre_st.php?lestage=".$idst."'>".$nomstage1[$i]." </a><br/>";
                   $i++;
                   echo '<hr class="my-4">';
                 }
