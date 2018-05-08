@@ -17,13 +17,13 @@
 <body>
 
 <div class="container-fluid">
+	<br/>
 	<div class="row">
 		<div class="col-lg-3">
-			<br/><br/>
 			<h1>Tutoriel</h1>
-			<br/><br/>
 		</div>
 	</div>
+	<br/>
 	<div class="row">
 		<!-- Section Guide -->
 		<div class="col-lg-7">
