@@ -17,7 +17,7 @@ foreach($_POST['centre'] as $centre)
 {
     $query="INSERT INTO centres_interet (id_ind, id_mot_cle, compteur)
     VALUES ($id_ind, $centre, 5)";
-    $result=mysqli_query($link,$query);
+    $result=mysqli_query($link, $query);
 }
 
 //Ouvre la page

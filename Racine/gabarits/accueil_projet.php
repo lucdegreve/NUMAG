@@ -15,7 +15,7 @@ By Manuel, Julien Louet et Marie -->
 
 	<?php Include("Entete-VALIDE.php");
 	include("Connexion_bdd.php");?>
-	?>
+	
 	<br/>
 	<br/>
 	<div class="container-fluid">
