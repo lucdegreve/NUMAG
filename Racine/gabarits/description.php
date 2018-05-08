@@ -13,8 +13,9 @@
 		</br>
 		<div class="row">
 			<div class="col-md-12" align="center">
-			RACINE - Un but commun :  partager une vision dynamique et positive de l’agriculture
-		</br>
+			<h1> RACINE - Un but commun :  partager une vision dynamique et positive de l’agriculture </h1>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-md-1">
 				<div class="btn-group-vertical">
