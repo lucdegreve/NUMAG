@@ -13,9 +13,10 @@
 		</br>
 		</br> 
 		</br>
+		
 		<div class="btn-group-vertical">
-			<button type="button" href="Presentation.php" class="btn btn-secondary btn_lg">Accueil qui sommes-nous</button>
-			<button type="button" href="description.php" class="btn btn-primary">Présentation</button>
+			<button type="button" href="Presentation.php" class="btn btn-primary btn_lg">Accueil qui sommes-nous</button>
+			<button type="button" href="description.php" class="btn btn-secondary">Présentation</button>
 			<button type="button" href="mission.php" class="btn btn-secondary">Notre mission</button>
 			<button type="button" href="contact.php" class="btn btn-secondary">Nous contacter</button>
 		</div>
