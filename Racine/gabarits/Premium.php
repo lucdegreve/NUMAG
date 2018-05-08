@@ -34,7 +34,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 						<div class="card border-danger">
 					    <div class="card-body">
 					      <h5 class="card-title"> Assistance </h5>
-					      <p class="card-text">Racine propose une aide personalisée pour vous permettre de gérer au mieux votre profil ainsi que vos contacts.</p>
+					      <p class="card-text">Racine propose une aide personnalisée pour vous permettre de gérer au mieux votre profil ainsi que vos contacts.</p>
 					      <p class="card-text"><small class="text-muted">Nos conseillers seront là pour vous !</small></p>
 					    </div>
 					  </div>
@@ -49,7 +49,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 					    <img class="card-img-top" src="picto/annuaire.png" alt="Card image cap">
 					    <div class="card-body">
 					      <h5 class="card-title">Consultez l'annuaire exploitants</h5>
-					      <p class="card-text">Les multiples acteurs de Racine peuvent etre contacté d'un simple clique. Recherchez un profil qui vous interesse et contactez le ! </p>
+					      <p class="card-text">Les multiples acteurs de Racine peuvent être contactés d'un simple clique. Recherchez un profil qui vous intéresse et contactez le ! </p>
 					      <p class="card-text"><small class="text-muted">Plus de 3 000 inscrits sont déjà disponibles </small></p>
 					    </div>
 					  </div>
@@ -57,7 +57,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 						<div class="card border-danger">
 							<div class="card-header">Découvrez les espaces agricoles des environs</div>
 					    <div class="card-body">
-					      <p class="card-text">Nous proposons une localisation d'exploitations agricoles qui participent à l'évolution de notre platteforme. </p>
+					      <p class="card-text">Nous proposons une localisation d'exploitations agricoles qui participent à l'évolution de notre plateforme. </p>
 								<img class="card-img-top" src="picto/localisation.png" alt="Card image cap">
 							</div>
 					  </div>

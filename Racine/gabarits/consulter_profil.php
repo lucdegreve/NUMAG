@@ -62,7 +62,7 @@
 	        				<h5 class="card-title"><b>Stages</b></h5>
 	        				<p class="card-text">Propositions de stages de Alphonse Paumier.</p>
 									<hr class="my-4">
-	        				<p class="card-text"> <i> Aucune offre de stage n'a été proposée par Alphonse Pommier. </i></p>
+	        				<p class="card-text"> <i> Aucune offre de stage n'a été proposée par Alphonse Paumier. </i></p>
 	      				</div>
 	    				</div>
 
