@@ -39,7 +39,7 @@
 					<hr class="my-4">
 					Vous trouverez ci-dessous un guide d'utilisation de la plateforme:
 					<br/><br/>
-					<iframe src="video/guide.pdf" width="650" height="500"></iframe>
+					<iframe src="video/Guide_utilisation_RACINE.pdf" width="650" height="500"></iframe>
 					<br/><br/>
 				</div>
 			</div>
