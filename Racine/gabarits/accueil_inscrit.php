@@ -189,6 +189,7 @@
 							<hr class="my-4">
 								<?php
 								//Afficher maximum 3 contacts
+<<<<<<< Updated upstream
 								$i=0;
 								$compteur=0;
 								while ($compteur<3)
