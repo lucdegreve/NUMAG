@@ -21,7 +21,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 		@$Message=$_GET["Message"];
 		if ($Message==1)
 		{
-			echo 'Veuillez vérifier votre identifiant et votre mot de passe puis réessayer';
+			echo '<div class="center-block> Veuillez vérifier votre identifiant et votre mot de passe puis réessayer </div>';
 		}
 	?>
 	<div class="row">
