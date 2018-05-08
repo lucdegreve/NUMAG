@@ -170,7 +170,7 @@
 	$NbLignesContacts=mysqli_num_rows($ResultContacts);
 
 	//Construction de la requête récupérant la table Individus
-	$RequeteIndiv = "SELECT id_ind, prenom, nom_ind, id_prof, civilite FROM Individus";
+	$RequeteIndiv = "SELECT id_ind, prenom, nom_ind, id_prof, civilite FROM individus";
 	//Execution de la requete et production du recordset
 	$ResultIndiv = mysqli_query($link,$RequeteIndiv);
 	//Traitement du recordset
