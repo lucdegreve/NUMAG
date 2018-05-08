@@ -85,17 +85,20 @@ mysqli_set_charset($link, 'UTF-8');
 					          ORDER BY messages_prives.date_mp";
 
 					$results=mysqli_query($link,$query);
-					echo '<table>';
-					while ($row=mysqli_fetch_array($results,MYSQLI_BOTH)){
+					echo "<ul class='list-group'>";
+						while ($row=mysqli_fetch_array($results,MYSQLI_BOTH)){
 						$IDMP=$row['id_mp'];
 						$TEXTE=$row['texte'];
 						$DATE=$row['date'];
 						$NOM= $row['nom_ind'];
 						$PRENOM= $row['prenom'];
-						echo '<tr><th>'.$PRENOM.' '.$NOM.'<br/></th></tr>';
-						echo "<tr><td>$TEXTE<br/><i>$DATE</i> <br/></td><td></td></tr>";
+						echo '<li class="list-group-item"><h4>'.$PRENOM.' '.$NOM.'</h4>
+						<p class="lead">'.$TEXTE.'
+						<br/><i>$DATE</i>
+						</p>
+						</li>';
 					}
-					echo '</table>';
+					echo '</ul>';
 
 					echo '<form method="GET">';
 
