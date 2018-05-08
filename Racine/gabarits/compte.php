@@ -99,7 +99,8 @@
 					      }
 					    }
 					    echo'</div>';
-					  echo '<input type="submit" class="btn btn-info" value="Valider les modifications"></input>';
+						echo'<br/>';
+					  echo '<input type="submit" class="btn btn-info center-block" value="Valider les modifications"></input>';
 					echo '</form>';
 					?>
 
