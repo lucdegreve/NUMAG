@@ -251,8 +251,9 @@
 												<!-- //Bouton pour ajouter en contact (à mettre dans la boucle) -->
 												<form action="Messagerie_Bootstrap.php" method="GET">
 													<!-- //On transmet en caché l'id du destinataire et de l'utilisateur connecté -->
-													<input type='hidden' name='idcontact' value='$IdSugg'>
-	                        <input type='hidden' name='message' value='Ceci est le début de votre conversation'>
+													<?php echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";?>
+													<?php echo "<input type='hidden' name='idcontact' value='$IdSugg'>";?>
+                                                                                                        <?php echo "<input type='hidden' name='message' value='Ceci est le début de votre conversation'>";?>
 													<input type="submit" value="Contacter" class="btn btn-info btn-sm btn-block" name="bt">
 												</form>
 

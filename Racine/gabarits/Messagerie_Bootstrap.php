@@ -155,7 +155,7 @@
           GROUP BY id_mp
           ORDER BY messages_prives.date_mp";
           $results=mysqli_query($link,$query);
-          $query3="SELECT prenom, nom_ind FROM individus WHERE id_ind=".$contact;
+          $query3="SELECT prenom, nom_ind FROM individus WHERE id_ind=$contact";
           $results3=mysqli_query($link,$query3);
           $tab=mysqli_fetch_all($results3);
         }
