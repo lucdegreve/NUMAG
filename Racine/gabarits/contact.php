@@ -19,7 +19,7 @@
 					<a href="Presentation.php" class="btn btn-secondary btn-lg btn-block">Accueil qui sommes-nous</a>
 					<a href="description.php" class="btn btn-secondary btn-lg btn-block">Présentation</a>
 					<a href="mission.php" class="btn btn-secondary btn-lg btn-block">Notre mission</a>
-					<a href="contact.php" class="btn btn-primary btn-lg btn-block">Nous contacter</a>
+					<a href="contact.php" class="btn btn-info btn-lg btn-block">Nous contacter</a>
 				</div>
 			</div>
 		</div>
