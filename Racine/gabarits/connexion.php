@@ -1,6 +1,6 @@
 <!-- Code effectué par Clément Turbillier -->
 <!-- Ce code est fait en exploitant les possibilités de Bootstrap, il s'agit du formulaire d'inscription du site
-les containers et containers fluids structurent la page d'inscription 
+les containers et containers fluids structurent la page d'inscription
 Cette page permet à une personne de se connecter au site
 Des validations sont mises en place grace aux données de bootstrap-->
 
@@ -9,14 +9,14 @@ Des validations sont mises en place grace aux données de bootstrap-->
 	<head>
 		<meta charset="utf-8">
 		<title> Formulaire de connexion </title>
-		
+
 		<!-- css -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 	<?php include("Entete-NC.php"); ?>
-	<?php 
+	<?php
 		$Message=0;
 		@$Message=$_GET["Message"];
 		if ($Message==1)
@@ -24,7 +24,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 			echo 'Veuillez vérifier votre identifiant et votre mot de passe puis réessayer';
 		}
 	?>
-	<div class="row">	
+	<div class="row">
 		<div class="col-md-4">
 		</div>
 		<div class="col-md-4">
@@ -51,7 +51,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 					<input type="submit" class="btn btn-info btn-block" VALUE =" Connexion ">
 					</input>
 			</form>
-					<a class="nav-link" href="connexion.php"><p class="text-dark petit">Mot de passe oublié ?</p></a>
+					<a class="nav-link" href="connexion.php"><p class="text-dark" style=font-size:0.5em>Mot de passe oublié ?</p></a>
 				</div>
 			<form action="inscriptionG.php" method="GET" name="F2">
 				<div class="col-md-12">
@@ -64,6 +64,6 @@ Des validations sont mises en place grace aux données de bootstrap-->
 			<br/>
 			<br/>
 			<br/>
-		
+
 		<?php include("Pied-VALIDE.html"); ?>
 	</body>
