@@ -20,7 +20,7 @@
 	<div id="guide">
 		Vous trouverez ci-dessous un guide d'utilisation de la plateforme:
 		<br/><br/>
-		<iframe src="Informations Abeilles.pdf" width="800" height="800"></iframe>
+		<iframe src="Guide.pdf" width="800" height="800"></iframe>
 		<br/>
 	</div>
 	
@@ -31,7 +31,7 @@
 		<param name="tutoriel" value="tutoriel.wmv"/>
 		</object>
 		<br/>
-		<a href="https://ent.agro-bordeaux.fr/" target="_blank"> Cliquez ici </a>
+		<a href="picto/Stageetconnexionfini.swf" target="_blank"> Cliquez ici </a>
 		<br/>
 	</div>
 	
