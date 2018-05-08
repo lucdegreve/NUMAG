@@ -22,6 +22,9 @@
 					<a href="contact.php" class="btn btn-secondary btn-lg btn-block">Nous contacter</a>
 				</div>
 			</div>
+			<div class="col-md-4">
+				RACINE est une plateforme permettant des échanges entre les agriculteurs et les étudiants, le but étant de
+			</div>
 		</div>
 	</body>
 </html>
