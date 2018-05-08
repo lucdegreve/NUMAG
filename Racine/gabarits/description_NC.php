@@ -10,16 +10,20 @@
 	</head>
 	<body>
 	<?php include("Entete-NC.php"); ?>
-		</br>
-		</br> 
-		</br>
+	</br>
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-12" align="center">
+			<h1> RACINE - Un but commun :  partager une vision dynamique et positive de l’agriculture </h1>
+			</br>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-1">
 				<div class="btn-group-vertical">
-					<a href="Presentation_NC.php" class="btn btn-secondary btn-lg btn-block">Accueil qui sommes-nous</a>
-					<a href="description_NC.php" class="btn btn-info btn-lg btn-block">Présentation</a>
-					<a href="mission_NC.php" class="btn btn-secondary btn-lg btn-block">Notre mission</a>
-					<a href="contact_NC.php" class="btn btn-secondary btn-lg btn-block">Nous contacter</a>
+					<a href="Presentation.php" class="btn btn-secondary btn-lg btn-block">Accueil</a>
+					<a href="description.php" class="btn btn-info btn-lg btn-block">Présentation</a>
+					<a href="mission.php" class="btn btn-secondary btn-lg btn-block">Notre mission</a>
+					<a href="contact.php" class="btn btn-secondary btn-lg btn-block">Nous contacter</a>
 				</div>
 			</div>
 			<div class="col-md-5" align="center">
