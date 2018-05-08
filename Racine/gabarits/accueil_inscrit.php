@@ -4,7 +4,7 @@
 	//Connexion au serveur
 	include'Connexion_bdd.php';
 	//Afficher correctement les caractères spéciaux
-	
+
 ?>
 
 	<html>
@@ -54,7 +54,7 @@
 			}
 		}
 	}
-	
+
 	//Requête sortant la liste des mots clé associés à leurs scores pour l'individu connecté
 	$query_mots_cle_co="SELECT id_ind, id_mot_cle, compteur FROM Centres_interet WHERE id_ind = ".$id_ind_co." ORDER BY compteur DESC";
 	$result_mots_cle_co=mysqli_query($link,$query_mots_cle_co);
@@ -102,8 +102,8 @@
         $tab_inscrits[$i][0]=$identifiant[$i];
         $tab_inscrits[$i][1]=$score[$i];
 	}
-	
-	
+
+
 
 	//Récuperation des scores des actualités ordonnées
 	$query_SA="SELECT id_actu, SUM(Centres_interet.Compteur) AS Score_actu
@@ -168,13 +168,13 @@
 	//Traitement du recordset
 	$TabContacts = mysqli_fetch_all($ResultContacts);
 	$NbLignesContacts=mysqli_num_rows($ResultContacts);
-	
+
 	//Construction de la requête récupérant la table Individus
 	$RequeteIndiv = "SELECT id_ind, prenom, nom_ind, id_prof FROM Individus";
 	//Execution de la requete et production du recordset
 	$ResultIndiv = mysqli_query($link,$RequeteIndiv);
 	//Traitement du recordset
-	$TabIndiv = mysqli_fetch_all($ResultIndiv);	
+	$TabIndiv = mysqli_fetch_all($ResultIndiv);
 	?>
 
 	<br>
@@ -184,15 +184,14 @@
 			<div class="col-lg-2">
 <!-- On définit ici une section 'suggestions' -->
 				<div id="suggestions">
-						<form class="jumbotron HauteurMaxee">
+						<div class="jumbotron HauteurMax">
 							<h3>Suggestions</h3>
 							<hr class="my-4">
-							<div class="form-group">
 								<?php
 								//Afficher maximum 3 contacts
 								$i=0;
 								$compteur=0;
-								while ($compteur<3)								
+								while ($compteur<3)
 								{
 									$IdSugg = $tab_inscrits[$i][0]; //On sélectionne chaque suggestion de contact une par une
 									$i++;
@@ -202,12 +201,12 @@
 									{
 										if ($IdSugg == $TabContacts[$k][0])
 										{
-											$test = true;											
+											$test = true;
 										}
 									}
 									//Si les 2 individus ne sont pas déjà en contact...
 									if ($test == false)
-									{										
+									{
 										//... on parcourt la table des individus jusqu'à trouver le contact concerné pour récupérer ses infos
 										$compteur++;
 										$j = 0;
@@ -225,50 +224,48 @@
 												{
 													echo "Agriculteur";
 												}
-												else											
+												else
 												{
 													echo "Etudiant";
 												}
-												echo '<p>';
-												//Bouton pour accéder au profil de l'utilisateur
-												echo '<a href="consulter_profil.php" class="btn btn-info btn-sm btn-block">Voir le profil</a>';
-												/*echo '<form action="consulter_profil.php" method="GET">';
-												echo '<input type = "submit" value = "Voir le profil" class="btn btn-info btn-sm btn-block" name = "bouton">';
-												echo '</form>';		
-												*/
-												//Bouton pour ajouter en contact (à mettre dans la boucle)
-												echo '<form action="Messagerie_Bootstrap.php" method="GET">';
-													//On transmet en caché l'id du destinataire et de l'utilisateur connecté
-												echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";
-												echo "<input type='hidden' name='idcontact' value='$IdSugg'>";
-                                                echo "<input type='hidden' name='message' value='Ceci est le début de votre conversation'>";
-												echo '<br/>';
-												echo '<input type="submit" value="Contacter" class="btn btn-info btn-sm btn-block" name="bt">';
-												echo '</form>';
-												echo '</p>';
-												echo '<hr class="my-1">';
+												?>
+												<br/>
+												<br/>
+												<!-- //Bouton pour accéder au profil de l'utilisateur -->
+												<a href="consulter_profil.php" class="btn btn-info btn-sm btn-block marge_bas">Voir le profil</a>
+
+												<!-- //Bouton pour ajouter en contact (à mettre dans la boucle) -->
+												<form action="Messagerie_Bootstrap.php" method="GET">
+													<!-- //On transmet en caché l'id du destinataire et de l'utilisateur connecté -->
+													<input type='hidden' name='id_ind_co' value='$id_ind_co'>
+													<input type='hidden' name='idcontact' value='$IdSugg'>
+	                        <input type='hidden' name='message' value='Ceci est le début de votre conversation'>
+													<input type="submit" value="Contacter" class="btn btn-info btn-sm btn-block" name="bt">
+												</form>
+
+												<hr class="my-1">
+												<?php
 											}
-											$j++;										
+											$j++;
 										}
 									}
 								}
 								?>
-							</div>
-					</form>
+					</div>
 				</div>
 			</div>
 <!-- On définit ici une section 'actualites' -->
 			<div class="col-lg-8">
 				<div id="actualites">
-					<form class="jumbotron HauteurMaxee">
+					<div class="jumbotron-Racine HauteurMax">
 						<h3>Actualités</h3>
 						<hr class="my-4">
-						<div class="form-group">
 							<?php
 							// code alternatif pour afficher TOUTES les actualites :
 							// for ($j=0; $j<$NBL; $j++)
 							for ($j=0; $j<5; $j++)
-							{ echo '<div class="card bg-light border-secondary mb-3">';
+							{ echo '<div class="card bg-light border-secondary mb-3 pading_lateral">';
+
 								$id = $tab_trie[$j][0];
 								$k = 0;
 								$verif = false;
@@ -281,7 +278,7 @@
 										$mois = substr($date, -5, 2);
 										$annee = substr($date, -10, 4);
 										echo "<p class='card-text'><B>".$TabActu[$k][1]."</B> - ".$jour."/".$mois."/".$annee."</p>";
-										echo "<a href = ".$TabActu[$k][2]." class='card-link'> ".$TabActu[$k][2]." </a>";
+										echo "<a href = ".$TabActu[$k][2]." class='card-link font-size:1em;'> ".$TabActu[$k][2]." </a>";
 										echo "<p> ".$TabActu[$k][4]."</p>";
 										$verif = true;
 									}
@@ -308,20 +305,19 @@
 										}
 										$k++;
 									}
-								} echo "</div>";
+								}
+							echo "</div>";
 							}
 							?>
-						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 <!-- On définit ici une section 'contacts' -->
 			<div class="col-lg-2">
 				<div id="contacts">
-					<form class="jumbotron HauteurMaxee">
+					<div class="jumbotron HauteurMax">
 						<h3>Contacts</h3>
 						<hr class="my-4">
-						<div class="form-group">
 							<?php
 							for ($i=0; $i<$NbLignesContacts; $i++)
 							{
@@ -338,8 +334,7 @@
 								echo "<br/>";
 							}
 							?>
-						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</div>
