@@ -69,7 +69,7 @@ a:hover, a:focus {
 	color: rgb(37,117,127);
 }
 .HauteurMax{
-  height: 90%;
+  height: 100%;
 }
 .HauteurAuto{
   height: 83%;
@@ -138,4 +138,26 @@ a:hover, a:focus {
 .nav-pills .show > .nav-link {
   color: #fff;
   background-color: #dc3545;
+}
+.marge_bas{
+  margin-bottom: 1em;
+}
+.pading_lateral{
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.HauteurLimit{
+  height: 300px;
+}
+.jumbotron-Racine {
+  padding: 1rem 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: rgb(37,117,127);
+  border-radius: 0.3rem;
+}
+
+@media (min-width: 576px) {
+  .jumbotron-Racine {
+    padding: 2rem 1rem;
+  }
 }
