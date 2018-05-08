@@ -42,7 +42,7 @@ Bootstrap assure un aspect graphique élégant-->
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<li class="nav-item">
-					<a class="nav-link" href="accueil_inscrit.php"><p class="text-light"><img alt="" src="picto\accueil.png" width="35" height="30"></p></a>
+					<a class="nav-link" href="accueil_inscrit.php"><p class="text-light"><img alt="" src="picto\accueil.png" width="40" height="40"></p></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="Messagerie_Bootstrap.php"><p class="text-light">Messagerie</p></a>
