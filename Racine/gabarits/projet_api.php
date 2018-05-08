@@ -57,7 +57,7 @@ mysqli_set_charset($link, 'UTF-8');
     </div>
 		<br>
     <div class="row">
-      <h5>Partie forum</h5>
+      <h3>Partie forum</h3>
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
@@ -97,23 +97,25 @@ mysqli_set_charset($link, 'UTF-8');
 						$DATE=$row['date'];
 						$NOM= $row['nom_ind'];
 						$PRENOM= $row['prenom'];
-						echo '<li class="list-group-item"><h4>'.$PRENOM.' '.$NOM.'</h4>
+						echo '<li class="list-group-item"><h5>'.$PRENOM.' '.$NOM.'</h5>
 						<p class="lead">'.$TEXTE.'
-						<br/><i>$DATE</i>
+						<br/><i>'.$DATE.'</i>
 						</p>
 						</li>';
 					}
 					echo "<br/><li>";
 					echo '<form method="GET">';
+					echo "<div class='form-group'>";
 
 					//En cliquant, le message 'Tapez votre message ici' par défault disparait. On entre le msg
 					?>
-					<input type="text" onfocus="this.value=''" value="Tapez votre message ici" size="80" name="message">
+					<input class="form-control" type="text" onfocus="this.value=''" value="Tapez votre message ici" size="80" name="message">
 					<?php
 					//On transmet en caché l'id du destinataire et de l'utilisateur connecté
-					echo "<input type='hidden' name='id_ind_co' value='$id_ind_co'>";
-					echo "<input type='hidden' name='idcontact' value='$forum'>";
+					echo "<input type='hidden' name='id_ind_co' value=".$id_ind_co.">";
+					echo "<input type='hidden' name='idcontact' value=".$forum.">";
 					echo '<input type="submit" value="Envoyer" name="bt">';
+					echo "</div>";
 					echo '</form>';
 					echo "</li>";
 					echo '</ul>';
