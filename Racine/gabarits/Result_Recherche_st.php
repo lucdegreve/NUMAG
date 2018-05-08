@@ -37,7 +37,7 @@
     </script>
 
     <!-- ouverture de la fenetre pop up pour les tags -->
-    <script type="text/javascript">
+ <!--   <script type="text/javascript">
       function open_popup_test()
       {
       window.open("recherche_tag_st.php", "recherche_tag_st", "toolbar=yes, status=yes, scrollbars=yes, resizable=no, width=300, height=300");
@@ -48,14 +48,14 @@
 
   </head>
   <body>
-
+-->
 <?php
 	Include("Connexion_bdd.php");
 
     // récupération des données de la recherche
 	@$mot_cle=$_GET ['tag'];
 	$lieu=$_GET["dpt"];
-  $mois=$_GET["mois"];
+	$mois=$_GET["mois"];
 	$periode_st=$_GET["periode"];
 	$nombreligneeffectuées=0;
   $i=0;
@@ -122,19 +122,19 @@
 		//  Ces listes sont créées par rapport aux nombres de correspondances entre recherche et stage de la base de donnée
 		if ($compteur==4)
 		{
-			array_push($L4,$nombreligneeffectuées);
+			array_push($L4,$Tab[$nombreligneeffectuées][4]);
 		}
 		if ($compteur==3)
 		{
-			array_push($L3,$nombreligneeffectuées);
+			array_push($L3,$Tab[$nombreligneeffectuées][4]);
 		}
 		if ($compteur==2)
 		{
-			array_push($L2,$nombreligneeffectuées);
+			array_push($L2,$Tab[$nombreligneeffectuées][4]);
 		}
 		if ($compteur==1)
 		{
-			array_push($L1,$nombreligneeffectuées);
+			array_push($L1,$Tab[$nombreligneeffectuées][4]);
 		}
 	$nombreligneeffectuées=$nombreligneeffectuées+1;
 	}
