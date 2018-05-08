@@ -105,16 +105,20 @@ mysqli_set_charset($link, 'UTF-8');
 					}
 					?>
 					<br/>
-										<form method="GET">
-						<div class='form-group'><?php
-								//En cliquant, le message 'Tapez votre message ici' par défault disparait. On entre le msg
-							?>
-							<input class="form-control" type="text" onfocus="this.value=''" value="Tapez votre message ici" size="80" name="message">
-							<?php
-							//On transmet en caché l'id du destinataire et de l'utilisateur connecté?>
-							<input type='hidden' name='id_ind_co' value=".$id_ind_co.">
-							<input type='hidden' name='idcontact' value=".$forum.">
-							<input type="submit" value="Envoyer" name="bt">
+					<form method="GET">
+						<div class='form-group'>
+							<div class="col-lg-9">
+								<!-- //En cliquant, le message 'Tapez votre message ici' par défault disparait. On entre le msg
+								-->
+								<input class="form-control" type="text" onfocus="this.value=''" value="Tapez votre message ici" size="80" name="message">
+							</div>
+							<div class="col-lg-3">
+								<!--
+								//On transmet en caché l'id du destinataire et de l'utilisateur connecté -->
+								<input type='hidden' name='id_ind_co' value=".$id_ind_co.">
+								<input type='hidden' name='idcontact' value=".$forum.">
+								<input class="btn btn-info "type="submit" value="Envoyer" name="bt">
+							</div>
 						</div>
 					</form>
 				</ul>
