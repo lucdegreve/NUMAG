@@ -107,6 +107,7 @@
 				</div>
 			</div>
 		</div>
-			<?php include("Pied-VALIDE.html"); ?>
+	</div>
+	<?php include("Pied-VALIDE.html"); ?>
 </body>
 </html>
