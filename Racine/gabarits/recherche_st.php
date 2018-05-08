@@ -108,7 +108,7 @@
             			$nbligne=mysqli_num_rows($result);
             			?>
                   <div class="form-group">
-                      <label for="exampleSelect2">Choisir un mot-clef</label>
+                    <label for="exampleSelect2">Choisir un mot-clef</label>
                       <select multiple class="form-control" name="tag" size="9">
                         <?php
                           for ($j=0; $j<$nbligne; $j++)
