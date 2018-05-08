@@ -14,7 +14,7 @@
 		</br> 
 		</br>
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-4">
 				<div class="btn-group-vertical">
 					<a href="Presentation.php" class="btn btn-info btn-lg btn-block">Accueil qui sommes-nous</a>
 					<a href="description.php" class="btn btn-secondary btn-lg btn-block">Présentation</a>
@@ -23,7 +23,8 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				RACINE est une plateforme permettant des échanges entre les agriculteurs et les étudiants, le but étant de
+				RACINE est une plateforme permettant des échanges entre les agriculteurs et les étudiants, 
+				le but étant la mise en contact entre différents acteurs, la consultation d'actualité er 
 			</div>
 		</div>
 	</body>
