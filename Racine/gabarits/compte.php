@@ -14,7 +14,23 @@ $query="SELECT civilite, prenom, UPPER(nom_ind), type_prof, DATE_FORMAT(naissanc
 $result=mysqli_query($link,$query);
 $tab=mysqli_fetch_all($result);
 echo $tab[0][0].". ".$tab[0][1]." ".$tab[0][2]." <br/>";
-echo $tab[0][3]."<br/><br/>";
+$profil=$tab[0][3];
+if ($tab[0][0]=='Mme')
+{
+	if($tab[0][3]=='Agriculteur')
+	{
+		$profil='Agricultrice';
+	}
+	if($tab[0][3]=='Étudiant')
+	{
+		$profil='Étudiante';
+	}
+	if($tab[0][3]=='Administrateur')
+	{
+		$profil='Administratrice';
+	}
+}
+echo $profil."<br/><br/>";
 echo "Date de naissance <br/>".$tab[0][4]." <br/><br/>";
 echo "Adresse <br/>".$tab[0][5]."<br/>".$tab[0][6]." ".$tab[0][7]." <br/><br/>";
 echo "Téléphone <br/>".$tab[0][8]." <br/><br/>";
