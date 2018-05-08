@@ -53,8 +53,8 @@ By Manuel, Julien Louet, Marie -->
 	$nbcolresume=mysqli_num_fields($resultresume);
 
 
-// Récupération de la description, du type de production et des mots clès
-	$querydescription="SELECT stages.id_st, stages.description_st, types_production.libelle_type_prod, mots_cles.libelle_mot_cle
+// Récupération de la description, du type de production
+	$querydescription="SELECT stages.id_st, stages.description_st, types_production.libelle_type_prod
 	FROM stages
 	INNER JOIN individus
 	ON stages.id_ind=individus.id_ind
@@ -62,10 +62,6 @@ By Manuel, Julien Louet, Marie -->
 	ON individus.id_exp=exploitation_typeprod.id_exp
 	INNER JOIN types_production
 	ON exploitation_typeprod.id_type_prod=types_production.id_type_prod
-	LEFT JOIN mot_cle_stage
-	ON stages.id_st=mot_cle_stage.id_st
-	LEFT JOIN mots_cles
-	ON mot_cle_stage.id_mot_cle=mots_cles.id_mot_cle
 	WHERE stages.id_st=".$quelstage;
 
 	$resultdescription=mysqli_query($link,$querydescription);
@@ -73,6 +69,19 @@ By Manuel, Julien Louet, Marie -->
 	$nblignedescription=mysqli_num_rows($resultdescription);
 	$nbcoldescription=mysqli_num_fields($resultdescription);
 
+	
+// Récupération des mots clès
+	$querytag="SELECT mots_cles.libelle_mot_cle
+	FROM stages
+	LEFT JOIN mot_cle_stage
+	ON stages.id_st=mot_cle_stage.id_st
+	LEFT JOIN mots_cles
+	ON mot_cle_stage.id_mot_cle=mots_cles.id_mot_cle
+	WHERE stages.id_st=".$quelstage;
+
+	$resulttag=mysqli_query($link,$querytag);
+	$Tabtag=mysqli_fetch_all($resulttag);
+	$nblignetag=mysqli_num_rows($resulttag);
 
 	// Récupération du nom et prenom de l'agriculteur
 	$querycontact="SELECT id_st, nom_ind, prenom, individus.id_ind
@@ -145,8 +154,9 @@ By Manuel, Julien Louet, Marie -->
 							echo '<div class="form-group">';
 								echo '<label for="exampleSelect1"><u> Mots-clés : </u></label>';
 								echo '</br>';
-								for ($i=0;$i<$nblignedescription;$i++)
-								{echo ' '.$Tabdescription[$i][3].' ';
+								for ($i=0;$i<$nblignetag;$i++)
+								{
+									echo ' '.$Tabtag[$i][0].' ';
 								}
 							echo '</div>';
 							?>
@@ -164,6 +174,7 @@ By Manuel, Julien Louet, Marie -->
           envoyant vers la page messagerie.php (prise de contact avec l'agriculteur) -->
 						<div class="form-group">
 							<?php
+							
 								echo '<label for="exampleSelect1"><u> Nom : </u></label>';
 								echo '</br>';
 								echo '<label for="exampleSelect1" name="nom">'.$Tabcontact[0][1].'</label>';
