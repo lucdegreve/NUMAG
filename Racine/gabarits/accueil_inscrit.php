@@ -185,7 +185,7 @@
 <!-- On définit ici une section 'suggestions' -->
 				<div id="suggestions">
 						<div class="jumbotron HauteurMax">
-							<h3>Suggestions</h3>
+							<h3><img alt="" src="picto\suggestion.png" width="40" height="40"></h3>
 							<hr class="my-4">
 								<?php
 								//Afficher maximum 3 contacts
