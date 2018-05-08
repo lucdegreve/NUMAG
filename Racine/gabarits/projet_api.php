@@ -27,11 +27,14 @@ mysqli_set_charset($link, 'UTF-8');
 		<br>
     <div class="jumbotron">
       <div class="row">
-				<h4>Description du projet</h4>
-				<hr class="my-4">
+				<div class="col-lg-12">
+					<h4>Description du projet</h4>
+					<hr class="my-4">
+					<br>
+				</div>
+			</div>
+			<div class="row">
         <div class="col-lg-6">
-
-          <br><br>
           <p class="lead">
             Bonjour, je m'appelle Thomas et je suis un apiculteur actuellement en train d'utiliser le moins de produits pesticides possible <br/>
             J'ai vu sur ce site (www.apiculturebio.com) qu'il y avait un guide très détaillé afin de progresser d'une apiculture standard à une biologique <br/>
