@@ -31,6 +31,8 @@
 		<param name="tutoriel" value="tutoriel.wmv"/>
 		</object>
 		<br/>
+		<a href="https://ent.agro-bordeaux.fr/" target="_blank"> Cliquez ici </a>
+		<br/>
 	</div>
 	
 	Bonne navigation sur RACINE ! 
