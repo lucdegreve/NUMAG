@@ -108,6 +108,8 @@
 			</div>
 		</div>
 	</div>
+	<br/>
+	<br/>
 	<?php include("Pied-VALIDE.html"); ?>
 </body>
 </html>
