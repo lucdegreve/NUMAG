@@ -61,6 +61,7 @@
 							<a class="btn btn-outline-info btn-md btn-block" href="video/Stageetconnexionfini.exe" role="button"> Téléchargement de la vidéo </a>
 						</div>
 					</div>
+					<hr class="my-4">
 					<br/>
 					<h5> 2ème vidéo </h5>
 					<div class="row text-center">
@@ -96,9 +97,9 @@
 		</div>
 	</div>
 	<br/>
-	<div class="row text-center">
+	<div class="row">
 		<div class="col-lg-12">
-			<h3> Bonne navigation sur RACINE !</h3>
+			<h3 align ="center"> Bonne navigation sur RACINE !</h3>
 		</div>
 	</div>
 	<br/>
