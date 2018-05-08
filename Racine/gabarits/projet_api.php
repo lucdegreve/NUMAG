@@ -21,7 +21,6 @@ mysqli_set_charset($link, 'UTF-8');
         <!-- Création du formulaire central : Description du stage -->
         <div>
           <h3>Projet d'apiculture biologique</h3>
-          <hr class="my-4">
         </div>
       </div>
     </div>
@@ -29,6 +28,7 @@ mysqli_set_charset($link, 'UTF-8');
       <div class="row">
         <div class="col-lg-6">
           <h4>Description du projet</h4>
+					<hr class="my-4">
           <br><br>
           <p class="lead">
             Bonjour, je m'appelle Thomas et je suis un apiculteur actuellement en train d'utiliser le moins de produits pesticides possible <br/>
@@ -52,6 +52,8 @@ mysqli_set_charset($link, 'UTF-8');
     </div>
     <div class="row">
       <h5>Partie forum</h5>
+		</div>
+		<div class="row">
       <br/><br/><br/>
 	  <?php
 
