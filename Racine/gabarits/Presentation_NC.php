@@ -10,11 +10,14 @@
 	</head>
 	<body>
 	<?php include("Entete-NC.php"); ?>
-		
+		</br>
+		</br> 
+		</br>
 		<div class="btn-group-vertical">
-			<button type="button" class="btn btn-primary">Présentation</button>
-			<button type="button" class="btn btn-secondary">Notre mission</button>
-			<button type="button" class="btn btn-secondary">Nous contacter</button>
+			<button type="button" href="Presentation_NC.php" class="btn btn-secondary btn_lg">Accueil qui sommes-nous</button>
+			<button type="button" href="description.php" class="btn btn-primary">Présentation</button>
+			<button type="button" href="mission.php" class="btn btn-secondary">Notre mission</button>
+			<button type="button" href="contact.php" class="btn btn-secondary">Nous contacter</button>
 		</div>
 	</body>
 </html>
