@@ -20,7 +20,7 @@ Bootstrap assure un aspect graphique élégant-->
 				<div class="col-md-6">
 					<div class="center">
 					</br>
-					<i>RACINE &mdash; Réseau Agricole Collaboratif par l'Interaction et l'Echange</i></div>
+					<i>RACINE &mdash; Réseau Agricole Collaboratif par l'INteraction et l'Echange</i></div>
 				</div>
 			</div>
 
