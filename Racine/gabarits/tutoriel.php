@@ -96,7 +96,7 @@
 		</div>
 	</div>
 	<br/>
-	<div class="row">
+	<div class="row text-center">
 		<div class="col-lg-12">
 			<h3> Bonne navigation sur RACINE !</h3>
 		</div>
