@@ -22,6 +22,17 @@
 					<a href="contact.php" class="btn btn-secondary btn-lg btn-block">Nous contacter</a>
 				</div>
 			</div>
+			<div class="col-md-4">
+				<img src="picto/Jules.png" width="300" height="80">
+				Jules Colombo, 21 ans
+				Non issu du monde agricole
+				3ème année à Bordeaux Sciences Agro - <span> spécialisation </span> : Management des Entreprises Agricoles
+				<img src="picto/Audrey.png" width="300" height="80">
+				Audrey Fourcade, 31 ans
+				Fille d'agriculteur
+				3ème année à Bordeaux Sciences Agro - <span> spécialisation </span> : Management des Entreprises Agricoles				
+			</div>
 		</div>
+		
 	</body>
 </html>
