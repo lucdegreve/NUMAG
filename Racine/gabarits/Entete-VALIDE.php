@@ -6,7 +6,6 @@ Bootstrap assure un aspect graphique élégant-->
 <HTML>
 	<head>
 		<meta charset="utf-8">
-		<title> Entete </title>
 
 		<!-- css -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -17,12 +16,12 @@ Bootstrap assure un aspect graphique élégant-->
 				<div class="col-md-4">
 					<img src="picto/Racine_logo_etroit.png" width="300" height="80">
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-5">
 					<div class="center">
 					</br>
 					<i>RACINE &mdash; Réseau Agricole Collaboratif par l'Interaction et l'Echange</i></div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<br>
 					<ul class="nav nav-pills">
 						<li class="nav-item">
