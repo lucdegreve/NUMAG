@@ -11,7 +11,7 @@
 <body>
 <?php
 $query="SELECT civilite, prenom, UPPER(nom_ind), type_prof, DATE_FORMAT(naissance, '%d/%m/%Y'), ad_ind, cp, UPPER(nom_commune), tel, mail FROM individus JOIN communes ON individus.id_commune=communes.id_commune JOIN profils ON individus.id_prof=profils.id_prof WHERE id_ind=$id_ind_co";
-$$result=mysqli_query($link,$query);
+$result=mysqli_query($link,$query);
 $tab=mysqli_fetch_all($result);
 echo $tab[0][0].". ".$tab[0][1]." ".$tab[0][2]." <br/>";
 echo $tab[0][3]."<br/><br/>";
