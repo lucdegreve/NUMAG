@@ -27,9 +27,10 @@ mysqli_set_charset($link, 'UTF-8');
 		<br>
     <div class="jumbotron">
       <div class="row">
+				<h4>Description du projet</h4>
+				<hr class="my-4">
         <div class="col-lg-6">
-          <h4>Description du projet</h4>
-					<hr class="my-4">
+
           <br><br>
           <p class="lead">
             Bonjour, je m'appelle Thomas et je suis un apiculteur actuellement en train d'utiliser le moins de produits pesticides possible <br/>
@@ -98,8 +99,6 @@ mysqli_set_charset($link, 'UTF-8');
 						</p>
 						</li>';
 					}
-					echo '</ul>';
-
 					echo '<form method="GET">';
 
 					//En cliquant, le message 'Tapez votre message ici' par défault disparait. On entre le msg
@@ -111,7 +110,7 @@ mysqli_set_charset($link, 'UTF-8');
 					echo "<input type='hidden' name='idcontact' value='$forum'>";
 					echo '<input type="submit" value="Envoyer" name="bt">';
 					echo '</form>';
-
+					echo '</ul>';
 					?>
 			</div>
     </div>
