@@ -13,11 +13,15 @@
 		</br>
 		</br> 
 		</br>
-		<div class="btn-group-vertical">
-			<button type="button" href="Presentation_NC.php" class="btn btn-secondary btn_lg">Accueil qui sommes-nous</button>
-			<button type="button" href="description_NC.php" class="btn btn-secondary">Présentation</button>
-			<button type="button" href="mission_NC.php" class="btn btn-secondary">Notre mission</button>
-			<button type="button" href="contact_NC.php" class="btn btn-primary">Nous contacter</button>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="btn-group-vertical">
+					<a href="Presentation_NC.php" class="btn btn-secondary btn-lg btn-block">Accueil qui sommes-nous</a>
+					<a href="description_NC.php" class="btn btn-secondary btn-lg btn-block">Présentation</a>
+					<a href="mission_NC.php" class="btn btn-secondary btn-lg btn-block">Notre mission</a>
+					<a href="contact_NC.php" class="btn btn-primary btn-lg btn-block">Nous contacter</a>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
