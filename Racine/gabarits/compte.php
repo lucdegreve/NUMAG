@@ -12,8 +12,7 @@
 <body>
 <?php
 //////// COLONNE DE GAUCHE \\\\\\\\\\\\
-$query="SELECT civilite, prenom, UPPER(nom_ind), type_prof, DATE_FORMAT(naissance, '%d/%m/%Y'), ad_ind, cp, UPPER(nom_commune), tel, mail
-FROM individus JOIN communes ON individus.id_commune=communes.id_commune JOIN profils ON individus.id_prof=profils.id_prof WHERE id_ind=$id_ind_co";
+$query="SELECT civilite, prenom, UPPER(nom_ind), type_prof, DATE_FORMAT(naissance, '%d/%m/%Y'), ad_ind, cp, UPPER(nom_commune), tel, mail FROM individus JOIN communes ON individus.id_commune=communes.id_commune JOIN profils ON individus.id_prof=profils.id_prof WHERE id_ind=$id_ind_co";
 $result=mysqli_query($link,$query);
 $tab=mysqli_fetch_all($result);
 echo $tab[0][0].". ".$tab[0][1]." ".$tab[0][2]." <br/>";
@@ -45,7 +44,7 @@ $result=mysqli_query($link,$query);
 $tab = mysqli_fetch_all($result);
 $nblig=mysqli_num_rows($result);
 
-$query1 = "SELECT * FROM centres_interet WHERE id_ind=$id_ind_co";
+$query1 = "SELECT * FROM centres_interet WHERE id_ind=17";
 $result1 = mysqli_query($link, $query1);
 $tab1 = mysqli_fetch_all($result1);
 $nblig1=mysqli_num_rows($result1);
@@ -67,6 +66,7 @@ echo '<form action="maj_des_CI.php" method="post" name="form1">';
       }
     }
     echo'</div>';
+    echo'<input type="hidden" name="id_ind" value='.$id_ind.'>';
   echo '<input type="submit" class="btn btn-info" value="Valider les modifications"></input>';
 echo '</form>';
 

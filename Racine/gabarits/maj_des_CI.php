@@ -17,7 +17,7 @@ foreach($_POST['centre'] as $centre)
     if ($centre!=$tab['id_mot_cle'])
     {
         $query1="INSERT INTO centres_interet (id_ind, id_mot_cle, compteur)
-        VALUES ($id_ind, $centre, 5)";
+        VALUES ($id_ind_co, $centre, 5)";
         $result1=mysqli_query($link, $query1);
     }
 }
