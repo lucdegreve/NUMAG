@@ -55,10 +55,10 @@
 					<h5> Se connecter et rechercher un stage </h5>
 					<br/>
 					<div class="row text-center">
-						<div class="col-md-6">
+						<div class="col-md-5">
 							<a class="btn btn-info btn-lg btn-block" href="video/Stageetconnexionfini.htm" target="_blank" role="button"> Lien vers la vidéo </a>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-7">
 							<a class="btn btn-outline-info btn-lg btn-block" href="video/Stageetconnexionfini.exe" role="button"> Téléchargement de la vidéo </a>
 						</div>
 					</div>
@@ -71,7 +71,7 @@
 	</div>
 	<br/>
 	<div class="row">
-		<div class="col-lg-3">
+		<div class="col-lg-12">
 			<h3> Bonne navigation sur RACINE !</h3>
 		</div>
 	</div>
