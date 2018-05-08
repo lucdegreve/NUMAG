@@ -55,10 +55,10 @@
 					<h5> Se connecter et rechercher un stage </h5>
 					<br/>
 					<div class="row text-center">
-						<div class="col-md-5">
+						<div class="col-sm-5">
 							<a class="btn btn-info btn-lg btn-block" href="video/Stageetconnexionfini.htm" target="_blank" role="button"> Lien vers la vidéo </a>
 						</div>
-						<div class="col-md-7">
+						<div class="col-sm-7">
 							<a class="btn btn-outline-info btn-lg btn-block" href="video/Stageetconnexionfini.exe" role="button"> Téléchargement de la vidéo </a>
 						</div>
 					</div>
