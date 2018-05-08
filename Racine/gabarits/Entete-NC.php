@@ -47,7 +47,7 @@ Bootstrap assure un aspect graphique élégant-->
 					<a class="nav-link" href="Index.php"><p class="text-light">Tutoriel</p></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="Presentation_NC.php"><p class="text-light">Qui sommes nous ?</p></a>
+					<a class="nav-link" href="Presentation_NC.php"><p class="text-light">Qui sommes-nous ?</p></a>
 				</li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
