@@ -31,26 +31,25 @@
 				</br>
 				<h5> Jules Colombo, 21 ans </h5>
 				Non issu du monde agricole
-				</br>
-				</br>
-				<I>“Les étudiants agro manquent de connaissance sur le monde agricole, sur les coopératives, la PAC, les marchés à terme... Les stages de 1ère année sont trouvés par le bouche à oreille, ils ne sont pas forcément motivés par de réelles problématiques sur les exploitations, et donc ne sont pas toujours bien accompagnés.”</I>
 			</div>
-			<div class="col-md-5" align="center">
+			<div class="col-md-5" align="center">			
 				<img src="picto/Audrey.png" width="150" height="150">
 				</br>
 				<h5> Audrey Fourcade, 31 ans </h5>
 				Fille d'agriculteurs
-				</br>
-				</br>
-				<I>“L’exploitation familiale est passée en bio en 2001, aujourd’hui de nombreux agriculteurs viennent directement échanger sur place sans intermédiaire, pour connaître les raisons de cette réussite, et pour pouvoir se lancer dans leurs projets de développement.”</I>
+			</div>
+		<div class="row">
+			<div class="col-md-10" align="center">	
+			3 ème année à Bordeaux Sciences Agro - <U> Spécialisation </U> : Management des Entreprises Agricoles	
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-1">
+			<div class="col-md-5" align="center">
+				<I>“Les étudiants agro manquent de connaissance sur le monde agricole, sur les coopératives, la PAC, les marchés à terme... Les stages de 1ère année sont trouvés par le bouche à oreille, ils ne sont pas forcément motivés par de réelles problématiques sur les exploitations, et donc ne sont pas toujours bien accompagnés.”</I>
 			</div>
-			<div class="col-md-11" align="center">
-			3 ème année à Bordeaux Sciences Agro - <U> spécialisation </U> : Management des Entreprises Agricoles	
+			<div class="col-md-5" align="center">			
+				<I>“L’exploitation familiale est passée en bio en 2001, aujourd’hui de nombreux agriculteurs viennent directement échanger sur place sans intermédiaire, pour connaître les raisons de cette réussite, et pour pouvoir se lancer dans leurs projets de développement.”</I>
 			</div>
-		</div>	
+		</div>
 	</body>
 </html>
