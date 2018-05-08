@@ -222,11 +222,25 @@
 												//Indiquer le statut agriculteur ou étudiant
 												if ($TabIndiv[$j][3] == 1)
 												{
-													echo "Agriculteur";
+													if ($TabIndiv[$j][4] == 'M')
+													{
+														echo "Agriculteur";
+													}
+													else
+													{
+														echo "Agricultrice";
+													}
 												}
-												else
+												else											
 												{
-													echo "Etudiant";
+													if ($TabIndiv[$j][4] == 'M')
+													{
+														echo "Étudiant";
+													}
+													else
+													{
+														echo "Étudiante";
+													}
 												}
 												?>
 												<br/>
