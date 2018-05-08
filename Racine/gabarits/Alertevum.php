@@ -16,7 +16,7 @@ $modifMessage="UPDATE messages_prives SET lu =1";
 $resultMm=mysqli_query($link, $modifMessage);
 
 //Ouvre la messagerie
-header('Location: Messagerie_Bootstrap.php?idcontact='.$id_dest);
+header('Location: Messagerie_Bootstrap.php?idcontact='.$id_expe);
 //header('Location: https://www.agro-bordeaux.fr/');
   exit();
 ?>
