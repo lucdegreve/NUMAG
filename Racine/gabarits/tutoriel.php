@@ -22,7 +22,7 @@
 	
 <div class="container-fluid">
 	<!-- Section à placer à gauche -->
-	<div class="col-lg-6">
+	<div class="col-lg-5">
 		<div id="guide">
 			<div class="jumbotron HauteurMax">
 				<h3> Guide d'utilisation de RACINE </h3>
@@ -35,7 +35,7 @@
 		</div>
 	</div>
 	<!-- Section à placer à droite, vidéos les unes en dessous des autres -->
-	<div class="col-lg-6">
+	<div class="col-lg-5">
 		<div id="video">
 			<div class="jumbotron HauteurMax">
 				<h3> Vidéos </h3>
