@@ -1,4 +1,4 @@
-<!-- Code effectué par Aurélie Jambon -->
+<!-- Code effectué par MC -->
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -22,6 +22,31 @@
 					<a href="contact_NC.php" class="btn btn-secondary btn-lg btn-block">Nous contacter</a>
 				</div>
 			</div>
+			<div class="col-md-5" align="center">
+				<img src="picto/Jules.png" width="150" height="150">
+				</br>
+				<h5> Jules Colombo, 21 ans </h5>
+				Non issu du monde agricole
+				</br>
+				</br>
+				<I>“Les étudiants agro manquent de connaissance sur le monde agricole, sur les coopératives, la PAC, les marchés à terme... Les stages de 1ère année sont trouvés par le bouche à oreille, ils ne sont pas forcément motivés par de réelles problématiques sur les exploitations, et donc ne sont pas toujours bien accompagnés.”</I>
+			</div>
+			<div class="col-md-5" align="center">
+				<img src="picto/Audrey.png" width="150" height="150">
+				</br>
+				<h5> Audrey Fourcade, 31 ans </h5>
+				Fille d'agriculteurs
+				</br>
+				</br>
+				<I>“L’exploitation familiale est passée en bio en 2001, aujourd’hui de nombreux agriculteurs viennent directement échanger sur place sans intermédiaire, pour connaître les raisons de cette réussite, et pour pouvoir se lancer dans leurs projets de développement.”</I>
+			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-11" align="center">
+			3 ème année à Bordeaux Sciences Agro - <U> spécialisation </U> : Management des Entreprises Agricoles	
+			</div>
+		</div>	
 	</body>
 </html>

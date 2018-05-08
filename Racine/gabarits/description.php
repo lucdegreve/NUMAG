@@ -1,4 +1,4 @@
-<!-- Code effectué par Aurélie Jambon -->
+<!-- Code effectué par MC -->
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -33,9 +33,9 @@
 				Non issu du monde agricole
 				</br>
 				</br>
-				<I>“Les étudiants agro manquent de connaissance sur le monde agricole, sur les coopératives, la PAC, les marchés à terme...Les stages de 1ère année sont trouvés par le bouche à oreille, ils ne sont pas forcément motivés par de réelles problématiques sur les exploitations, et donc ne sont pas toujours bien accompagnés.”</I>
+				<I>“Les étudiants agro manquent de connaissance sur le monde agricole, sur les coopératives, la PAC, les marchés à terme... Les stages de 1ère année sont trouvés par le bouche à oreille, ils ne sont pas forcément motivés par de réelles problématiques sur les exploitations, et donc ne sont pas toujours bien accompagnés.”</I>
 			</div>
-			<div class="col-md-6" align="center">
+			<div class="col-md-5" align="center">
 				<img src="picto/Audrey.png" width="150" height="150">
 				</br>
 				<h5> Audrey Fourcade, 31 ans </h5>
@@ -49,9 +49,8 @@
 			<div class="col-md-1">
 			</div>
 			<div class="col-md-11" align="center">
-			3 ème année à Bordeaux Sciences Agro - <span> spécialisation </span> : Management des Entreprises Agricoles	
+			3 ème année à Bordeaux Sciences Agro - <U> spécialisation </U> : Management des Entreprises Agricoles	
 			</div>
-		</div>
-		
+		</div>	
 	</body>
 </html>
