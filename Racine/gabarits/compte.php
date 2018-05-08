@@ -19,6 +19,7 @@
 	?>
 
 	<br/>
+	<br/>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 text-center">
@@ -104,6 +105,7 @@
 
 				</div>
 			</div>
+		</div>
 			<?php include("Pied-VALIDE.html"); ?>
 </body>
 </html>

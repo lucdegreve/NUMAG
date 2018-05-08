@@ -9,7 +9,7 @@ Des validations sont mises en place grace aux données de bootstrap-->
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title> Benchmark </title>
+		<title> privilège premium </title>
 
 		<!-- css -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
