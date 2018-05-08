@@ -184,7 +184,7 @@
                 $dest=$row['id_dest'];
                 if ($dest==$id_ind_co){ ?>
                   <div class="col-lg-6">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 18rem; background-color:#ddfaff;">
                       <div class="card-header">
                         <?php echo"<h6 class='card-subtitle mb-2 text-muted min-size'><i>".$tab[0][0]." ".$tab[0][1]." - ".$DATE."</i></h6>";
                             $query1="UPDATE messages_prives SET lu = '1' WHERE id_mp=$IDMP";
@@ -256,7 +256,7 @@
     </div>
   </div>
 </div>
-
+<br>
 
     <?php include "Pied-VALIDE.html" ?>
   </body>
