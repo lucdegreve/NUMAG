@@ -14,7 +14,7 @@
 		</br> 
 		</br>
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-2">
 				<div class="btn-group-vertical">
 					<a href="Presentation.php" class="btn btn-secondary btn-lg btn-block">Accueil</a>
 					<a href="description.php" class="btn btn-info btn-lg btn-block">Présentation</a>
@@ -22,7 +22,7 @@
 					<a href="contact.php" class="btn btn-secondary btn-lg btn-block">Nous contacter</a>
 				</div>
 			</div>
-			<div class="col-md-4" align="center">
+			<div class="col-md-5" align="center">
 				<img src="picto/Jules.png" width="150" height="150">
 				</br>
 				<h5> Jules Colombo, 21 ans </h5>
@@ -33,7 +33,7 @@
 				<I>“Les étudiants agro manquent de connaissance sur le monde agricole, sur les coopératives, la PAC, les marchés à terme...” </I>
 				</p>
 			</div>
-			<div class="col-md-4" align="center">
+			<div class="col-md-5" align="center">
 				<img src="picto/Audrey.png" width="150" height="150">
 				</br>
 				<h5> Audrey Fourcade, 31 ans </h5>
@@ -46,9 +46,9 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-2">
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-10">
 			<p align="center">
 			3 ème année à Bordeaux Sciences Agro - <span> spécialisation </span> : Management des Entreprises Agricoles	
 			</p>
